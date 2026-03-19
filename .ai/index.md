@@ -34,6 +34,8 @@
 | OpenGraph 分享图 | `app/opengraph-image.png` | 社交媒体分享时的预览图 |
 | Twitter 分享图 | `app/twitter-image.png` | Twitter 分享预览图 |
 | 首页轮播照片 | `app/(main)/Photos.tsx` | 5 张照片，存放在同目录 `image-*.jpg` |
+| ★ 封面图池配置 | `config/cover-pool.ts` | 19 张预生成封面，slug → 图片编号映射 |
+| ★ 封面图池图片 | `public/covers/pool/cover-{01-19}.png` | 5 大类色调，新增文章在 cover-pool.ts 加映射 |
 
 ### 1.3 导航/路由
 

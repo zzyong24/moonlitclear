@@ -20,6 +20,8 @@ import path from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
 
+import { getCoverFromPool } from '~/config/cover-pool'
+
 // ============================================================
 // 类型定义 — 与原 Sanity Post 类型保持兼容
 // ============================================================
@@ -250,11 +252,11 @@ function parseMarkdownFile(filePath: string): VaultPostDetail | null {
     const readTime = readingTime(content)
 
     // 构建封面图路径
-    // 优先级：frontmatter.publish_cover > /covers/{slug}.png 自动匹配 > 默认渐变色
-    // - publish_cover 以 http 开头 → 直接用 URL
-    // - publish_cover 是文件名 → /covers/{文件名}
-    // - 无 publish_cover → 检查 /covers/{slug}.png 是否存在
-    // - 都没有 → 空字符串，使用渐变色兜底
+    // 优先级：
+    // 1. frontmatter.publish_cover（手动指定） → 直接用
+    // 2. /covers/{slug}.png 单独文件 → 自动匹配
+    // 3. 图片池映射（cover-pool.ts）→ 从 19 张预生成图中选一张
+    // 4. 都没有 → 空字符串，使用渐变色兜底（理论上不会走到这里）
     const slugForCover = generateSlug(filename, frontmatter)
     let coverUrl = ''
     if (frontmatter.publish_cover) {
@@ -272,7 +274,8 @@ function parseMarkdownFile(filePath: string): VaultPostDetail | null {
         fs.accessSync(autoPath)
         coverUrl = `/covers/${slugForCover}.png`
       } catch {
-        // 文件不存在，使用默认渐变色
+        // 单独文件不存在，使用图片池映射
+        coverUrl = getCoverFromPool(slugForCover)
       }
     }
 
