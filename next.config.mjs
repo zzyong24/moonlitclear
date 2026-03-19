@@ -6,8 +6,6 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // 构建时跳过 ESLint 检查，避免第三方/遗留代码的严格规则阻断部署
-  // ESLint 仍在开发时通过 IDE 和 pre-commit hook 运行
   eslint: {
     ignoreDuringBuilds: true,
   },

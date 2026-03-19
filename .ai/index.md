@@ -279,8 +279,8 @@ YYYYMMDD_文章标题.md
 
 | # | 文件 | 残留内容 | 状态 |
 |---|------|---------|------|
-| 9 | `README.md` | 全文 Cali 引用 | ⏳ 待重写为 MoonlitClear 项目 README |
-| 10 | `package.json` | `"name": "cali.so"` | ⏳ 可改为 `"moonlitclear-site"` |
+| 9 | `README.md` | ~~全文 Cali 引用~~ → MoonlitClear 项目 README | ✅ 已重写 |
+| 10 | `package.json` | ~~`"name": "cali.so"`~~ → `"moonlitclear-site"` | ✅ 已修复 |
 | 11 | `lib/vault.ts` | ~~注释 "Sanity 中 Cali 的信息"~~ → MoonlitClear | ✅ 已修复 |
 | 12 | `emails/newsletters/1.md` | Cali 的旧 Newsletter | ⏳ 可删除或重写 |
 

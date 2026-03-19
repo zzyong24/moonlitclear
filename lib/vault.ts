@@ -80,15 +80,12 @@ export interface VaultHeading {
 // 配置
 // ============================================================
 
-/** vault 文章目录的绝对路径 */
-const VAULT_WRITING_DIR = path.join(
-  process.cwd(),
-  '..',
-  'vault',
-  'space',
-  'crafted',
-  'writing'
-)
+/**
+ * vault 文章目录的绝对路径
+ * 文章存放在 cali.so/vault/writing/（仓库内部），
+ * 本地通过 symlink 链接到 Obsidian vault 实现双向同步
+ */
+const VAULT_WRITING_DIR = path.join(process.cwd(), 'vault', 'writing')
 
 /**
  * 默认封面配色方案
