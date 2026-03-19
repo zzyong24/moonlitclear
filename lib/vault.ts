@@ -4,7 +4,7 @@
  * 从本地 vault 目录读取 Markdown 文件作为博客数据源，
  * 替代原来的 Sanity CMS 数据层。
  *
- * 数据流：vault/space/crafted/writing/*.md → gray-matter 解析 → 统一 Post 类型
+ * 数据流：vault/writing/*.md → gray-matter 解析 → 统一 Post 类型
  *
  * 设计决策：
  * - 使用 gray-matter 解析 frontmatter，它是 Next.js 生态中最成熟的选择
@@ -249,10 +249,32 @@ function parseMarkdownFile(filePath: string): VaultPostDetail | null {
     // 计算阅读时长
     const readTime = readingTime(content)
 
-    // 构建封面图：使用 frontmatter.publish_cover 或默认渐变色背景
-    const coverUrl = frontmatter.publish_cover
-      ? `/vault-assets/${id}/${frontmatter.publish_cover}`
-      : '' // 空字符串表示使用默认样式
+    // 构建封面图路径
+    // 优先级：frontmatter.publish_cover > /covers/{slug}.png 自动匹配 > 默认渐变色
+    // - publish_cover 以 http 开头 → 直接用 URL
+    // - publish_cover 是文件名 → /covers/{文件名}
+    // - 无 publish_cover → 检查 /covers/{slug}.png 是否存在
+    // - 都没有 → 空字符串，使用渐变色兜底
+    const slugForCover = generateSlug(filename, frontmatter)
+    let coverUrl = ''
+    if (frontmatter.publish_cover) {
+      const cover = String(frontmatter.publish_cover)
+      coverUrl = cover.startsWith('http') ? cover : `/covers/${cover}`
+    } else {
+      // 自动检测 public/covers/{slug}.png 是否存在
+      const autoPath = path.join(
+        process.cwd(),
+        'public',
+        'covers',
+        `${slugForCover}.png`
+      )
+      try {
+        fs.accessSync(autoPath)
+        coverUrl = `/covers/${slugForCover}.png`
+      } catch {
+        // 文件不存在，使用默认渐变色
+      }
+    }
 
     // 分类：从 frontmatter.tags 或 publish_category 获取
     const categories: string[] = []

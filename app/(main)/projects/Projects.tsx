@@ -18,7 +18,7 @@ const projects = [
   {
     _id: 'thirdspace',
     name: 'ThirdSpace',
-    url: 'https://github.com/zzyong24',
+    url: 'https://github.com/zzyong24/thirdspace',
     description:
       'AI 驱动的个人知识管理系统。基于 Obsidian + MCP 协议，实现「收集 → 沉淀 → 反思 → 实践 → 输出」全闭环，36 个 MCP 工具让 AI 对话即知识沉淀。',
     icon: '🧠',
@@ -28,7 +28,7 @@ const projects = [
   {
     _id: 'ai-tongban',
     name: 'AI 童伴',
-    url: 'https://github.com/zzyong24',
+    url: 'https://https://aitongban.cloud',
     description:
       '让 AI 成为孩子的成长导师。为家长提供 59 个教育场景 Prompt + 内置 AI 对话服务，覆盖德育、智育、心理、生活四大领域，已完成 18 次产品迭代。',
     icon: '👶',
@@ -38,7 +38,7 @@ const projects = [
   {
     _id: 'lifeos',
     name: 'LifeOS',
-    url: 'https://github.com/zzyong24',
+    url: 'https://github.com/zzyong24/thirdspace',
     description:
       'AI 辅助决策系统。将人际关系和事件建模为 AI 可理解的结构化数据，通过人际图谱 + 事件闭环，让 AI 成为你的决策参谋，越用越懂你。',
     icon: '🎯',
@@ -46,9 +46,9 @@ const projects = [
     status: 'active' as const,
   },
   {
-    _id: 'obsidian-ai-chat',
-    name: 'Obsidian AI Chat',
-    url: 'https://github.com/zzyong24',
+    _id: 'obsidian-lingxi',
+    name: 'Obsidian lingxi',
+    url: 'https://github.com/zzyong24/obsidian-lingxi',
     description:
       'Obsidian 侧边栏 AI 对话插件。通过 Skill/Prompt 模板 + 国内大模型，将创作灵感自动转化为结构化笔记，面向短视频创作者的知识管理解决方案。',
     icon: '💬',
