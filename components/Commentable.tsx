@@ -213,15 +213,24 @@ function Root({ className, blockId }: CommentableProps) {
             onClick={handleToggleCommenting}
           >
             {top3Users.map((user, idx) => (
-              <Image
-                key={idx}
-                src={user.imageUrl ?? ''}
-                alt=""
-                width={20}
-                height={20}
-                unoptimized
-                className="pointer-events-none h-5 w-5 select-none rounded-full ring-2 ring-white dark:ring-zinc-800"
-              />
+              user.imageUrl ? (
+                <Image
+                  key={idx}
+                  src={user.imageUrl}
+                  alt=""
+                  width={20}
+                  height={20}
+                  unoptimized
+                  className="pointer-events-none h-5 w-5 select-none rounded-full ring-2 ring-white dark:ring-zinc-800"
+                />
+              ) : (
+                <span
+                  key={idx}
+                  className="pointer-events-none flex h-5 w-5 select-none items-center justify-center rounded-full bg-zinc-300 text-[10px] font-bold text-zinc-600 ring-2 ring-white dark:bg-zinc-700 dark:text-zinc-300 dark:ring-zinc-800"
+                >
+                  ?
+                </span>
+              )
             ))}
           </motion.button>
         )}
@@ -343,14 +352,20 @@ function Comment({
         )}
       >
         <div className="flex w-6 shrink-0 items-end">
-          <Image
-            src={c.userInfo.imageUrl ?? ''}
-            alt=""
-            className="h-6 w-6 select-none rounded-full"
-            width={24}
-            height={24}
-            unoptimized
-          />
+          {c.userInfo.imageUrl ? (
+            <Image
+              src={c.userInfo.imageUrl}
+              alt=""
+              className="h-6 w-6 select-none rounded-full"
+              width={24}
+              height={24}
+              unoptimized
+            />
+          ) : (
+            <span className="flex h-6 w-6 select-none items-center justify-center rounded-full bg-zinc-300 text-xs font-bold text-zinc-600 dark:bg-zinc-700 dark:text-zinc-300">
+              {parseDisplayName(c.userInfo)?.charAt(0) ?? '?'}
+            </span>
+          )}
         </div>
         <div
           className={clsxm(
@@ -529,14 +544,20 @@ function CommentTextarea({ isLoading, onSubmit }: CommentTextareaProps) {
             autoFocus
           />
         )}
-        <Image
-          src={me?.imageUrl ?? ''}
-          alt=""
-          className="h-6 w-6 select-none rounded-full"
-          width={24}
-          height={24}
-          unoptimized
-        />
+        {me?.imageUrl ? (
+          <Image
+            src={me.imageUrl}
+            alt=""
+            className="h-6 w-6 select-none rounded-full"
+            width={24}
+            height={24}
+            unoptimized
+          />
+        ) : (
+          <span className="flex h-6 w-6 select-none items-center justify-center rounded-full bg-zinc-300 text-xs font-bold text-zinc-600 dark:bg-zinc-700 dark:text-zinc-300">
+            {me?.firstName?.charAt(0) ?? '?'}
+          </span>
+        )}
       </div>
       <footer className="flex h-5 w-full items-center justify-between">
         <span

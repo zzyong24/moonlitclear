@@ -20,7 +20,7 @@
  *   这是 Markdown 无原生 block ID 的固有局限，可接受的权衡
  */
 
-import React from 'react'
+import React, { useRef } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
@@ -30,31 +30,35 @@ import { ClientOnly } from '~/components/ClientOnly'
 import { Commentable } from '~/components/Commentable'
 import { Mermaid } from '~/components/Mermaid'
 
-/** 全局标题计数器，用于给标题生成与 extractHeadings 一致的 ID */
-let headingCounter = 0
-/** 全局内容块计数器，用于给每个块生成唯一的评论 blockId */
-let blockCounter = 0
+/**
+ * 计数器 hook，避免模块级全局变量在并发渲染下的竞态
+ *
+ * 设计决策：使用 useRef 代替模块级全局变量，
+ * 保证每个组件实例独立计数，React 18 Strict Mode 兼容。
+ * 每次渲染前通过 reset 重置，确保 SSR 和 CSR 生成的 ID 一致。
+ */
+function useCounters() {
+  const headingRef = useRef(0)
+  const blockRef = useRef(0)
 
-function resetCounters() {
-  headingCounter = 0
-  blockCounter = 0
-}
+  // 每次组件渲染时重置（在渲染阶段调用是安全的，ref 不触发 re-render）
+  headingRef.current = 0
+  blockRef.current = 0
 
-/** 生成标题 ID，与 vault.ts 中 extractHeadings 的逻辑保持一致 */
-function getHeadingId(): string {
-  headingCounter++
-  return `heading-${headingCounter}`
-}
-
-/** 生成内容块 ID，用于 Commentable 组件的 blockId */
-function getBlockId(): string {
-  blockCounter++
-  return `block-${blockCounter}`
+  return {
+    getHeadingId: () => {
+      headingRef.current++
+      return `heading-${headingRef.current}`
+    },
+    getBlockId: () => {
+      blockRef.current++
+      return `block-${blockRef.current}`
+    },
+  }
 }
 
 export function PostMarkdown({ content }: { content: string }) {
-  // 每次渲染时重置计数器
-  resetCounters()
+  const { getHeadingId, getBlockId } = useCounters()
 
   return (
     <ReactMarkdown

@@ -398,6 +398,36 @@ export function getLatestVaultPosts(options?: {
 }
 
 /**
+ * 根据 _id（文件名）获取单篇文章详情
+ * 用于评论 API 等以 _id 为标识符的场景
+ *
+ * 设计决策：评论系统使用 _id（文件名）作为 postId 存入数据库，
+ * 因为 slug 可能被用户修改（通过 publish_slug），而 _id 是稳定的。
+ */
+export function getVaultPostById(id: string): VaultPostDetail | undefined {
+  const allPosts = getAllVaultPosts()
+  const post = allPosts.find((p) => p._id === id)
+
+  if (!post) return undefined
+
+  const related = allPosts
+    .filter((p) => {
+      if (p._id === post._id) return false
+      const sharedTags = p.categories.filter((c) =>
+        post.categories.includes(c)
+      )
+      return sharedTags.length > 0
+    })
+    .slice(0, 3)
+    .map(({ body: _body, headings: _headings, ...rest }) => rest)
+
+  return {
+    ...post,
+    related: related.length > 0 ? related : undefined,
+  }
+}
+
+/**
  * 根据 slug 获取单篇文章详情
  * 等价于原 getBlogPost()
  */

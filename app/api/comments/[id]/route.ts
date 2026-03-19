@@ -17,7 +17,7 @@ import { env } from '~/env.mjs'
 import { url } from '~/lib'
 import { resend } from '~/lib/mail'
 import { redis } from '~/lib/redis'
-import { getVaultPost } from '~/lib/vault'
+import { getVaultPostById } from '~/lib/vault'
 
 const ratelimit = new Ratelimit({
   redis,
@@ -94,15 +94,15 @@ export async function POST(req: NextRequest, { params }: Params) {
     })
   }
 
-  // 从 vault 中查找文章（postId 即为 slug）
-  const vaultPost = getVaultPost(postId)
+  // 从 vault 中查找文章（postId 是 _id，即文件名）
+  const vaultPost = getVaultPostById(postId)
   if (!vaultPost) {
     return NextResponse.json({ error: 'Post not found' }, { status: 412 })
   }
   const post = {
     slug: vaultPost.slug,
     title: vaultPost.title,
-    imageUrl: vaultPost.mainImage.asset.url,
+    imageUrl: vaultPost.mainImage.asset.url || '',
   }
 
   try {
