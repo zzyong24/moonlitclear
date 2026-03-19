@@ -28,7 +28,7 @@ const projects = [
   {
     _id: 'ai-tongban',
     name: 'AI 童伴',
-    url: 'https://https://aitongban.cloud',
+    url: 'https://aitongban.cloud',
     description:
       '让 AI 成为孩子的成长导师。为家长提供 59 个教育场景 Prompt + 内置 AI 对话服务，覆盖德育、智育、心理、生活四大领域，已完成 18 次产品迭代。',
     icon: '👶',

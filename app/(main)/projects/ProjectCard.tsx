@@ -89,10 +89,11 @@ export function ProjectCard({ project }: { project: Project }) {
         <ExternalLinkIcon className="h-4 w-4 flex-none" />
       </p>
 
+      {/* Hover 边框高亮效果 — 只显示虚线边框，不重复渲染文字内容避免重影 */}
       <AnimatePresence>
         {isHovering && (
-          <motion.footer
-            className="pointer-events-none absolute -inset-x-4 -inset-y-6 z-30 select-none px-4 py-6 sm:-inset-x-6 sm:rounded-2xl sm:px-6"
+          <motion.div
+            className="pointer-events-none absolute -inset-x-4 -inset-y-6 z-0 select-none sm:-inset-x-6 sm:rounded-2xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             style={{
@@ -101,16 +102,7 @@ export function ProjectCard({ project }: { project: Project }) {
             exit={{ opacity: 0 }}
           >
             <div className="absolute inset-x-px inset-y-px rounded-2xl border border-dashed border-zinc-900/30 dark:border-zinc-100/20" />
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-dashed border-zinc-900/20 bg-white dark:border-zinc-100/20 dark:bg-zinc-800">
-              <div className="h-9 w-9 rounded-full border border-dashed border-zinc-900/40 dark:border-zinc-100/60 dark:bg-zinc-900/20" />
-            </div>
-            <h2 className="mt-6 text-base font-bold text-zinc-50 [text-shadow:rgb(0,0,0)_-0.5px_0.5px_0px,rgb(0,0,0)_0.5px_0.5px_0px,rgb(0,0,0)_0.5px_-0.5px_0px,rgb(0,0,0)_-0.5px_-0.5px_0px] dark:text-zinc-900 dark:[text-shadow:rgb(255,255,255)_-0.5px_0.5px_0px,rgb(255,255,255)_0.5px_0.5px_0px,rgb(255,255,255)_0.5px_-0.5px_0px,rgb(255,255,255)_-0.5px_-0.5px_0px]">
-              {name}
-            </h2>
-            <p className="mt-2 text-sm text-zinc-600 opacity-50 dark:text-zinc-400">
-              {description}
-            </p>
-          </motion.footer>
+          </motion.div>
         )}
       </AnimatePresence>
     </Card>
