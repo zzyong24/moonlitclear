@@ -62,8 +62,8 @@
 | 要改什么 | 去哪个文件 | 说明 |
 |---------|-----------|------|
 | 项目列表页 | `app/(main)/projects/page.tsx` | 项目列表 |
-| 项目数据来源 | `sanity/schemas/project.ts` | ⚠️ 仍从 Sanity CMS 读取 |
-| 项目卡片样式 | `app/(main)/projects/ProjectCard.tsx` | 单个项目卡片组件 |
+| 项目数据来源 | `app/(main)/projects/Projects.tsx` | ✅ 静态配置，5 个项目（ThirdSpace/AI童伴/LifeOS/Obsidian AI Chat/MoonlitClear） |
+| 项目卡片样式 | `app/(main)/projects/ProjectCard.tsx` | 支持 emoji 图标、技术标签、项目状态展示 |
 
 ### 1.6 留言墙
 
@@ -294,7 +294,7 @@ YYYYMMDD_文章标题.md
 | 首页轮播照片 | ⚠️ 仍为原项目图片 | `app/(main)/Photos.tsx` + `image-*.jpg` | 需要替换为你的照片 |
 | 工作经历(Resume) | ⚠️ 返回 null | `app/(main)/Resume.tsx` + `lib/vault.ts` | `getVaultSettings()` 返回空 |
 | 社交链接 | ⚠️ 占位 URL | `app/(main)/Headline.tsx` | GitHub/邮箱链接需要换成真实地址 |
-| 项目数据 | ⚠️ 仍从 Sanity 读取 | `sanity/schemas/project.ts` | 可迁移到 vault 或硬编码 |
+| 项目数据 | ✅ 已迁移到本地静态配置 | `app/(main)/projects/Projects.tsx` | 5 个项目，支持 emoji/标签/状态 |
 
 ---
 

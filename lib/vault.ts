@@ -350,7 +350,7 @@ export function getLatestVaultPosts(options?: {
   const allPosts = getAllVaultPosts()
 
   // 返回时去掉 body 和 headings（列表页不需要）
-  return allPosts.slice(0, limit).map(({ body, headings, ...rest }) => rest)
+  return allPosts.slice(0, limit).map(({ body: _body, headings: _headings, ...rest }) => rest)
 }
 
 /**
@@ -373,7 +373,7 @@ export function getVaultPost(slug: string): VaultPostDetail | undefined {
       return sharedTags.length > 0
     })
     .slice(0, 3)
-    .map(({ body, headings, ...rest }) => rest)
+    .map(({ body: _body, headings: _headings, ...rest }) => rest)
 
   return {
     ...post,
@@ -388,7 +388,7 @@ export function getVaultPost(slug: string): VaultPostDetail | undefined {
  */
 export function getVaultSettings() {
   return {
-    projects: null as null,
+    projects: null,
     heroPhotos: null as string[] | null,
     resume: null as
       | {
