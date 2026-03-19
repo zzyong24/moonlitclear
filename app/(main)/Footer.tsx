@@ -9,7 +9,6 @@ import { kvKeys } from '~/config/kv'
 import { navigationItems } from '~/config/nav'
 import { db } from '~/db'
 import { subscribers } from '~/db/schema'
-import { env } from '~/env.mjs'
 import { prettifyNumber } from '~/lib/math'
 import { redis } from '~/lib/redis'
 
@@ -46,7 +45,7 @@ function Links() {
 
 async function TotalPageViews() {
   let views: number
-  if (env.VERCEL_ENV === 'production') {
+  if (process.env.VERCEL_ENV === 'production') {
     views = await redis.incr(kvKeys.totalPageViews)
   } else {
     views = 345678
@@ -70,19 +69,24 @@ type VisitorGeolocation = {
 }
 async function LastVisitorInfo() {
   let lastVisitor: VisitorGeolocation | undefined = undefined
-  if (env.VERCEL_ENV === 'production') {
+  try {
+    // 直接从 Redis 读取访客信息（不再区分环境）
     const [lv, cv] = await redis.mget<VisitorGeolocation[]>(
       kvKeys.lastVisitor,
       kvKeys.currentVisitor
     )
     lastVisitor = lv
-    await redis.set(kvKeys.lastVisitor, cv)
+    if (cv) {
+      await redis.set(kvKeys.lastVisitor, cv)
+    }
+  } catch {
+    // Redis 连接失败时忽略
   }
 
   if (!lastVisitor) {
     lastVisitor = {
-      country: 'US',
-      flag: '🇺🇸',
+      country: '未知',
+      flag: '🌍',
     }
   }
 
@@ -116,10 +120,11 @@ export async function Footer() {
             </div>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <p className="text-sm text-zinc-500/80 dark:text-zinc-400/80">
-                &copy; {new Date().getFullYear()} Cali Castle. 网站已开源：
+                &copy; {new Date().getFullYear()} MoonlitClear. 基于{' '}
                 <PeekabooLink href="https://github.com/CaliCastle/cali.so">
-                  GitHub
+                  cali.so
                 </PeekabooLink>
+                {' '}开源项目
               </p>
               <Links />
             </div>

@@ -1,9 +1,17 @@
 import { ProjectCard } from '~/app/(main)/projects/ProjectCard'
-import { getSettings } from '~/sanity/queries'
+
+// 暂时使用静态项目列表，后续可以从 vault 读取
+const projects = [
+  {
+    _id: 'thirdspace',
+    name: 'ThirdSpace',
+    url: 'https://github.com',
+    description: '基于 Obsidian + MCP 的个人知识管理系统，文本是知识的通用接口。',
+    icon: '',
+  },
+]
 
 export async function Projects() {
-  const projects = (await getSettings())?.projects || []
-
   return (
     <ul
       role="list"

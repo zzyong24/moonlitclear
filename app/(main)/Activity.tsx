@@ -38,7 +38,7 @@ export function Activity() {
       enabled:
         typeof window === 'undefined'
           ? false
-          : new URL(window.location.href).hostname === 'cali.so',
+          : true, // 所有环境都启用活动状态
     }
   )
   const [open, setOpen] = React.useState(false)
@@ -84,7 +84,7 @@ export function Activity() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                 >
-                  Cali 在使用 {appLabels[app] ?? app}
+                  MoonlitClear 在使用 {appLabels[app] ?? app}
                 </motion.div>
               </Tooltip.Content>
             </Tooltip.Portal>

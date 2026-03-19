@@ -17,12 +17,12 @@ import {
   UTurnLeftIcon,
 } from '~/assets'
 import { ClientOnly } from '~/components/ClientOnly'
-import { PostPortableText } from '~/components/PostPortableText'
+import { PostMarkdown } from '~/components/PostMarkdown'
 import { Prose } from '~/components/Prose'
 import { Button } from '~/components/ui/Button'
 import { Container } from '~/components/ui/Container'
 import { prettifyNumber } from '~/lib/math'
-import { type PostDetail } from '~/sanity/schemas/post'
+import { type VaultPostDetail, type VaultPost } from '~/lib/vault'
 
 import { BlogPostCard } from './BlogPostCard'
 import { BlogPostTableOfContents } from './BlogPostTableOfContents'
@@ -33,11 +33,13 @@ export function BlogPostPage({
   reactions,
   relatedViews,
 }: {
-  post: PostDetail
+  post: VaultPostDetail
   views?: number
   reactions?: number[]
   relatedViews: number[]
 }) {
+  const hasImage = post.mainImage.asset.url !== ''
+
   return (
     <Container className="mt-16 lg:mt-32">
       <div className="w-full md:flex md:justify-between xl:relative">
@@ -57,6 +59,7 @@ export function BlogPostPage({
           </Button>
           <article data-postid={post._id}>
             <header className="relative flex flex-col items-center pb-5 after:absolute after:-bottom-1 after:block after:h-px after:w-full after:rounded after:bg-gradient-to-r after:from-zinc-400/20 after:via-zinc-200/10 after:to-transparent dark:after:from-zinc-600/20 dark:after:via-zinc-700/10">
+              {/* 封面区域 */}
               <motion.div
                 className="relative mb-7 aspect-[240/135] w-full md:mb-12 md:w-[120%]"
                 initial={{ opacity: 0, scale: 0.96, y: 10 }}
@@ -68,25 +71,43 @@ export function BlogPostPage({
                   damping: 20,
                 }}
               >
-                <div className="absolute z-0 hidden aspect-[240/135] w-full blur-xl saturate-150 after:absolute after:inset-0 after:hidden after:bg-white/50 dark:after:bg-black/50 md:block md:after:block">
-                  <Image
-                    src={post.mainImage.asset.url}
-                    alt=""
-                    className="select-none"
-                    unoptimized
-                    fill
-                    aria-hidden={true}
-                  />
-                </div>
-                <Image
-                  src={post.mainImage.asset.url}
-                  alt={post.title}
-                  className="select-none rounded-2xl ring-1 ring-zinc-900/5 transition dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 md:rounded-3xl"
-                  placeholder="blur"
-                  blurDataURL={post.mainImage.asset.lqip}
-                  unoptimized
-                  fill
-                />
+                {hasImage ? (
+                  <>
+                    <div className="absolute z-0 hidden aspect-[240/135] w-full blur-xl saturate-150 after:absolute after:inset-0 after:hidden after:bg-white/50 dark:after:bg-black/50 md:block md:after:block">
+                      <Image
+                        src={post.mainImage.asset.url}
+                        alt=""
+                        className="select-none"
+                        unoptimized
+                        fill
+                        aria-hidden={true}
+                      />
+                    </div>
+                    <Image
+                      src={post.mainImage.asset.url}
+                      alt={post.title}
+                      className="select-none rounded-2xl ring-1 ring-zinc-900/5 transition dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 md:rounded-3xl"
+                      placeholder={post.mainImage.asset.lqip ? 'blur' : 'empty'}
+                      blurDataURL={post.mainImage.asset.lqip || undefined}
+                      unoptimized
+                      fill
+                    />
+                  </>
+                ) : (
+                  <div
+                    className="flex h-full w-full items-center justify-center rounded-2xl md:rounded-3xl"
+                    style={{
+                      background: `linear-gradient(135deg, ${post.mainImage.asset.dominant?.background ?? '#1a1a2e'} 0%, ${post.mainImage.asset.dominant?.foreground ?? '#e0e0e0'}30 100%)`,
+                    }}
+                  >
+                    <span
+                      className="text-6xl font-bold opacity-10"
+                      style={{ color: post.mainImage.asset.dominant?.foreground ?? '#e0e0e0' }}
+                    >
+                      {post.title.slice(0, 2)}
+                    </span>
+                  </div>
+                )}
               </motion.div>
               <motion.div
                 className="flex w-full items-center space-x-4 text-sm font-medium text-zinc-600/80 dark:text-zinc-400/80"
@@ -111,10 +132,12 @@ export function BlogPostPage({
                     })?.format('YYYY/MM/DD')}
                   </span>
                 </time>
-                <span className="inline-flex items-center space-x-1.5">
-                  <ScriptIcon />
-                  <span>{post.categories?.join(', ')}</span>
-                </span>
+                {post.categories && post.categories.length > 0 && (
+                  <span className="inline-flex items-center space-x-1.5">
+                    <ScriptIcon />
+                    <span>{post.categories.join(', ')}</span>
+                  </span>
+                )}
               </motion.div>
               <motion.h1
                 className="mt-6 w-full text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
@@ -171,7 +194,7 @@ export function BlogPostPage({
               </motion.div>
             </header>
             <Prose className="mt-8">
-              <PostPortableText value={post.body} />
+              <PostMarkdown content={post.body} />
             </Prose>
           </article>
         </div>
@@ -194,11 +217,11 @@ export function BlogPostPage({
           </h2>
 
           <div className="mt-6 grid grid-cols-1 justify-center gap-6 md:grid-cols-[repeat(auto-fit,75%)] lg:grid-cols-[repeat(auto-fit,45%)] lg:gap-8">
-            {post.related.map((post, idx) => (
+            {post.related.map((relatedPost, idx) => (
               <BlogPostCard
-                post={post}
+                post={relatedPost}
                 views={relatedViews[idx] ?? 0}
-                key={post._id}
+                key={relatedPost._id}
               />
             ))}
           </div>
@@ -206,7 +229,7 @@ export function BlogPostPage({
       ) : null}
 
       <ClientOnly>
-        <BlogPostStateLoader post={post} />
+        <BlogPostStateLoader post={post as any} />
       </ClientOnly>
     </Container>
   )

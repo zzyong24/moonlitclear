@@ -3,7 +3,6 @@ import { get } from '@vercel/edge-config'
 import { type NextRequest, NextResponse } from 'next/server'
 
 import { kvKeys } from '~/config/kv'
-import { env } from '~/env.mjs'
 import countries from '~/lib/countries.json'
 import { getIP } from '~/lib/ip'
 import { redis } from '~/lib/redis'
@@ -38,14 +37,18 @@ async function beforeAuthMiddleware(req: NextRequest) {
     }
   }
 
-  if (geo && !isApi && env.VERCEL_ENV === 'production') {
+  if (geo && !isApi) {
     const country = geo.country
     const city = geo.city
 
     const countryInfo = countries.find((x) => x.cca2 === country)
     if (countryInfo) {
       const flag = countryInfo.flag
-      await redis.set(kvKeys.currentVisitor, { country, city, flag })
+      try {
+        await redis.set(kvKeys.currentVisitor, { country, city, flag })
+      } catch {
+        // Redis 连接失败时忽略
+      }
     }
   }
 

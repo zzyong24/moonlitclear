@@ -4,31 +4,7 @@ import { clsxm } from '@zolplay/utils'
 import { motion, useScroll, type Variants } from 'framer-motion'
 import React from 'react'
 
-interface HeadingNode {
-  _type: 'span'
-  text: string
-  _key: string
-}
-
-interface Node {
-  _type: 'block'
-  style: 'h1' | 'h2' | 'h3' | 'h4'
-  _key: string
-  children?: HeadingNode[]
-}
-
-const parseOutline = (nodes: Node[]) => {
-  return nodes
-    .filter((node) => node._type === 'block' && node.style.startsWith('h'))
-    .map((node) => {
-      return {
-        style: node.style,
-        text:
-          node.children?.[0] !== undefined ? node.children[0].text ?? '' : '',
-        id: node._key,
-      }
-    })
-}
+import { type VaultHeading } from '~/lib/vault'
 
 const listVariants = {
   hidden: {
@@ -59,8 +35,11 @@ const itemVariants = {
   },
 } satisfies Variants
 
-export function BlogPostTableOfContents({ headings }: { headings: Node[] }) {
-  const outline = parseOutline(headings)
+export function BlogPostTableOfContents({
+  headings,
+}: {
+  headings: VaultHeading[]
+}) {
   const { scrollY } = useScroll()
   const [highlightedHeadingId, setHighlightedHeadingId] = React.useState<
     string | null
@@ -71,12 +50,16 @@ export function BlogPostTableOfContents({ headings }: { headings: Node[] }) {
       const articleElement = document.querySelector<HTMLElement>(
         'article[data-postid]'
       )
-      const outlineYs = outline.map((node) => {
-        const el = document.querySelector<HTMLAnchorElement>(
+
+      const outlineYs = headings.map((node) => {
+        const el = document.querySelector<HTMLElement>(
           `article ${node.style}:where([id="${node.id}"]) > a`
         )
-        if (!el) return 0
-
+        if (!el) {
+          // 回退方案：直接通过 id 查找
+          const directEl = document.getElementById(node.id)
+          return directEl ? directEl.getBoundingClientRect().top : 0
+        }
         return el.getBoundingClientRect().top
       })
 
@@ -86,9 +69,11 @@ export function BlogPostTableOfContents({ headings }: { headings: Node[] }) {
         } else {
           const idx = outlineYs.findIndex((y) => y > 0)
           if (idx === -1) {
-            setHighlightedHeadingId(outline[outline.length - 1]?.id ?? null)
+            setHighlightedHeadingId(
+              headings[headings.length - 1]?.id ?? null
+            )
           } else {
-            setHighlightedHeadingId(outline[idx]?.id ?? null)
+            setHighlightedHeadingId(headings[idx]?.id ?? null)
           }
         }
       }
@@ -99,7 +84,7 @@ export function BlogPostTableOfContents({ headings }: { headings: Node[] }) {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [outline, scrollY])
+  }, [headings, scrollY])
 
   return (
     <motion.ul
@@ -108,7 +93,7 @@ export function BlogPostTableOfContents({ headings }: { headings: Node[] }) {
       variants={listVariants}
       className="group pointer-events-auto flex flex-col space-y-2 text-zinc-500"
     >
-      {outline.map((node) => (
+      {headings.map((node) => (
         <motion.li
           key={node.id}
           variants={itemVariants}

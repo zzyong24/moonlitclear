@@ -11,9 +11,10 @@ import Image from 'next/image'
 import React from 'react'
 
 import { prettifyNumber } from '~/lib/math'
-import { type Post } from '~/sanity/schemas/post'
 
-function moodToReactions(mood: Post['mood']) {
+type Mood = 'happy' | 'sad' | 'neutral'
+
+function moodToReactions(mood: Mood) {
   switch (mood) {
     case 'happy':
       return ['claps', 'tada', 'confetti', 'fire']
@@ -28,7 +29,7 @@ export function BlogReactions({
   _id,
   mood,
   reactions,
-}: Pick<Post, '_id' | 'mood'> & { reactions?: number[] }) {
+}: { _id: string; mood: Mood } & { reactions?: number[] }) {
   const mouseY = useMotionValue(Infinity)
   const onMouseMove = React.useCallback(
     (e: React.MouseEvent) => {

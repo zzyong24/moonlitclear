@@ -6,16 +6,21 @@ import {
   useMotionValue,
 } from 'framer-motion'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import React from 'react'
 
 import { ExternalLinkIcon } from '~/assets'
 import { Card } from '~/components/ui/Card'
-import { urlForImage } from '~/sanity/lib/image'
-import { type Project } from '~/sanity/schemas/project'
+
+interface Project {
+  _id: string
+  name: string
+  url: string
+  description: string
+  icon: string
+}
 
 export function ProjectCard({ project }: { project: Project }) {
-  const { _id, url, icon, name, description } = project
+  const { _id, url, name, description } = project
 
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
@@ -41,14 +46,9 @@ export function ProjectCard({ project }: { project: Project }) {
       onMouseLeave={() => setIsHovering(false)}
     >
       <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image
-          src={urlForImage(icon)?.size(100, 100).auto('format').url()}
-          alt=""
-          width={36}
-          height={36}
-          className="h-9 w-9 rounded-full"
-          unoptimized
-        />
+        <span className="text-xl font-bold text-zinc-600 dark:text-zinc-300">
+          {name.slice(0, 1)}
+        </span>
       </div>
       <h2 className="mt-6 text-base font-bold text-zinc-800 dark:text-zinc-100">
         <Card.Link href={url} target="_blank">
@@ -57,7 +57,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </h2>
       <Card.Description>{description}</Card.Description>
       <p className="pointer-events-none relative z-40 mt-6 flex items-center text-sm font-medium text-zinc-400 transition group-hover:-translate-y-0.5 group-hover:text-lime-600 dark:text-zinc-200 dark:group-hover:text-lime-400">
-        <span className="mr-2">{new URL(url).host}</span>
+        <span className="mr-2">{url ? new URL(url).host : ''}</span>
         <ExternalLinkIcon className="h-4 w-4 flex-none" />
       </p>
 

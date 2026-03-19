@@ -3,22 +3,21 @@ import { notFound } from 'next/navigation'
 
 import { BlogPostPage } from '~/app/(main)/blog/BlogPostPage'
 import { kvKeys } from '~/config/kv'
-import { env } from '~/env.mjs'
 import { url } from '~/lib'
 import { redis } from '~/lib/redis'
-import { getBlogPost } from '~/sanity/queries'
+import { getVaultPost } from '~/lib/vault'
 
 export const generateMetadata = async ({
   params,
 }: {
   params: { slug: string }
 }) => {
-  const post = await getBlogPost(params.slug)
+  const post = await Promise.resolve(getVaultPost(params.slug))
   if (!post) {
     notFound()
   }
 
-  const { title, description, mainImage } = post
+  const { title, description } = post
 
   return {
     title,
@@ -26,24 +25,12 @@ export const generateMetadata = async ({
     openGraph: {
       title,
       description,
-      images: [
-        {
-          url: mainImage.asset.url,
-        },
-      ],
       type: 'article',
     },
     twitter: {
-      images: [
-        {
-          url: mainImage.asset.url,
-        },
-      ],
       title,
       description,
       card: 'summary_large_image',
-      site: '@thecalicastle',
-      creator: '@thecalicastle',
     },
   } satisfies Metadata
 }
@@ -53,46 +40,36 @@ export default async function BlogPage({
 }: {
   params: { slug: string }
 }) {
-  const post = await getBlogPost(params.slug)
+  const post = getVaultPost(params.slug)
   if (!post) {
     notFound()
   }
 
-  let views: number
-  if (env.VERCEL_ENV === 'production') {
-    views = await redis.incr(kvKeys.postViews(post._id))
-  } else {
-    views = 30578
-  }
-
-  let reactions: number[] = []
+  // 从 Redis 读取真实浏览量，并自增 1（每次访问计数）
+  let views = 0
+  let reactions = [0, 0, 0, 0]
   try {
-    if (env.VERCEL_ENV === 'production') {
-      const res = await fetch(url(`/api/reactions?id=${post._id}`), {
-        next: {
-          tags: [`reactions:${post._id}`],
-        },
-      })
-      const data = await res.json()
-      if (Array.isArray(data)) {
-        reactions = data
-      }
-    } else {
-      reactions = Array.from({ length: 4 }, () =>
-        Math.floor(Math.random() * 50000)
-      )
+    views = await redis.incr(kvKeys.postViews(post._id))
+    const storedReactions = await redis.get<number[]>(`reactions:${post._id}`)
+    if (storedReactions) {
+      reactions = storedReactions
     }
-  } catch (error) {
-    console.error(error)
+  } catch {
+    // Redis 连接失败时使用默认值
   }
 
+  // 相关文章浏览量也从 Redis 读取
   let relatedViews: number[] = []
-  if (typeof post.related !== 'undefined' && post.related.length > 0) {
-    if (env.VERCEL_ENV === 'development') {
-      relatedViews = post.related.map(() => Math.floor(Math.random() * 1000))
-    } else {
-      const postIdKeys = post.related.map(({ _id }) => kvKeys.postViews(_id))
-      relatedViews = await redis.mget<number[]>(...postIdKeys)
+  if (post.related && post.related.length > 0) {
+    try {
+      relatedViews = await Promise.all(
+        post.related.map(async (rp) => {
+          const v = await redis.get<number>(kvKeys.postViews(rp._id))
+          return v ?? 0
+        })
+      )
+    } catch {
+      relatedViews = post.related.map(() => 0)
     }
   }
 
@@ -101,7 +78,7 @@ export default async function BlogPage({
       post={post}
       views={views}
       relatedViews={relatedViews}
-      reactions={reactions.length > 0 ? reactions : undefined}
+      reactions={reactions}
     />
   )
 }

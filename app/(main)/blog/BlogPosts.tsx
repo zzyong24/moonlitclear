@@ -1,22 +1,12 @@
-import { kvKeys } from '~/config/kv'
-import { env } from '~/env.mjs'
-import { redis } from '~/lib/redis'
-import { getLatestBlogPosts } from '~/sanity/queries'
+import { getLatestVaultPosts } from '~/lib/vault'
 
 import { BlogPostCard } from './BlogPostCard'
 
 export async function BlogPosts({ limit = 5 }) {
-  const posts = await getLatestBlogPosts({ limit, forDisplay: true }) || []
-  const postIdKeys = posts.map(({ _id }) => kvKeys.postViews(_id))
+  const posts = getLatestVaultPosts({ limit, forDisplay: true })
 
-  let views: number[] = []
-  if (env.VERCEL_ENV === 'development') {
-    views = posts.map(() => Math.floor(Math.random() * 1000))
-  } else {
-    if (postIdKeys.length > 0) {
-      views = await redis.mget<number[]>(...postIdKeys)
-    }
-  }
+  // 本地模式下使用随机浏览量
+  const views = posts.map(() => Math.floor(Math.random() * 1000))
 
   return (
     <>

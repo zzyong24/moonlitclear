@@ -5,15 +5,24 @@ import { useQuery } from 'react-query'
 
 import { addComment, blogPostState } from '~/app/(main)/blog/blog-post.state'
 import { type PostIDLessCommentDto } from '~/db/dto/comment.dto'
-import { type Post } from '~/sanity/schemas/post'
 
-export function BlogPostStateLoader({ post }: { post: Post }) {
+interface MinimalPost {
+  _id: string
+}
+
+export function BlogPostStateLoader({ post }: { post: MinimalPost }) {
   const { data: comments } = useQuery(
     ['comments', post._id],
     async () => {
-      const res = await fetch(`/api/comments/${post._id}`)
-      const data = await res.json()
-      return data as PostIDLessCommentDto[]
+      try {
+        const res = await fetch(`/api/comments/${post._id}`)
+        if (!res.ok) return []
+        const data = await res.json()
+        return data as PostIDLessCommentDto[]
+      } catch {
+        // 评论系统未启用时静默失败
+        return []
+      }
     },
     { initialData: [] }
   )

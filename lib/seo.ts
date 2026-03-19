@@ -1,10 +1,10 @@
 export const seo = {
-  title: 'Cali Castle | 开发者、设计师、细节控、创始人',
+  title: 'MoonlitClear | 造系统的工程师、AI 实践者',
   description:
-    '我叫 Cali，一名开发者，设计师，细节控，同时也是佐玩创始人，目前带领着佐玩致力于创造一个充满创造力的工作环境，同时鼓励团队创造影响世界的产品。',
+    '我是 MoonlitClear，00 后软件工程师。AI 为基，认知破界。已搭建 40+ 工具的 AI 知识管理系统，正在用架构思维 + AI 重构 100 个行业。',
   url: new URL(
     process.env.NODE_ENV === 'production'
-      ? 'https://cali.so'
+      ? process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
       : 'http://localhost:3000'
   ),
 } as const
