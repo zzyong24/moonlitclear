@@ -308,12 +308,29 @@ export function getAllVaultPostSlugs(): string[] {
  * 内部函数，供其他公开 API 使用
  */
 function getAllVaultPosts(): VaultPostDetail[] {
+  // 部署调试日志：帮助排查 Vercel 上文件路径问题
+  console.log(`[vault] cwd: ${process.cwd()}`)
+  console.log(`[vault] VAULT_WRITING_DIR: ${VAULT_WRITING_DIR}`)
+  console.log(`[vault] exists: ${fs.existsSync(VAULT_WRITING_DIR)}`)
+
   if (!fs.existsSync(VAULT_WRITING_DIR)) {
     console.warn(`[vault] Writing directory not found: ${VAULT_WRITING_DIR}`)
+    // 尝试列出 cwd 下的内容以便排查
+    try {
+      const cwdFiles = fs.readdirSync(process.cwd())
+      console.warn(`[vault] Files in cwd: ${cwdFiles.join(', ')}`)
+      const vaultDir = path.join(process.cwd(), 'vault')
+      if (fs.existsSync(vaultDir)) {
+        console.warn(`[vault] Files in vault/: ${fs.readdirSync(vaultDir).join(', ')}`)
+      }
+    } catch (e) {
+      console.warn('[vault] Failed to list cwd contents')
+    }
     return []
   }
 
   const files = fs.readdirSync(VAULT_WRITING_DIR).filter((f) => f.endsWith('.md'))
+  console.log(`[vault] Found ${files.length} markdown files`)
   const posts: VaultPostDetail[] = []
 
   for (const file of files) {
