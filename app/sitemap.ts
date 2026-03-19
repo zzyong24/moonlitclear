@@ -3,7 +3,7 @@ import { type MetadataRoute } from 'next'
 import { url } from '~/lib'
 import { getAllVaultPostSlugs } from '~/lib/vault'
 
-export default async function sitemap() {
+export default function sitemap() {
   const staticMap = [
     {
       url: url('/').href,

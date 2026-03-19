@@ -67,7 +67,7 @@ const projects = [
   },
 ]
 
-export async function Projects() {
+export function Projects() {
   return (
     <ul
       role="list"

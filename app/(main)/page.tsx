@@ -6,7 +6,7 @@ import { Newsletter } from '~/app/(main)/Newsletter'
 import { PencilSwooshIcon } from '~/assets'
 import { Container } from '~/components/ui/Container'
 
-export default async function BlogHomePage() {
+export default function BlogHomePage() {
   return (
     <>
       <Container className="mt-10">

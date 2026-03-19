@@ -2,7 +2,7 @@ import { getLatestVaultPosts } from '~/lib/vault'
 
 import { BlogPostCard } from './BlogPostCard'
 
-export async function BlogPosts({ limit = 5 }) {
+export function BlogPosts({ limit = 5 }) {
   const posts = getLatestVaultPosts({ limit, forDisplay: true })
 
   // 本地模式下使用随机浏览量

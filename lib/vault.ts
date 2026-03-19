@@ -15,8 +15,9 @@
  */
 
 import fs from 'fs'
-import matter from 'gray-matter'
 import path from 'path'
+
+import matter from 'gray-matter'
 import readingTime from 'reading-time'
 
 // ============================================================
@@ -118,6 +119,7 @@ function getPaletteForFile(filename: string) {
     hash = (hash << 5) - hash + filename.charCodeAt(i)
     hash |= 0
   }
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return DEFAULT_PALETTES[Math.abs(hash) % DEFAULT_PALETTES.length]!
 }
 
@@ -198,7 +200,7 @@ function extractHeadings(content: string): VaultHeading[] {
 
       counter++
       headings.push({
-        style: `h${level}` as VaultHeading['style'],
+        style: `h${level}`,
         text,
         id: `heading-${counter}`,
       })
@@ -223,14 +225,14 @@ function parseMarkdownFile(filePath: string): VaultPostDetail | null {
     // 提取标题：优先 frontmatter.title → 内容中第一个 # 标题 → 文件名
     const contentTitle = extractTitleFromContent(content)
     const title =
-      (frontmatter.title as string) ||
+      String(frontmatter.title || '') ||
       contentTitle ||
       id.replace(/^\d{8}_/, '').replace(/_/g, ' ')
 
     // 提取描述：优先 frontmatter.publish_description → frontmatter.description → 自动提取
     const description =
-      (frontmatter.publish_description as string) ||
-      (frontmatter.description as string) ||
+      String(frontmatter.publish_description || '') ||
+      String(frontmatter.description || '') ||
       extractDescription(content)
 
     // 生成 slug

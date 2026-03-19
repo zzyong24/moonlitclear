@@ -58,7 +58,7 @@ export function Mermaid({ chart }: MermaidProps) {
       }
     }
 
-    renderChart()
+    void renderChart()
 
     return () => {
       cancelled = true

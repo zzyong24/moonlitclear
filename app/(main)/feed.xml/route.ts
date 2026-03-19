@@ -5,7 +5,7 @@ import { getLatestVaultPosts } from '~/lib/vault'
 
 export const revalidate = 60 * 60 // 1 hour
 
-export async function GET() {
+export function GET() {
   const feed = new RSS({
     title: seo.title,
     description: seo.description,

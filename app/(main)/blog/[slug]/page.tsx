@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 
 import { BlogPostPage } from '~/app/(main)/blog/BlogPostPage'
 import { kvKeys } from '~/config/kv'
-import { url } from '~/lib'
 import { redis } from '~/lib/redis'
 import { getVaultPost } from '~/lib/vault'
 
