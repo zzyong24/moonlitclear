@@ -17,7 +17,7 @@ import { env } from '~/env.mjs'
 import { url } from '~/lib'
 import { resend } from '~/lib/mail'
 import { redis } from '~/lib/redis'
-import { client } from '~/sanity/lib/client'
+import { getVaultPost } from '~/lib/vault'
 
 const ratelimit = new Ratelimit({
   redis,
@@ -94,16 +94,15 @@ export async function POST(req: NextRequest, { params }: Params) {
     })
   }
 
-  const post = await client.fetch<
-    { slug: string; title: string; imageUrl: string } | undefined
-  >(
-    '*[_type == "post" && _id == $id][0]{ "slug": slug.current, title, "imageUrl": mainImage.asset->url }',
-    {
-      id: postId,
-    }
-  )
-  if (!post) {
+  // 从 vault 中查找文章（postId 即为 slug）
+  const vaultPost = getVaultPost(postId)
+  if (!vaultPost) {
     return NextResponse.json({ error: 'Post not found' }, { status: 412 })
+  }
+  const post = {
+    slug: vaultPost.slug,
+    title: vaultPost.title,
+    imageUrl: vaultPost.mainImage.asset.url,
   }
 
   try {

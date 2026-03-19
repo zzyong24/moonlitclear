@@ -19,7 +19,7 @@ import { db } from '~/db'
 import { comments } from '~/db/schema'
 import { url } from '~/lib'
 import { truncate } from '~/lib/string'
-import { client } from '~/sanity/lib/client'
+import { getLatestVaultPosts } from '~/lib/vault'
 
 export default async function AdminCommentsPage() {
   const {
@@ -40,17 +40,17 @@ export default async function AdminCommentsPage() {
     .from(comments)
     .orderBy(desc(comments.createdAt))
     .limit(15)
-  // get unique post IDs from comments
-  const postIds = [...new Set(latestComments.map((comment) => comment.postId))]
-  const posts = await client.fetch<
-    { _id: string; title: string; slug: string }[]
-  >(
-    `*[_type == "post" && (_id in [${postIds
-      .map((v) => `"${v}"`)
-      .join(',')}])]{ _id, title, "slug":slug.current }`
+  // 从 vault 获取所有文章，构建 postId → 文章信息 的映射
+  // 注意：评论的 postId 存储的是 Sanity 时代的 _id，vault 中 _id 是文件名
+  // 这里用 slug 做匹配备选，并兼容 _id 匹配
+  const allPosts = getLatestVaultPosts({ limit: 999 })
+  const postMap = new Map(
+    allPosts.flatMap((post) => [
+      [post._id, { _id: post._id, title: post.title, slug: post.slug }],
+      // 也用 slug 作为 key，兼容可能的 postId 格式
+      [post.slug, { _id: post._id, title: post.title, slug: post.slug }],
+    ])
   )
-  // define a map with key of post IDs to posts
-  const postMap = new Map(posts.map((post) => [post._id, post]))
 
   return (
     <>

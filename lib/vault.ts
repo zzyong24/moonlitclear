@@ -84,6 +84,12 @@ export interface VaultHeading {
  * vault 文章目录的绝对路径
  * 文章存放在 cali.so/vault/writing/（仓库内部），
  * 本地通过 symlink 链接到 Obsidian vault 实现双向同步
+ *
+ * 设计决策：使用 process.cwd()，这是 Next.js 推荐的方式。
+ * 在所有环境中 process.cwd() 指向项目根目录：
+ * - 本地开发时：项目根目录
+ * - Vercel 构建时：/vercel/path0
+ * - Vercel serverless 运行时：/var/task（Next.js 会自动拷贝 traced files 到此目录）
  */
 const VAULT_WRITING_DIR = path.join(process.cwd(), 'vault', 'writing')
 
