@@ -25,7 +25,7 @@ export function BlogPostCard({
     <Link
       href={`/blog/${slug}`}
       prefetch={false}
-      className="group relative flex w-full transform-gpu flex-col rounded-3xl bg-transparent ring-2 ring-[--post-image-bg] transition-transform hover:-translate-y-0.5"
+      className="group relative flex w-full transform-gpu flex-col rounded-3xl bg-transparent ring-2 ring-[--post-image-bg] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10 dark:hover:shadow-black/30"
       style={
         {
           '--post-image-fg':

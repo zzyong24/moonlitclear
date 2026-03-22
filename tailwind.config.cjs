@@ -375,6 +375,9 @@ module.exports = {
 
       animation: {
         typing: 'typing-pulse 1.35s steps(1, end) infinite',
+        'float-slow': 'float-slow 8s ease-in-out infinite',
+        'float-medium': 'float-medium 6s ease-in-out infinite',
+        'float-fast': 'float-fast 4s ease-in-out infinite',
       },
 
       boxShadow: {
