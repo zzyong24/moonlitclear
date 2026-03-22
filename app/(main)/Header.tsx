@@ -30,6 +30,153 @@ import { Container } from '~/components/ui/Container'
 import { Tooltip } from '~/components/ui/Tooltip'
 import { url } from '~/lib'
 import { clamp } from '~/lib/math'
+// ========== 轮播签名动画 — 头像旁逐字打字 + 循环切换 ==========
+
+/**
+ * 轮播签名组件 — 多条 slogan 循环展示
+ *
+ * 设计决策：
+ * - 多条签名/slogan 轮播，每条逐字打字 → 停留 → 擦除 → 下一条
+ * - 颜色素雅：与页面 zinc 冷灰调一致
+ * - 字号适配 header：base → lg 响应式
+ * - 使用 AnimatePresence 实现条目切换的淡入淡出
+ */
+
+/** 轮播文案列表 — 可随意增减 */
+const SIGNATURES = [
+  'MoonlitClear ✦ 月明水清深',
+  '用 AI 造工具，用工具养认知',
+  'Ship Fast, Learn Deep',
+  '一个人就是一支队伍',
+  '把想法变成作品 ✦ 持续交付',
+]
+
+/** 单条打字动画子组件 */
+function TypewriterLine({
+  text,
+  onComplete,
+}: {
+  text: string
+  onComplete: () => void
+}) {
+  const [displayed, setDisplayed] = React.useState('')
+  const [showCursor, setShowCursor] = React.useState(true)
+
+  React.useEffect(() => {
+    let index = 0
+    let tid: ReturnType<typeof setTimeout>
+
+    function typeNext() {
+      if (index < text.length) {
+        const char = text[index]!
+        setDisplayed(text.slice(0, index + 1))
+        index++
+
+        // 变速打字
+        let delay: number
+        if (char === ' ') {
+          delay = 120 + Math.random() * 60
+        } else if (char === '✦') {
+          delay = 300
+        } else if (/[\u4e00-\u9fff]/.test(char)) {
+          delay = 100 + Math.random() * 40
+        } else {
+          delay = 55 + Math.random() * 30
+        }
+        tid = setTimeout(typeNext, delay)
+      } else {
+        // 打字完毕 → 光标闪烁 2s → 通知外层切换
+        tid = setTimeout(() => {
+          setShowCursor(false)
+          tid = setTimeout(onComplete, 400)
+        }, 2200)
+      }
+    }
+
+    tid = setTimeout(typeNext, 300)
+    return () => clearTimeout(tid)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [text])
+
+  /** 渲染文本 — 遇到 ✦ 做特殊装饰 */
+  const renderText = () => {
+    const starIdx = displayed.indexOf('✦')
+    if (starIdx === -1) {
+      return (
+        <span className="font-signature text-zinc-700 dark:text-zinc-300">
+          {displayed}
+        </span>
+      )
+    }
+
+    const before = displayed.slice(0, starIdx)
+    const after = displayed.slice(starIdx + 1).replace(/^ /, '')
+
+    return (
+      <>
+        <span className="font-signature text-zinc-700 dark:text-zinc-300">
+          {before}
+        </span>
+        <span className="relative mx-1.5 inline-block text-zinc-400 dark:text-zinc-500">
+          ✦
+        </span>
+        <span className="font-kai text-zinc-600 dark:text-zinc-400">
+          {after}
+        </span>
+      </>
+    )
+  }
+
+  return (
+    <div className="relative whitespace-nowrap text-base tracking-wider sm:text-lg">
+      {renderText()}
+      {showCursor && (
+        <span
+          className="ml-0.5 inline-block h-[1em] w-[1.5px] translate-y-[0.1em] align-middle
+            bg-zinc-500 dark:bg-zinc-400"
+          style={{ animation: 'blink-caret 0.8s step-end infinite' }}
+        />
+      )}
+    </div>
+  )
+}
+
+/** 轮播容器 — 循环播放 SIGNATURES */
+function CalligraphySignature() {
+  const [currentIdx, setCurrentIdx] = React.useState(0)
+  // key 用于强制 AnimatePresence 重新挂载子组件
+  const [round, setRound] = React.useState(0)
+
+  const handleComplete = React.useCallback(() => {
+    setCurrentIdx((prev) => (prev + 1) % SIGNATURES.length)
+    setRound((r) => r + 1)
+  }, [])
+
+  return (
+    <motion.div
+      className="pointer-events-auto flex items-center overflow-hidden"
+      initial={{ opacity: 0, x: -10 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.4, delay: 0.5 }}
+    >
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={round}
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -6 }}
+          transition={{ duration: 0.3 }}
+        >
+          <TypewriterLine
+            text={SIGNATURES[currentIdx]!}
+            onComplete={handleComplete}
+          />
+        </motion.div>
+      </AnimatePresence>
+    </motion.div>
+  )
+}
+
 export function Header() {
   const isHomePage = usePathname() === '/'
 
@@ -193,34 +340,38 @@ export function Header() {
                     stiffness: 200,
                   }}
                 >
-                  <motion.div
-                    className="relative inline-flex"
-                    layoutId="avatar"
-                    layout
-                    onContextMenu={onAvatarContextMenu}
-                  >
+                  <div className="flex items-center gap-3">
                     <motion.div
-                      className="absolute left-0 top-3 origin-left opacity-[var(--avatar-border-opacity,0)] transition-opacity"
-                      style={{
-                        transform: avatarBorderTransform,
-                      }}
+                      className="relative inline-flex"
+                      layoutId="avatar"
+                      layout
+                      onContextMenu={onAvatarContextMenu}
                     >
-                      <Avatar />
-                    </motion.div>
+                      <motion.div
+                        className="absolute left-0 top-3 origin-left opacity-[var(--avatar-border-opacity,0)] transition-opacity"
+                        style={{
+                          transform: avatarBorderTransform,
+                        }}
+                      >
+                        <Avatar />
+                      </motion.div>
 
-                    <motion.div
-                      className="block h-16 w-16 origin-left"
-                      style={{
-                        transform: avatarTransform,
-                      }}
-                    >
-                      <Avatar.Image
-                        large
-                        alt={isShowingAltAvatar}
-                        className="block h-full w-full"
-                      />
+                      <motion.div
+                        className="block h-16 w-16 origin-left"
+                        style={{
+                          transform: avatarTransform,
+                        }}
+                      >
+                        <Avatar.Image
+                          large
+                          alt={isShowingAltAvatar}
+                          className="block h-full w-full"
+                        />
+                      </motion.div>
                     </motion.div>
-                  </motion.div>
+                    {/* 签名打字动画 — 头像右侧 */}
+                    <CalligraphySignature />
+                  </div>
                 </motion.div>
               </Container>
             </>

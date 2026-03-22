@@ -371,6 +371,10 @@ module.exports = {
 
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
+        // 签名用衬线体 — 英文书法感
+        signature: ['"Georgia"', '"Palatino Linotype"', '"Book Antiqua"', '"Palatino"', 'serif'],
+        // 中文楷体
+        kai: ['"STKaiti"', '"KaiTi"', '"楷体"', '"AR PL UKai CN"', 'serif'],
       },
 
       animation: {
@@ -395,6 +399,9 @@ module.exports = {
         'energy-pulse': 'energy-pulse 3s ease-in-out infinite',
         'heat-shimmer': 'heat-shimmer 5s ease-in-out infinite',
         'debris-fly': 'debris-fly 6s ease-out infinite',
+        // 签名动画
+        'star-spin': 'star-spin 8s linear infinite',
+        'blink-caret': 'blink-caret 0.8s step-end infinite',
       },
 
       boxShadow: {
