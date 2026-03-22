@@ -375,9 +375,26 @@ module.exports = {
 
       animation: {
         typing: 'typing-pulse 1.35s steps(1, end) infinite',
-        'float-slow': 'float-slow 8s ease-in-out infinite',
-        'float-medium': 'float-medium 6s ease-in-out infinite',
-        'float-fast': 'float-fast 4s ease-in-out infinite',
+        // 通用
+        'float-slow': 'float-slow 12s ease-in-out infinite',
+        'float-medium': 'float-medium 9s ease-in-out infinite',
+        'float-fast': 'float-fast 7s ease-in-out infinite',
+        'particle-float': 'particle-float 5s ease-in-out infinite',
+        // 暗色 · 星空
+        'twinkle': 'twinkle 3s ease-in-out infinite',
+        'twinkle-alt': 'twinkle-alt 4s ease-in-out infinite',
+        'meteor': 'meteor 8s linear infinite',
+        'meteor-long': 'meteor-long 12s linear infinite',
+        'nebula-pulse': 'nebula-pulse 10s ease-in-out infinite',
+        'aurora-shift': 'aurora-shift 15s ease-in-out infinite',
+        // 亮色 · 火星撞地球
+        'shockwave': 'shockwave 4s ease-out infinite',
+        'shockwave-delayed': 'shockwave-delayed 5s ease-out 2s infinite',
+        'ember-rise': 'ember-rise 3s ease-out infinite',
+        'lava-crack-glow': 'lava-crack-glow 4s ease-in-out infinite',
+        'energy-pulse': 'energy-pulse 3s ease-in-out infinite',
+        'heat-shimmer': 'heat-shimmer 5s ease-in-out infinite',
+        'debris-fly': 'debris-fly 6s ease-out infinite',
       },
 
       boxShadow: {
