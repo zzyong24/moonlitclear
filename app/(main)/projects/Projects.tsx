@@ -56,6 +56,26 @@ const projects = [
     status: 'building' as const,
   },
   {
+    _id: 'noteclear',
+    name: '清记 NoteClear',
+    url: 'https://github.com/zzyong24/noteclear',
+    description:
+      'Agent 驱动的长视频深度总结工具。支持 Bilibili、YouTube、小红书、抖音和本地文件，将视频转化为结构完整的 Markdown 笔记，内置 Faster-Whisper 本地转录，支持任意 OpenAI 兼容 API。',
+    icon: '🎬',
+    tags: ['Python', 'TypeScript', 'Whisper', 'AI'],
+    status: 'active' as const,
+  },
+  {
+    _id: 'my-artifacts',
+    name: 'my-artifacts',
+    url: 'https://github.com/zzyong24/my-artifacts',
+    description:
+      '教学短视频工程工具链。原始文稿一键生成口播稿 + GSAP 教学动画，提词器与幻灯片 BroadcastChannel 联动录制，把每一篇文章「立体化」为可发布的视频作品。',
+    icon: '🎞️',
+    tags: ['JavaScript', 'GSAP', 'HTML', 'Claude'],
+    status: 'building' as const,
+  },
+  {
     _id: 'moonlitclear-site',
     name: 'MoonlitClear',
     url: 'https://github.com/zzyong24/cali.so',
