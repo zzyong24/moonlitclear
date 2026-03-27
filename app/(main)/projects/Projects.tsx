@@ -36,16 +36,6 @@ const projects = [
     status: 'active' as const,
   },
   {
-    _id: 'lifeos',
-    name: 'LifeOS',
-    url: 'https://github.com/zzyong24/thirdspace',
-    description:
-      'AI 辅助决策系统。将人际关系和事件建模为 AI 可理解的结构化数据，通过人际图谱 + 事件闭环，让 AI 成为你的决策参谋，越用越懂你。',
-    icon: '🎯',
-    tags: ['Python', 'MCP', 'RAG', 'AI'],
-    status: 'active' as const,
-  },
-  {
     _id: 'obsidian-lingxi',
     name: 'Obsidian lingxi',
     url: 'https://github.com/zzyong24/obsidian-lingxi',
@@ -67,13 +57,23 @@ const projects = [
   },
   {
     _id: 'my-artifacts',
-    name: 'my-artifacts',
-    url: 'https://github.com/zzyong24/my-artifacts',
+    name: 'My-Artifacts',
+    url: 'https://github.com/zzyong24/artifacts-tech',
     description:
       '教学短视频工程工具链。原始文稿一键生成口播稿 + GSAP 教学动画，提词器与幻灯片 BroadcastChannel 联动录制，把每一篇文章「立体化」为可发布的视频作品。',
     icon: '🎞️',
     tags: ['JavaScript', 'GSAP', 'HTML', 'Claude'],
     status: 'building' as const,
+  },
+  {
+    _id: 'mkd2pic',
+    name: 'mkd2pic',
+    url: 'https://github.com/zzyong24/mkd2pic',
+    description:
+      '精美的 Markdown 转图片工具。实时预览、智能分页，支持数学公式、Mermaid 图表、ECharts 可视化，一键导出 PNG / PDF / ZIP，适配小红书、朋友圈等社交媒体场景。',
+    icon: '🎨',
+    tags: ['JavaScript', 'KaTeX', 'Mermaid', 'ECharts'],
+    status: 'active' as const,
   },
   {
     _id: 'moonlitclear-site',
