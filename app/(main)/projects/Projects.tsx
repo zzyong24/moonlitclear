@@ -86,16 +86,6 @@ const projects = [
     status: 'building' as const,
   },
   {
-    _id: 'nuwa-skill',
-    name: 'Nuwa Skill',
-    url: 'https://github.com/zzyong24/nuwa-skill',
-    description:
-      '蒸馏任何人的思维方式——心智模型、决策启发式、表达 DNA。让你欣赏的人成为你随身携带的智囊。',
-    icon: '🧩',
-    tags: ['Python', 'MCP', 'Skill', 'AI'],
-    status: 'planning' as const,
-  },
-  {
     _id: 'mkd2pic',
     name: 'mkd2pic',
     url: 'https://github.com/zzyong24/mkd2pic',
