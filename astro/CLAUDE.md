@@ -13,3 +13,5 @@ See [AGENTS.md](./AGENTS.md) for all project documentation and AI agent instruct
 ## 已确认的品牌视觉与演示规范
 
 新增或修改本站文章封面、产品主图、产品演示、本人照片及其布局前，必须阅读 [官网视觉规则](docs/brand-visual-system.md)。该文件是当前风格的单一依据，包含已认可样图、提示词模板、产品主题、共用组件与验收要求；历史设计记录不覆盖当前规范。沿用共享 tokens、素材 registry 和 ProductDemo，不为每页另做风格或交互运行时。用户最新明确反馈优先；改变方向时同步更新规范与样图。
+
+改版 v6（2026-10-25 起）：修改页面视觉、UI、布局前先读 [docs/redesign-v6/](docs/redesign-v6/README.md)。

@@ -6,6 +6,8 @@
 
 ## 最新源码
 
+- **改版 v6 设计规范（待实施）**：[视觉风格 / UI 规范 / 模块划分 / 验收标准](astro/docs/redesign-v6/README.md)
+
 - [页面、组件与样式](astro/src/)
 - [共用卡片特效](astro/src/components/moonlit/CardEffect.astro)
 - [全幅分层 WebGL 背景](astro/src/scripts/site-atmosphere.ts)
