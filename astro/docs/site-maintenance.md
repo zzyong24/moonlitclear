@@ -253,3 +253,5 @@ flowchart LR
 - `npm run check`（Astro 0 error、ESLint、Prettier）通过；`npm run build:local` 生成静态目录，构建检查逐项核对 28 个仓库、卡片数、搜索、筛选、9 个 AI 图像资产与旧地址跳转。
 - 浏览器验证搜索“公众号”返回 2 项、选“视觉与视频”返回 8 项，搜索与分类合用时返回 0 项；实际卡片图已加载并按 4:3 画幅呈现。预览页面继续使用 noindex；未部署。
 - 运行本机预览需要 `npm run preview:replacement`；本次未修改生产站点、未发布 GitHub 清单，也未验证正式域名。
+
+官网后续迭代方向与优先级见 [待迭代清单](iteration-backlog.md)。
