@@ -1,14 +1,19 @@
 ---
 import PageLayout from './PageLayout.astro';
 import '~/assets/styles/brand-tokens.css';
-import Header from '~/components/moonlit/Header.astro';
+import '~/assets/styles/tokens-v6.css';
+import Header from '~/components/v6/Header.astro';
 import SiteAtmosphere from '~/components/moonlit/SiteAtmosphere.astro';
-import Footer from '~/components/moonlit/Footer.astro';
+import Footer from '~/components/v6/Footer.astro';
 import type { MetaData } from '~/types';
 interface Props {
   metadata?: MetaData;
 }
 const { metadata = {} } = Astro.props;
+// 生产环境使用构建后生成的宋体子集；开发环境直接用 fontsource 分片。
+if (import.meta.env.DEV) {
+  await import('@fontsource/noto-serif-sc/900.css');
+}
 ---
 
 <PageLayout metadata={metadata}>
@@ -16,7 +21,10 @@ const { metadata = {} } = Astro.props;
   <Header slot="header" />
   <div class="brand-grid-bg" aria-hidden="true"></div>
   <SiteAtmosphere />
-  <slot name="head" slot="head" />
+  <Fragment slot="head">
+    {!import.meta.env.DEV && <link rel="stylesheet" href="/fonts/serif.css" />}
+    <slot name="head" />
+  </Fragment>
   <slot />
   <Footer slot="footer" />
 </PageLayout>

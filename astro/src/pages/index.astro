@@ -1,20 +1,25 @@
 ---
 import Layout from '~/layouts/SiteLayout.astro';
-import ProfileHero from '~/components/moonlit/ProfileHero.astro';
-import ProjectCards from '~/components/moonlit/ProjectCards.astro';
-import OpenSourceCards from '~/components/moonlit/OpenSourceCards.astro';
-import ArticleCard from '~/components/moonlit/ArticleCard.astro';
-import LinksPanel from '~/components/moonlit/LinksPanel.astro';
+import Hero from '~/components/v6/home/Hero.astro';
+import PathTimeline from '~/components/v6/home/PathTimeline.astro';
+import Stats from '~/components/v6/home/Stats.astro';
+import Products from '~/components/v6/home/Products.astro';
+import OpenSource from '~/components/v6/home/OpenSource.astro';
+import Articles from '~/components/v6/home/Articles.astro';
+import Offers from '~/components/v6/home/Offers.astro';
+import ClosingCta from '~/components/v6/home/ClosingCta.astro';
 import { fetchPosts } from '~/utils/blog';
 import { projects } from '~/data/brand';
 import { openSourceEntries } from '~/data/open-source';
+import githubStats from '~/data/github-stats.json';
+
 const allPosts = await fetchPosts();
-const posts = allPosts.slice(0, 6);
-const tabs = [
-  { id: 'work', label: '产品', count: String(projects.length).padStart(2, '0') },
-  { id: 'opensource', label: '开源', count: String(openSourceEntries.length).padStart(2, '0') },
-  { id: 'articles', label: '文章', count: String(allPosts.length) },
-  { id: 'links', label: '链接', count: '↗' },
+const totalStars = Object.values(githubStats.repos).reduce((sum, repo) => sum + repo.stars, 0);
+const stats = [
+  { value: projects.length, label: '个产品', pad: true },
+  { value: openSourceEntries.length, label: '个开源项目', growing: true },
+  { value: totalStars, label: 'GitHub Star', growing: true },
+  { value: allPosts.length, label: '篇文章', growing: true },
 ];
 ---
 
@@ -24,96 +29,27 @@ const tabs = [
     description: '月明Verse｜朱志勇。一个人做产品、做内容、做增长，记录 AI Native 实践、工具实测与产品从 0 到 1。',
   }}
 >
-  <ProfileHero />
-  <section class="home-index" id="explore" aria-label="月明Verse的作品与记录">
-    <div class="index-heading"><span class="eyebrow">01 / 作品与记录</span><p>做过的项目，写下的笔记。</p></div>
-    <div class="index-tabs" aria-label="内容分类">
-      {
-        tabs.map((tab) => (
-          <a id={`tab-${tab.id}`} href={`#${tab.id}`} data-home-tab={tab.id}>
-            {tab.label}
-            <sup>{tab.count}</sup>
-          </a>
-        ))
-      }
-    </div>
-    <div class="index-panels">
-      <section id="work" data-home-panel aria-labelledby="tab-work"><ProjectCards /></section>
-      <section id="opensource" data-home-panel aria-labelledby="tab-opensource">
-        <div class="index-panel-heading">
-          <h2>把做事的方法，开源成可用的工具。</h2><p>从独立软件到内容工作流，所有项目都在同一个目录里。</p>
-        </div>
-        <OpenSourceCards />
-        <a class="opensource-directory-link" href="/opensource">
-          <span><strong>{openSourceEntries.length}</strong> 个开源项目，覆盖软件与创作工具</span><b
-            >查看全部开源项目 ↗</b
-          >
-        </a>
-      </section>
-      <section id="articles" data-home-panel aria-labelledby="tab-articles">
-        <div class="index-panel-heading">
-          <h2>思考的过程，也值得留下。</h2><a href="/blog" class="text-arrow">全部 {allPosts.length} 篇文章 ↗</a>
-        </div>
-        <div class="article-grid">
-          {posts.map((post, index) => <ArticleCard post={post} featured={index === 0 && !!post.workId} />)}
-        </div>
-      </section>
-      <section id="links" data-home-panel aria-labelledby="tab-links">
-        <LinksPanel />
-      </section>
-    </div>
-  </section>
-  <div class="home-signoff">
-    <span>边做边学。</span><p>有新的尝试，就在这里记一笔。</p><a href="/links">有想交流的，欢迎来聊 ↗</a>
+  <div class="v6-page">
+    <Hero productCount={projects.length} openSourceCount={openSourceEntries.length} postCount={allPosts.length} />
+    <PathTimeline />
+    <Stats stats={stats} tags={['全栈开发', 'AI Native', '独立产品', '内容与增长']} />
+    <Products />
+    <OpenSource />
+    <Articles posts={allPosts.slice(0, 8)} total={allPosts.length} />
+    <Offers />
+    <ClosingCta />
   </div>
 </Layout>
+
 <script>
-  import { initHomeIndex } from '~/scripts/home-index';
+  import { initHomeV6 } from '~/scripts/v6-home';
   let cleanup: (() => void) | undefined;
   document.addEventListener('astro:page-load', () => {
     cleanup?.();
-    cleanup = initHomeIndex();
+    cleanup = initHomeV6();
   });
   document.addEventListener('astro:before-swap', () => {
     cleanup?.();
     cleanup = undefined;
   });
 </script>
-
-<style>
-  .opensource-directory-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 18px;
-    margin-top: 46px;
-    padding: 22px 24px;
-    border: 1px solid var(--brand-border);
-    border-radius: 14px;
-    color: var(--brand-body);
-    background: #fff;
-    text-decoration: none;
-  }
-  .opensource-directory-link strong,
-  .opensource-directory-link b {
-    color: var(--brand-ink);
-  }
-  .opensource-directory-link strong {
-    margin-right: 4px;
-    font-size: 21px;
-  }
-  .opensource-directory-link b {
-    white-space: nowrap;
-  }
-  .opensource-directory-link:hover b {
-    color: var(--brand-accent);
-  }
-  @media (max-width: 650px) {
-    .opensource-directory-link {
-      align-items: flex-start;
-      flex-direction: column;
-      margin-top: 32px;
-      padding: 18px;
-    }
-  }
-</style>

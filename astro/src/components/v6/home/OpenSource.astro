@@ -1,0 +1,150 @@
+---
+import OpenSourceCard from '~/components/moonlit/OpenSourceCard.astro';
+import SectionHeading from '../SectionHeading.astro';
+import { openSourceEntries } from '~/data/open-source';
+import { githubStars } from '~/data/github-stars';
+
+const ranked = [...openSourceEntries]
+  .map((item) => ({ item, stars: githubStars(item.url) ?? 0 }))
+  .sort((a, b) => b.stars - a.stars);
+const picks = ranked.slice(0, 4).map((r) => r.item);
+const categories = [...new Set(openSourceEntries.map((i) => i.category))].map((category) => {
+  const items = ranked.filter((r) => r.item.category === category);
+  return { category, count: items.length, top: items[0]?.item.title };
+});
+---
+
+<section class="v6-section" id="opensource" data-tone="light" data-bg="moon-200" aria-labelledby="opensource-title">
+  <div class="v6-container">
+    <SectionHeading
+      id="opensource-title"
+      eyebrow="开源 · Open Source"
+      title="把做事的方法，<br />开源成可用的工具。"
+      lead={`从独立软件到内容工作流，${openSourceEntries.length} 个项目都在 GitHub 公开。挑一个能直接用的，拿去改成你自己的。`}
+    />
+    <div class="v6-os">
+      <div class="v6-os__cards">
+        {
+          picks.map((item, i) => (
+            <div data-reveal style={`--reveal-i:${i}`}>
+              <OpenSourceCard item={item} compact />
+            </div>
+          ))
+        }
+      </div>
+      <aside class="v6-os__index" aria-labelledby="os-index-title" data-reveal>
+        <h3 id="os-index-title" class="v6-h4">按用途找</h3>
+        <ul>
+          {
+            categories.map((c) => (
+              <li>
+                <a href={`/opensource?category=${encodeURIComponent(c.category)}`}>
+                  <span class="v6-os__count">{String(c.count).padStart(2, '0')}</span>
+                  <span class="v6-os__name">
+                    <strong>{c.category}</strong>
+                    {c.top && <small>例如 {c.top}</small>}
+                  </span>
+                  <span class="v6-arrow" aria-hidden="true">
+                    →
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <a class="v6-btn v6-btn--primary" href="/opensource">
+          查看全部 {openSourceEntries.length} 个开源项目 <span class="v6-arrow" aria-hidden="true">→</span>
+        </a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+  .v6-os {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: 48px;
+    align-items: start;
+  }
+  .v6-os__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+  .v6-os__index {
+    position: sticky;
+    top: 96px;
+    display: grid;
+    gap: 20px;
+    padding: 28px;
+    border-radius: var(--radius-md);
+    background: var(--card-light);
+    border: 1px solid var(--v6-line);
+    box-shadow: var(--shadow-card);
+  }
+  .v6-os__index ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 2px solid var(--v6-fg);
+  }
+  .v6-os__index li a {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 4px;
+    border-bottom: 1px solid var(--v6-line);
+    color: var(--v6-fg);
+    text-decoration: none;
+    transition: background-color var(--dur-fast) ease;
+  }
+  .v6-os__index li a:hover {
+    background: color-mix(in srgb, var(--v6-fg) 4%, transparent);
+  }
+  .v6-os__count {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    color: var(--v6-accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .v6-os__name {
+    display: grid;
+    gap: 2px;
+  }
+  .v6-os__name strong {
+    font-family: var(--font-serif);
+    font-size: 17px;
+  }
+  .v6-os__name small {
+    font-size: 13px;
+    color: var(--v6-fg-3);
+  }
+  .v6-os__index .v6-btn {
+    width: 100%;
+  }
+  @media (max-width: 1023px) {
+    .v6-os {
+      grid-template-columns: 1fr;
+    }
+    .v6-os__index {
+      position: static;
+    }
+  }
+  @media (max-width: 767px) {
+    .v6-os__cards {
+      grid-template-columns: 1fr;
+    }
+    .v6-os__cards > :nth-child(n + 3) {
+      display: none;
+    }
+    .v6-os__index {
+      padding: 20px;
+    }
+    .v6-os__index .v6-btn {
+      white-space: normal;
+      text-align: center;
+    }
+  }
+</style>

@@ -1,0 +1,352 @@
+/* moonlit-web-3 · 改版 v6：深夜蓝 × 月白纸色分段，宋体标题。规范见 docs/redesign-v6/ */
+:root {
+  --night-900: #0a1828;
+  --night-800: #10233a;
+  --night-700: #1a3150;
+  --line-dark: rgba(246, 239, 226, 0.14);
+  --line-dark-strong: rgba(246, 239, 226, 0.28);
+
+  --moon-50: #fcfaf5;
+  --moon-100: #f5f0e6;
+  --moon-200: #ece4d4;
+  --line-light: #e2dacb;
+  --line-light-strong: #cfc4b0;
+  --card-light: #fffdf9;
+
+  --moon-cream: #f6efe2;
+  --moon-cream-2: rgba(246, 239, 226, 0.72);
+  --moon-cream-3: rgba(246, 239, 226, 0.6);
+  --ink: #182b42;
+  --body: #394b60;
+  --muted: #536176;
+
+  --copper: #9b4f2c;
+  --copper-moon: #e2a676;
+  --moon-glow: rgba(132, 150, 255, 0.16);
+
+  --font-serif: 'Noto Serif SC', 'Songti SC', STSong, serif;
+  --font-sans: var(--brand-font);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(24, 43, 66, 0.04), 0 12px 32px -12px rgba(24, 43, 66, 0.12);
+
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 160ms;
+  --dur-base: 300ms;
+}
+
+[data-tone='dark'] {
+  --v6-fg: var(--moon-cream);
+  --v6-fg-2: var(--moon-cream-2);
+  --v6-fg-3: var(--moon-cream-3);
+  --v6-accent: var(--copper-moon);
+  --v6-line: var(--line-dark);
+  --v6-line-strong: var(--line-dark-strong);
+  --v6-btn-bg: var(--moon-cream);
+  --v6-btn-fg: var(--night-800);
+  color: var(--v6-fg);
+}
+[data-tone='light'] {
+  --v6-fg: var(--ink);
+  --v6-fg-2: var(--body);
+  --v6-fg-3: var(--muted);
+  --v6-accent: var(--copper);
+  --v6-line: var(--line-light);
+  --v6-line-strong: var(--line-light-strong);
+  --v6-btn-bg: var(--night-800);
+  --v6-btn-fg: var(--moon-cream);
+  color: var(--v6-fg);
+}
+
+/* ---------- 页面外壳：全站月白纸底，取消网格；旧页面标题先统一为宋体（P2/P3 过渡） ---------- */
+html,
+body {
+  background: var(--moon-50) !important;
+}
+.brand-grid-bg {
+  display: none;
+}
+main h1,
+main h2 {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+.v6-page {
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+.v6-section {
+  position: relative;
+  padding-block: 128px;
+}
+.v6-section--sm {
+  padding-block: 96px;
+}
+.v6-section[data-bg='night-900'] {
+  background: var(--night-900);
+}
+.v6-section[data-bg='night-800'] {
+  background: var(--night-800);
+}
+.v6-section[data-bg='moon-50'] {
+  background: var(--moon-50);
+}
+.v6-section[data-bg='moon-100'] {
+  background: var(--moon-100);
+}
+.v6-section[data-bg='moon-200'] {
+  background: var(--moon-200);
+}
+
+.v6-container {
+  width: 100%;
+  max-width: calc(1120px + 64px);
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+.v6-container--narrow {
+  max-width: calc(760px + 64px);
+}
+
+/* ---------- 文字 ---------- */
+.v6-display,
+.v6-h2,
+.v6-h3,
+.v6-h4,
+.v6-stat {
+  font-family: var(--font-serif);
+  color: var(--v6-fg);
+  text-wrap: balance;
+  margin: 0;
+}
+.v6-display {
+  font-size: 84px;
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: 0.02em;
+}
+.v6-h2 {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+.v6-h3 {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+.v6-h4 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.v6-stat {
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.v6-lead {
+  font-size: 18.5px;
+  line-height: 1.85;
+  color: var(--v6-fg-2);
+  text-wrap: pretty;
+  margin: 0;
+}
+.v6-body {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--v6-fg-2);
+  text-wrap: pretty;
+  margin: 0;
+}
+.v6-small {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--v6-fg-2);
+}
+.v6-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  color: var(--v6-accent);
+}
+
+/* ---------- 按钮 ---------- */
+.v6-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 22px;
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    color var(--dur-fast) ease;
+}
+.v6-btn--primary {
+  background: var(--v6-btn-bg);
+  color: var(--v6-btn-fg);
+}
+.v6-btn--primary:hover {
+  background: color-mix(in srgb, var(--v6-btn-bg) 88%, var(--v6-accent));
+}
+.v6-btn--secondary {
+  border-color: var(--v6-line-strong);
+  color: var(--v6-fg);
+  background: transparent;
+}
+[data-tone='light'] .v6-btn--secondary {
+  border-color: var(--ink);
+}
+.v6-btn--secondary:hover {
+  background: color-mix(in srgb, var(--v6-fg) 8%, transparent);
+}
+.v6-btn--sm {
+  min-height: 36px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+.v6-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--v6-fg);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--v6-line-strong);
+  padding-bottom: 2px;
+  transition: border-color var(--dur-fast) ease;
+}
+.v6-link:hover {
+  border-color: var(--v6-accent);
+}
+.v6-arrow {
+  display: inline-block;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+a:hover .v6-arrow,
+a:focus-visible .v6-arrow {
+  transform: translateX(4px);
+}
+
+.v6-page a:focus-visible,
+.v6-page button:focus-visible,
+.v6-header a:focus-visible,
+.v6-header button:focus-visible,
+.v6-footer a:focus-visible {
+  outline: 2px solid var(--v6-accent, var(--copper));
+  outline-offset: 3px;
+}
+
+.v6-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 9px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--v6-accent);
+  background: color-mix(in srgb, var(--v6-accent) 13%, transparent);
+  white-space: nowrap;
+}
+
+/* ---------- 进入视口出现：JS 只给首屏以外的元素加 is-pending，无 JS 时全部直接可见 ---------- */
+[data-reveal] {
+  transition:
+    opacity 320ms var(--ease-out),
+    transform 320ms var(--ease-out);
+  transition-delay: calc(var(--reveal-i, 0) * 60ms);
+}
+[data-reveal].is-pending {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1023px) {
+  .v6-display {
+    font-size: 64px;
+  }
+  .v6-h2 {
+    font-size: 40px;
+  }
+  .v6-h3 {
+    font-size: 24px;
+  }
+  .v6-stat {
+    font-size: 48px;
+  }
+  .v6-lead {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .v6-section {
+    padding-block: 72px;
+  }
+  .v6-section--sm {
+    padding-block: 56px;
+  }
+  .v6-container {
+    padding-inline: 20px;
+  }
+  .v6-display {
+    font-size: 44px;
+  }
+  .v6-h2 {
+    font-size: 32px;
+  }
+  .v6-h3 {
+    font-size: 20px;
+  }
+  .v6-h4 {
+    font-size: 18px;
+  }
+  .v6-stat {
+    font-size: 40px;
+  }
+  .v6-lead {
+    font-size: 16px;
+  }
+  .v6-body {
+    font-size: 15px;
+  }
+  .v6-small {
+    font-size: 13px;
+  }
+  .v6-eyebrow {
+    font-size: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v6-arrow {
+    transition: none;
+  }
+  [data-reveal],
+  [data-reveal].is-pending {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

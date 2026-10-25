@@ -1,0 +1,25 @@
+---
+interface Props {
+  tone: 'dark' | 'light';
+  bg: 'night-900' | 'night-800' | 'moon-50' | 'moon-100' | 'moon-200';
+  size?: 'lg' | 'sm';
+  id?: string;
+  labelledby?: string;
+  narrow?: boolean;
+  class?: string;
+}
+const { tone, bg, size = 'lg', id, labelledby, narrow = false, class: className } = Astro.props;
+---
+
+<section
+  id={id}
+  aria-labelledby={labelledby}
+  data-tone={tone}
+  data-bg={bg}
+  class:list={['v6-section', { 'v6-section--sm': size === 'sm' }, className]}
+>
+  <slot name="bleed" />
+  <div class:list={['v6-container', { 'v6-container--narrow': narrow }]}>
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,148 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import { offers } from '~/data/offers';
+---
+
+<section class="v6-section" id="offers" data-tone="dark" data-bg="night-800" aria-labelledby="offers-title">
+  <div class="v6-container">
+    <SectionHeading
+      id="offers-title"
+      eyebrow="合作 · Work with me"
+      title="三种方式，<br />来找我聊。"
+      lead="从你的具体问题开始。一次咨询、长期交流，或者把你做出来的东西发给我看看。"
+    />
+    <div class="v6-offers">
+      {
+        offers.map((o, i) => {
+          const external = 'external' in o.action && o.action.external;
+          return (
+            <article
+              class:list={['v6-offer', { 'v6-offer--accent': i === 0 }]}
+              data-tone={i === 0 ? 'light' : 'dark'}
+              data-reveal
+              style={`--reveal-i:${i}`}
+            >
+              <div class="v6-offer__top">
+                <span class="v6-small">{o.label}</span>
+                <strong class="v6-offer__price">
+                  {o.price}
+                  {'unit' in o && <small>{o.unit}</small>}
+                </strong>
+              </div>
+              <h3 class="v6-h3">{o.title}</h3>
+              <p class="v6-body">{o.description}</p>
+              {'topics' in o && (
+                <ul class="v6-offer__topics">
+                  {o.topics.map((t) => (
+                    <li>{t}</li>
+                  ))}
+                </ul>
+              )}
+              {'note' in o && <p class="v6-small v6-offer__note">{o.note}</p>}
+              <a
+                class:list={['v6-btn', i === 0 ? 'v6-btn--primary' : 'v6-btn--secondary']}
+                href={o.action.href}
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noreferrer' : undefined}
+              >
+                {o.action.label}{' '}
+                <span class="v6-arrow" aria-hidden="true">
+                  {external ? '↗' : '→'}
+                </span>
+              </a>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .v6-offers {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+  }
+  .v6-offer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 28px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--v6-line);
+    transition: background-color var(--dur-base) ease;
+  }
+  .v6-offer:not(.v6-offer--accent):hover {
+    background: color-mix(in srgb, var(--night-700) 60%, transparent);
+  }
+  .v6-offer--accent {
+    background: var(--moon-100);
+    border-color: transparent;
+  }
+  .v6-offer__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--v6-line);
+  }
+  .v6-offer__price {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--v6-fg);
+  }
+  .v6-offer__price small {
+    margin-left: 4px;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--v6-fg-2);
+  }
+  .v6-offer__topics {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .v6-offer__topics li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--v6-fg-2);
+  }
+  .v6-offer__topics li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 6px;
+    height: 1px;
+    background: var(--v6-accent);
+  }
+  .v6-offer__note {
+    margin: 0;
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    background: color-mix(in srgb, var(--v6-fg) 6%, transparent);
+  }
+  .v6-offer .v6-btn {
+    margin-top: auto;
+    align-self: stretch;
+  }
+  @media (max-width: 1023px) {
+    .v6-offers {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 767px) {
+    .v6-offer {
+      padding: 20px;
+    }
+  }
+</style>

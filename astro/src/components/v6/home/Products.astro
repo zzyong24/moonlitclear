@@ -1,0 +1,236 @@
+---
+import CardEffect from '~/components/moonlit/CardEffect.astro';
+import SectionHeading from '../SectionHeading.astro';
+import { projects } from '~/data/brand';
+import { productDetails } from '~/data/product-details';
+import { visualAsset } from '~/data/visuals';
+
+const countZh = ['零', '一', '两', '三', '四', '五', '六', '七', '八', '九', '十'];
+const n = projects.length;
+const nLabel = countZh[n] ?? String(n);
+const [featured, ...rest] = [
+  ...projects.filter((p) => (p as { featured?: boolean }).featured),
+  ...projects.filter((p) => !(p as { featured?: boolean }).featured),
+];
+const srcset = (id: string) =>
+  visualAsset(id)
+    .variants.map((v) => `${v.url} ${v.width}w`)
+    .join(', ');
+const theme = (id: string) => productDetails[id]?.theme;
+const border = '1px solid rgba(246, 239, 226, 0.12)';
+---
+
+<section class="v6-section" id="products" data-tone="dark" data-bg="night-800" aria-labelledby="products-title">
+  <div class="v6-container">
+    <SectionHeading
+      id="products-title"
+      eyebrow="产品 · Products"
+      title={`一个人，<br />${nLabel}个产品。`}
+      lead="每个产品都从我自己遇到的问题开始：做视频、记录孩子、写代码、做内容、整理知识。能用的先交出去，再慢慢打磨。"
+      linkHref="/projects"
+      linkLabel="全部产品"
+    />
+
+    {
+      featured && (
+        <a class="v6-feature" href={`/projects/${featured.id}`} data-card-theme={theme(featured.id)} data-reveal>
+          <CardEffect
+            kind="work"
+            theme={theme(featured.id)}
+            colorMode="original"
+            aspect="4 / 3"
+            radius="var(--radius-md)"
+            border={border}
+          >
+            <img
+              src={visualAsset(featured.id).variants[1].url}
+              srcset={srcset(featured.id)}
+              sizes="(max-width: 767px) 90vw, 620px"
+              width={visualAsset(featured.id).width}
+              height={visualAsset(featured.id).height}
+              alt={visualAsset(featured.id).alt}
+              loading="lazy"
+              decoding="async"
+            />
+          </CardEffect>
+          <div class="v6-feature__copy">
+            <span class="v6-tag">{featured.tag}</span>
+            <h3 class="v6-h3 v6-feature__name">{featured.name}</h3>
+            <p class="v6-lead">{featured.headline}</p>
+            <p class="v6-body">{featured.description}</p>
+            <ul class="v6-feature__list">
+              {featured.features.map((f) => (
+                <li>{f}</li>
+              ))}
+            </ul>
+            <span class="v6-btn v6-btn--primary v6-feature__cta">
+              查看产品{' '}
+              <span class="v6-arrow" aria-hidden="true">
+                →
+              </span>
+            </span>
+          </div>
+        </a>
+      )
+    }
+
+    <ul class="v6-products">
+      {
+        rest.map((p, i) => (
+          <li data-reveal style={`--reveal-i:${i % 3}`}>
+            <a href={`/projects/${p.id}`} data-card-theme={theme(p.id)}>
+              <CardEffect
+                kind="work"
+                theme={theme(p.id)}
+                colorMode="original"
+                aspect="16 / 10"
+                radius="var(--radius-md)"
+                border={border}
+              >
+                <img
+                  src={visualAsset(p.id).variants[0].url}
+                  srcset={srcset(p.id)}
+                  sizes="(max-width: 767px) 90vw, (max-width: 1023px) 45vw, 360px"
+                  width={visualAsset(p.id).width}
+                  height={visualAsset(p.id).height}
+                  alt={visualAsset(p.id).alt}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </CardEffect>
+              <div class="v6-products__copy">
+                <span class="v6-small v6-products__tag">{p.tag}</span>
+                <h3 class="v6-h3">
+                  {p.name}{' '}
+                  <span class="v6-arrow" aria-hidden="true">
+                    →
+                  </span>
+                </h3>
+                <p class="v6-body">{p.description}</p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .v6-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: 48px;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 64px;
+    border: 1px solid var(--v6-line);
+    border-radius: var(--radius-lg);
+    background: color-mix(in srgb, var(--night-700) 45%, transparent);
+    transition:
+      background-color var(--dur-base) ease,
+      border-color var(--dur-base) ease;
+  }
+  .v6-feature:hover {
+    background: color-mix(in srgb, var(--night-700) 75%, transparent);
+    border-color: var(--v6-line-strong);
+  }
+  .v6-feature__copy {
+    display: grid;
+    gap: 16px;
+    justify-items: start;
+    padding-right: 20px;
+  }
+  .v6-feature__name {
+    font-size: 36px;
+    font-weight: 900;
+  }
+  .v6-feature__copy .v6-lead {
+    color: var(--v6-fg);
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 1.6;
+  }
+  .v6-feature__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    width: 100%;
+    margin: 4px 0 8px;
+    padding: 16px 0 0;
+    list-style: none;
+    border-top: 1px solid var(--v6-line);
+  }
+  .v6-feature__list li {
+    font-size: 14px;
+    color: var(--v6-fg-2);
+  }
+  .v6-feature__list li::before {
+    content: '— ';
+    color: var(--v6-accent);
+  }
+  .v6-products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .v6-products a {
+    display: grid;
+    gap: 18px;
+  }
+  .v6-products__copy {
+    display: grid;
+    gap: 8px;
+  }
+  .v6-products__tag {
+    color: var(--v6-accent);
+  }
+  .v6-products .v6-body {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 15px;
+  }
+  .v6-products h3 .v6-arrow {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    color: var(--v6-fg-2);
+  }
+  @media (max-width: 1023px) {
+    .v6-feature {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .v6-feature__copy {
+      padding: 0 8px 12px;
+    }
+    .v6-products {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 767px) {
+    .v6-feature {
+      padding: 12px;
+      margin-bottom: 48px;
+    }
+    .v6-feature__name {
+      font-size: 28px;
+    }
+    .v6-feature__cta {
+      width: 100%;
+    }
+    .v6-products {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>

@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run assets:build && npm run content:sync && astro build && npm run verify && node scripts/compress.mjs",
+    "build": "npm run assets:build && npm run content:sync && astro build && npm run fonts:serif && npm run verify && node scripts/compress.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "check": "npm run check:astro && npm run check:eslint && npm run check:prettier",
@@ -30,7 +30,8 @@
     "github:stats": "node scripts/update-github-stats.mjs --write",
     "build:local": "CONTENT_MODE=preview npm run build",
     "test:content": "node --test scripts/tests/content.test.mjs",
-    "assets:build": "node scripts/build-brand-assets.mjs"
+    "assets:build": "node scripts/build-brand-assets.mjs",
+    "fonts:serif": "node scripts/build-serif-font.mjs"
   },
   "dependencies": {
     "@astro-community/astro-embed-twitter": "^0.5.11",
@@ -38,15 +39,15 @@
     "@astro-community/astro-embed-youtube": "^0.5.10",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
+    "@fontsource-variable/outfit": "^5.2.8",
     "astro": "^7.3.1",
     "astro-icon": "^1.1.5",
     "astro-seo": "^1.2.0",
+    "gray-matter": "^4.0.3",
     "limax": "4.2.3",
     "lodash.merge": "^4.6.2",
-    "unpic": "^4.2.2",
     "three": "^0.183.0",
-    "@fontsource-variable/outfit": "^5.2.8",
-    "gray-matter": "^4.0.3"
+    "unpic": "^4.2.2"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
@@ -54,6 +55,7 @@
     "@astrojs/mdx": "^8.0.0",
     "@astrojs/partytown": "^2.1.7",
     "@eslint/js": "^10.0.1",
+    "@fontsource/noto-serif-sc": "^5.3.1",
     "@iconify-json/flat-color-icons": "^1.2.3",
     "@iconify-json/tabler": "^1.2.38",
     "@tailwindcss/typography": "^0.5.20",
@@ -61,6 +63,8 @@
     "@types/js-yaml": "^4.0.9",
     "@types/lodash.merge": "^4.6.9",
     "@types/mdx": "^2.0.14",
+    "@types/node": "^25.0.0",
+    "@types/three": "^0.183.0",
     "@typescript-eslint/eslint-plugin": "^8.66.0",
     "@typescript-eslint/parser": "^8.66.0",
     "astro-compress": "^2.4.3",
@@ -70,19 +74,19 @@
     "globals": "^17.9.0",
     "js-yaml": "^4.3.2",
     "mdast-util-to-string": "^4.0.0",
+    "parse5": "^7.3.0",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "reading-time": "^1.5.0",
+    "remark-gfm": "4.0.1",
+    "remark-parse": "11.0.0",
     "sharp": "^0.35.3",
+    "subset-font": "^2.9.0",
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.66.0",
-    "@types/three": "^0.183.0",
-    "@types/node": "^25.0.0",
     "unified": "11.0.5",
-    "remark-parse": "11.0.0",
-    "remark-gfm": "4.0.1",
     "unist-util-visit": "5.1.0"
   },
   "overrides": {

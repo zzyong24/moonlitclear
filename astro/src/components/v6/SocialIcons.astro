@@ -1,0 +1,68 @@
+---
+import { Icon } from 'astro-icon/components';
+import { socials } from '~/data/brand';
+const icons: Record<string, string> = {
+  GitHub: 'tabler:brand-github',
+  抖音: 'tabler:brand-tiktok',
+  'B 站': 'tabler:brand-bilibili',
+};
+interface Props {
+  label?: string;
+}
+const { label } = Astro.props;
+---
+
+<div class="v6-social">
+  {label && <span class="v6-small">{label}</span>}
+  <ul>
+    {
+      socials.map((s) => (
+        <li>
+          <a href={s.url} target="_blank" rel="noreferrer" aria-label={`${s.name}（新窗口打开）`} title={s.name}>
+            {icons[s.name] ? <Icon name={icons[s.name]} aria-hidden="true" /> : <b aria-hidden="true">{s.name}</b>}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .v6-social {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  ul {
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--v6-line-strong);
+    color: var(--v6-fg);
+    transition:
+      background-color var(--dur-fast) ease,
+      border-color var(--dur-fast) ease;
+  }
+  a:hover {
+    background: color-mix(in srgb, var(--v6-fg) 10%, transparent);
+    border-color: var(--v6-fg-2);
+  }
+  a :global(svg) {
+    width: 18px;
+    height: 18px;
+  }
+  b {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+</style>

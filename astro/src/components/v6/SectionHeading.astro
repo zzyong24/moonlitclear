@@ -1,0 +1,64 @@
+---
+/** 每段标题固定句式：左 eyebrow + H2，右说明底对齐。 */
+interface Props {
+  id: string;
+  eyebrow: string;
+  title: string; // 允许 <br />
+  lead?: string;
+  linkHref?: string;
+  linkLabel?: string;
+}
+const { id, eyebrow, title, lead, linkHref, linkLabel } = Astro.props;
+---
+
+<div class="v6-heading" data-reveal>
+  <div class="v6-heading__main">
+    <span class="v6-eyebrow">{eyebrow}</span>
+    <h2 id={id} class="v6-h2" set:html={title} />
+  </div>
+  {
+    (lead || linkHref) && (
+      <div class="v6-heading__side">
+        {lead && <p class="v6-body">{lead}</p>}
+        {linkHref && (
+          <a class="v6-link" href={linkHref}>
+            {linkLabel}{' '}
+            <span class="v6-arrow" aria-hidden="true">
+              →
+            </span>
+          </a>
+        )}
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .v6-heading {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 24px 48px;
+    align-items: end;
+    margin-bottom: 56px;
+  }
+  .v6-heading__main {
+    display: grid;
+    gap: 12px;
+  }
+  .v6-heading__side {
+    display: grid;
+    gap: 14px;
+    justify-items: start;
+    padding-bottom: 6px;
+  }
+  @media (max-width: 767px) {
+    .v6-heading {
+      grid-template-columns: 1fr;
+      margin-bottom: 32px;
+      gap: 12px;
+    }
+    .v6-heading__main {
+      gap: 8px;
+    }
+  }
+</style>

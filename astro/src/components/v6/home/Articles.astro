@@ -1,0 +1,193 @@
+---
+import CardEffect from '~/components/moonlit/CardEffect.astro';
+import SectionHeading from '../SectionHeading.astro';
+import type { Post } from '~/types';
+interface Props {
+  posts: Post[];
+  total: number;
+}
+const { posts, total } = Astro.props;
+const featured = posts.find((p) => p.workId) ?? posts[0];
+const list = posts.filter((p) => p !== featured).slice(0, 5);
+const ym = (d: Date) => d.toISOString().slice(0, 7).replace('-', '.');
+const ymd = (d: Date) => d.toISOString().slice(0, 10).replaceAll('-', '.');
+const cover = (p: Post) => {
+  const src = typeof p.image === 'string' ? p.image : p.image?.src;
+  return {
+    src: p.coverVariants?.[1]?.url || src,
+    srcset: p.coverVariants?.map((v) => `${v.url} ${v.width}w`).join(', '),
+  };
+};
+---
+
+<section class="v6-section" id="articles" data-tone="light" data-bg="moon-50" aria-labelledby="articles-title">
+  <div class="v6-container">
+    <SectionHeading
+      id="articles-title"
+      eyebrow="文章 · Writing"
+      title="思考的过程，<br />也值得留下。"
+      lead="做产品和做内容时反复遇到的问题，我写下来。尽量写到能被检验的程度。"
+      linkHref="/blog"
+      linkLabel={`全部 ${total} 篇文章`}
+    />
+
+    {
+      featured && (
+        <a class="v6-article-feature" href={'/' + featured.permalink} data-reveal>
+          <CardEffect kind="article" aspect="16 / 9" radius="var(--radius-md)" border="1px solid var(--line-light)">
+            <img
+              src={cover(featured).src}
+              srcset={cover(featured).srcset}
+              sizes="(max-width: 767px) 90vw, 560px"
+              width="1200"
+              height="675"
+              alt={featured.imageAlt || ''}
+              loading="lazy"
+              decoding="async"
+            />
+          </CardEffect>
+          <div class="v6-article-feature__copy">
+            <div class="v6-article-meta">
+              <span class="v6-tag">{featured.category?.title || '实践记录'}</span>
+              <time class="v6-small" datetime={featured.publishDate.toISOString()}>
+                {ymd(featured.publishDate)}
+              </time>
+            </div>
+            <h3 class="v6-h3">{featured.title}</h3>
+            <p class="v6-body">{featured.excerpt}</p>
+            <span class="v6-link">
+              阅读全文{' '}
+              <span class="v6-arrow" aria-hidden="true">
+                →
+              </span>
+            </span>
+          </div>
+        </a>
+      )
+    }
+
+    <ol class="v6-rows">
+      {
+        list.map((p, i) => (
+          <li data-reveal style={`--reveal-i:${i}`}>
+            <a href={'/' + p.permalink}>
+              <time class="v6-small" datetime={p.publishDate.toISOString()}>
+                {ym(p.publishDate)}
+              </time>
+              <span class="v6-rows__main">
+                <strong class="v6-h3">{p.title}</strong>
+                {p.excerpt && <span class="v6-small">{p.excerpt}</span>}
+              </span>
+              <span class="v6-rows__meta">
+                <span class="v6-tag">{p.category?.title || '实践记录'}</span>
+                <span class="v6-arrow" aria-hidden="true">
+                  →
+                </span>
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .v6-article-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    gap: 48px;
+    align-items: center;
+    padding-bottom: 56px;
+  }
+  .v6-article-feature__copy {
+    display: grid;
+    gap: 16px;
+    justify-items: start;
+  }
+  .v6-article-feature__copy .v6-h3 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.3;
+  }
+  .v6-article-feature__copy .v6-body {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .v6-article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .v6-rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 2px solid var(--v6-fg);
+  }
+  .v6-rows a {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: center;
+    padding: 28px 8px;
+    border-bottom: 1px solid var(--v6-line);
+    transition: background-color var(--dur-fast) ease;
+  }
+  .v6-rows a:hover {
+    background: color-mix(in srgb, var(--v6-fg) 3%, transparent);
+  }
+  .v6-rows time {
+    font-variant-numeric: tabular-nums;
+    color: var(--v6-fg-3);
+  }
+  .v6-rows__main {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+  }
+  .v6-rows__main .v6-h3 {
+    font-size: 21px;
+  }
+  .v6-rows__main .v6-small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .v6-rows__meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--v6-fg-2);
+  }
+  @media (max-width: 767px) {
+    .v6-article-feature {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding-bottom: 40px;
+    }
+    .v6-article-feature__copy .v6-h3 {
+      font-size: 24px;
+    }
+    .v6-rows a {
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 6px 16px;
+      padding: 20px 0;
+    }
+    .v6-rows time {
+      grid-column: 1 / -1;
+    }
+    .v6-rows__main .v6-h3 {
+      font-size: 18px;
+    }
+    .v6-rows__meta .v6-tag {
+      display: none;
+    }
+  }
+</style>

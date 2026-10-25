@@ -1,0 +1,255 @@
+---
+import { Icon } from 'astro-icon/components';
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const overlay = path === '/';
+const nav = [
+  { label: '产品', href: '/projects' },
+  { label: '开源', href: '/opensource' },
+  { label: '文章', href: '/blog' },
+  { label: '关于我', href: '/links' },
+];
+const isCurrent = (href: string) => path === href || path.startsWith(href + '/');
+---
+
+<a class="v6-skip" href="#main">跳到正文</a>
+<header class="v6-header" data-tone="dark" data-overlay={overlay ? '' : undefined} data-v6-header>
+  <div class="v6-header__inner">
+    <a class="v6-header__brand" href="/" aria-label="月明Verse 首页">
+      <img src="/brand/moonlit-verse-avatar-v1.webp" alt="" width="32" height="32" decoding="async" />
+      <span><strong>月明Verse</strong><small>朱志勇 · 独立开发者</small></span>
+    </a>
+    <nav class="v6-header__nav" aria-label="主导航">
+      {
+        nav.map((item) => (
+          <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="v6-header__actions">
+      <a class="v6-btn v6-btn--secondary v6-btn--sm" href="https://github.com/zzyong24" target="_blank" rel="noreferrer"
+        >GitHub <span aria-hidden="true">↗</span></a
+      >
+      <a class="v6-btn v6-btn--primary v6-btn--sm" href="/links#offers">聊一聊</a>
+    </div>
+    <button
+      class="v6-header__toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="v6-menu"
+      aria-label="打开菜单"
+      data-v6-menu-toggle
+    >
+      <Icon name="tabler:menu-2" aria-hidden="true" class="icon-open" />
+      <Icon name="tabler:x" aria-hidden="true" class="icon-close" />
+    </button>
+  </div>
+  <div class="v6-menu" id="v6-menu" data-v6-menu hidden>
+    <nav aria-label="移动端导航">
+      <a href="/">首页</a>
+      {
+        nav.map((item) => (
+          <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="v6-menu__actions">
+      <a class="v6-btn v6-btn--primary" href="/links#offers">聊一聊</a>
+      <a class="v6-btn v6-btn--secondary" href="https://github.com/zzyong24" target="_blank" rel="noreferrer"
+        >GitHub ↗</a
+      >
+    </div>
+  </div>
+</header>
+
+<script>
+  import { initHeader } from '~/scripts/v6-header';
+  let cleanup: (() => void) | undefined;
+  document.addEventListener('astro:page-load', () => {
+    cleanup?.();
+    cleanup = initHeader();
+  });
+  document.addEventListener('astro:before-swap', () => {
+    cleanup?.();
+    cleanup = undefined;
+  });
+</script>
+
+<style>
+  .v6-skip {
+    position: fixed;
+    left: 16px;
+    top: -60px;
+    z-index: 100;
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    background: var(--moon-cream);
+    color: var(--night-800);
+    font-weight: 600;
+  }
+  .v6-skip:focus {
+    top: 12px;
+  }
+  .v6-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--night-800);
+    border-bottom: 1px solid var(--line-dark);
+    font-family: var(--font-sans);
+    transition:
+      background-color var(--dur-base) ease,
+      border-color var(--dur-base) ease;
+  }
+  .v6-header[data-overlay] {
+    position: fixed;
+    inset: 0 0 auto;
+    background: transparent;
+    border-color: transparent;
+  }
+  .v6-header[data-overlay].is-scrolled,
+  .v6-header.is-open {
+    background: color-mix(in srgb, var(--night-800) 95%, transparent);
+    border-color: var(--line-dark);
+    backdrop-filter: blur(8px);
+  }
+  .v6-header__inner {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    height: 72px;
+    max-width: calc(1120px + 64px);
+    margin-inline: auto;
+    padding-inline: 32px;
+  }
+  .v6-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--moon-cream);
+    text-decoration: none;
+    margin-right: auto;
+  }
+  .v6-header__brand img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  .v6-header__brand span {
+    display: grid;
+    line-height: 1.2;
+  }
+  .v6-header__brand strong {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+  }
+  .v6-header__brand small {
+    font-size: 12px;
+    color: var(--moon-cream-2);
+  }
+  .v6-header__nav {
+    display: flex;
+    gap: 28px;
+  }
+  .v6-header__nav a {
+    position: relative;
+    padding-block: 6px;
+    font-size: 15px;
+    color: var(--moon-cream);
+    text-decoration: none;
+    opacity: 0.86;
+    transition: opacity var(--dur-fast) ease;
+  }
+  .v6-header__nav a:hover {
+    opacity: 1;
+  }
+  .v6-header__nav a[aria-current='page'] {
+    color: var(--copper-moon);
+    opacity: 1;
+  }
+  .v6-header__nav a[aria-current='page']::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 -2px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+  .v6-header__actions {
+    display: flex;
+    gap: 10px;
+  }
+  .v6-header__toggle {
+    display: none;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    border: 0;
+    border-radius: 50%;
+    color: var(--moon-cream);
+    background: transparent;
+  }
+  .v6-header__toggle :global(svg) {
+    width: 24px;
+    height: 24px;
+  }
+  .v6-header__toggle :global(.icon-close),
+  .v6-header.is-open .v6-header__toggle :global(.icon-open) {
+    display: none;
+  }
+  .v6-header.is-open .v6-header__toggle :global(.icon-close) {
+    display: block;
+  }
+  .v6-menu {
+    position: fixed;
+    inset: 60px 0 0;
+    padding: 32px 20px 40px;
+    background: var(--night-800);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+  }
+  .v6-menu[hidden] {
+    display: none;
+  }
+  .v6-menu nav {
+    display: grid;
+  }
+  .v6-menu nav a {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line-dark);
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--moon-cream);
+    text-decoration: none;
+  }
+  .v6-menu nav a[aria-current='page'] {
+    color: var(--copper-moon);
+  }
+  .v6-menu__actions {
+    display: grid;
+    gap: 12px;
+    margin-top: 32px;
+  }
+  @media (max-width: 899px) {
+    .v6-header__nav,
+    .v6-header__actions {
+      display: none;
+    }
+    .v6-header__toggle {
+      display: grid;
+    }
+    .v6-header__inner {
+      height: 60px;
+      padding-inline: 20px;
+    }
+  }
+</style>

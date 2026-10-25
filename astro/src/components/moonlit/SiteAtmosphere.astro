@@ -1,7 +1,8 @@
 ---
-// Keep long reading and product-detail pages quiet. No content artwork is drawn here.
+// v6：全站不再挂载流线背景（docs/redesign-v6/01 §6），代码保留以便回滚。Keep long reading and product-detail pages quiet. No content artwork is drawn here.
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
-const showContours = ['/', '/projects', '/blog', '/opensource'].includes(path);
+const contourPaths: string[] = []; // 回滚：恢复为 ['/', '/projects', '/blog', '/opensource']
+const showContours = contourPaths.includes(path);
 ---
 
 {showContours && <canvas class="brand-contours" data-brand-contours aria-hidden="true" />}

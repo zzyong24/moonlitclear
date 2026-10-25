@@ -1,0 +1,99 @@
+---
+import { brand } from '~/data/brand';
+import SocialIcons from './SocialIcons.astro';
+const links = [
+  { label: '产品', href: '/projects' },
+  { label: '开源', href: '/opensource' },
+  { label: '文章', href: '/blog' },
+  { label: '关于我', href: '/links' },
+  { label: 'RSS', href: '/feed.xml' },
+];
+---
+
+<footer class="v6-footer" data-tone="dark">
+  <div class="v6-container">
+    <div class="v6-footer__top">
+      <div class="v6-footer__brand">
+        <a href="/" class="v6-footer__logo">月明Verse</a>
+        <p class="v6-small">朱志勇 · 独立开发者。<br />一个人做产品、做内容、做增长。</p>
+        <a class="v6-footer__mail v6-small" href={`mailto:${brand.email}`}>{brand.email}</a>
+      </div>
+      <SocialIcons label="关注我" />
+    </div>
+    <div class="v6-footer__bottom">
+      <nav aria-label="页脚导航">
+        {links.map((l) => <a href={l.href}>{l.label}</a>)}
+      </nav>
+      <small>© {new Date().getFullYear()} 朱志勇 · {brand.alias}</small>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .v6-footer {
+    background: var(--night-900);
+    padding-block: 72px 40px;
+    font-family: var(--font-sans);
+  }
+  .v6-footer__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--v6-line);
+  }
+  .v6-footer__brand {
+    display: grid;
+    gap: 12px;
+  }
+  .v6-footer__brand p {
+    margin: 0;
+  }
+  .v6-footer__logo {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--moon-cream);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .v6-footer__mail {
+    color: var(--v6-fg-2);
+    text-decoration: none;
+  }
+  .v6-footer__mail:hover {
+    color: var(--v6-accent);
+  }
+  .v6-footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-top: 24px;
+    flex-wrap: wrap;
+  }
+  .v6-footer__bottom nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+  }
+  .v6-footer__bottom a {
+    font-size: 14px;
+    color: var(--v6-fg-2);
+    text-decoration: none;
+  }
+  .v6-footer__bottom a:hover {
+    color: var(--v6-fg);
+  }
+  .v6-footer__bottom small {
+    font-size: 13px;
+    color: var(--v6-fg-2);
+  }
+  @media (max-width: 767px) {
+    .v6-footer__top {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

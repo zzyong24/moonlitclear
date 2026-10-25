@@ -1,0 +1,176 @@
+---
+import { getImage } from 'astro:assets';
+import portrait from '~/assets/moonlit/portrait-cutout-v1.png';
+import SocialIcons from '../SocialIcons.astro';
+interface Props {
+  productCount: number;
+  openSourceCount: number;
+  postCount: number;
+}
+const { productCount, openSourceCount, postCount } = Astro.props;
+const widths = [360, 520, 720, 1000];
+const images = await Promise.all(
+  widths.map((width) => getImage({ src: portrait, width, format: 'webp', quality: 82 }))
+);
+const ratio = portrait.height / portrait.width;
+---
+
+<section class="v6-hero" data-tone="dark" aria-labelledby="hero-title">
+  <div class="v6-hero__glow" aria-hidden="true"></div>
+  <div class="v6-hero__inner v6-container">
+    <div class="v6-hero__copy">
+      <span class="v6-eyebrow">朱志勇 · 月明Verse</span>
+      <h1 id="hero-title" class="v6-display">
+        <span>一个人做产品。</span><span>做内容，</span><span>也做增长。</span>
+      </h1>
+      <p class="v6-lead">
+        我是朱志勇，也叫月明Verse。全栈开发工程师，在职独立开发者。这里有我做的 {productCount} 个产品、{openSourceCount} 个开源项目，以及
+        {postCount} 篇从 0 到 1 的真实记录。
+      </p>
+      <div class="v6-hero__actions">
+        <a class="v6-btn v6-btn--primary" href="#products">看我做的产品</a>
+        <a class="v6-btn v6-btn--secondary" href="#articles">读我的文章</a>
+      </div>
+      <SocialIcons label="关注我" />
+    </div>
+    <div class="v6-hero__figure">
+      <span class="v6-hero__moon" aria-hidden="true">月</span>
+      <img
+        src={images[1].src}
+        srcset={images.map((img, i) => `${img.src} ${widths[i]}w`).join(', ')}
+        sizes="(max-width: 767px) 78vw, (max-width: 1023px) 46vw, 500px"
+        width={520}
+        height={Math.round(520 * ratio)}
+        alt="朱志勇，身穿深蓝西装和白色上衣，面带微笑"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .v6-hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--night-800);
+    min-height: min(100svh, 800px);
+    display: flex;
+    align-items: stretch;
+  }
+  .v6-hero__glow {
+    position: absolute;
+    right: -6%;
+    top: 4%;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, var(--moon-glow), transparent 72%);
+    pointer-events: none;
+  }
+  .v6-hero__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: 24px;
+    padding-top: 72px;
+    min-height: inherit;
+  }
+  .v6-hero__copy {
+    display: grid;
+    align-content: center;
+    gap: 28px;
+    padding-block: 64px 96px;
+    z-index: 2;
+  }
+  .v6-hero__copy h1 span {
+    display: block;
+    white-space: nowrap;
+  }
+  .v6-hero__copy .v6-eyebrow {
+    margin-bottom: -8px;
+  }
+  .v6-hero__copy .v6-lead {
+    max-width: 30em;
+  }
+  .v6-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .v6-hero__figure {
+    position: relative;
+    align-self: end;
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+  }
+  .v6-hero__moon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-22%, -50%);
+    font-family: var(--font-serif);
+    font-size: 600px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--moon-cream);
+    opacity: 0.94;
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .v6-hero__figure img {
+    position: relative;
+    align-self: flex-end;
+    width: min(100%, 500px);
+    height: auto;
+    max-height: calc(min(100svh, 800px) - 96px);
+    object-fit: contain;
+    object-position: bottom center;
+    filter: drop-shadow(0 30px 60px rgba(5, 12, 22, 0.35));
+  }
+  @media (max-width: 1023px) {
+    .v6-hero__moon {
+      font-size: 440px;
+    }
+  }
+  @media (max-width: 767px) {
+    .v6-hero {
+      min-height: 0;
+    }
+    .v6-hero__inner {
+      grid-template-columns: 1fr;
+      padding-top: 60px;
+      gap: 0;
+    }
+    .v6-hero__copy {
+      padding-block: 40px 32px;
+      gap: 22px;
+    }
+    .v6-hero__actions .v6-btn {
+      flex: 1 1 100%;
+    }
+    .v6-hero__figure {
+      height: 400px;
+      min-height: 0;
+    }
+    .v6-hero__moon {
+      font-size: 330px;
+      transform: translate(-30%, -50%);
+    }
+    .v6-hero__figure img {
+      width: auto;
+      height: 100%;
+      max-height: none;
+    }
+    .v6-hero__glow {
+      width: 520px;
+      height: 520px;
+      top: auto;
+      bottom: 0;
+      right: -30%;
+    }
+  }
+</style>

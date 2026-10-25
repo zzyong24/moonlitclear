@@ -1,6 +1,6 @@
 # 月明Verse 官网改版 v6 · 执行总纲
 
-> 状态：设计规范已定稿，待实施（2026-10-25）
+> 状态：设计规范已定稿；P0 基础 + 首页已实施（2026-10-25），子页面（P2）待实施。验收记录：`design/redesign-v6/review/ACCEPTANCE.md`
 > 参考：[lizheng.ai](https://www.lizheng.ai/)（截图存档见 [`design/redesign-v6/reference/`](../../design/redesign-v6/reference/)）
 > 适用范围：`astro/` 当前 Astro 站点。旧 Next.js 根目录不改。
 > 读者：负责实施的开发者 / 模型。动手前按顺序读完本目录全部文件。
