@@ -2,57 +2,40 @@
 import { getImage } from 'astro:assets';
 import portrait from '~/assets/moonlit/portrait-cutout-v1.png';
 import brushMark from '~/assets/moonlit/brush-yueming.svg?raw';
-import { timeline } from '~/data/timeline';
 import SocialIcons from '../SocialIcons.astro';
-interface Props {
-  productCount: number;
-  openSourceCount: number;
-  postCount: number;
+interface Stat {
+  value: number;
+  label: string;
+  growing?: boolean;
+  pad?: boolean;
 }
-const { productCount, openSourceCount, postCount } = Astro.props;
+interface Props {
+  stats: Stat[];
+}
+const { stats } = Astro.props;
+const shown = stats.filter((s) => s.value > 0);
+const format = (s: Stat) => (s.pad ? String(s.value).padStart(2, '0') : String(s.value));
 const widths = [360, 520, 720, 1000];
 const images = await Promise.all(
   widths.map((width) => getImage({ src: portrait, width, format: 'webp', quality: 82 }))
 );
 const ratio = portrait.height / portrait.width;
-
-// 首屏底部色带：有本人确认的时间轴（timeline.ts 非 draft）时显示「路径」，否则显示「方向」。
-const confirmed = timeline.filter((item) => !item.draft);
-const band =
-  confirmed.length > 1
-    ? {
-        label: '路径',
-        note: '从写代码，到一个人做完整的产品。',
-        items: confirmed.map((t) => ({ title: t.title, note: t.note ?? t.period, current: !!t.current })),
-      }
-    : {
-        label: '方向',
-        note: '一个人，把代码、产品和内容连成一条线。',
-        items: [
-          { title: '全栈开发', note: '在职全栈工程师', current: false },
-          { title: 'AI Native', note: '用 Agent 写代码、做内容', current: false },
-          { title: '独立产品', note: `${productCount} 个产品，一个人做完`, current: false },
-          { title: '开源', note: `${openSourceCount} 个项目公开在 GitHub`, current: false },
-          { title: '内容与增长', note: `${postCount} 篇文章，多平台分发`, current: true },
-        ],
-      };
 ---
 
 <section class="v6-hero v6-grain" data-tone="dark" aria-labelledby="hero-title">
   <div class="v6-container v6-hero__wrap">
     <div class="v6-hero__copy">
-      <p class="v6-kicker rise">朱志勇 · 月明Verse</p>
+      <p class="v6-kicker rise">朱志勇 · 月明Verse · 武汉</p>
       <h1 id="hero-title" class="v6-display rise d1">
-        <span>一个人做产品。</span><span>做内容，</span><span>也做增长。</span>
+        <span>先做出来，</span><span>再老实复盘。</span>
       </h1>
       <p class="v6-lead rise d2">
-        我是朱志勇，也叫<b>月明Verse</b>。<span class="nw">全栈开发工程师，在职独立开发者。</span>这里有我做的<b
-          >{productCount} 个产品</b
-        >、<b>{openSourceCount} 个开源项目</b>，以及 {postCount} 篇从 0 到 1 的真实记录。
+        我是朱志勇，网上叫<b>月明Verse</b>。00 后，白天是全栈工程师，下班后用 AI 做自己的产品。卖出过第一笔
+        <b>18.8 元</b>，也给自己搭的系统打过 <b>6 分</b>。做出来的东西和每一次复盘，都放在这里。
       </p>
       <div class="v6-hero__actions rise d3">
-        <a class="v6-btn v6-btn--primary" href="#products">看我做的产品</a>
-        <a class="v6-btn v6-btn--secondary" href="#articles">读我的文章</a>
+        <a class="v6-btn v6-btn--primary" href="#products">看做出来的东西</a>
+        <a class="v6-btn v6-btn--secondary" href="#retros">读复盘</a>
       </div>
       <div class="rise d4"><SocialIcons label="关注我" /></div>
     </div>
@@ -75,18 +58,22 @@ const band =
 
   <div class="v6-hero__band">
     <div class="v6-container">
-      <p class="v6-hero__band-head"><b>{band.label}</b><span>{band.note}</span></p>
-      <ol class="v6-hero__path" style={`--n:${band.items.length}`}>
+      <h2 id="stats-title" class="sr-only">数字一览</h2>
+      <dl class="v6-hero__stats" style={`--n:${shown.length}`}>
         {
-          band.items.map((item) => (
-            <li class:list={{ 'is-current': item.current }}>
-              <span class="v6-hero__dot" aria-hidden="true" />
-              <strong>{item.title}</strong>
-              <span>{item.note}</span>
-            </li>
+          shown.map((s) => (
+            <div>
+              <dt>{s.label}</dt>
+              <dd>
+                <span class="v6-num" data-count-to={s.value} data-count-format={s.pad ? 'pad2' : undefined}>
+                  {format(s)}
+                </span>
+                {s.growing && <sup aria-hidden="true">+</sup>}
+              </dd>
+            </div>
           ))
         }
-      </ol>
+      </dl>
     </div>
   </div>
 </section>
@@ -130,9 +117,6 @@ const band =
     max-width: 28em;
     margin-top: 26px;
   }
-  .nw {
-    display: inline-block;
-  }
   .v6-lead b {
     white-space: nowrap;
     font-weight: 500;
@@ -157,7 +141,7 @@ const band =
     position: absolute;
     top: 8%;
     left: 50%;
-    width: 108%;
+    width: 120%;
     transform: translateX(-50%);
     color: var(--moon-cream);
     opacity: 0.95;
@@ -183,74 +167,56 @@ const band =
     position: relative;
     z-index: 1;
     background: var(--night-900);
-    padding-block: 30px 34px;
+    padding-block: 32px 34px;
   }
-  .v6-hero__band-head {
+  .v6-hero__stats {
+    display: grid;
+    grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr));
+    margin: 0;
+  }
+  .v6-hero__stats > div {
     display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 4px 14px;
-    margin: 0 0 22px;
-    font-size: 13.5px;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 2px 28px;
+    border-left: 1px solid var(--line-dark);
   }
-  .v6-hero__band-head b {
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    color: var(--copper-moon);
+  .v6-hero__stats > div:first-child {
+    border-left: 0;
+    padding-left: 0;
   }
-  .v6-hero__band-head span {
+  .v6-hero__stats dt {
+    font-size: 14px;
     color: var(--moon-cream-3);
   }
-  .v6-hero__path {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(var(--n, 5), minmax(0, 1fr));
-    grid-auto-flow: column;
-    gap: 24px;
+  .v6-hero__stats dd {
+    display: flex;
+    align-items: flex-start;
     margin: 0;
-    padding: 0;
-    list-style: none;
   }
-  .v6-hero__path::before {
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, var(--line-dark-strong), var(--line-dark) 85%, transparent);
-  }
-  .v6-hero__path li {
-    position: relative;
-    display: grid;
-    gap: 4px;
-    padding-top: 26px;
-  }
-  .v6-hero__dot {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--night-900);
-    box-shadow: inset 0 0 0 1.5px var(--moon-cream-2);
-  }
-  .is-current .v6-hero__dot {
-    background: var(--copper-moon);
-    box-shadow: 0 0 0 5px color-mix(in srgb, var(--copper-moon) 22%, transparent);
-  }
-  .v6-hero__path strong {
-    font-family: var(--font-serif);
-    font-size: 19px;
-    font-weight: 900;
-    letter-spacing: 0.02em;
+  .v6-hero__stats .v6-num {
+    font-size: clamp(32px, 3.2vw, 46px);
+    line-height: 1;
+    letter-spacing: -0.01em;
     color: var(--moon-cream);
   }
-  .v6-hero__path li > span:last-child {
-    font-size: 13.5px;
-    line-height: 1.6;
-    color: var(--moon-cream-3);
+  .v6-hero__stats sup {
+    top: 0;
+    margin-left: 2px;
+    font-family: var(--font-num);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--copper-moon);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 
   .rise {
@@ -306,8 +272,8 @@ const band =
       height: min(104vw, 440px);
     }
     .v6-hero__mark {
-      width: 100%;
-      top: 10%;
+      width: 108%;
+      top: 12%;
     }
     .v6-hero__portrait {
       height: 96%;
@@ -321,30 +287,13 @@ const band =
     .v6-hero__actions .v6-btn {
       flex: 1 1 0;
     }
-    .v6-hero__path {
-      grid-template-columns: 1fr;
-      grid-auto-flow: row;
-      gap: 18px;
-      padding-left: 26px;
+    .v6-hero__stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: 24px;
     }
-    .v6-hero__path::before {
-      top: 4px;
-      bottom: 4px;
-      left: 4px;
-      right: auto;
-      width: 1px;
-      height: auto;
-      background: var(--line-dark-strong);
-    }
-    .v6-hero__path li {
-      padding-top: 0;
-      grid-template-columns: auto 1fr;
-      align-items: baseline;
-      column-gap: 12px;
-    }
-    .v6-hero__dot {
-      left: -26px;
-      top: 7px;
+    .v6-hero__stats > div:nth-child(3) {
+      border-left: 0;
+      padding-left: 0;
     }
   }
   @media (prefers-reduced-motion: reduce) {

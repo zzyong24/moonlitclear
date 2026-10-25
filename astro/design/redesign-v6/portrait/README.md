@@ -7,4 +7,4 @@
 
 ## 首屏书法字「月明」
 
-`src/assets/moonlit/brush-yueming.svg` 由 Google Fonts 的 Ma Shan Zheng（马善政毛笔楷书，SIL Open Font License 1.1）字形转成路径，只含「月明」两个字，作为图形内联，不加载字体文件。生成方法：fontTools 读取字形 → SVGPathPen 输出 path，两字间距 40 单位，坐标取整。
+`src/assets/moonlit/brush-yueming.svg` 由 Google Fonts 的 Ma Shan Zheng（马善政毛笔楷书，SIL Open Font License 1.1）字形转成路径，只含「月明」两个字，作为图形内联，不加载字体文件。生成方法：fontTools 读取字形 → SVGPathPen 输出 path，两字间距 230 单位，坐标取整。

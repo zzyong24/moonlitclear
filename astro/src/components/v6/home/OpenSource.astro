@@ -1,5 +1,4 @@
 ---
-import OpenSourceCard from '~/components/moonlit/OpenSourceCard.astro';
 import SectionHeading from '../SectionHeading.astro';
 import { openSourceEntries } from '~/data/open-source';
 import { githubStars } from '~/data/github-stars';
@@ -7,7 +6,8 @@ import { githubStars } from '~/data/github-stars';
 const ranked = [...openSourceEntries]
   .map((item) => ({ item, stars: githubStars(item.url) ?? 0 }))
   .sort((a, b) => b.stars - a.stars);
-const picks = ranked.slice(0, 4).map((r) => r.item);
+const picks = ranked.slice(0, 6);
+const repoName = (url: string) => url.replace(/^https:\/\/github\.com\/[^/]+\//, '').replace(/\/$/, '');
 const categories = [...new Set(openSourceEntries.map((i) => i.category))].map((category) => {
   const items = ranked.filter((r) => r.item.category === category);
   return { category, count: items.length, top: items[0]?.item.title };
@@ -18,20 +18,28 @@ const categories = [...new Set(openSourceEntries.map((i) => i.category))].map((c
   <div class="v6-container">
     <SectionHeading
       id="opensource-title"
-      eyebrow="开源 · Open Source"
+      eyebrow="开源"
       title="把做事的方法，<br />开源成可用的工具。"
-      lead={`从独立软件到内容工作流，${openSourceEntries.length} 个项目都在 GitHub 公开。挑一个能直接用的，拿去改成你自己的。`}
+      lead={`自己在用的方法和工具，整理干净就放到 GitHub。现在有 ${openSourceEntries.length} 个，挑一个直接拿去改。`}
     />
     <div class="v6-os">
-      <div class="v6-os__cards">
+      <ol class="v6-repos">
         {
-          picks.map((item, i) => (
-            <div data-reveal style={`--reveal-i:${i}`}>
-              <OpenSourceCard item={item} compact />
-            </div>
+          picks.map(({ item, stars }, i) => (
+            <li data-reveal style={`--reveal-i:${i % 2}`}>
+              <a href={item.url} target="_blank" rel="noreferrer">
+                <span class="v6-repos__head">
+                  <code>{repoName(item.url)}</code>
+                  {stars > 0 && <span class="v6-repos__stars">★ {stars}</span>}
+                </span>
+                <strong class="v6-repos__name">{item.title}</strong>
+                <span class="v6-repos__desc">{item.description}</span>
+                <span class="v6-repos__cat">{item.category}</span>
+              </a>
+            </li>
           ))
         }
-      </div>
+      </ol>
       <aside class="v6-os__index" aria-labelledby="os-index-title" data-reveal>
         <h3 id="os-index-title" class="v6-h4">按用途找</h3>
         <ul>
@@ -67,16 +75,65 @@ const categories = [...new Set(openSourceEntries.map((i) => i.category))].map((c
     gap: 48px;
     align-items: start;
   }
-  .v6-os__cards {
+  .v6-repos {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 32px 24px;
+    gap: 0 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--ink);
   }
-  .v6-os__cards :global(.opensource-copy h3) {
+  .v6-repos li {
+    border-bottom: 1px solid var(--v6-line);
+  }
+  .v6-repos a {
+    display: grid;
+    gap: 6px;
+    height: 100%;
+    padding: 20px 0 22px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .v6-repos__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .v6-repos code {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .v6-repos__stars {
+    flex: none;
+    font-family: var(--font-num);
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--copper);
+  }
+  .v6-repos strong {
     font-family: var(--font-serif);
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 900;
     letter-spacing: 0.02em;
+    transition: color var(--dur-fast) ease;
+  }
+  .v6-repos a:hover strong {
+    color: var(--copper);
+  }
+  .v6-repos__desc {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--body);
+  }
+  .v6-repos__cat {
+    font-size: 12.5px;
+    color: var(--muted);
   }
   .v6-os__index {
     position: sticky;
@@ -141,10 +198,10 @@ const categories = [...new Set(openSourceEntries.map((i) => i.category))].map((c
     }
   }
   @media (max-width: 767px) {
-    .v6-os__cards {
+    .v6-repos {
       grid-template-columns: 1fr;
     }
-    .v6-os__cards > :nth-child(n + 3) {
+    .v6-repos > :nth-child(n + 5) {
       display: none;
     }
     .v6-os__index {

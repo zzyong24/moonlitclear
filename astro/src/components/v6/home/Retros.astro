@@ -1,0 +1,150 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import { retros } from '~/data/retros';
+import type { Post } from '~/types';
+interface Props {
+  posts: Post[];
+}
+const { posts } = Astro.props;
+const ym = (d: Date) => d.toISOString().slice(0, 7).replace('-', '.');
+const items = retros.map((r) => ({ ...r, post: posts.find((p) => p.title.includes(r.match)) })).filter((r) => r.post);
+---
+
+{
+  items.length > 0 && (
+    <section class="v6-section" id="retros" data-tone="light" data-bg="moon-100" aria-labelledby="retros-title">
+      <div class="v6-container">
+        <SectionHeading
+          id="retros-title"
+          eyebrow="复盘"
+          title="数字背后，<br />是一次次复盘。"
+          lead="做对的、做错的都写下来。每个数字都能点回原文，看当时到底发生了什么。"
+        />
+        <ol class="v6-retros">
+          {items.map((r, i) => (
+            <li data-reveal style={`--reveal-i:${i % 3}`}>
+              <a class="v6-card v6-retro" href={'/' + r.post!.permalink}>
+                <span class="v6-retro__figure">
+                  <span class:list={['v6-retro__n', { 'is-word v6-serif': !/^[\d.]+$/.test(r.figure) }]}>
+                    {r.figure}
+                  </span>
+                  {r.unit && <span class="v6-retro__unit">{r.unit}</span>}
+                </span>
+                <span class="v6-retro__context">{r.context}</span>
+                <blockquote class="v6-retro__quote">{r.conclusion}</blockquote>
+                <span class="v6-retro__foot">
+                  <time datetime={r.post!.publishDate.toISOString()}>{ym(r.post!.publishDate)}</time>
+                  <span>
+                    读原文{' '}
+                    <span class="v6-arrow" aria-hidden="true">
+                      →
+                    </span>
+                  </span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .v6-retros {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .v6-retros li {
+    display: flex;
+  }
+  .v6-retro {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 28px 28px 22px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .v6-retro__figure {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .v6-retro__n {
+    font-family: var(--font-num);
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-variant-numeric: lining-nums;
+    color: var(--ink);
+  }
+  .v6-retro__n.is-word {
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: 50px;
+    letter-spacing: 0.02em;
+  }
+  .v6-retro__unit {
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .v6-retro__context {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .v6-retro blockquote {
+    margin: 16px 0 0;
+    padding-left: 14px;
+    border-left: 2px solid var(--copper);
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .v6-retro__foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 22px;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+  .v6-retro__foot time {
+    font-family: var(--font-num);
+    font-weight: 600;
+  }
+  .v6-retro__foot > span {
+    color: var(--copper);
+    font-weight: 500;
+  }
+  @media (max-width: 1023px) {
+    .v6-retros {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 640px) {
+    .v6-retros {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .v6-retro {
+      padding: 22px 20px 18px;
+    }
+    .v6-retro__n {
+      font-size: 46px;
+    }
+    .v6-retro__n.is-word {
+      font-size: 42px;
+    }
+  }
+</style>

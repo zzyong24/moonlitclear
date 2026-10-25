@@ -1,23 +1,22 @@
 ---
-import CardEffect from '~/components/moonlit/CardEffect.astro';
+import { getImage } from 'astro:assets';
 import SectionHeading from '../SectionHeading.astro';
 import { projects } from '~/data/brand';
-import { productDetails } from '~/data/product-details';
-import { visualAsset } from '~/data/visuals';
+import { productNotes } from '~/data/product-notes';
+import movingShot from '~/assets/products/moving-main.webp';
 
 const countZh = ['零', '一', '两', '三', '四', '五', '六', '七', '八', '九', '十'];
-const n = projects.length;
-const nLabel = countZh[n] ?? String(n);
-const [featured, ...rest] = [
-  ...projects.filter((p) => (p as { featured?: boolean }).featured),
-  ...projects.filter((p) => !(p as { featured?: boolean }).featured),
-];
-const srcset = (id: string) =>
-  visualAsset(id)
-    .variants.map((v) => `${v.url} ${v.width}w`)
-    .join(', ');
-const theme = (id: string) => productDetails[id]?.theme;
-const border = '1px solid rgba(246, 239, 226, 0.12)';
+const nLabel = countZh[projects.length] ?? String(projects.length);
+const featured = projects.find((p) => p.id === 'moving') ?? projects[0];
+// 目录顺序跟 product-notes.ts 的键顺序走，方便按状态调整。
+const order = Object.keys(productNotes);
+const rank = (id: string) => (order.indexOf(id) < 0 ? order.length : order.indexOf(id));
+const rest = projects.filter((p) => p !== featured).sort((a, b) => rank(a.id) - rank(b.id));
+const widths = [640, 960, 1400];
+const shots = await Promise.all(
+  widths.map((width) => getImage({ src: movingShot, width, format: 'webp', quality: 84 }))
+);
+const note = (id: string) => productNotes[id];
 ---
 
 <section
@@ -30,95 +29,59 @@ const border = '1px solid rgba(246, 239, 226, 0.12)';
   <div class="v6-container">
     <SectionHeading
       id="products-title"
-      eyebrow="产品 · Products"
+      eyebrow="产品"
       title={`一个人，<br />${nLabel}个产品。`}
-      lead="每个产品都从我自己遇到的问题开始：做视频、记录孩子、写代码、做内容、整理知识。能用的先交出去，再慢慢打磨。"
+      lead="每个都从我自己卡住的地方开始：做视频、做抖音、写代码、整理资料、带孩子。有的在卖，有的还在内测，状态照实写。"
       linkHref="/projects"
-      linkLabel="全部产品"
+      linkLabel="产品详情"
     />
 
-    {
-      featured && (
-        <a class="v6-feature" href={`/projects/${featured.id}`} data-card-theme={theme(featured.id)} data-reveal>
-          <CardEffect
-            kind="work"
-            theme={theme(featured.id)}
-            colorMode="original"
-            aspect="4 / 3"
-            radius="var(--radius-md)"
-            border={border}
-          >
-            <img
-              src={visualAsset(featured.id).variants[1].url}
-              srcset={srcset(featured.id)}
-              sizes="(max-width: 767px) 90vw, 620px"
-              width={visualAsset(featured.id).width}
-              height={visualAsset(featured.id).height}
-              alt={visualAsset(featured.id).alt}
-              loading="lazy"
-              decoding="async"
-            />
-          </CardEffect>
-          <div class="v6-feature__copy">
-            <span class="v6-tag">{featured.tag}</span>
-            <h3 class="v6-h3 v6-feature__name">{featured.name}</h3>
-            <p class="v6-lead">{featured.headline}</p>
-            <p class="v6-body">{featured.description}</p>
-            <ul class="v6-feature__list">
-              {featured.features.map((f) => (
-                <li>{f}</li>
-              ))}
-            </ul>
-            <span class="v6-btn v6-btn--primary v6-feature__cta">
-              查看产品{' '}
-              <span class="v6-arrow" aria-hidden="true">
-                →
-              </span>
-            </span>
-          </div>
-        </a>
-      )
-    }
+    <a class="v6-feature" href={`/projects/${featured.id}`} data-reveal>
+      <div class="v6-feature__copy">
+        <span class="v6-feature__status">{note(featured.id)?.status ?? featured.tag}</span>
+        <h3 class="v6-feature__name">{featured.name}</h3>
+        <p class="v6-feature__headline">{featured.headline}</p>
+        <p class="v6-feature__note">{note(featured.id)?.note ?? featured.description}</p>
+        <ul class="v6-feature__list">{featured.features.map((f) => <li>{f}</li>)}</ul>
+        <span class="v6-feature__go">
+          看看它怎么用{' '}
+          <span class="v6-arrow" aria-hidden="true"> → </span>
+        </span>
+      </div>
+      <figure class="v6-window">
+        <div class="v6-window__bar" aria-hidden="true"><i></i><i></i><i></i><span>媒措 Moving · 真实界面</span></div>
+        <img
+          src={shots[1].src}
+          srcset={shots.map((s, i) => `${s.src} ${widths[i]}w`).join(', ')}
+          sizes="(max-width: 1023px) 92vw, 700px"
+          width={movingShot.width}
+          height={movingShot.height}
+          alt="媒措 Moving 客户端主界面：左侧项目与会话，中间对话制作区，右侧项目文件"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </a>
 
-    <ul class="v6-products">
+    <ol class="v6-index">
       {
         rest.map((p, i) => (
           <li data-reveal style={`--reveal-i:${i % 3}`}>
-            <a href={`/projects/${p.id}`} data-card-theme={theme(p.id)}>
-              <CardEffect
-                kind="work"
-                theme={theme(p.id)}
-                colorMode="original"
-                aspect="16 / 10"
-                radius="var(--radius-md)"
-                border={border}
-              >
-                <img
-                  src={visualAsset(p.id).variants[0].url}
-                  srcset={srcset(p.id)}
-                  sizes="(max-width: 767px) 90vw, (max-width: 1023px) 45vw, 360px"
-                  width={visualAsset(p.id).width}
-                  height={visualAsset(p.id).height}
-                  alt={visualAsset(p.id).alt}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </CardEffect>
-              <div class="v6-products__copy">
-                <span class="v6-small v6-products__tag">{p.tag}</span>
-                <h3 class="v6-h3">
-                  {p.name}{' '}
-                  <span class="v6-arrow" aria-hidden="true">
-                    →
-                  </span>
-                </h3>
-                <p class="v6-body">{p.description}</p>
-              </div>
+            <a href={`/projects/${p.id}`} aria-label={`${p.name}：${note(p.id)?.status ?? p.tag}`}>
+              <span class="v6-index__no">{String(i + 2).padStart(2, '0')}</span>
+              <span class="v6-index__name">
+                <strong>{p.name}</strong>
+                <small>{note(p.id)?.status ?? p.tag}</small>
+              </span>
+              <span class="v6-index__note">{note(p.id)?.note ?? p.description}</span>
+              <span class="v6-index__go" aria-hidden="true">
+                →
+              </span>
             </a>
           </li>
         ))
       }
-    </ul>
+    </ol>
   </div>
 </section>
 
@@ -129,126 +92,186 @@ const border = '1px solid rgba(246, 239, 226, 0.12)';
   }
   .v6-feature {
     display: grid;
-    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-    gap: 48px;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 56px;
     align-items: center;
-    padding: 14px;
     margin-bottom: 56px;
-    border-radius: var(--radius-md);
-    background: var(--night-900);
-    box-shadow: 0 0 0 1px var(--v6-line);
-    transition:
-      transform 350ms var(--ease-out),
-      box-shadow 350ms var(--ease-out);
-  }
-  .v6-feature:hover {
-    transform: translateY(-4px);
-    box-shadow:
-      0 0 0 1px var(--v6-line-strong),
-      0 30px 60px -36px rgba(0, 0, 0, 0.7);
   }
   .v6-feature__copy {
     display: grid;
-    gap: 16px;
     justify-items: start;
-    padding-right: 20px;
+    gap: 14px;
+  }
+  .v6-feature__status {
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--copper-moon);
   }
   .v6-feature__name {
-    font-size: clamp(28px, 2.6vw, 36px);
-    font-weight: 900;
-  }
-  .v6-feature__copy .v6-lead {
-    color: var(--v6-fg);
+    margin: 0;
     font-family: var(--font-serif);
-    font-weight: 700;
+    font-size: clamp(30px, 2.8vw, 40px);
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    color: var(--moon-cream);
+  }
+  .v6-feature__headline {
+    margin: 0;
+    font-family: var(--font-serif);
     font-size: 19px;
+    font-weight: 900;
     line-height: 1.6;
+    color: var(--moon-cream);
+  }
+  .v6-feature__note {
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: var(--moon-cream-2);
   }
   .v6-feature__list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 20px;
-    width: 100%;
-    margin: 4px 0 8px;
-    padding: 16px 0 0;
-    list-style: none;
-    border-top: 1px solid var(--v6-line);
-  }
-  .v6-feature__list li {
-    font-size: 14px;
-    color: var(--v6-fg-2);
-  }
-  .v6-feature__list li::before {
-    content: '— ';
-    color: var(--v6-accent);
-  }
-  .v6-products {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 44px 28px;
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 4px 0 0;
     padding: 0;
     list-style: none;
   }
-  .v6-products a {
-    display: grid;
-    gap: 16px;
+  .v6-feature__list li {
+    padding: 3px 10px;
+    border-radius: var(--radius-xs);
+    font-size: 13px;
+    color: var(--moon-cream-2);
+    box-shadow: inset 0 0 0 1px var(--line-dark);
   }
-  .v6-products h3 {
-    font-size: 22px;
+  .v6-feature__go {
+    display: inline-flex;
+    gap: 8px;
+    margin-top: 10px;
+    padding-bottom: 2px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--moon-cream);
+    border-bottom: 1px solid var(--line-dark-strong);
+  }
+  .v6-feature:hover .v6-feature__go {
+    border-color: var(--copper-moon);
+  }
+  .v6-window {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f4f4f7;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 40px 80px -40px rgba(0, 0, 0, 0.8);
+    transition: transform 500ms var(--ease-out);
+  }
+  .v6-feature:hover .v6-window {
+    transform: translateY(-4px);
+  }
+  .v6-window__bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    height: 34px;
+    padding: 0 14px;
+    background: #e9e9ee;
+    border-bottom: 1px solid #dcdce2;
+  }
+  .v6-window__bar i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d0d0d6;
+  }
+  .v6-window__bar span {
+    margin-left: 10px;
+    font-size: 12px;
+    color: #7a7a86;
+  }
+  .v6-window img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .v6-index {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line-dark-strong);
+  }
+  .v6-index a {
+    display: grid;
+    grid-template-columns: 3.5rem minmax(0, 15rem) minmax(0, 1fr) auto;
+    column-gap: 28px;
+    align-items: baseline;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .v6-index__no {
+    font-family: var(--font-num);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--moon-cream-3);
+  }
+  .v6-index__name {
+    display: grid;
+    gap: 4px;
+  }
+  .v6-index__name strong {
+    font-family: var(--font-serif);
+    font-size: 21px;
     font-weight: 900;
+    letter-spacing: 0.02em;
+    color: var(--moon-cream);
     transition: color var(--dur-fast) ease;
   }
-  .v6-products a:hover h3 {
+  .v6-index__name small {
+    font-size: 12.5px;
     color: var(--copper-moon);
   }
-  .v6-products__copy {
-    display: grid;
-    gap: 8px;
-  }
-  .v6-products__tag {
-    font-size: 13px;
-    letter-spacing: 0.03em;
-    color: var(--v6-fg-3);
-  }
-  .v6-products .v6-body {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  .v6-index__note {
     font-size: 15px;
+    line-height: 1.8;
+    color: var(--moon-cream-2);
   }
-  .v6-products h3 .v6-arrow {
-    font-family: var(--font-sans);
-    font-size: 17px;
-    color: var(--v6-fg-3);
+  .v6-index__go {
+    color: var(--moon-cream-3);
+    transition:
+      color var(--dur-fast) ease,
+      transform var(--dur-fast) ease;
+  }
+  .v6-index a:hover strong,
+  .v6-index a:hover .v6-index__go {
+    color: var(--copper-moon);
+  }
+  .v6-index a:hover .v6-index__go {
+    transform: translateX(3px);
   }
   @media (max-width: 1023px) {
     .v6-feature {
       grid-template-columns: 1fr;
-      gap: 28px;
+      gap: 32px;
     }
-    .v6-feature__copy {
-      padding: 0 8px 12px;
-    }
-    .v6-products {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .v6-window {
+      order: -1;
     }
   }
-  @media (max-width: 767px) {
-    .v6-feature {
-      padding: 12px;
-      margin-bottom: 48px;
+  @media (max-width: 720px) {
+    .v6-index a {
+      grid-template-columns: 2.25rem minmax(0, 1fr) auto;
+      row-gap: 8px;
+      column-gap: 14px;
+      padding: 20px 0;
     }
-    .v6-feature__name {
-      font-size: 28px;
+    .v6-index__note {
+      grid-column: 2 / 3;
     }
-    .v6-feature__cta {
-      width: 100%;
-    }
-    .v6-products {
-      grid-template-columns: 1fr;
-      gap: 40px;
+    .v6-index__go {
+      grid-row: 1;
+      grid-column: 3;
     }
   }
 </style>

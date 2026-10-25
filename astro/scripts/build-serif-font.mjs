@@ -26,8 +26,13 @@ const SERIF_CLASSES = new Set([
   'v6-header__brand',
   'v6-menu',
   'v6-os__name',
-  'v6-proof__row',
-  'v6-hero__path',
+  'v6-serif',
+  'v6-retro__quote',
+  'v6-quote',
+  'v6-feature__name',
+  'v6-feature__headline',
+  'v6-index__name',
+  'v6-repos__name',
 ]);
 const ALWAYS = '月明Verse朱志勇0123456789+.,，。、：；！？·—→↗《》「」（）%';
 

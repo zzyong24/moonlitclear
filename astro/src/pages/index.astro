@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/SiteLayout.astro';
 import Hero from '~/components/v6/home/Hero.astro';
-import Stats from '~/components/v6/home/Stats.astro';
+import Retros from '~/components/v6/home/Retros.astro';
 import Products from '~/components/v6/home/Products.astro';
 import OpenSource from '~/components/v6/home/OpenSource.astro';
 import Articles from '~/components/v6/home/Articles.astro';
@@ -24,16 +24,16 @@ const stats = [
 
 <Layout
   metadata={{
-    title: '朱志勇的产品、文章与开源实践',
-    description: '月明Verse｜朱志勇。一个人做产品、做内容、做增长，记录 AI Native 实践、工具实测与产品从 0 到 1。',
+    title: '朱志勇（月明Verse）｜先做出来，再老实复盘',
+    description: `朱志勇，网上叫月明Verse。00 后全栈工程师，下班后用 AI 做自己的产品。这里有 ${projects.length} 个产品、${openSourceEntries.length} 个开源项目，以及 AI 协作、Agent 工程和产品复盘的文章。`,
   }}
 >
   <div class="v6-page">
-    <Hero productCount={projects.length} openSourceCount={openSourceEntries.length} postCount={allPosts.length} />
-    <Stats stats={stats} />
+    <Hero stats={stats} />
+    <Retros posts={allPosts} />
     <Products />
     <OpenSource />
-    <Articles posts={allPosts.slice(0, 8)} total={allPosts.length} />
+    <Articles posts={allPosts} total={allPosts.length} />
     <Offers />
     <ClosingCta />
   </div>
