@@ -1,0 +1,175 @@
+{
+  "checkedAt": "2026-09-23",
+  "source": "GitHub zzyong24 owner repositories filtered to public, non-fork, non-archived moonlit-* Skill repositories",
+  "totalCount": 24,
+  "skills": [
+    {
+      "name": "moonlit-topic-radar",
+      "title": "选题雷达",
+      "category": "选题与研究",
+      "description": "从信息信号里，找到你的内容角度。",
+      "url": "https://github.com/zzyong24/moonlit-topic-radar"
+    },
+    {
+      "name": "moonlit-topic-engine",
+      "title": "选题引擎",
+      "category": "选题与研究",
+      "description": "找到值得讲、也有依据讲的那一题。",
+      "url": "https://github.com/zzyong24/moonlit-topic-engine"
+    },
+    {
+      "name": "moonlit-benchmark-research",
+      "title": "对标研究",
+      "category": "选题与研究",
+      "description": "从真实内容里，找到可借鉴的结构。",
+      "url": "https://github.com/zzyong24/moonlit-benchmark-research"
+    },
+    {
+      "name": "moonlit-douyin-extractor",
+      "title": "抖音数据萃取",
+      "category": "选题与研究",
+      "description": "让作品指标与评论，成为复盘材料。",
+      "url": "https://github.com/zzyong24/moonlit-douyin-extractor"
+    },
+    {
+      "name": "moonlit-content-engine",
+      "title": "内容引擎",
+      "category": "内容与写作",
+      "description": "一个命题，长出多种表达。",
+      "url": "https://github.com/zzyong24/moonlit-content-engine"
+    },
+    {
+      "name": "moonlit-business-copywriter",
+      "title": "商业内容写作",
+      "category": "内容与写作",
+      "description": "把真实任务，写成观众关心的内容。",
+      "url": "https://github.com/zzyong24/moonlit-business-copywriter"
+    },
+    {
+      "name": "moonlit-de-ai-perception",
+      "title": "文案去 AI 味",
+      "category": "内容与写作",
+      "description": "保留事实与口吻，让表达自然一点。",
+      "url": "https://github.com/zzyong24/moonlit-de-ai-perception"
+    },
+    {
+      "name": "moonlit-oral-to-outline",
+      "title": "口述成纲",
+      "category": "内容与写作",
+      "description": "把你讲过的想法，整理成清晰大纲。",
+      "url": "https://github.com/zzyong24/moonlit-oral-to-outline"
+    },
+    {
+      "name": "moonlit-wechat-article",
+      "title": "公众号写作",
+      "category": "内容与写作",
+      "description": "让主张、证据和解释，组成一篇文章。",
+      "url": "https://github.com/zzyong24/moonlit-wechat-article"
+    },
+    {
+      "name": "moonlit-wechat-moments",
+      "title": "朋友圈文案",
+      "category": "内容与写作",
+      "description": "用一个具体片段，说出你的判断。",
+      "url": "https://github.com/zzyong24/moonlit-wechat-moments"
+    },
+    {
+      "name": "moonlit-x-short",
+      "title": "X 短帖与线程",
+      "category": "内容与写作",
+      "description": "一个洞察，或一条连续的论证。",
+      "url": "https://github.com/zzyong24/moonlit-x-short"
+    },
+    {
+      "name": "moonlit-xiaohongshu",
+      "title": "小红书图文",
+      "category": "内容与写作",
+      "description": "一张封面，配一段值得读的内容。",
+      "url": "https://github.com/zzyong24/moonlit-xiaohongshu"
+    },
+    {
+      "name": "moonlit-astronaut-illustration",
+      "title": "宇航员线稿配图",
+      "category": "视觉与视频",
+      "description": "让动作，讲清一个观点。",
+      "url": "https://github.com/zzyong24/moonlit-astronaut-illustration"
+    },
+    {
+      "name": "moonlit-material-illustration",
+      "title": "材料信息图",
+      "category": "视觉与视频",
+      "description": "把看不见的关系，变成看得懂的图。",
+      "url": "https://github.com/zzyong24/moonlit-material-illustration"
+    },
+    {
+      "name": "moonlit-explainer-canvas",
+      "title": "解说画布",
+      "category": "视觉与视频",
+      "description": "边指、边缩放，把关系讲清楚。",
+      "url": "https://github.com/zzyong24/moonlit-explainer-canvas"
+    },
+    {
+      "name": "moonlit-video-script",
+      "title": "视频脚本",
+      "category": "视觉与视频",
+      "description": "每句旁白，都有该解释的画面。",
+      "url": "https://github.com/zzyong24/moonlit-video-script"
+    },
+    {
+      "name": "moonlit-html-video",
+      "title": "HTML 信息视频",
+      "category": "视觉与视频",
+      "description": "让旁白、字幕与画面，同步讲清机制。",
+      "url": "https://github.com/zzyong24/moonlit-html-video"
+    },
+    {
+      "name": "moonlit-talking-head-video",
+      "title": "真人出镜视频",
+      "category": "视觉与视频",
+      "description": "让实录与证据，共同推进讲解。",
+      "url": "https://github.com/zzyong24/moonlit-talking-head-video"
+    },
+    {
+      "name": "moonlit-avatar-video",
+      "title": "数字人横版视频",
+      "category": "视觉与视频",
+      "description": "让人物与信息，沿同一条时间线推进。",
+      "url": "https://github.com/zzyong24/moonlit-avatar-video"
+    },
+    {
+      "name": "moonlit-video-cover",
+      "title": "视频封面",
+      "category": "视觉与视频",
+      "description": "把这一期讲什么，压缩成一眼可读。",
+      "url": "https://github.com/zzyong24/moonlit-video-cover"
+    },
+    {
+      "name": "moonlit-social-publisher",
+      "title": "社交图文发布",
+      "category": "发布与分发",
+      "description": "一次准备，逐平台核对与提交。",
+      "url": "https://github.com/zzyong24/moonlit-social-publisher"
+    },
+    {
+      "name": "moonlit-video-publisher",
+      "title": "四平台视频发布",
+      "category": "发布与分发",
+      "description": "核对每个草稿，再提交每个平台。",
+      "url": "https://github.com/zzyong24/moonlit-video-publisher"
+    },
+    {
+      "name": "moonlit-wechat-publisher",
+      "title": "公众号排版与草稿",
+      "category": "发布与分发",
+      "description": "排好文章，再写入草稿箱。",
+      "url": "https://github.com/zzyong24/moonlit-wechat-publisher"
+    },
+    {
+      "name": "moonlit-skill-creator",
+      "title": "Skill 设计师",
+      "category": "Agent 与工作流",
+      "description": "把可重复的任务，做成可维护的能力。",
+      "url": "https://github.com/zzyong24/moonlit-skill-creator"
+    }
+  ]
+}

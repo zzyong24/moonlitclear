@@ -1,0 +1,20 @@
+{
+  "id": "W-20261003-001",
+  "source": {
+    "kind": "moonlit-creator",
+    "artifact": "wechatArticle",
+    "version": "v03"
+  },
+  "slug": "weekly-report-from-work-records",
+  "visibility": "public",
+  "date": "2026-10-03",
+  "category": "AI 工作流",
+  "tags": ["周报", "Skill", "工作流"],
+  "summary": "把每日记录、上周计划和人工验收连起来，生成有事实边界的周报草稿。",
+  "cover": {
+    "source": "design/cover-sources/creator-W-20261003-001-real-ip-v1.png",
+    "template": "mechanism",
+    "designVersion": "moonlit-web-2",
+    "alt": "月明本人照片与每日记录、周报草稿、人工核对三步笔记板。"
+  }
+}

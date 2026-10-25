@@ -1,0 +1,40 @@
+/* moonlit-web-2: shared light theme, portrait and editorial palette. */
+:root {
+  --brand-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --brand-paper: #fffcf8;
+  --brand-surface: #edf1f5;
+  --brand-ink: #182b42;
+  --brand-body: #394b60;
+  --brand-muted: #536176;
+  --brand-accent: #244e78;
+  --brand-copper: #9b4f2c;
+  --brand-apricot: #f0d6bf;
+  --brand-border: #d7dee6;
+  --brand-radius: 16px;
+}
+
+/* Card palettes follow the productDetails theme names and detail-page accents. */
+[data-card-motion] {
+  --card-accent: var(--brand-copper);
+}
+[data-card-theme='coral'] {
+  --card-accent: #a3462e;
+}
+[data-card-theme='blue'] {
+  --card-accent: #305aa0;
+}
+[data-card-theme='amber'] {
+  --card-accent: #8e5b0b;
+}
+[data-card-theme='sage'] {
+  --card-accent: #4b6548;
+}
+[data-card-theme='peach'] {
+  --card-accent: #9b543b;
+}
+[data-card-theme='plum'] {
+  --card-accent: #79516b;
+}
+[data-card-theme='teal'] {
+  --card-accent: #256373;
+}

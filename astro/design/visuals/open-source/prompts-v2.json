@@ -1,0 +1,33 @@
+{
+  "version": "moonlit-open-source-card-art-v2",
+  "generator": "built-in image_gen",
+  "reference": "OIL 开源目录截图，仅参考卡片清晰度和信息层级；不复刻人物、宠物、配色或排版",
+  "sharedPrompt": "Create a premium editorial 3D still-life for an individual open-source project card. Use a coherent Moonlit visual family: warm ivory background, soft natural shadows, tactile ceramic and paper, restrained navy and brushed copper with a small sage accent. Landscape 4:3 composition, recognizable at small thumbnail size, centered with generous margins; keep the lower 18 percent visually quiet for a website caption overlay. Static single still. No text, letters, numbers, logos, watermark, screenshot, or copied characters.",
+  "captionPolicy": "Render project name and a concise plain-language purpose as HTML over the image. Never ask the image model to draw labels or rely on the illustration alone to explain the tool.",
+  "items": [
+    { "id": "moonlit-topic-radar", "scene": "从信息卡片中筛出选题线索的内容研究桌面" },
+    { "id": "moonlit-topic-engine", "scene": "多条内容路径汇入一张清晰选题卡片" },
+    { "id": "moonlit-benchmark-research", "scene": "不同内容样本与放大观察工具" },
+    { "id": "moonlit-douyin-extractor", "scene": "数据刻度、作品卡片与评论便笺" },
+    { "id": "moonlit-content-engine", "scene": "一个命题长出文章、短帖与视频等多种表达" },
+    { "id": "moonlit-business-copywriter", "scene": "笔、真实任务单与内容卡片" },
+    { "id": "moonlit-de-ai-perception", "scene": "文案草稿经过编辑校准后保留自然语气" },
+    { "id": "moonlit-oral-to-outline", "scene": "零散口述便笺整理成清晰层级大纲" },
+    { "id": "moonlit-wechat-article", "scene": "文章手稿、段落卡片和观点提示" },
+    { "id": "moonlit-wechat-moments", "scene": "打开的随身笔记本和一张私密便笺" },
+    { "id": "moonlit-x-short", "scene": "三张短帖卡片以铜色夹扣串联" },
+    { "id": "moonlit-xiaohongshu", "scene": "相机、空白方形照片和说明卡" },
+    { "id": "moonlit-astronaut-illustration", "scene": "白色宇航头盔、铅笔与讲解卡片" },
+    { "id": "moonlit-material-illustration", "scene": "信息模块通过连接件组成易读结构图" },
+    { "id": "moonlit-explainer-canvas", "scene": "讲解画板上的留白卡片与指示杆" },
+    { "id": "moonlit-video-script", "scene": "脚本手稿、分镜空格与书写工具" },
+    { "id": "moonlit-html-video", "scene": "屏幕中的画面块与时间线" },
+    { "id": "moonlit-talking-head-video", "scene": "摄影机、麦克风、补光灯与拍摄清单" },
+    { "id": "moonlit-avatar-video", "scene": "陶瓷数字人、麦克风和镜头片" },
+    { "id": "moonlit-video-cover", "scene": "留白封面版式与镜头配件" },
+    { "id": "moonlit-social-publisher", "scene": "社交内容卡片与多平台分发路径" },
+    { "id": "moonlit-video-publisher", "scene": "胶片沿分发轨道流向多个内容终端" },
+    { "id": "moonlit-wechat-publisher", "scene": "长文稿、手机预览与排版工具" },
+    { "id": "moonlit-skill-creator", "scene": "能力模块、蓝图和说明手册" }
+  ]
+}

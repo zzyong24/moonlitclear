@@ -1,0 +1,123 @@
+---
+import Layout from '~/layouts/SiteLayout.astro';
+import SinglePost from '~/components/blog/SinglePost.astro';
+import { fetchPosts } from '~/utils/blog';
+import { projects } from '~/data/brand';
+import { articleProjectLinks } from '~/data/article-project-links';
+export const prerender = true;
+export async function getStaticPaths() {
+  return (await fetchPosts()).map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+const { post } = Astro.props;
+const Content = post.Content;
+const related = (await fetchPosts()).filter((p) => p.slug !== post.slug).slice(0, 3);
+const relatedProjectId = articleProjectLinks[post.slug];
+const relatedProject = projects.find((project) => project.id === relatedProjectId);
+if (relatedProjectId && !relatedProject) throw new Error(`Unknown related project: ${relatedProjectId}`);
+---
+
+<Layout
+  metadata={{
+    ...post.metadata,
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      ...post.metadata?.openGraph,
+      type: 'article',
+      article: { publishedTime: post.publishDate.toISOString(), section: post.category?.title },
+    },
+  }}
+  ><div id="main" class="article-shell">
+    <a href="/blog" class="text-arrow back-to-blog">← 返回文章库</a>
+    {post.previewOnly && <p class="local-article-notice">本地预览 · 这篇文章尚未发布到官网</p>}
+    <SinglePost post={post} url={new URL('/' + post.permalink, Astro.site)}>{Content && <Content />}</SinglePost>{
+      relatedProject && (
+        <section class="article-project" aria-labelledby="article-project-heading">
+          <span>文中提到的作品</span>
+          <a href={`/projects/${relatedProject.id}`}>
+            <div>
+              <h2 id="article-project-heading">{relatedProject.name}</h2>
+              <p>{relatedProject.description}</p>
+            </div>
+            <strong aria-hidden="true">↗</strong>
+          </a>
+        </section>
+      )
+    }<section class="related-reading">
+      <h2>继续阅读</h2>{
+        related.map((p) => (
+          <a href={'/' + p.permalink}>
+            {p.title}
+            <span>↗</span>
+          </a>
+        ))
+      }
+    </section>
+  </div></Layout
+>
+
+<style>
+  .article-project {
+    max-width: 720px;
+    margin: 36px auto 0;
+    padding: 0 24px;
+  }
+  .article-project > span {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--brand-accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  .article-project a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 24px;
+    border: 1px solid var(--brand-border);
+    border-radius: var(--brand-radius);
+    background: #fffdf8;
+    color: var(--brand-ink);
+    text-decoration: none;
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+  .article-project a:hover {
+    border-color: var(--brand-accent);
+    box-shadow: 0 8px 24px #182b4210;
+  }
+  .article-project a:focus-visible {
+    outline: 3px solid var(--brand-accent);
+    outline-offset: 3px;
+  }
+  .article-project h2 {
+    margin: 0 0 6px;
+    font-size: 23px;
+    line-height: 1.25;
+  }
+  .article-project p {
+    margin: 0;
+    color: var(--brand-body);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .article-project strong {
+    align-self: flex-start;
+    color: var(--brand-accent);
+    font-size: 24px;
+    font-weight: 400;
+  }
+  .local-article-notice {
+    margin: 24px auto 0;
+    max-width: 900px;
+    padding: 12px 18px;
+    border: 1px solid #17694424;
+    color: #176944;
+    background: #f1f6ee;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+</style>

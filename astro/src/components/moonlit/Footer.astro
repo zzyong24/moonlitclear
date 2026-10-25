@@ -1,0 +1,117 @@
+---
+import { brand, socials } from '~/data/brand';
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const siteLinks = [
+  { label: '作品', href: '/projects' },
+  { label: '开源', href: '/opensource' },
+  { label: '文章', href: '/blog' },
+  { label: '链接', href: '/links' },
+];
+const onLinksPage = currentPath === '/links';
+---
+
+<footer class="moon-footer">
+  <div class="footer-top">
+    <p>
+      {onLinksPage ? '做过的东西，' : '谢谢你来看看。'}<br /><span
+        >{onLinksPage ? '也欢迎看看。' : '有问题，随时聊。'}</span
+      >
+    </p><a
+      href={onLinksPage ? '/projects' : '/links'}
+      class="round-arrow"
+      aria-label={onLinksPage ? '查看作品' : '了解交流方式'}>↗</a
+    >
+  </div>
+  <nav class="footer-site-nav" aria-label="站内浏览">
+    <span>继续浏览</span>
+    <div>
+      {
+        siteLinks.map(({ label, href }) => (
+          <a href={href} aria-current={currentPath === href ? 'page' : undefined}>
+            {label} ↗
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+  <div class="footer-bottom">
+    <a class="footer-brand" href="/"
+      ><img src="/brand/moonlit-verse-avatar-v1.webp" alt="" width="28" height="28" loading="lazy" />{brand.name}</a
+    ><div>
+      {
+        socials.map((s) => (
+          <a href={s.url} target="_blank" rel="noreferrer">
+            {s.name} ↗
+          </a>
+        ))
+      }
+    </div><small>© {new Date().getFullYear()} {brand.alias} · <a href="/feed.xml">RSS</a></small>
+  </div>
+</footer>
+
+<style>
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-brand img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .footer-site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 0;
+    border-top: 1px solid var(--brand-border);
+  }
+  .footer-site-nav > span {
+    color: var(--brand-muted);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+  .footer-site-nav > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(18px, 3vw, 42px);
+  }
+  .footer-site-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    color: var(--brand-ink);
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .footer-site-nav a:hover,
+  .footer-site-nav a[aria-current='page'] {
+    color: var(--brand-accent);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+  .footer-site-nav a:focus-visible {
+    outline: 2px solid var(--brand-accent);
+    outline-offset: 4px;
+  }
+  @media (max-width: 650px) {
+    .footer-site-nav {
+      align-items: stretch;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .footer-site-nav > div {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .footer-site-nav a {
+      min-height: 44px;
+      font-size: 14px;
+    }
+  }
+</style>

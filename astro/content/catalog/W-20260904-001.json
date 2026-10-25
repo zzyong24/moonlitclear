@@ -1,0 +1,20 @@
+{
+  "id": "W-20260904-001",
+  "source": {
+    "kind": "moonlit-creator",
+    "artifact": "wechatArticle",
+    "version": "v1"
+  },
+  "slug": "nomifun-digital-companion",
+  "visibility": "public",
+  "date": "2026-09-05",
+  "category": "Agent 与产品",
+  "tags": ["AI Agent", "开源产品", "NomiFun"],
+  "summary": "拆解 NomiFun 如何把长期记忆、知识、Skill 和独立工作区组织成跨会话延续的数字伙伴，并附上实际产品证据。",
+  "cover": {
+    "source": "design/cover-sources/creator-W-20260904-001-v1.webp",
+    "template": "mechanism",
+    "designVersion": "moonlit-web-2",
+    "alt": "真人作者与体现长期记忆、伙伴技能、知识及独立工作区的产品笔记板。"
+  }
+}

@@ -1,0 +1,50 @@
+---
+import Layout from '~/layouts/SiteLayout.astro';
+import ProjectCards from '~/components/moonlit/ProjectCards.astro';
+---
+
+<Layout metadata={{ title: '产品与开源作品' }}
+  ><section class="page-intro" id="main">
+    <span class="eyebrow">THE WORK / 产品与开源</span><h1>做过的产品，<br /><em>还在打磨。</em></h1><p>
+      从内容创作、开发工具到日常记录，做一些自己也会用的产品。
+    </p>
+  </section><div class="projects-catalog"><ProjectCards /></div><div class="opensource-more">
+    <span class="eyebrow">OPEN SOURCE</span><p>独立软件和创作工具统一收录在开源目录。</p><a href="/opensource"
+      >浏览全部开源项目 ↗</a
+    >
+  </div></Layout
+>
+
+<style>
+  .projects-catalog {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+  .opensource-more {
+    max-width: 1180px;
+    margin: 35px auto 70px;
+    padding: 25px 30px;
+    border: 1px solid var(--brand-border);
+    border-radius: 14px;
+    background: #fffdf6d9;
+  }
+  .opensource-more p {
+    margin: 6px 0 10px;
+    color: var(--brand-body);
+  }
+  .opensource-more a {
+    color: var(--brand-accent);
+    font-weight: 650;
+    text-decoration: none;
+  }
+  @media (max-width: 650px) {
+    .projects-catalog {
+      padding: 0 24px;
+    }
+    .opensource-more {
+      margin: 28px 24px 50px;
+      padding: 20px;
+    }
+  }
+</style>

@@ -1,115 +1,51 @@
-# 🌙 MoonlitClear — 个人博客 & 数字花园
+# 月明Verse · 个人品牌官网
 
-> 造系统的工程师 · AI 实践者 · 跨界探索者 · 创造者
+线上网站：[aitongban.cloud](https://aitongban.cloud/)。
 
-MoonlitClear 的个人站点，基于 [cali.so](https://github.com/CaliCastle/cali.so) 开源项目二次开发。
+**当前使用的 Astro 版完整源码在 [`astro/`](astro/)。** 原 Next.js 版文件保留在仓库根目录，历史说明见 [README.nextjs.md](README.nextjs.md)，当前网站已不使用旧版运行方式。
 
-博客内容采用 **Vault 模式**（本地 Markdown 文件驱动），告别 CMS 依赖，用 Obsidian 写文章，Git 管版本。
+## 最新源码
 
-## ✨ 特色功能
+- [页面、组件与样式](astro/src/)
+- [共用卡片特效](astro/src/components/moonlit/CardEffect.astro)
+- [全幅分层 WebGL 背景](astro/src/scripts/site-atmosphere.ts)
+- [产品与开源数据](astro/src/data/)
+- [文章目录与同步脚本](astro/content/)、[维护方案](astro/docs/site-maintenance.md)
+- [文生图母版](astro/design/)、[静态资源](astro/public/)
+- [版本打包与部署说明](astro/docs/deployment.md)
 
-- 📝 **Vault 博客系统** — 本地 Markdown 文件即文章，支持 frontmatter、自动生成 slug、阅读时间估算
-- 🎨 **项目展示** — 静态配置，支持 emoji 图标、技术标签、项目状态
-- 💬 **评论 & 留言墙** — 基于 Clerk 认证 + Neon PostgreSQL
-- 📧 **邮件订阅** — Resend + React Email，支持订阅确认 & 留言通知
-- 📊 **浏览统计** — Upstash Redis 驱动的阅读量 & 反应计数
-- 🎭 **Framer Motion 动画** — 流畅的页面过渡和交互动效
+Astro 静态预渲染 + Tailwind CSS，Node 标准库文件服务器负责运行，内容维护使用 Markdown 与 JSON。真人封面、作品演示、产品/文章/开源共用闪卡，以及全幅分层背景均在当前源码中。
 
-## 🛠 技术栈
+## 本地运行
 
-| 层 | 技术 | 说明 |
-|---|------|------|
-| 框架 | [Next.js 14](https://nextjs.org/) (App Router) | 服务端渲染 + 静态生成 |
-| 语言 | [TypeScript](https://www.typescriptlang.org/) | 全栈类型安全 |
-| 样式 | [Tailwind CSS](https://tailwindcss.com/) | 原子化 CSS |
-| 内容 | Vault (本地 Markdown) | Obsidian 写文章，Git 管版本 |
-| 数据库 | [Neon](https://neon.tech/) + [Drizzle ORM](https://orm.drizzle.team/) | 评论 / 留言 / 订阅 |
-| 认证 | [Clerk](https://clerk.com/) | 用户登录（留言 / 评论） |
-| 邮件 | [Resend](https://resend.com/) + [React Email](https://react.email) | 订阅确认 / 留言通知 |
-| 缓存 | [Upstash Redis](https://upstash.com/) | 浏览统计 / 反应计数 |
-| 动画 | [Framer Motion](https://www.framer.com/motion/) | 页面过渡动画 |
-| UI | [Radix UI](https://www.radix-ui.com/) | 无障碍组件 |
-| 部署 | [Vercel](https://vercel.com/) | 自动构建部署 |
-
-## 🚀 快速开始
-
-### 环境要求
-
-- Node.js 18+
-- pnpm
-
-### 安装 & 运行
+需要 Node.js >=22.22.3；构建工具链使用 npm。请在 `astro/` 目录执行，而非旧 Next.js 根目录：
 
 ```bash
-# 克隆仓库
-git clone https://github.com/zzyong24/cali.so.git
-cd cali.so
+git clone https://github.com/zzyong24/moonlitclear.git
+cd moonlitclear/astro
+npm ci
 
-# 安装依赖
-pnpm install
-
-# 复制环境变量并配置
-cp .env.example .env.local
-
-# 启动开发服务器
-pnpm dev
+# Creator 文章原稿是外部内容依赖，不随网站源码公开
+export MOONLIT_CREATOR_ROOT="/path/to/your/moonlit-creator"
+npm run assets:build
+npm run content:sync
+npm run dev -- --host 127.0.0.1 --port 4333
 ```
 
-### 环境变量
+`MOONLIT_CREATOR_ROOT` 需包含目录配置指定的作品及锁定版本；仅克隆源码不等于已取得作者的原稿工作区。内容快照、草稿、node_modules、dist 与生产发布包不进 Git。没有外部作品库时，不要把缺源报错误认为构建已完成；按 [文章工作流](astro/docs/content-workflow.md) 准备自己的内容源。
 
-查看 `.env.example` 了解所有配置项。核心变量：
+## 验证与构建
 
-| 变量 | 必需 | 说明 |
-|------|------|------|
-| `NEXT_PUBLIC_SITE_URL` | ✅ | 站点 URL |
-| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | ✅ | Clerk 认证公钥 |
-| `CLERK_SECRET_KEY` | ✅ | Clerk 认证密钥 |
-| `DATABASE_URL` | ⚠️ | PostgreSQL 连接串（评论 / 留言需要） |
-| `RESEND_API_KEY` | ⚠️ | 邮件服务（订阅通知需要） |
-| `UPSTASH_REDIS_REST_URL` | ⚠️ | Redis（浏览统计需要） |
-
-## 📝 写博客文章
-
-在 `vault/space/crafted/writing/` 目录创建 Markdown 文件即可：
-
-```yaml
----
-title: "文章标题"
-publish_slug: "article-slug"
-publish_description: "一句话描述"
-created: "2026-03-19 10:00:00"
-tags: ["ai", "engineering"]
-mood: "happy"
----
-
-# 文章标题
-
-正文内容...
+```bash
+cd astro
+npm run check
+npm run test:content
+npm run build
+npm run pack
 ```
 
-文件命名规范：`YYYYMMDD_文章标题.md`，保存后开发服务器自动热更新。
+此仓库是网站源码同步出口。线上部署需独立执行备份、候选验证、切换和公网检查；GitHub 推送不会由本仓库的 workflow 自动改动当前生产服务器。本次同步不表示本地新增文章已上线。
 
-## 📁 项目结构
+## 许可与素材
 
-```
-cali.so/
-├── app/                    # Next.js App Router
-│   ├── (main)/             # 主要页面（首页/博客/项目/留言墙）
-│   ├── admin/              # 管理后台
-│   └── api/                # API 路由
-├── assets/                 # 头像、图标等静态资源
-├── components/             # 通用组件（评论、Markdown 渲染等）
-├── config/                 # 导航、邮件、缓存 key 配置
-├── db/                     # 数据库 schema
-├── emails/                 # React Email 邮件模板
-├── lib/                    # 工具库（vault 引擎、SEO 等）
-└── vault/                  # 博客文章（Markdown 文件）
-```
-
-## 🙏 致谢
-
-本项目基于 [Cali Castle](https://github.com/CaliCastle) 的 [cali.so](https://github.com/CaliCastle/cali.so) 开源项目开发，感谢 Cali 的慷慨分享。
-
-## 📜 License
-
-MIT
+Astro 版保留上游 AstroWind 的 [MIT 许可证](astro/LICENSE.md) 和来源说明；旧版保留原项目的历史与说明。作者肖像、文章、品牌图、付款二维码和其他个人素材不随框架 MIT 自动授权他人使用。复用代码时请替换自己的身份、内容和素材。

@@ -1,0 +1,429 @@
+---
+import { brand } from '~/data/brand';
+import { getImage } from 'astro:assets';
+import portrait from '~/assets/moonlit/portrait.png';
+
+const photo = await getImage({ src: portrait, width: 600, format: 'webp', quality: 85 });
+
+const communityUrl = 'https://wx.zsxq.com/group/88882141588552';
+// 飞书应用尚缺创建 Base 的 scope；授权后替换为新建投稿表单的公开链接。
+const submissionUrl = `mailto:${brand.email}?subject=${encodeURIComponent('作品投稿｜月明Verse官网')}`;
+
+const consultationTopics = [
+  'AI 原生开发：从需求、Agent 分工到验证与交付的实际工作流',
+  '产品从 0 到 1：方向、商业模式、上线、收款与首批用户',
+  '个人助理搭建：两次咨询中解决飞书机器人、本地知识库与消息闭环',
+  'AI 辅助自媒体：选题、脚本、制作和复盘怎样连成流程',
+];
+---
+
+<div class="links-panel">
+  <section class="links-intro" aria-labelledby="links-title">
+    <div>
+      <span class="eyebrow">THE PERSON / 月明Verse</span>
+      <h2 id="links-title">你好，我是朱志勇。<br /><em>也叫月明Verse。</em></h2>
+      <p>00 年生，在武汉长大，ISTP。全栈开发工程师，也是在职独立开发者。</p>
+      <p>一个人做产品、做内容、做增长。我持续实战 AI Native，分享工具实测，以及产品从 0 到 1 走过的路。</p>
+      <div class="intro-tags">
+        <span>全栈开发</span><span>AI Native</span><span>独立产品</span><span>内容与增长</span>
+      </div>
+    </div>
+    <div class="links-portrait">
+      <img
+        src={photo.src}
+        alt="朱志勇身穿深蓝西装和白色上衣的全身形象照"
+        width="600"
+        height={Math.round((600 * portrait.height) / portrait.width)}
+        loading="lazy"
+      />
+      <span>朱志勇 / 月明Verse</span>
+    </div>
+  </section>
+
+  <div class="links-section-title">
+    <span class="eyebrow">WAYS TO CONNECT / 01—03</span><h3>从你的具体问题开始。</h3>
+  </div>
+  <div class="offer-grid">
+    <article class="offer-card consult-card">
+      <div class="offer-top"><span>01 / 一对一</span><strong>¥399 <small>/ 小时</small></strong></div>
+      <h4>咨询</h4>
+      <p>带着问题来。我们一起梳理现状、拆开卡点，讨论下一步怎么做。</p>
+      <ul>{consultationTopics.map((topic) => <li>{topic}</li>)}</ul>
+      <button type="button" class="offer-action primary" data-payment-open
+        >查看咨询付款方式 <span aria-hidden="true">↗</span></button
+      >
+    </article>
+    <article class="offer-card community-card">
+      <div class="offer-top"><span>02 / 持续交流</span><strong>长期</strong></div>
+      <h4>知识星球 · 交流答疑</h4>
+      <p>把值得继续讨论的 AI 工具、产品实践和内容创作问题放在一起，方便持续交流。</p>
+      <div class="offer-note">适合想持续关注我的实践，或带着具体问题来讨论的朋友。</div>
+      <a class="offer-action" href={communityUrl} target="_blank" rel="noreferrer"
+        >进入知识星球 <span aria-hidden="true">↗</span></a
+      >
+    </article>
+    <article class="offer-card submission-card">
+      <div class="offer-top"><span>03 / 分享作品</span><strong>开放</strong></div>
+      <h4>作品投稿</h4>
+      <p>做出了能打开、能运行的作品？欢迎发来。好的、有趣的项目，我会了解后再决定是否分享给更多人。</p>
+      <div class="offer-note">请附作品名称、可访问链接、解决的问题和你的联系方式。</div>
+      <a class="offer-action" href={submissionUrl}>先通过邮件投稿 <span aria-hidden="true">↗</span></a>
+    </article>
+  </div>
+
+  <dialog class="payment-dialog" aria-labelledby="payment-title">
+    <div class="payment-head">
+      <span class="eyebrow">ONE-ON-ONE / 一对一咨询</span><button
+        type="button"
+        data-payment-close
+        aria-label="关闭付款说明">×</button
+      >
+    </div>
+    <div class="payment-body">
+      <div>
+        <h2 id="payment-title">咨询 · ¥399 / 小时</h2>
+        <p>用支付宝扫码付款后，请在付款备注里填写你的微信号。我看到后会主动添加你，再约时间和确认要讨论的问题。</p>
+        <ol><li>扫码支付咨询费用</li><li>付款备注填写你的微信号</li><li>我添加你，确认问题与时间</li></ol>
+        <small>请先确认微信号填写准确，以便我联系你。</small>
+      </div>
+      <figure>
+        <img src="/alipay-consult.jpg" width="320" height="314" alt="月明一对一咨询的支付宝收款二维码" /><figcaption>
+          支付宝收款码 · ¥399 / 小时
+        </figcaption>
+      </figure>
+    </div>
+  </dialog>
+</div>
+
+<script>
+  function setupPaymentDialog() {
+    const dialog = document.querySelector<HTMLDialogElement>('.payment-dialog');
+    const open = document.querySelector<HTMLButtonElement>('[data-payment-open]');
+    const close = dialog?.querySelector<HTMLButtonElement>('[data-payment-close]');
+    if (!dialog || !open || !close) return;
+    open.onclick = () => dialog.showModal();
+    close.onclick = () => dialog.close();
+    dialog.onclick = (event) => {
+      if (event.target === dialog) dialog.close();
+    };
+  }
+  document.addEventListener('astro:page-load', setupPaymentDialog);
+</script>
+
+<style>
+  .links-panel {
+    color: var(--brand-ink);
+  }
+  .links-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(210px, 0.7fr);
+    gap: clamp(24px, 5vw, 90px);
+    align-items: center;
+    padding: 20px 0 58px;
+    border-bottom: 1px solid var(--brand-border);
+  }
+  .links-intro h2 {
+    margin: 18px 0 24px;
+    font-size: clamp(36px, 4.2vw, 58px);
+    line-height: 1.22;
+    letter-spacing: -0.05em;
+  }
+  .links-intro h2 em {
+    color: var(--brand-accent);
+    font-style: normal;
+  }
+  .links-intro p {
+    max-width: 680px;
+    margin: 0 0 15px;
+    color: var(--brand-body);
+    font-size: 17px;
+    line-height: 1.85;
+  }
+  .intro-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 25px;
+  }
+  .intro-tags span {
+    padding: 7px 12px;
+    border: 1px solid var(--brand-border);
+    border-radius: 999px;
+    color: var(--brand-accent);
+    background: #fff;
+    font-size: 12px;
+  }
+  .links-portrait {
+    overflow: hidden;
+    border: 1px solid var(--brand-border);
+    border-radius: 22px;
+    background: #f3f0e9;
+  }
+  .links-portrait img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+  .links-portrait span {
+    display: block;
+    padding: 12px 16px;
+    background: #fffdf7;
+    font-size: 12px;
+    font-weight: 650;
+  }
+  .links-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 15px;
+    padding: 42px 0 24px;
+  }
+  .links-section-title h3 {
+    margin: 0;
+    font-size: 27px;
+    letter-spacing: -0.03em;
+  }
+  .offer-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr;
+    gap: 16px;
+  }
+  .offer-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 450px;
+    padding: 25px;
+    border: 1px solid var(--brand-border);
+    border-radius: 20px;
+    background: #fffdf8;
+    box-shadow: 0 10px 32px #2735290a;
+  }
+  .consult-card {
+    background: linear-gradient(145deg, #fff9e8, #fffefd 67%);
+    border-color: #e9d6a5;
+  }
+  .community-card {
+    background: linear-gradient(145deg, #f0f5ef, #fffefd 67%);
+  }
+  .submission-card {
+    background: linear-gradient(145deg, #f5f0ec, #fffefd 67%);
+  }
+  .offer-top {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--brand-accent);
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .offer-top strong {
+    color: var(--brand-ink);
+    font-size: 22px;
+    white-space: nowrap;
+  }
+  .offer-top small {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .offer-card h4 {
+    margin: 33px 0 10px;
+    font-size: clamp(26px, 2.5vw, 35px);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+  }
+  .offer-card p {
+    margin: 0 0 17px;
+    color: var(--brand-body);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .offer-card ul {
+    display: grid;
+    gap: 10px;
+    padding: 16px 0 0 17px;
+    margin: 0 0 25px;
+    border-top: 1px solid var(--brand-border);
+    color: var(--brand-body);
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .offer-card li::marker {
+    color: var(--brand-copper);
+  }
+  .offer-note {
+    padding-top: 15px;
+    margin-top: 8px;
+    border-top: 1px solid var(--brand-border);
+    color: var(--brand-muted);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .offer-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 16px;
+    margin-top: auto;
+    border: 1px solid var(--brand-ink);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--brand-ink);
+    font: 650 14px var(--brand-font);
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .offer-action.primary {
+    background: var(--brand-ink);
+    color: #fff;
+  }
+  .offer-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px #2735291a;
+  }
+  .payment-dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: min(760px, calc(100vw - 28px));
+    max-height: min(90vh, 850px);
+    padding: 0;
+    border: 1px solid var(--brand-border);
+    border-radius: 22px;
+    background: #fffdf8;
+    color: var(--brand-ink);
+    box-shadow: 0 30px 90px #182b4255;
+  }
+  .payment-dialog::backdrop {
+    background: #12202bb8;
+    backdrop-filter: blur(7px);
+  }
+  .payment-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 25px;
+    border-bottom: 1px solid var(--brand-border);
+  }
+  .payment-head button {
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--brand-border);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--brand-ink);
+    font-size: 25px;
+    line-height: 1;
+  }
+  .payment-body {
+    display: grid;
+    grid-template-columns: 1fr minmax(220px, 0.8fr);
+    gap: 32px;
+    padding: 32px;
+  }
+  .payment-body h2 {
+    margin: 0 0 15px;
+    font-size: 33px;
+    letter-spacing: -0.04em;
+  }
+  .payment-body p,
+  .payment-body li {
+    color: var(--brand-body);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .payment-body ol {
+    padding-left: 21px;
+    margin: 22px 0;
+  }
+  .payment-body li {
+    padding-left: 6px;
+    margin-bottom: 8px;
+  }
+  .payment-body li::marker {
+    color: var(--brand-copper);
+    font-weight: 700;
+  }
+  .payment-body small {
+    color: var(--brand-muted);
+    font-size: 12px;
+  }
+  .payment-body figure {
+    align-self: center;
+    margin: 0;
+    padding: 12px;
+    border: 1px solid var(--brand-border);
+    border-radius: 16px;
+    background: #fff;
+    text-align: center;
+  }
+  .payment-body img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1193/1170;
+    object-fit: contain;
+  }
+  .payment-body figcaption {
+    margin-top: 7px;
+    color: var(--brand-body);
+    font-size: 12px;
+  }
+  @media (max-width: 900px) {
+    .offer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .consult-card {
+      grid-column: 1 / -1;
+      min-height: 0;
+    }
+  }
+  @media (max-width: 650px) {
+    .links-intro,
+    .offer-grid,
+    .payment-body {
+      grid-template-columns: 1fr;
+    }
+    .links-intro {
+      gap: 25px;
+      padding-bottom: 35px;
+    }
+    .links-portrait {
+      max-width: 300px;
+    }
+    .links-portrait img {
+      height: 260px;
+    }
+    .links-section-title {
+      display: block;
+    }
+    .links-section-title h3 {
+      margin-top: 8px;
+    }
+    .offer-card,
+    .consult-card {
+      grid-column: auto;
+      min-height: 0;
+    }
+    .offer-action {
+      margin-top: 25px;
+    }
+    .payment-body {
+      gap: 17px;
+      padding: 23px;
+    }
+    .payment-body h2 {
+      font-size: 28px;
+    }
+    .payment-body figure {
+      width: min(260px, 100%);
+      justify-self: center;
+    }
+  }
+</style>

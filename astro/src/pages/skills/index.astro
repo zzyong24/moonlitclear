@@ -1,0 +1,25 @@
+---
+import Layout from '~/layouts/SiteLayout.astro';
+---
+
+<Layout metadata={{ title: '开源', description: '开源项目已统一收录到开源目录。' }}>
+  <meta http-equiv="refresh" content="0;url=/opensource" />
+  <main id="main" class="legacy-redirect">
+    <p>开源项目目录已合并。</p>
+    <a href="/opensource">前往开源目录 ↗</a>
+  </main>
+</Layout>
+<script>
+  location.replace('/opensource');
+</script>
+<style>
+  .legacy-redirect {
+    max-width: 1180px;
+    margin: 70px auto;
+    padding: 30px;
+    color: var(--brand-ink);
+  }
+  .legacy-redirect a {
+    color: var(--brand-accent);
+  }
+</style>

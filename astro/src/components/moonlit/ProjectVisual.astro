@@ -1,0 +1,142 @@
+---
+import { visualAsset } from '~/data/visuals';
+interface Props {
+  kind: string;
+  title: string;
+  steps: string[];
+}
+const { kind, title, steps } = Astro.props;
+const asset = visualAsset(kind);
+const src = asset.variants.at(-1)!.url;
+---
+
+<div class="project-visual" data-project-visual aria-label={`${asset.alt}。鼠标左右移动查看过程。`}>
+  <div class="visual-label"><span>{title}</span><span class="mouse-hint">左右移动探索 ↔</span></div>
+  <div class="visual-frames" style={`aspect-ratio:${asset.width}/${asset.height}`} aria-hidden="true">
+    {
+      [0, 1, 2, 3].map((index) => (
+        <div class="motion-frame" data-motion-frame={index}>
+          <img
+            src={src}
+            srcset={asset.variants.map((v) => `${v.url} ${v.width}w`).join(', ')}
+            sizes="(max-width: 900px) 200vw, 1120px"
+            width={asset.width}
+            height={asset.height}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            draggable="false"
+            style={`left:${(index % 2) * -100}%;top:${Math.floor(index / 2) * -100}%;`}
+          />
+        </div>
+      ))
+    }
+  </div>
+  <ol class="visual-steps">
+    {
+      steps.map((step, i) => (
+        <li data-visual-step={i}>
+          <span>0{i + 1}</span>
+          {step}
+        </li>
+      ))
+    }
+  </ol>
+</div>
+<style>
+  .project-visual {
+    border: 1px solid #20252214;
+    background: var(--brand-surface);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    contain: layout paint;
+    color: var(--brand-ink);
+    user-select: none;
+  }
+  .visual-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 20px 22px 16px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--brand-muted);
+    position: relative;
+    z-index: 1;
+  }
+  .mouse-hint {
+    letter-spacing: 0;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .visual-frames {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .motion-frame {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+  .project-visual[data-pointer-active='true'] .motion-frame {
+    transition: opacity 120ms ease-out;
+  }
+  .motion-frame:last-child {
+    opacity: 1;
+  }
+  .motion-frame img {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    max-width: none;
+    pointer-events: none;
+  }
+  .visual-steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0 22px;
+    padding: 18px 0;
+    border-top: 1px solid #20252216;
+    list-style: none;
+    font-size: 13px;
+    color: var(--brand-muted);
+  }
+  .visual-steps li {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .visual-steps li > span {
+    font-size: 11px;
+    opacity: 1;
+  }
+  .visual-steps li[data-active='true'] {
+    color: var(--brand-accent);
+  }
+  @media (max-width: 700px) {
+    .visual-label {
+      padding: 17px 18px 13px;
+      font-size: 12px;
+    }
+    .visual-steps {
+      margin: 0 18px;
+      padding: 15px 0;
+      font-size: 12px;
+    }
+    .visual-steps li {
+      gap: 5px;
+    }
+  }
+  @media (hover: none), (prefers-reduced-motion: reduce) {
+    .project-visual[data-pointer-active='true'] .motion-frame {
+      transition: none;
+    }
+    .mouse-hint {
+      display: none;
+    }
+  }
+</style>

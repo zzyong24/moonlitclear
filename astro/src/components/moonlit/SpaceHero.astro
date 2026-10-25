@@ -1,0 +1,51 @@
+---
+import { getImage } from 'astro:assets';
+import astronaut from '~/assets/moonlit/astronaut-original.png';
+const poster = await getImage({ src: astronaut, width: 768, format: 'webp' });
+---
+
+<section class="space-hero" id="main" aria-labelledby="hero-title">
+  <div class="space-canvas" aria-hidden="true"></div><div class="nebula" aria-hidden="true"></div>
+  <div class="hero-watermark" aria-hidden="true">MOONLIT</div>
+  <div class="hero-content">
+    <div class="signal"><span></span> AI NATIVE BUILDER <i>/</i> 月明Verse</div><h1 id="hero-title">
+      AI 为基。<br /><span>认知破界。</span>
+    </h1><p class="hero-intro">探索个体与组织的下一种可能。<br />用 AI 把想法做成产品，把经验长成系统。</p><div
+      class="hero-actions"
+    >
+      <a href="#work" class="glow-button">进入作品世界 <span>↗</span></a><a href="/about" class="quiet-button"
+        >认识月明 <span>→</span></a
+      >
+    </div><p class="hero-coordinate">INDEPENDENT MIND. <span>COLLECTIVE POWER.</span></p>
+  </div>
+  <div class="explorer-stage">
+    <img
+      class="character-video character-poster"
+      src={poster.src}
+      width={poster.attributes.width}
+      height={poster.attributes.height}
+      alt="月明的绿色月牙宇航员"
+      fetchpriority="high"
+    /><span class="orbit-tag"><i></i> MOONLIT EXPLORER<small>好奇心，永不着陆。</small></span>
+  </div>
+  <p class="motion-hint">移动鼠标，和月明打个招呼</p>
+  <div class="hero-dock">
+    <a href="#work"><span>01 / BUILD</span><strong>产品与作品</strong><i>↗</i></a><a href="#articles"
+      ><span>02 / THINK</span><strong>思考与记录</strong><i>↗</i></a
+    ><a href="#connect"><span>03 / CONNECT</span><strong>一起创造</strong><i>↗</i></a>
+  </div>
+</section>
+<script>
+  import { startHeroMotion } from '~/scripts/hero-motion';
+  let cleanup: (() => void) | undefined;
+  const init = () => {
+    cleanup?.();
+    const el = document.querySelector<HTMLElement>('.space-hero');
+    if (el) cleanup = startHeroMotion(el);
+  };
+  document.addEventListener('astro:page-load', init);
+  document.addEventListener('astro:before-swap', () => {
+    cleanup?.();
+    cleanup = undefined;
+  });
+</script>

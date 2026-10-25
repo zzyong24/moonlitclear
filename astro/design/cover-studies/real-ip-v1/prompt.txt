@@ -1,0 +1,25 @@
+Create ONE finished landscape 16:9 Chinese personal-brand article cover through image-to-image composition.
+
+INPUT 1 is a screenshot of an OIL article cover. Use it ONLY as the visual layout/style reference: soft light warm-white graph-paper background, gentle mint and lavender edge washes, huge crisp dark Chinese headline on the left, an authentic-looking content/document panel on the center-right, and a photographic creator cutout prominently in the lower right. REMOVE the reference creator entirely. Do not reproduce his identity, glasses, hoodie, Feishu logo, brand names, or original copy.
+INPUT 2 is the user's actual portrait and is the ONLY identity reference. Preserve this exact man's recognizable face, hairstyle, face shape, natural skin texture, gentle open smile, and navy jacket with white T-shirt. Use a real-photo cutout from this portrait, not an invented person, beauty-filtered face, illustration, astronaut, mascot, or 3D character. Crop roughly waist/chest-up in the lower-right; keep his head large and lively like the reference, with a very thin warm-white cutout edge and natural soft shadow. Preserve his actual casual standing posture as closely as possible; avoid inventing gestures or hands.
+
+The content comes from his real article "别急着上 Agent，先把业务拆成五层". It uses a hypothetical industrial equipment inquiry to explain five layers: 数据层 (source facts), 语义层 (business objects and relationships), Skill 层 (reusable actions), 业务编排层 (sequence and handoffs), Agent 层 (judgment within boundaries). This is his authored framework, not fabricated metrics, client results, awards, dashboards, or a claimed existing software UI.
+
+COMPOSITION: produce a polished editorial creator thumbnail, 16:9, about 1920x1080, using the OIL screenshot's high readability and human warmth, adapted to this man and his content. Left ~50% headline. Center/back-right a gently angled, thin white document/notes panel with REAL content labels. Right/front ~30% photographic person cutout, enough scale to recognize him in a small card, never covering the main headline. No thick cards all over the scene, no floating ceramic modules.
+EXACT TEXT: small eyebrow "月明水清深 · AI 实践".
+Main headline, bold black Chinese sans serif, three lines:
+"别急着上 Agent"
+"先把业务"
+"拆成五层"
+Highlight "五层" with a simple mint-green marker background.
+Small subline below the main title: "从一条业务询盘，拆清 AI 的分工".
+The document panel title: "企业 AI · 五层拆解".
+Within the document, five clean readable rows in this exact top-to-bottom order:
+"01 数据层"
+"02 语义层"
+"03 Skill 层"
+"04 业务编排层"
+"05 Agent 层"
+Optionally use very short true annotations: "事实来源", "对象与关系", "可复用动作", "顺序与交接", "边界内判断".
+Restrained delicate green connector line may link the rows. The document must read as an editorial summary of the real article, not a forged screenshot. Keep text sharp and spelled correctly; don't add invented numbers or promises.
+Visual mood: approachable young practitioner explaining something he has thought through, natural photo texture, light editorial collage, practical and thoughtful rather than corporate promo. Match the reference's calm light color and believable creator presence. No astronaut, no cartoon avatar, no anonymous stock-photo man, no sci-fi 3D machinery, no OIL logo, no Feishu logo, no glossy plastic skin, no shouting face, no busy icons. Generate the whole final bitmap including typography.

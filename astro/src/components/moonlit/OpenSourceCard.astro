@@ -1,0 +1,222 @@
+---
+import CardEffect from './CardEffect.astro';
+import { openSourceTheme, type OpenSourceEntry } from '~/data/open-source';
+import { githubStars } from '~/data/github-stars';
+import { visualAsset } from '~/data/visuals';
+interface Props {
+  item: OpenSourceEntry;
+  compact?: boolean;
+}
+const { item, compact = false } = Astro.props;
+const asset = visualAsset(item.image);
+const image = asset.variants.at(-1)!;
+const stars = githubStars(item.url);
+const theme = openSourceTheme(item);
+---
+
+<article
+  class:list={['opensource-card', { 'opensource-card--compact': compact }]}
+  data-category={item.category}
+  data-search={`${item.name} ${item.title} ${item.description} ${item.category}`.toLocaleLowerCase()}
+>
+  <a
+    href={item.url}
+    target="_blank"
+    rel="noreferrer"
+    data-card-theme={theme}
+    aria-label={`查看 ${item.title} 开源仓库${stars === undefined ? '' : `，GitHub Star ${stars}`}`}
+  >
+    <CardEffect
+      kind="opensource"
+      theme={theme}
+      visualClass="opensource-art"
+      aspect="1.42"
+      radius={compact ? '12px 12px 0 0' : '14px 14px 0 0'}
+      border="none"
+    >
+      <img
+        src={image.url}
+        srcset={asset.variants.map((v) => `${v.url} ${v.width}w`).join(', ')}
+        sizes={compact
+          ? '(max-width:430px) 90vw, (max-width:760px) 45vw, (max-width:1060px) 30vw, 280px'
+          : '(max-width:650px) 90vw, 560px'}
+        width={image.width}
+        height={image.height}
+        alt={`${item.title} 的 AI 生成概念图`}
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="opensource-art-caption">{item.description}</span>
+      <span class="opensource-type">{item.type}</span>
+      <span class="opensource-arrow" aria-hidden="true">↗</span>
+    </CardEffect>
+    <div class="opensource-copy">
+      <div class="opensource-meta">
+        <span class="opensource-category">{item.category}</span>
+        {
+          stars !== undefined && (
+            <span class="opensource-stars" aria-hidden="true">
+              <>
+                <span>★</span>
+                <strong>{stars}</strong>
+              </>
+            </span>
+          )
+        }
+      </div>
+      <h3>{item.title}</h3>
+    </div>
+  </a>
+</article>
+<style>
+  .opensource-card {
+    min-width: 0;
+  }
+  .opensource-card > a {
+    display: block;
+    height: 100%;
+    border: 1px solid var(--brand-border);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--brand-ink);
+    text-decoration: none;
+    transition:
+      border-color 0.18s ease,
+      box-shadow 0.18s ease;
+  }
+  .opensource-card > a:hover {
+    border-color: var(--card-accent, var(--brand-accent));
+    box-shadow: 0 8px 28px #182b4210;
+  }
+  .opensource-art-caption {
+    position: absolute;
+    z-index: 2;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    display: -webkit-box;
+    overflow: hidden;
+    padding: 8px 10px;
+    border: 1px solid #182b4218;
+    border-radius: 8px;
+    background: rgba(255, 253, 246, 0.95);
+    color: var(--brand-ink);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.45;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .opensource-type,
+  .opensource-arrow {
+    position: absolute;
+    z-index: 2;
+    top: 12px;
+    display: grid;
+    place-items: center;
+    min-width: 34px;
+    height: 32px;
+    padding: 0 10px;
+    border: 1px solid #182b4218;
+    border-radius: 999px;
+    background: #fffdf5ef;
+    color: var(--brand-ink);
+  }
+  .opensource-type {
+    left: 12px;
+    font-size: 12px;
+  }
+  .opensource-arrow {
+    right: 12px;
+    width: 32px;
+    padding: 0;
+    font-size: 17px;
+  }
+  .opensource-copy {
+    padding: 14px 16px 17px;
+  }
+  .opensource-meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .opensource-category {
+    color: var(--brand-accent);
+    font-size: 12px;
+    font-weight: 650;
+  }
+  .opensource-stars {
+    display: inline-flex;
+    flex: none;
+    align-items: baseline;
+    gap: 4px;
+    color: var(--brand-copper);
+    white-space: nowrap;
+  }
+  .opensource-stars span {
+    font-size: 12px;
+    line-height: 1;
+  }
+  .opensource-stars strong {
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+  .opensource-copy h3 {
+    margin: 7px 0 0;
+    font-size: 20px;
+    line-height: 1.35;
+    letter-spacing: -0.025em;
+  }
+  .opensource-card a:focus-visible {
+    outline: 3px solid var(--brand-accent);
+    outline-offset: 3px;
+  }
+  .opensource-card[hidden] {
+    display: none;
+  }
+  .opensource-card--compact > a {
+    border-radius: 13px;
+    background: #ffffffeb;
+  }
+  .opensource-card--compact .opensource-copy {
+    padding: 12px 13px 16px;
+  }
+  .opensource-card--compact .opensource-copy h3 {
+    font-size: 18px;
+  }
+  .opensource-card--compact .opensource-meta {
+    gap: 6px;
+  }
+  .opensource-card--compact .opensource-stars {
+    gap: 3px;
+  }
+  .opensource-card--compact .opensource-stars span {
+    font-size: 11px;
+  }
+  .opensource-card--compact :is(.opensource-type, .opensource-arrow) {
+    top: 9px;
+    min-width: 30px;
+    height: 28px;
+    padding: 0 9px;
+  }
+  .opensource-card--compact .opensource-type {
+    left: 9px;
+    font-size: 11px;
+  }
+  .opensource-card--compact .opensource-arrow {
+    right: 9px;
+    width: 28px;
+    padding: 0;
+    font-size: 15px;
+  }
+  @media (max-width: 760px) {
+    .opensource-card--compact .opensource-copy {
+      padding: 10px 11px 12px;
+    }
+    .opensource-card--compact .opensource-copy h3 {
+      font-size: 17px;
+    }
+  }
+</style>

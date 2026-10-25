@@ -1,0 +1,21 @@
+{
+  "id": "W-20260927-001",
+  "source": {
+    "kind": "moonlit-creator",
+    "artifact": "wechatArticle",
+    "version": "v06"
+  },
+  "title": "Personal AI 的入口之争",
+  "slug": "personal-ai-entry",
+  "visibility": "public",
+  "date": "2026-09-27",
+  "category": "AI 产品观察",
+  "tags": ["Personal AI", "个人记忆", "AI 入口"],
+  "summary": "从个人记忆、设备算力和服务连接，讨论个人 AI 入口为什么难以形成。",
+  "cover": {
+    "source": "design/cover-sources/creator-W-20260927-001-real-ip-v1.png",
+    "template": "mechanism",
+    "designVersion": "moonlit-web-2",
+    "alt": "月明本人照片与个人记忆、设备算力、服务连接三项笔记板。"
+  }
+}

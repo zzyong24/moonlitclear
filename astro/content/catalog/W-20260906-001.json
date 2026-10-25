@@ -1,0 +1,20 @@
+{
+  "id": "W-20260906-001",
+  "source": {
+    "kind": "moonlit-creator",
+    "artifact": "wechatArticle",
+    "version": "v4"
+  },
+  "slug": "image-to-playable-roguelike",
+  "visibility": "public",
+  "date": "2026-09-06",
+  "category": "AI 创作",
+  "tags": ["GPT Image", "Codex", "Blender", "Three.js"],
+  "summary": "用 GPT Image 2、Codex、Blender 和 Three.js，把原创形象从参考图接力做成立体角色与可玩的网页肉鸽游戏，并公开六组提示词。",
+  "cover": {
+    "source": "design/cover-sources/creator-W-20260906-001-v1.webp",
+    "template": "mechanism",
+    "designVersion": "moonlit-web-2",
+    "alt": "真人作者与从原创形象、3D 角色到可玩月面游戏的制作流程笔记板。"
+  }
+}

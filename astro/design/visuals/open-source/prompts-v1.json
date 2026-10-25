@@ -1,0 +1,16 @@
+{
+  "generator": "built-in image_gen",
+  "reference": "User-provided OIL open-source card screenshot, used only for compact editorial card readability",
+  "sharedPrompt": "Use case: stylized-concept. Asset type: static open-source directory card artwork for a personal brand website. Style: premium editorial 3D still life, warm ivory studio background, soft natural light, tactile materials, deep navy with restrained copper accents. Landscape 4:3 composition; center the still life with breathing room and keep key objects within the central 75 percent. One still image, not an animation storyboard or multiple panels. No text, letters, numbers, logos, watermarks, people, mascots, or software screenshots. The reference image guides only card illustration scale and clarity; do not copy its characters, dog, or palette.",
+  "assets": {
+    "hermes-book": "An ivory hardcover field guide opening beside organized chapter cards and a small brass bookmark, representing an AI Agent architecture handbook.",
+    "skills-judgment": "Ivory capability cards being carefully reviewed through a copper-rimmed lens, with a refined check token and revision pencil, communicating review and improvement of AI Agent capabilities.",
+    "aiterm-open-source": "A compact ivory terminal device, small file tabs, and a copper cable connecting several tidy workspaces, representing terminal, files, and Git in one place. Muted teal detail.",
+    "mkd2pic": "A folded ivory manuscript transforming into a neat stack of blank image cards, with copper binder clips, representing Markdown-to-image publishing.",
+    "open-research": "An ivory research notebook, magnifying lens, source cards, and a small copper compass arranged as a still life about topic research.",
+    "open-writing": "An ivory notebook with blank page, copper fountain pen, and draft cards suggesting an idea becoming several polished formats.",
+    "open-visual-video": "A compact copper film camera beside blank film and an ivory storyboard card, representing visual production and video.",
+    "open-publishing": "Ivory envelopes and folded media cards leaving a small copper dispatch tray, representing review then publishing.",
+    "open-agent-workflow": "Ivory modular blocks connected by copper links, two small tool tokens, and a central output card, representing coordinated AI workflows without screens."
+  }
+}

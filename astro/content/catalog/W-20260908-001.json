@@ -1,0 +1,21 @@
+{
+  "id": "W-20260908-001",
+  "source": {
+    "kind": "moonlit-creator",
+    "artifact": "wechatArticle",
+    "version": "v3"
+  },
+  "title": "从 AI Native 个人到 AI 协作组织",
+  "slug": "ai-native-organization",
+  "visibility": "public",
+  "date": "2026-09-08",
+  "category": "AI 组织协作",
+  "tags": ["AI Native", "组织协作", "工作流"],
+  "summary": "从个人使用 AI 延伸到团队协作，梳理组织流程、知识和评估如何一起变化。",
+  "cover": {
+    "source": "design/cover-sources/creator-W-20260908-001-real-ip-v1.png",
+    "template": "mechanism",
+    "designVersion": "moonlit-web-2",
+    "alt": "月明本人照片与 AI 协作组织的 Context、Harness、Eval、Loop 笔记板。"
+  }
+}

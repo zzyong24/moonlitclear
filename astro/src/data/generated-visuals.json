@@ -1,0 +1,2624 @@
+{
+  "version": "moonlit-raster-3",
+  "generator": "OpenAI image generation; raster cover masters, sharp derivative export only",
+  "assets": {
+    "hermes-book": {
+      "kind": "open-source",
+      "alt": "暖白立体书册、章节卡片与铜色书签组成的 AI Agent 架构手册概念图",
+      "source": "design/visuals/open-source/hermes-book-v1.png",
+      "sourceHash": "b3d8ff07717199acf3878076d14f1f48c9f09a12d4bae928a082958d4708d05e",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/hermes-book-b3d8ff077171-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 28276,
+          "sha256": "66482a63b436322b6af4fbef9645474d333dca66f966da2fb658cae6113bcb45"
+        },
+        {
+          "url": "/brand/generated/hermes-book-b3d8ff077171-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 58226,
+          "sha256": "73ab10afc63f790131a5d6fab5e45ec0e0b602f7f42d42b235585cf6c99ef11c"
+        },
+        {
+          "url": "/brand/generated/hermes-book-b3d8ff077171-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 149884,
+          "sha256": "9eeb5a2c170c4cd6dadebc2bf211c8c4b4ef7104baa1cee7c658de07d2e75c5c"
+        }
+      ]
+    },
+    "skills-judgment": {
+      "kind": "open-source",
+      "alt": "卡片、铜框放大镜和勾选标记组成的能力审视概念图",
+      "source": "design/visuals/open-source/skills-judgment-v1.png",
+      "sourceHash": "ff159190232b267f449f5b22e0789b0ec1ca14ad2188cba56f14e278b1593c03",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/skills-judgment-ff159190232b-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 20646,
+          "sha256": "788ece42a2f8bd4a47aab798ac2ad4632194ba15e6d62092e304f7fb82c84b35"
+        },
+        {
+          "url": "/brand/generated/skills-judgment-ff159190232b-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 45122,
+          "sha256": "2a136c30eb92425ba724035202f2d351d071eec05b3aaa623f7a2b20b37c3f28"
+        },
+        {
+          "url": "/brand/generated/skills-judgment-ff159190232b-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 116260,
+          "sha256": "3acfb8557fb24b9bc8b9f11d1ae5050f68c45a18f1e5d6cc3e6d263fc18a4106"
+        }
+      ]
+    },
+    "aiterm-open-source": {
+      "kind": "open-source",
+      "alt": "终端、文件标签与铜色连接线组成的开发工作区概念图",
+      "source": "design/visuals/open-source/aiterm-v1.png",
+      "sourceHash": "65f4d78ad8babdeb67ffcef17d577023d4a0c49564929b2772f32bef19051476",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/aiterm-open-source-65f4d78ad8ba-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 14958,
+          "sha256": "1e03a269d04ccb783bfc4f1a2d894ce63222cdb3f7d5de0658cc2d43e56700bf"
+        },
+        {
+          "url": "/brand/generated/aiterm-open-source-65f4d78ad8ba-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 29212,
+          "sha256": "9f2952fb9f50c971badc33b712a0997b3ff70c731e3d57972f8ae0469c209ebe"
+        },
+        {
+          "url": "/brand/generated/aiterm-open-source-65f4d78ad8ba-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 60200,
+          "sha256": "5b73fda7990dcffa34c9d66d48ef4f62eb228c3ad9e64701180c7146467e0de0"
+        }
+      ]
+    },
+    "mkd2pic": {
+      "kind": "open-source",
+      "alt": "空白手稿经过排版成为多张图片卡片的 Markdown 转图概念图",
+      "source": "design/visuals/open-source/mkd2pic-v1.png",
+      "sourceHash": "97710697a3325a694314a804fa5cffd03b2a8d43b29d1b10e75524a0850b8494",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/mkd2pic-97710697a332-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 17210,
+          "sha256": "e239afe538d30f1c8ea244d2a90bf08b268072316c7cc608090bb3af7ff5cc93"
+        },
+        {
+          "url": "/brand/generated/mkd2pic-97710697a332-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 36798,
+          "sha256": "75baf55f1af92a70900170e92e16c31569ed978b1352501f0efb41cd1c06e5bc"
+        },
+        {
+          "url": "/brand/generated/mkd2pic-97710697a332-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 97540,
+          "sha256": "986e60170011990b0eab98b32553de7339d62e3b9bae55bd01be54c581a3e0f5"
+        }
+      ]
+    },
+    "book": {
+      "kind": "atlas",
+      "alt": "白色与绿色精装书从闭合到展开的四个关键画面",
+      "source": "design/visuals/book-v1.png",
+      "sourceHash": "0514f3e0a5d75d549ec19e510a74b74bb9907b353be78152923ad6a339dccf43",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/book-0514f3e0a5d7-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 31626,
+          "sha256": "681eb8cac86b4348fe432cbb1be85e4c9ef2aaeb49ee24c66527e7338e002b9f"
+        },
+        {
+          "url": "/brand/generated/book-0514f3e0a5d7-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 92418,
+          "sha256": "20e58357c2259d6fc221279ca7aeadcecf622833ce324de5308bd9d39a72009f"
+        }
+      ]
+    },
+    "skills": {
+      "kind": "atlas",
+      "alt": "技能卡片经过绿色扫描器并形成待确认评估的四个关键画面",
+      "source": "design/visuals/skills-v1.png",
+      "sourceHash": "5ec0f77c90e0095c74581ec0dbd1862a7b7bf7ce72c23cc9dfd656b6f88cf410",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/skills-5ec0f77c90e0-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 28206,
+          "sha256": "3aac042c722e269e793f509d7710baedfc710c3c82953989ec196661381f1d0e"
+        },
+        {
+          "url": "/brand/generated/skills-5ec0f77c90e0-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 81690,
+          "sha256": "c665ab6e286a1d39cbccef6b975ac190147928cb0f64f8880d1edb2d13d5d843"
+        }
+      ]
+    },
+    "pages": {
+      "kind": "atlas",
+      "alt": "Markdown 手稿经过排版装置成为多页图片的四个关键画面",
+      "source": "design/visuals/pages-v1.png",
+      "sourceHash": "510975b4e5acccf3742eaced800a5c6221d33b9e1fd852dd4038a118d117fa4a",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/pages-510975b4e5ac-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 27928,
+          "sha256": "60698232fe9908e3411569108d92591af25d630a911b2a039bee0c050c90bffc"
+        },
+        {
+          "url": "/brand/generated/pages-510975b4e5ac-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 75908,
+          "sha256": "218e398235122b52ef0327f581f1edf8d6e4b0d60236d555f8c5fffce1d13de6"
+        }
+      ]
+    },
+    "terminal": {
+      "kind": "atlas",
+      "alt": "复古白色终端展开文件树与编辑器的四个关键画面",
+      "source": "design/visuals/terminal-v1.png",
+      "sourceHash": "8e4c8aec929a4eb49dfc2c417603057cbcbb69a7dbda91fe303cbb0ac23b8b7c",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/terminal-8e4c8aec929a-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 29238,
+          "sha256": "6324d69389baf757307cafb7cda4b0438b04b8a1dd39551d95ebbf0f19eb93fe"
+        },
+        {
+          "url": "/brand/generated/terminal-8e4c8aec929a-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 80038,
+          "sha256": "69fac4597b088e4eed92d5cbaefe25519cb100cbb8cfe448d3ef1738c4f6f2c7"
+        }
+      ]
+    },
+    "creatoros": {
+      "kind": "product",
+      "alt": "铜橙色摄影机、分镜纸与胶片组成的创作工作室 AI 概念图",
+      "source": "design/visuals/creatoros-detail-v3.png",
+      "sourceHash": "8aa7dbff3592a16fcb7cb685fdac45f042bdf409d716fdbd344aeaba97bbbca8",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/creatoros-8aa7dbff3592-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 38746,
+          "sha256": "822a0aaa4b4275a02e8ecef410ef1088a820612b2d44ab6c085e16bb36eece65"
+        },
+        {
+          "url": "/brand/generated/creatoros-8aa7dbff3592-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 85842,
+          "sha256": "8352a6257ffffbd745b5fa7a17dc5f097afb56869653a268dd1f81bd52dd57a0"
+        },
+        {
+          "url": "/brand/generated/creatoros-8aa7dbff3592-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 232228,
+          "sha256": "051d10bb04f766c4b34108842be79cd3b66a899a635cfa758c5154c9fe3f911f"
+        }
+      ]
+    },
+    "thirdspace": {
+      "kind": "product",
+      "alt": "蓝色玻璃桥连接书籍与知识卡片的档案空间 AI 概念图",
+      "source": "design/visuals/thirdspace-detail-v3.png",
+      "sourceHash": "728dc9b3845a66117d3ec6e83b6e80d18fcdf9bf92ec2c243c5366975e9a03e5",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/thirdspace-728dc9b3845a-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 32748,
+          "sha256": "974a6a32b745389b13a57a50985f6af8b122b1fb3ac7a103248dc2e6e46f4a58"
+        },
+        {
+          "url": "/brand/generated/thirdspace-728dc9b3845a-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 75830,
+          "sha256": "a1803022b1006287fdaad27cc32ead648b0096b205cbb7bde4e39b9277cc6bff"
+        },
+        {
+          "url": "/brand/generated/thirdspace-728dc9b3845a-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 217754,
+          "sha256": "cd4ad2e7d1102a365cac76343c7a060c6d1ab1d31dd4df09c0c85e934a8a5a61"
+        }
+      ]
+    },
+    "msg-collect": {
+      "kind": "product",
+      "alt": "琥珀色资料整理装置把视频、报纸与文档转为笔记的 AI 概念图",
+      "source": "design/visuals/msg-collect-detail-v3.png",
+      "sourceHash": "b3c75060bf6fd80a4d12113187f6aca374ecbd32e44e03ff96e54fb3dad7727d",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/msg-collect-b3c75060bf6f-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 24358,
+          "sha256": "7afb5b906e6651a01a8bfc8a28d050ee50637b0e94da13ec3834f5152734ccf4"
+        },
+        {
+          "url": "/brand/generated/msg-collect-b3c75060bf6f-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 54430,
+          "sha256": "06b647777aaff7320c56f9472bf1c25f4f348005f9debbcac38b011f4377af70"
+        },
+        {
+          "url": "/brand/generated/msg-collect-b3c75060bf6f-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 150156,
+          "sha256": "f6a2f75b9544f62a09f1a85e35522e13881c285f1cb13ac307fbd05f6244a593"
+        }
+      ]
+    },
+    "ai-companion": {
+      "kind": "product",
+      "alt": "鼠尾草绿阅读椅、立体故事书与对话雕塑构成的 AI 概念图",
+      "source": "design/visuals/ai-companion-detail-v3.png",
+      "sourceHash": "2503eba53e9307b1559a8b038eb8bafdf544b7ddef647d5e0c8cf9d45e1900b4",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/ai-companion-2503eba53e93-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 36134,
+          "sha256": "2f45dc08bcbdabd950c02cc5b10da0c8d3ac1c045d0192835d41736e3820868b"
+        },
+        {
+          "url": "/brand/generated/ai-companion-2503eba53e93-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 82542,
+          "sha256": "c7fd4683d731eaaeb2af8743029f9b705daf62e68740b3d5459225a82da1e223"
+        },
+        {
+          "url": "/brand/generated/ai-companion-2503eba53e93-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 216702,
+          "sha256": "6e80643627034deb1d14befcdd17800d915523c99f0e1efa98fc502d1ab009af"
+        }
+      ]
+    },
+    "wireframe-background": {
+      "kind": "background",
+      "alt": "暖白底上的浅灰绿色空间线框背景",
+      "source": "design/visuals/wireframe-background-v1.png",
+      "sourceHash": "e8385f5fe3fae83398614995829cf44018759f0878efd63862e590526f89a198",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/wireframe-background-e8385f5fe3fa-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 2674,
+          "sha256": "01d65062f43b85c0ba45d7af14eb2df88656f48e094b34dff76f5ad9798ccca5"
+        },
+        {
+          "url": "/brand/generated/wireframe-background-e8385f5fe3fa-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 8026,
+          "sha256": "c5ff6147dc904c44679ff63e3add01bdd3503949dc5374013a6b139d99ebe3e4"
+        },
+        {
+          "url": "/brand/generated/wireframe-background-e8385f5fe3fa-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 26140,
+          "sha256": "9faea74adec3d71e5be0b92b090483797e0776e8b2577e6ef9d76494c4656781"
+        }
+      ]
+    },
+    "hean": {
+      "kind": "product",
+      "alt": "暖桃色成长日记、奶瓶与月亮灯组成的禾安 AI 概念图",
+      "source": "design/visuals/hean-detail-v1.png",
+      "sourceHash": "384032bc6d421bac60779d3b82191bf86ea89b08c3dc7fcbe45a8e0c65718d67",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/hean-384032bc6d42-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 29770,
+          "sha256": "078aa863c39b718469bd0b563a59cfd27ce81cfc2fe2e7c5f8771d8a259ceca6"
+        },
+        {
+          "url": "/brand/generated/hean-384032bc6d42-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 64094,
+          "sha256": "78def2faddf4b4026dfd0bb9cb4b6af87eaa34451abbc7a9b0181a30f0dd8861"
+        },
+        {
+          "url": "/brand/generated/hean-384032bc6d42-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 168818,
+          "sha256": "8f5f481d50c0dada4bb409c50b364791be4388ea2db20ab9519b7674183e325f"
+        }
+      ]
+    },
+    "moving": {
+      "kind": "product",
+      "alt": "灰紫色放映机、分镜轨道与胶片组成的媒措 Moving AI 概念图",
+      "source": "design/visuals/moving-detail-v1.png",
+      "sourceHash": "3545adc4ed2c6aeb22001bbb252b3b5917d7cff2b700470357544266b753ab1d",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/moving-3545adc4ed2c-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 32146,
+          "sha256": "27912d00b578af61b568df1feeaccca4ba567021fa60539262ec01baf0b970b5"
+        },
+        {
+          "url": "/brand/generated/moving-3545adc4ed2c-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 71836,
+          "sha256": "fbc811e4742ab0e1b855f4303e38c7393c5cc6b9757cdaa79592f69f2e1dc503"
+        },
+        {
+          "url": "/brand/generated/moving-3545adc4ed2c-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 190202,
+          "sha256": "c97497d944a865d2ed238b88cf4fd977ddb6cbfe8f5930456ef7fb6bd35162e2"
+        }
+      ]
+    },
+    "aiterm": {
+      "kind": "product",
+      "alt": "蓝绿色多屏终端、文件夹与分支连接件组成的 AITerm AI 概念图",
+      "source": "design/visuals/aiterm-detail-v1.png",
+      "sourceHash": "df5595fd5632a2fd5e4384ec34363244179e268ee8fa2ec4ea94b95454e0c22d",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/aiterm-df5595fd5632-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 28182,
+          "sha256": "6e71182d2f812b9908e2a4effde5346444338f45060ffba4d54890a9f8a46454"
+        },
+        {
+          "url": "/brand/generated/aiterm-df5595fd5632-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 56996,
+          "sha256": "b76c7b96e671909ce0c40564430cf574976859c8baecfc19a1ea0f3bf172349e"
+        },
+        {
+          "url": "/brand/generated/aiterm-df5595fd5632-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 144526,
+          "sha256": "fe091cf0899a0f7f0086974a0e2da0fc17ac1476b266f6be68bea7b4408165ef"
+        }
+      ]
+    },
+    "moonlit-topic-radar": {
+      "kind": "open-source",
+      "alt": "暖白桌面上从信息卡片中筛出选题线索的内容研究概念图",
+      "source": "design/visuals/open-source/moonlit-topic-radar-v1.png",
+      "sourceHash": "98a1589fa8cfdf2259cd020c98c035e030fc5a4fc84c5eaeade4996f6f1523ef",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-topic-radar-98a1589fa8cf-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 22916,
+          "sha256": "f9136bd846bf108c997073300caef67659c63e4e6c8cbb6c019d81e37b4a62a8"
+        },
+        {
+          "url": "/brand/generated/moonlit-topic-radar-98a1589fa8cf-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 47232,
+          "sha256": "692bbaf9514f12640abd2300fb8334d8deba34f4e9fc2a3610267546232d45f3"
+        },
+        {
+          "url": "/brand/generated/moonlit-topic-radar-98a1589fa8cf-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 110030,
+          "sha256": "8886de8cdb734127a59b45da05372982466f5056bd1fac20d24609129c034c9c"
+        }
+      ]
+    },
+    "moonlit-topic-engine": {
+      "kind": "open-source",
+      "alt": "多条内容路径汇入一张清晰选题卡片的内容策划概念图",
+      "source": "design/visuals/open-source/moonlit-topic-engine-v1.png",
+      "sourceHash": "8904af9072f2b68583f3f27364bc5d8df1032706aff54fe7e95e51b45d81f959",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-topic-engine-8904af9072f2-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 15210,
+          "sha256": "09492e8f32c8995a73934058c66e698db79e30aad5329f249c4c34c8dc75438e"
+        },
+        {
+          "url": "/brand/generated/moonlit-topic-engine-8904af9072f2-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 30124,
+          "sha256": "e67d2f231771746ee92ff58fd1cb96ffc948c2d89658d6c49fa21f95b4599cc4"
+        },
+        {
+          "url": "/brand/generated/moonlit-topic-engine-8904af9072f2-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 69314,
+          "sha256": "07350ea6ebe503190e04ad945edc16319eb4d05715fe111b69b5c9e129763126"
+        }
+      ]
+    },
+    "moonlit-benchmark-research": {
+      "kind": "open-source",
+      "alt": "不同内容样本与放大观察工具组成的对标研究概念图",
+      "source": "design/visuals/open-source/moonlit-benchmark-research-v1.png",
+      "sourceHash": "7acbdd93c6d8cdda9b3093b0aa641fed00b45e3881367d14d99801e8ea4278f1",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-benchmark-research-7acbdd93c6d8-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 25776,
+          "sha256": "0680e0a61639ad9ce6d1dbfe3ec8e967d09f2c39122b52afa3a4316b1623c918"
+        },
+        {
+          "url": "/brand/generated/moonlit-benchmark-research-7acbdd93c6d8-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 59548,
+          "sha256": "4e4dd7065bb044f393d119f6b9e7dc91f3dc0f8e10c96c929e63bb21fff1a219"
+        },
+        {
+          "url": "/brand/generated/moonlit-benchmark-research-7acbdd93c6d8-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 160456,
+          "sha256": "735978a4995f4cfa3b7664eee78e2655e08b439f06c45416819e1c6ae1e96c5b"
+        }
+      ]
+    },
+    "moonlit-douyin-extractor": {
+      "kind": "open-source",
+      "alt": "数据刻度、作品卡片与评论便笺组成的作品复盘概念图",
+      "source": "design/visuals/open-source/moonlit-douyin-extractor-v1.png",
+      "sourceHash": "c98693553c60e667ffdc5dfc8f65fbaf18bbb3cf0b123c1144918fcdac6433b8",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-douyin-extractor-c98693553c60-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 18630,
+          "sha256": "c515e413fb4547869b1de65e027bff9d97ef7db2fc0cb3d14de748831cdd356d"
+        },
+        {
+          "url": "/brand/generated/moonlit-douyin-extractor-c98693553c60-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 41170,
+          "sha256": "9ec33a79212eb12156e91ebb77809e751ef4f09d58054378471359540e44200b"
+        },
+        {
+          "url": "/brand/generated/moonlit-douyin-extractor-c98693553c60-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 106920,
+          "sha256": "0d7c4000b4f094eb63a2662c1bcd797d84f451c32a5c5e66ce40b7b99b505075"
+        }
+      ]
+    },
+    "moonlit-content-engine": {
+      "kind": "open-source",
+      "alt": "同一命题生长出文章、短帖与视频等多种表达的概念图",
+      "source": "design/visuals/open-source/moonlit-content-engine-v1.png",
+      "sourceHash": "a8ab246b6ad752004975070efdb535898100115b0deb0950ddd5f59d5dfa734d",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-content-engine-a8ab246b6ad7-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 18546,
+          "sha256": "a00f2f6c30d19078f38390318faab30a176a67ca316d27b033c3a3d201fb0b5e"
+        },
+        {
+          "url": "/brand/generated/moonlit-content-engine-a8ab246b6ad7-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 37424,
+          "sha256": "9649990c5acd7f10a921a9ce912a922320c8319a8b63205c79c91f41e2070804"
+        },
+        {
+          "url": "/brand/generated/moonlit-content-engine-a8ab246b6ad7-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 82256,
+          "sha256": "d1daa81d247103d4d240651457a3c1d69d5ffaada5185a8e6278e5a636969c81"
+        }
+      ]
+    },
+    "moonlit-business-copywriter": {
+      "kind": "open-source",
+      "alt": "笔与任务卡片构成的商业内容写作概念图",
+      "source": "design/visuals/open-source/moonlit-business-copywriter-v1.png",
+      "sourceHash": "7b3a05560af7c82975380ab8fe9ce33c4a7f434800a4c30cb7dc585aa7c6d7b1",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-business-copywriter-7b3a05560af7-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 18684,
+          "sha256": "226fb97aefdc1f5b6721997f6391f8f17de9e05ce1f63c801f72178417495e70"
+        },
+        {
+          "url": "/brand/generated/moonlit-business-copywriter-7b3a05560af7-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 41632,
+          "sha256": "5197928575d804b309c14fd66aa6171dfb3dade9c4e63bbaebc9ff3879e3e5fb"
+        },
+        {
+          "url": "/brand/generated/moonlit-business-copywriter-7b3a05560af7-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 107460,
+          "sha256": "4f132a639ffb1e6c0a99da3ed4fa87aba663032344758b86202fed06ff307c5b"
+        }
+      ]
+    },
+    "moonlit-de-ai-perception": {
+      "kind": "open-source",
+      "alt": "文案草稿经过细致校准后保留自然语气的编辑概念图",
+      "source": "design/visuals/open-source/moonlit-de-ai-perception-v1.png",
+      "sourceHash": "5651dfab441b016eaa0b1f2c0de2831b6126e8feb1a7d7ad8d68563dd40d289e",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-de-ai-perception-5651dfab441b-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 16654,
+          "sha256": "5592489c3bd4dcdf87c03f7c54f6c686c772a2474dd63d76603681c47144100f"
+        },
+        {
+          "url": "/brand/generated/moonlit-de-ai-perception-5651dfab441b-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 34660,
+          "sha256": "0a7433c583343e7249a82ab63c096d831d883d1310434d4676040c4446716a50"
+        },
+        {
+          "url": "/brand/generated/moonlit-de-ai-perception-5651dfab441b-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 93590,
+          "sha256": "269c9c2911e377c22bbe3774534d1969f87a6d494c2151d3e183a940423d97c8"
+        }
+      ]
+    },
+    "moonlit-oral-to-outline": {
+      "kind": "open-source",
+      "alt": "零散口述便笺整理成清晰层级大纲的概念图",
+      "source": "design/visuals/open-source/moonlit-oral-to-outline-v1.png",
+      "sourceHash": "4a12eb744ec8b753e3a625b2a191f0ab37f900fcb900f41cadb5eb62b3815191",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-oral-to-outline-4a12eb744ec8-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 18486,
+          "sha256": "a92e50f69a02e5dbc6e3209894474093640455afeda1c628402c9b1dfb3d3dab"
+        },
+        {
+          "url": "/brand/generated/moonlit-oral-to-outline-4a12eb744ec8-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 40452,
+          "sha256": "48779373c26580fec47c3f44b9dbb877914fec8397072310593366f05bd8261c"
+        },
+        {
+          "url": "/brand/generated/moonlit-oral-to-outline-4a12eb744ec8-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 103988,
+          "sha256": "bcc6bb73da19aa8d17a0a832c3c8105f1717246c8ff03895eb3c5fe31f7bf1a4"
+        }
+      ]
+    },
+    "moonlit-wechat-article": {
+      "kind": "open-source",
+      "alt": "文章手稿、段落卡片和观点提示组成的公众号写作概念图",
+      "source": "design/visuals/open-source/moonlit-wechat-article-v1.png",
+      "sourceHash": "734f385a68e7c70207af9b626ec639ed77b93550b68178d1b6ef557748c06335",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-wechat-article-734f385a68e7-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 19196,
+          "sha256": "5af0de2ee514cef5f7278e7c2415f6a06573c67948ec6712646e64f9590da7de"
+        },
+        {
+          "url": "/brand/generated/moonlit-wechat-article-734f385a68e7-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 40756,
+          "sha256": "4df058f0903ae6dc5a6e0d0fd7b067d0eac821aaf34973b2532df12d48f9533a"
+        },
+        {
+          "url": "/brand/generated/moonlit-wechat-article-734f385a68e7-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 110722,
+          "sha256": "ca3360455e461c337ed41e0d2e016306a3fdfa9e3086a0ced1148398c34bfc87"
+        }
+      ]
+    },
+    "moonlit-wechat-moments": {
+      "kind": "open-source",
+      "alt": "打开的随身笔记本与一张私密便笺组成的朋友圈文案概念图",
+      "source": "design/visuals/open-source/moonlit-wechat-moments-v1.png",
+      "sourceHash": "0ccbf74f73d6dedaf51955439ae9549824d9712a8cae7cf5c74876b8913ef5ed",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-wechat-moments-0ccbf74f73d6-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 16440,
+          "sha256": "0bd0c588677a1e171002d4c91973821da7bf2bca5eb097f4b77a495d0f54579d"
+        },
+        {
+          "url": "/brand/generated/moonlit-wechat-moments-0ccbf74f73d6-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 35752,
+          "sha256": "dffd2d8c0333b0b10357075274329cdc7ea678cbf4ad834b37410e2b206eae8d"
+        },
+        {
+          "url": "/brand/generated/moonlit-wechat-moments-0ccbf74f73d6-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 98746,
+          "sha256": "92f87aa224365a3548ac25d0a1fa81d58ca5d7671834e58259bf1198ecff4224"
+        }
+      ]
+    },
+    "moonlit-x-short": {
+      "kind": "open-source",
+      "alt": "三张短帖卡片用铜色夹扣串联的连续表达概念图",
+      "source": "design/visuals/open-source/moonlit-x-short-v1.png",
+      "sourceHash": "f4e58b1900d0c8e781e05449cb0d056cbf7238013578015298562d3aaa71552b",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-x-short-f4e58b1900d0-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 16256,
+          "sha256": "a16994d27a0e77569b35cf42f3bb118bc03a9cd2d8e05471b78435b6d794e546"
+        },
+        {
+          "url": "/brand/generated/moonlit-x-short-f4e58b1900d0-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 34686,
+          "sha256": "c519bc658817513fc8c22be1a8bf3abed47dee4ecd7509d5fb194530f758b4ed"
+        },
+        {
+          "url": "/brand/generated/moonlit-x-short-f4e58b1900d0-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 94128,
+          "sha256": "18789dd685778eb600d4d11862834168b83fcb3db517a5630b3cd75bc1f73309"
+        }
+      ]
+    },
+    "moonlit-xiaohongshu": {
+      "kind": "open-source",
+      "alt": "相机、空白方形照片和说明卡组成的小红书图文概念图",
+      "source": "design/visuals/open-source/moonlit-xiaohongshu-v1.png",
+      "sourceHash": "4f172fa81e0240abf0ed4030aa603c8c890c9509c7247be162af3f14f647534b",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-xiaohongshu-4f172fa81e02-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 18164,
+          "sha256": "f85572fbc9f7e18be5eb139c45dbed1c12897ecd6720a9d9ef7982ec41c78692"
+        },
+        {
+          "url": "/brand/generated/moonlit-xiaohongshu-4f172fa81e02-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 38684,
+          "sha256": "a253c7dd93f0a318a6c5c1c559f481974031e2bcf7c1a1a75acf24f7438c44fd"
+        },
+        {
+          "url": "/brand/generated/moonlit-xiaohongshu-4f172fa81e02-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 95664,
+          "sha256": "99eb4a018d41c2faa5304b3263d9f9f3b39a83e52b26c31f1121b2a19b99b638"
+        }
+      ]
+    },
+    "moonlit-astronaut-illustration": {
+      "kind": "open-source",
+      "alt": "白色宇航头盔、铅笔与讲解卡片组成的配图制作概念图",
+      "source": "design/visuals/open-source/moonlit-astronaut-illustration-v1.png",
+      "sourceHash": "e519839393d54963adb4a4b0e7eafd02083b14094d2748e39e4db5f9e3bc65b8",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-astronaut-illustration-e519839393d5-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 17814,
+          "sha256": "3620e33f669e571b45886eb3e0ff840f0246a1c9b756f4025cbbc3a79cffce1d"
+        },
+        {
+          "url": "/brand/generated/moonlit-astronaut-illustration-e519839393d5-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 38432,
+          "sha256": "60077b5790f2882572be8e04c4fcd246200f7f4195a374087d9a2bdc882c9f72"
+        },
+        {
+          "url": "/brand/generated/moonlit-astronaut-illustration-e519839393d5-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 96926,
+          "sha256": "098ef81519264da30f35997c22fc0821074ac9eb1c9e5a7910fdd41b3ce8e846"
+        }
+      ]
+    },
+    "moonlit-material-illustration": {
+      "kind": "open-source",
+      "alt": "信息模块通过连接件组成易读结构图的概念图",
+      "source": "design/visuals/open-source/moonlit-material-illustration-v1.png",
+      "sourceHash": "558bd6c8fd5d634ca3d0f1aa48576ce5f0365cef7710487d8105387f6c0882ba",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-material-illustration-558bd6c8fd5d-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 15778,
+          "sha256": "1032f3a1492a6ec5be25691f0a7760562b132c4add8082ff95f4fdc16c6a18ae"
+        },
+        {
+          "url": "/brand/generated/moonlit-material-illustration-558bd6c8fd5d-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 30942,
+          "sha256": "4ebc0d3fff11ce6a34cb883a2a14c4d7c12436a728ad63483368b727613d0cd7"
+        },
+        {
+          "url": "/brand/generated/moonlit-material-illustration-558bd6c8fd5d-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 70988,
+          "sha256": "6cb83c26d463169fce57258cf23fe5c8a96c6b59b45811e62bf9670c5959f21d"
+        }
+      ]
+    },
+    "moonlit-explainer-canvas": {
+      "kind": "open-source",
+      "alt": "讲解画板上的留白卡片与指示杆构成空间表达概念图",
+      "source": "design/visuals/open-source/moonlit-explainer-canvas-v1.png",
+      "sourceHash": "c9c7015a9b238a3f4e567625198097fd5a09e91cea27df42fcee07b9bda36f28",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-explainer-canvas-c9c7015a9b23-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 12236,
+          "sha256": "d9bc3337d2132e2d96df5d32474a7af26782055ed18cd229f72424482bc82081"
+        },
+        {
+          "url": "/brand/generated/moonlit-explainer-canvas-c9c7015a9b23-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 26044,
+          "sha256": "f00a8435bb4dd7c5e176777eb37105af2d5e5810b88fe6aa2a051e5969be54d6"
+        },
+        {
+          "url": "/brand/generated/moonlit-explainer-canvas-c9c7015a9b23-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 83574,
+          "sha256": "6d3d4555804ec0da6f6258a1985093160a9ff08c3c89d20f62d4cd68e67832fb"
+        }
+      ]
+    },
+    "moonlit-video-script": {
+      "kind": "open-source",
+      "alt": "脚本手稿、分镜空格与书写工具组成的视频策划概念图",
+      "source": "design/visuals/open-source/moonlit-video-script-v1.png",
+      "sourceHash": "561674c470fbe6a7b830263df8624612e58acbc19674a8bed10d6956c60a1bba",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-video-script-561674c470fb-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 16790,
+          "sha256": "b1dfa07a449029d1a2d9904dfed54dbe1f97baf594d2338297b9d30b0d81c2de"
+        },
+        {
+          "url": "/brand/generated/moonlit-video-script-561674c470fb-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 36776,
+          "sha256": "5186c36b8a26d5b294a3024e8390166525896db157ad5535bfdb0fbe1fdb1739"
+        },
+        {
+          "url": "/brand/generated/moonlit-video-script-561674c470fb-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 98408,
+          "sha256": "6bb5a7894d25dcea5991193e5c39778129df5c27629d73d2d84a41b201130a44"
+        }
+      ]
+    },
+    "moonlit-html-video": {
+      "kind": "open-source",
+      "alt": "屏幕中的画面块与时间线组成的信息视频制作概念图",
+      "source": "design/visuals/open-source/moonlit-html-video-v1.png",
+      "sourceHash": "79a48b304c85ce2fe811841b3a461ec16e2715f3d43f1279f3c43c2320c1845d",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-html-video-79a48b304c85-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 16556,
+          "sha256": "96db995b721723dbd5ea57ef16d617a01d985044b40a535d7611731e130fb270"
+        },
+        {
+          "url": "/brand/generated/moonlit-html-video-79a48b304c85-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 34884,
+          "sha256": "bd8f2a1d9af084e86c37b1886072cd13dd29923cad69e6f3f5ffb464cab86b5a"
+        },
+        {
+          "url": "/brand/generated/moonlit-html-video-79a48b304c85-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 83518,
+          "sha256": "0b59625388d7d4c30f461da6ef58ec0ad891a2be0c2d4b70964a33f92565f146"
+        }
+      ]
+    },
+    "moonlit-talking-head-video": {
+      "kind": "open-source",
+      "alt": "摄影机、麦克风、补光灯与拍摄清单组成的真人讲解概念图",
+      "source": "design/visuals/open-source/moonlit-talking-head-video-v1.png",
+      "sourceHash": "f2de50a3f1a8d7fbbef38b981c6531c344fc9ec2308d80ed5c9afd30d9a09be2",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-talking-head-video-f2de50a3f1a8-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 21402,
+          "sha256": "28a8ad86a513587a2bf11ce18f7eb706e43d3de67219bc208a522da035f0704d"
+        },
+        {
+          "url": "/brand/generated/moonlit-talking-head-video-f2de50a3f1a8-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 43218,
+          "sha256": "19029dc7e816cbbd56f193c430d4d0b5b5bbc15415376076b7116b9e06b2d0cb"
+        },
+        {
+          "url": "/brand/generated/moonlit-talking-head-video-f2de50a3f1a8-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 96850,
+          "sha256": "adbe196d2964a4ac9ec2451b7b1388730d1e6e2c5f1e09510a90316b9378684c"
+        }
+      ]
+    },
+    "moonlit-avatar-video": {
+      "kind": "open-source",
+      "alt": "陶瓷数字人、麦克风和镜头片组成的横版视频概念图",
+      "source": "design/visuals/open-source/moonlit-avatar-video-v1.png",
+      "sourceHash": "d576d23a7c10e6094a69f22eed2c7e593874d0755f096a7b76761b4ab62d707d",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-avatar-video-d576d23a7c10-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 21614,
+          "sha256": "cf0767901aa80452282ff4333bef84746eb6e6422b35d1042ad19332150abf1c"
+        },
+        {
+          "url": "/brand/generated/moonlit-avatar-video-d576d23a7c10-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 43540,
+          "sha256": "4c85d29aa12fcc3f9e8d49026dd7dfc8ce09167b81d4c46782b6742cc271efac"
+        },
+        {
+          "url": "/brand/generated/moonlit-avatar-video-d576d23a7c10-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 101322,
+          "sha256": "c2776acc4c39b8c3f1747dcde9657c21cd546797e12a487a4d2e9c3436fdf3e2"
+        }
+      ]
+    },
+    "moonlit-video-cover": {
+      "kind": "open-source",
+      "alt": "留白封面版式与镜头配件组成的视频封面设计概念图",
+      "source": "design/visuals/open-source/moonlit-video-cover-v1.png",
+      "sourceHash": "d817f7359379cd8876db465aaec5d6345f6f7dfd2c540e09cee270e49b852d16",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-video-cover-d817f7359379-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 15626,
+          "sha256": "66015ccae62a255a6343970bbf5df53280c4901408838d8ac5978262f990a006"
+        },
+        {
+          "url": "/brand/generated/moonlit-video-cover-d817f7359379-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 33730,
+          "sha256": "1e423e6bfc1ad33c2c760ce01aca01b8440a7d04f2320aebb4d68b1f3baf9857"
+        },
+        {
+          "url": "/brand/generated/moonlit-video-cover-d817f7359379-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 87952,
+          "sha256": "61e1b6c229fafdec109d03ac2d0f29f0218ed401736787cbcb9a1f513e580a70"
+        }
+      ]
+    },
+    "moonlit-social-publisher": {
+      "kind": "open-source",
+      "alt": "社交内容卡片与分发路径组成的图文发布概念图",
+      "source": "design/visuals/open-source/moonlit-social-publisher-v1.png",
+      "sourceHash": "903ce8dc589b2ff0c067fe309c9a03caa50964ee7d60516490ee5103a1a94b28",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-social-publisher-903ce8dc589b-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 18412,
+          "sha256": "3d4e574ca99a394b69681f084df8409d19e0370c803e69a7c0bcfc6728e0c093"
+        },
+        {
+          "url": "/brand/generated/moonlit-social-publisher-903ce8dc589b-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 38168,
+          "sha256": "bba9bf1d7a0d096d4385ed37c41cc841277f24dc68b6c72318270d928d9c8ad0"
+        },
+        {
+          "url": "/brand/generated/moonlit-social-publisher-903ce8dc589b-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 94630,
+          "sha256": "d3ea3afe096834d650feab1a823cff326029548d795a4d568454ef1f255f6f04"
+        }
+      ]
+    },
+    "moonlit-video-publisher": {
+      "kind": "open-source",
+      "alt": "胶片经分发轨道流向多个内容终端的视频发布概念图",
+      "source": "design/visuals/open-source/moonlit-video-publisher-v1.png",
+      "sourceHash": "3186e8cf88b3b527d1653b311059323f94a1c6b8fbaaba37c590b9d0187d113a",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-video-publisher-3186e8cf88b3-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 19854,
+          "sha256": "8fbb7fe828e7ff92b462e9100230f155f362d4119e0eb81b24f8bf721bd1e808"
+        },
+        {
+          "url": "/brand/generated/moonlit-video-publisher-3186e8cf88b3-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 40270,
+          "sha256": "bfe3f5e4da26b23597aa1e79e016c3ef15f8e96b8548ba7abd7145c67e1d7682"
+        },
+        {
+          "url": "/brand/generated/moonlit-video-publisher-3186e8cf88b3-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 90616,
+          "sha256": "8daa3134375040b9092ddd635791372c2bbdbf05e8a56028b5e3badaf1aae803"
+        }
+      ]
+    },
+    "moonlit-wechat-publisher": {
+      "kind": "open-source",
+      "alt": "长文稿、手机预览与排版工具组成的公众号发布概念图",
+      "source": "design/visuals/open-source/moonlit-wechat-publisher-v1.png",
+      "sourceHash": "7ac437dd62864a5619b0e089d57468158d3db3526babaf975ce7e50f8dac6a83",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-wechat-publisher-7ac437dd6286-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 21004,
+          "sha256": "43ae50582dd754cfde499e802aa2fda6bd4cc59586b3da4c73794341beec4474"
+        },
+        {
+          "url": "/brand/generated/moonlit-wechat-publisher-7ac437dd6286-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 46982,
+          "sha256": "1845a5a5c73496dbd721097b8c0fe4ffc86b62f4fb7b5b19f41fe4519faf0948"
+        },
+        {
+          "url": "/brand/generated/moonlit-wechat-publisher-7ac437dd6286-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 130082,
+          "sha256": "24cd939b75f5f112a6aa0c618b91efc865828dd2cd5da5faf83ee44878f599a6"
+        }
+      ]
+    },
+    "moonlit-skill-creator": {
+      "kind": "open-source",
+      "alt": "能力模块、蓝图和说明手册组成的 Skill 设计概念图",
+      "source": "design/visuals/open-source/moonlit-skill-creator-v1.png",
+      "sourceHash": "757d1aa97b9ddf0f002503867ccda7fa7ccb700103ace86ee67700d664a43390",
+      "width": 1448,
+      "height": 1086,
+      "variants": [
+        {
+          "url": "/brand/generated/moonlit-skill-creator-757d1aa97b9d-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 22714,
+          "sha256": "a236479f5fe597fed16b3137ede7f50db2d40d3dfbe111a29424ce9f8731ed88"
+        },
+        {
+          "url": "/brand/generated/moonlit-skill-creator-757d1aa97b9d-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 47984,
+          "sha256": "b183b75cb46f7d217c55e572dd52ee82c84a7703907b22db76cc23e53196ef2e"
+        },
+        {
+          "url": "/brand/generated/moonlit-skill-creator-757d1aa97b9d-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 116004,
+          "sha256": "fc91a13a4c29f056954fe178de80e4f66496b14aaf3682a43971009250f72630"
+        }
+      ]
+    },
+    "editorial-post-001": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：AI 协作开发工程化实践：从\"能用\"到\"可控\"",
+      "source": "design/cover-sources/legacy-article-001-v1.webp",
+      "sourceHash": "00abfa556ce8179634995a077387f12180f0adf12524b8a53cb2a8ece6baa07e",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-001-00abfa556ce8-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 16792,
+          "sha256": "6bde977be4ef1ca01e6ce25989360f1623968af7d001429c01004866b8d9aaf7"
+        },
+        {
+          "url": "/brand/generated/editorial-post-001-00abfa556ce8-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 32322,
+          "sha256": "e2b5c35e44caefd2a1dec5aba15b8108b62ea564b7487cad11821d535284adcb"
+        },
+        {
+          "url": "/brand/generated/editorial-post-001-00abfa556ce8-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 70504,
+          "sha256": "f31eeae43111c4061a7056d4fe84d3f54a1c31b4827a1c6df6745ef9d2a9366f"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-001-00abfa556ce8-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 92538,
+        "sha256": "10f7b2eb517d88e5b1a75af55fdd36bdb2dd2b0526f46285727da4527293bf2c"
+      }
+    },
+    "editorial-post-002": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：LLM时代，文本从来不是内容形式，而是知识的接口",
+      "source": "design/cover-sources/legacy-article-002-v1.webp",
+      "sourceHash": "772c6fd71a45c54902ef2d9fe5f7835793cbfbe9bfccb2c1764d59fd954d72d5",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-002-772c6fd71a45-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 22724,
+          "sha256": "ab18fda528787f376656b66005cb4e0583d4dac89413447f06f6c81d859415dd"
+        },
+        {
+          "url": "/brand/generated/editorial-post-002-772c6fd71a45-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 42774,
+          "sha256": "b93274d533d5136f6dde44078dc14aa16aaa4e68c7f8553969f1fc4d67ba4238"
+        },
+        {
+          "url": "/brand/generated/editorial-post-002-772c6fd71a45-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 95246,
+          "sha256": "fd11139bd1b4a5ade17df90c003a16e6597cc910bf344ce52d4fb00af345bb2a"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-002-772c6fd71a45-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 113213,
+        "sha256": "2228286e32eb2e1544df56a92ad3f23fe1b79ea602281dad0def45ca9bbb8780"
+      }
+    },
+    "editorial-post-003": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：ThirdSpace 完整部署教程：从零搭建 AI 驱动的个人知识库",
+      "source": "design/cover-sources/legacy-article-003-v1.webp",
+      "sourceHash": "39c343c4c62bf5fc53b5c32b42c33f2d6b9466d22f271e4f1124e04b1d1afebe",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-003-39c343c4c62b-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 21978,
+          "sha256": "0885038863b46ed2af10976f808e99b4529743ecb7c131c3300623881af13297"
+        },
+        {
+          "url": "/brand/generated/editorial-post-003-39c343c4c62b-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 42784,
+          "sha256": "c7e6775f218fc2763445e68062a6ec624ca6aedce0702410b3414eade1c0b110"
+        },
+        {
+          "url": "/brand/generated/editorial-post-003-39c343c4c62b-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 97044,
+          "sha256": "8a4821edb434c89bd251380e7041a5945cdc29a936a8167cb3109745980bb8d6"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-003-39c343c4c62b-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 111986,
+        "sha256": "b3599e37a253f94c608d31f0ed1a1f9a4f97b60056e4503bb897ed070f4d0fb8"
+      }
+    },
+    "editorial-post-004": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：工具做脏活，AI做智能：一个人如何用 40 个 MCP 工具搭出知识操作系统",
+      "source": "design/cover-sources/legacy-article-004-v1.webp",
+      "sourceHash": "d725621344b4b01415252895e42ac37c95cd51a85d0be8d4f752b670e0087c63",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-004-d725621344b4-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18602,
+          "sha256": "8e726b94459121e8a0bf82905372f05129b4bca0cec56c87f5bce19741e7ced0"
+        },
+        {
+          "url": "/brand/generated/editorial-post-004-d725621344b4-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 35960,
+          "sha256": "8066c549376afe36e66ec927f94e17315c87558421c7f253ee61824f530ebe53"
+        },
+        {
+          "url": "/brand/generated/editorial-post-004-d725621344b4-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 80268,
+          "sha256": "76515edfbd3b021034dc7c04fbdcd542b12e2f2185090f5c88e0f14dd014a19c"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-004-d725621344b4-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 100049,
+        "sha256": "2ff8fbcf756604464faa27c69f0cdf85d1ace8efecd232691e59259f0a338239"
+      }
+    },
+    "editorial-post-005": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：做技术的人，收到第一笔钱是什么感觉",
+      "source": "design/cover-sources/legacy-article-005-v1.webp",
+      "sourceHash": "27f0a73d12754a6de20728d72ba63f8f2dfb4aaf0b5217b3c12d155ce34153bd",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-005-27f0a73d1275-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19744,
+          "sha256": "a05534217049dc7a837eb6a5abe3e2de62af4d83a3e81fdf952b2898e74e60f9"
+        },
+        {
+          "url": "/brand/generated/editorial-post-005-27f0a73d1275-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 38584,
+          "sha256": "5144cb8050773c172e8b973297cb552525959ccb40dd65c52979a6b733823c83"
+        },
+        {
+          "url": "/brand/generated/editorial-post-005-27f0a73d1275-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 88116,
+          "sha256": "b0a0732a32b7445053e12b90fbc5fa6d40ef9f6589888eb53f09d46a2cbe3c08"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-005-27f0a73d1275-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 104796,
+        "sha256": "2c342a8d2d2ad322b8a69f4c3876bde8f8d4b2098dfb4d6ed0eea28866c1b85a"
+      }
+    },
+    "editorial-post-006": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：一篇文章的旅程：从收藏到行动验证",
+      "source": "design/cover-sources/legacy-article-006-v1.webp",
+      "sourceHash": "7bae2a312783e38fcb5dfed1b4bb9a16066a313ae0c78d792bcb409277f1f00f",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-006-7bae2a312783-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 20156,
+          "sha256": "4ce24e790b64220c933d5fe25223b53ec1493b4f095fa34a9736c60cd818abaf"
+        },
+        {
+          "url": "/brand/generated/editorial-post-006-7bae2a312783-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 39620,
+          "sha256": "16ec809815119016528e599186af1e4893203947f112d0e362f90cc894b7b22d"
+        },
+        {
+          "url": "/brand/generated/editorial-post-006-7bae2a312783-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 89942,
+          "sha256": "919b71da63b8468d0db6e85caa4a4eaa7e51bbe500675484c561130aad2c316e"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-006-7bae2a312783-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 105868,
+        "sha256": "4fd653b1644977b19c25cb7d60f5cc475343b8b578f3b1e5732abbc82c268594"
+      }
+    },
+    "editorial-post-007": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：借鉴开源 workflow 设计自己的内容生产系统——取舍与最小粒度原则",
+      "source": "design/cover-sources/legacy-article-007-v1.webp",
+      "sourceHash": "2ef86780c78c52fab3e5dd085303649c90506e8821c58fcaf99d3e48c456bda4",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-007-2ef86780c78c-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 23016,
+          "sha256": "d9dd475cd46e32b99f2bc24cb94507edc6986b09f39dea7a719f7dd674df32f3"
+        },
+        {
+          "url": "/brand/generated/editorial-post-007-2ef86780c78c-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 44488,
+          "sha256": "4cbc53025cb3066fbbd10a91ab600cb3637ee298d32c80e1c587b6556b8ce49f"
+        },
+        {
+          "url": "/brand/generated/editorial-post-007-2ef86780c78c-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 106964,
+          "sha256": "12663ac58aa0560a3ca37eafdf61580e22d8adf1b063a5c5e2ba0dfc8424ebcb"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-007-2ef86780c78c-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 115829,
+        "sha256": "1aafc2f4e77184d6a5b2b89b2600aff6821fd3a6664fc7f0b23ecffd53eb09b1"
+      }
+    },
+    "editorial-post-008": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：用AI搭内容系统：一个凌晨2点半还没睡的故事",
+      "source": "design/cover-sources/legacy-article-008-v1.webp",
+      "sourceHash": "ec47cb26e31ae189b5af8c78b2d879f1d35d0ecbd83271c06f6d21ece12264a1",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-008-ec47cb26e31a-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 26352,
+          "sha256": "3dc5190076248359d091e66e468decd15f783d0c3b8f470edad104bf62b3cc76"
+        },
+        {
+          "url": "/brand/generated/editorial-post-008-ec47cb26e31a-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 49898,
+          "sha256": "b8f645f089ffe43359a2f1595b9a883d047cb573020bee26a9bec882018f7a1d"
+        },
+        {
+          "url": "/brand/generated/editorial-post-008-ec47cb26e31a-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 112784,
+          "sha256": "386438c82590302899153b3fee5795d7299eb7caddce8f8c1ae606c962be0baa"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-008-ec47cb26e31a-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 125383,
+        "sha256": "40a5d93aa41413f05e4940aa13d60fde62be2a0e7274460f983a8e31f4cf2860"
+      }
+    },
+    "editorial-post-009": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：从《系统之美》到 Harness Engineering：用系统论重新理解 AI 工程",
+      "source": "design/cover-sources/legacy-article-009-v1.webp",
+      "sourceHash": "f7e3b098354f68019fedfb0f4972e61e2495fe0a8335635a2b0726321d7d376f",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-009-f7e3b098354f-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 16596,
+          "sha256": "af99a20c821f85cfeaf3e963d66dcb4cf5dde3af441d25d2f1b398705e1af3eb"
+        },
+        {
+          "url": "/brand/generated/editorial-post-009-f7e3b098354f-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 32552,
+          "sha256": "85edf7ed598f5925a4ee5b439cbde4bb0d547573aa7d573944b17c537254caa2"
+        },
+        {
+          "url": "/brand/generated/editorial-post-009-f7e3b098354f-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 74522,
+          "sha256": "20c39e870f0c81d29deeea250397b2bdba49c59d768c91565c489bae4b976d58"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-009-f7e3b098354f-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 94185,
+        "sha256": "d8dc8cb35638ff71ad8f25f799b3bfa3615f260f9a8872c15e0f502ca419f52a"
+      }
+    },
+    "editorial-post-010": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我怎么把每篇文章变成一个作品",
+      "source": "design/cover-sources/legacy-article-010-v1.webp",
+      "sourceHash": "f3c11e6444e79cfbcce4c3b6659fc02a135c64cbce5c471b5ebfbb54171d3533",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-010-f3c11e6444e7-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18520,
+          "sha256": "f644e7ff36d71049962b2117c0bb81631599531ce9d382a144b365bd85706928"
+        },
+        {
+          "url": "/brand/generated/editorial-post-010-f3c11e6444e7-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 34870,
+          "sha256": "3ee03c4d5f5a673d6aecb83cbe886ab14f999046eceb06993c04db9a2c00ee8e"
+        },
+        {
+          "url": "/brand/generated/editorial-post-010-f3c11e6444e7-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 78238,
+          "sha256": "2782173091befa6b400e79b0d778f7470df210d05b4d5563baf0f0f1afce2bb5"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-010-f3c11e6444e7-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 99977,
+        "sha256": "d281950d1b3d372dfc64e573e8fe603a5a17abe6b84203b707535e1876c756b8"
+      }
+    },
+    "editorial-post-011": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：知识库中心 vs 智能体中心：一个人的 AI 协作基础设施该怎么建",
+      "source": "design/cover-sources/legacy-article-011-v1.webp",
+      "sourceHash": "14588c07ce3a14672ef9ddd3396427b166f226745d07f39f3cc3d80bba0860c9",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-011-14588c07ce3a-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18764,
+          "sha256": "eaf5e17cc5a24a485521480e4b913424bee341227364d7dd41003837725081e5"
+        },
+        {
+          "url": "/brand/generated/editorial-post-011-14588c07ce3a-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 37278,
+          "sha256": "05520bf015f5565aeccf65c0ea4233d758b17b5824d73e077f0c18830d174689"
+        },
+        {
+          "url": "/brand/generated/editorial-post-011-14588c07ce3a-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 83312,
+          "sha256": "dc68cae4cfd04dc5991a421e52b12f3b071947ec5b16aca3d06a20d3a831a33f"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-011-14588c07ce3a-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 102058,
+        "sha256": "c3a250a37cc64662c6dba3fdc2ee73ce3003ac6d77c9904590fb70f95acedec6"
+      }
+    },
+    "editorial-post-012": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：用了 AI 之后，我终于理解为什么老板的需求总是不明确了",
+      "source": "design/cover-sources/legacy-article-012-v1.webp",
+      "sourceHash": "ed99a5291afcd9f4534d259993203563769c6b05c5d168b35ae946f0a382d400",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-012-ed99a5291afc-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18728,
+          "sha256": "7ce854c34e72f008ec10ee1121d187ea3cbccd2967b41a36566e2696fa831c9e"
+        },
+        {
+          "url": "/brand/generated/editorial-post-012-ed99a5291afc-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 36508,
+          "sha256": "ec2b6671e8da13f0fe523e55c875f0e04fe8afec51f8874a2d086858d58c4482"
+        },
+        {
+          "url": "/brand/generated/editorial-post-012-ed99a5291afc-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 82670,
+          "sha256": "d9d478fe7190d06d7ef2e8bb7ea9847f5ecf6d04ab5ec9321484e714900585c2"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-012-ed99a5291afc-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 102038,
+        "sha256": "7b03cb2d1a665201de6d2a81a71b87bd4f14c10d1665719018be4fa014850bba"
+      }
+    },
+    "editorial-post-013": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：MoonOS 立项自审：为什么要造个人 AI 操作系统",
+      "source": "design/cover-sources/legacy-article-013-v1.webp",
+      "sourceHash": "2a10ce649b1af3585779bd6796c6ac5f7b8671520f0e12eb349fcb272d498373",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-013-2a10ce649b1a-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 21200,
+          "sha256": "49aad7775ea76409c2c3c26d725d7d51d16665f38aaac51a76adbaf98882ef4e"
+        },
+        {
+          "url": "/brand/generated/editorial-post-013-2a10ce649b1a-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 42916,
+          "sha256": "e8c6805742213622053878c8e9958c0859e5ed43ceaf27c47396560e25fbed5c"
+        },
+        {
+          "url": "/brand/generated/editorial-post-013-2a10ce649b1a-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 102382,
+          "sha256": "5a271a5f5faee68e74b439e9de5db615f50c3c9bcaebdb9d2c3cb7b543815164"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-013-2a10ce649b1a-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 112668,
+        "sha256": "2d87a705d5e5a0a790b98aab6460dac28f488e6b7a99a28db665a6d1d0fd889b"
+      }
+    },
+    "editorial-post-014": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我给自己的 AI 系统打了 6 分：一个人造「个人 AI 操作系统」的冷静复盘",
+      "source": "design/cover-sources/legacy-article-014-v1.webp",
+      "sourceHash": "af1ee05e1f5b865c6fb84ad8c302ffba2610bfe2dead7d4dd7c6a6dfd8ffdee7",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-014-af1ee05e1f5b-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18828,
+          "sha256": "4aaec73963d943160bf0593614bfe42b0d57c50ccacdd2ae5c17e329fbf0d0e2"
+        },
+        {
+          "url": "/brand/generated/editorial-post-014-af1ee05e1f5b-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 36838,
+          "sha256": "e8ca0cf455c5308a4ca3003d3da84882de5386fd5dfdffcfb92ccf43c53b5131"
+        },
+        {
+          "url": "/brand/generated/editorial-post-014-af1ee05e1f5b-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 84826,
+          "sha256": "df6513932f370fb08063096a363fb19e692953a01b13da7e525caa5ebc996566"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-014-af1ee05e1f5b-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 101019,
+        "sha256": "de103565cc8765f0c114d78f2c6d2e7582bcd9d952ceb0dfffd4dbc48837fc26"
+      }
+    },
+    "editorial-post-015": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：AI 越加越多效果越来越差？你的系统缺的不是更好的模型，是一张体检报告",
+      "source": "design/cover-sources/legacy-article-015-v1.webp",
+      "sourceHash": "bf920af4e7b2cd845328d61ecbf0c9c622337d3fd60c39d0f1e38ceb67bfe5a5",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-015-bf920af4e7b2-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18846,
+          "sha256": "c2fb523b7f3395267b70f9fbf7366b6df6badf6acbab74d706ef6872bb5329a0"
+        },
+        {
+          "url": "/brand/generated/editorial-post-015-bf920af4e7b2-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 36534,
+          "sha256": "b83453078c2904c56bc5a363e1363a02dae6b5d705456e96b552277d9577ff8e"
+        },
+        {
+          "url": "/brand/generated/editorial-post-015-bf920af4e7b2-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 82678,
+          "sha256": "9680f2873dbadfff188a452a57d7a22fb347c2c0ca19a171a61d05db044957c8"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-015-bf920af4e7b2-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 101591,
+        "sha256": "3cb72fa4c4855836716b6279c8fecb6c3db8d7b39540500dd3b787592eb7b06e"
+      }
+    },
+    "editorial-post-016": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：AI 时代最重要的不是模型，而是你自己的 AI 资产",
+      "source": "design/cover-sources/legacy-article-016-v1.webp",
+      "sourceHash": "59a0a3d56d1902923c059202b3a81c07a797f62fba9fda7316e4ad8cbadd20ea",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-016-59a0a3d56d19-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19010,
+          "sha256": "1be67029c957eb2b8d660e39af06b9998391205a8a69739f008f191c4d47245b"
+        },
+        {
+          "url": "/brand/generated/editorial-post-016-59a0a3d56d19-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 36026,
+          "sha256": "264e837ac122b227e1c03a4e5e13f9489e589ef3b9fa56431f55fa9a59cdd9cc"
+        },
+        {
+          "url": "/brand/generated/editorial-post-016-59a0a3d56d19-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 83028,
+          "sha256": "2d2db71167d135b89788c374f79fe2ee4877b87a2be41171ce9c03372e4e1489"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-016-59a0a3d56d19-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 102217,
+        "sha256": "25e179de771536863dff049224896ffbb97a1ac2185b94ad4f6adb79b914b34a"
+      }
+    },
+    "editorial-post-017": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：让 AI 知道文件该放哪：我用一个函数解决了 Obsidian 知识库的混乱问题",
+      "source": "design/cover-sources/legacy-article-017-v1.webp",
+      "sourceHash": "7e0a8f5540c9dfe3a2eba1edd74b8db21b07c130a38654263b13a38041f33eb2",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-017-7e0a8f5540c9-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 16710,
+          "sha256": "6da9bd6a2ea840dedc1b5d68114eb7f4712806d0f4ac597473a19efa858b7f60"
+        },
+        {
+          "url": "/brand/generated/editorial-post-017-7e0a8f5540c9-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 32764,
+          "sha256": "2db5bdef9aef8004cd7e987cd288d5fa47f825d8a672f1d6516e435b599bc202"
+        },
+        {
+          "url": "/brand/generated/editorial-post-017-7e0a8f5540c9-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 74394,
+          "sha256": "227de4c2a26b55c431549c35da6b7431aa394afd564aabff5aeca9f406995c68"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-017-7e0a8f5540c9-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 94187,
+        "sha256": "396a9e6f64c49f0d730c3a9bfbfbd772d8b3036d1ebc1df23d69ab9882c29eef"
+      }
+    },
+    "editorial-post-018": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我思考了一个不可能实现的产品，但那些想法让我更清醒",
+      "source": "design/cover-sources/legacy-article-018-v1.webp",
+      "sourceHash": "6f04a47e7b9db9bb62161fc3db713f560a3100a46fe16205b957ae517e28ffa6",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-018-6f04a47e7b9d-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19996,
+          "sha256": "54dad199ee0c03ec1d04a87f17225fad9e0037637ede25c5cdfebc92e5d7c0da"
+        },
+        {
+          "url": "/brand/generated/editorial-post-018-6f04a47e7b9d-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 39254,
+          "sha256": "4e7eb1f936cb4af7fefa8f282eb58c5eba3ef38446482134c1278df2a37f67db"
+        },
+        {
+          "url": "/brand/generated/editorial-post-018-6f04a47e7b9d-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 92990,
+          "sha256": "04ff26d0661cabc97499b1a62e1763d952f3183d218acf34f01c0cf9320864f1"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-018-6f04a47e7b9d-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 107379,
+        "sha256": "87f88314ebe6c5f41fc57907b821d03965bbd0751443e815735f056676b7c470"
+      }
+    },
+    "editorial-post-019": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我用 AI 把知识库从「档案柜」变成「头脑地图」",
+      "source": "design/cover-sources/legacy-article-019-v1.webp",
+      "sourceHash": "65e4eb2f6267226dc59da5583d7da184fbde49ac44e74d2b39fb1166b730a091",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-019-65e4eb2f6267-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18096,
+          "sha256": "c0320b3c6e8e2d69727635f51011cc6a4a37b0fdf7fd32eca61e7ba98cf3ef23"
+        },
+        {
+          "url": "/brand/generated/editorial-post-019-65e4eb2f6267-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 35292,
+          "sha256": "91ab151ac8a70220e1c9e94d7b66ed3d18d6ac8bd7328b5066a8d66c252f0349"
+        },
+        {
+          "url": "/brand/generated/editorial-post-019-65e4eb2f6267-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 78664,
+          "sha256": "68977b1229ded5d05ac2e2e2bf75d958f64c0ddbd852b8cbfddfea1c50b683b7"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-019-65e4eb2f6267-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 98198,
+        "sha256": "16dafffa0876fe84bf3c4ebc5d45c4916eb2f2f2558706b42de9376109d1b70f"
+      }
+    },
+    "editorial-post-020": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我把主力 AI 助手换成了 Agent，两天踩了四个坑",
+      "source": "design/cover-sources/legacy-article-020-v1.webp",
+      "sourceHash": "87133695dd53a0cf7ff2e52953d65b359eb82a8b5cf03a55000097df3165e58d",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-020-87133695dd53-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 20908,
+          "sha256": "7104153c30673cf1c240b5ac59dbf3132f6a6ff57adf8d466fd3cd20e886a00e"
+        },
+        {
+          "url": "/brand/generated/editorial-post-020-87133695dd53-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 39754,
+          "sha256": "2b55ee7e7c178d09cda3a735845827ab8ae3cbd4cca9612aae3e7eae0609a99c"
+        },
+        {
+          "url": "/brand/generated/editorial-post-020-87133695dd53-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 89382,
+          "sha256": "e76e16ed4c9606f92da695bcaa91a10a5a9699f8717d3948199b99f89b0a725a"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-020-87133695dd53-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 108263,
+        "sha256": "c469eb576436fed3f0c0aeda00aabbfc671975d162dd3dcdcfc428d806222a1a"
+      }
+    },
+    "editorial-post-021": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：Hermes 最大缺点：Skill 系统能创建，不能维护",
+      "source": "design/cover-sources/legacy-article-021-v1.webp",
+      "sourceHash": "2487890302f00fc93d64812073874e52cd9a479a2a56fa6bb3269aa780f343d2",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-021-2487890302f0-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 17088,
+          "sha256": "b4d837f93547e19bec39a04c0eb793278eb0ec0928c6ad2207cb5d8c0be0fcc0"
+        },
+        {
+          "url": "/brand/generated/editorial-post-021-2487890302f0-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 33924,
+          "sha256": "70adb4b7c42962871e7d323bb032a2f7f375abf728ebbf64f68d41d9063b1839"
+        },
+        {
+          "url": "/brand/generated/editorial-post-021-2487890302f0-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 78232,
+          "sha256": "4c26a1e870affaa08b34383c1462ebd4107b3d8869be7e1fe2118ad8fdc2e065"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-021-2487890302f0-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 97332,
+        "sha256": "eb6762b5bf8493591282b6048295050c73873a4a318092fda23d579f9905c354"
+      }
+    },
+    "editorial-post-022": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：多智能体协作：不是人越多越好",
+      "source": "design/cover-sources/legacy-article-022-v1.webp",
+      "sourceHash": "bb9a3b95518b6fa7509fdca130a98606e344adeddc96e70441085c36de293c31",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-022-bb9a3b95518b-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 17312,
+          "sha256": "1446ae297acbd41f548aa4e8163eb1d626c8235c563a51a5ef016a6c36d94362"
+        },
+        {
+          "url": "/brand/generated/editorial-post-022-bb9a3b95518b-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 34382,
+          "sha256": "985f5be298d7e1bf8bd27eea1c90a3baab4e4f05d039d2092c8742a2cfa9219a"
+        },
+        {
+          "url": "/brand/generated/editorial-post-022-bb9a3b95518b-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 77756,
+          "sha256": "698017d7d6121b0175062ccc5e050b66f9642ef590359e01909cc22a322b6342"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-022-bb9a3b95518b-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 96692,
+        "sha256": "6e6ec8ae160450bb6103a173afd96b218d3e113202a09701b250319471899f18"
+      }
+    },
+    "editorial-post-023": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：Hermes + Claude Code 三层架构完全落地方案",
+      "source": "design/cover-sources/legacy-article-023-v1.webp",
+      "sourceHash": "8abf496a0b6edebad0f337ceb276c54f8e88cf16c831d174329803e945e7b7a2",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-023-8abf496a0b6e-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18858,
+          "sha256": "69c6da546973ce036d6bb62b5681f7a24dd40c7948eee70edbc5f2b9d638a468"
+        },
+        {
+          "url": "/brand/generated/editorial-post-023-8abf496a0b6e-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 37086,
+          "sha256": "d74a5322eed0b793b39058a7e5de5043e8d5c708ec351ae5966d2cc6bfecbea0"
+        },
+        {
+          "url": "/brand/generated/editorial-post-023-8abf496a0b6e-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 81618,
+          "sha256": "6c0fd87f005636f3066980c3f9f5e332489fb8ffb96463276788e8e6dcc1a95d"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-023-8abf496a0b6e-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 102198,
+        "sha256": "09dc767922bc14c76d2fbfb5eae09a505181f31b2f037a3a1b8cc1a2fc90acff"
+      }
+    },
+    "editorial-post-024": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：调试一个 AI Agent 协作架构:5 轮实跑、10 次 SKILL 迭代、3 种失败模式",
+      "source": "design/cover-sources/legacy-article-024-v1.webp",
+      "sourceHash": "cf0c0dc7506f17ad937709725ee8c523a3c5731ef1c2e130f62a19a72ca692ce",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-024-cf0c0dc7506f-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19858,
+          "sha256": "84acbf65fd6d4f213b51454ba3ab1bf0d3023293c9b4a659c467864feb0e5a0d"
+        },
+        {
+          "url": "/brand/generated/editorial-post-024-cf0c0dc7506f-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 38228,
+          "sha256": "fe44fc765d7b7871414c0cec954f6f78f937011a8fe5562b9d9f38c380e77ebf"
+        },
+        {
+          "url": "/brand/generated/editorial-post-024-cf0c0dc7506f-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 84810,
+          "sha256": "31a06130a512d553d95c83d3a31ef77859c36649ab415b8a2ea449bce5a82bdf"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-024-cf0c0dc7506f-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 106551,
+        "sha256": "2bcb1503363ea28da4165b175d15248a6a9d341ce48a10d81673cfa3ee15f346"
+      }
+    },
+    "editorial-post-025": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：Agent 到底进化了什么：从「对话框 AI」到「能干活的 AI」",
+      "source": "design/cover-sources/legacy-article-025-v1.webp",
+      "sourceHash": "95c75f971cfb5b4d91f2de71b39b0ffb647e1c5e258eb7483e7c7eb782da7f71",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-025-95c75f971cfb-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 17256,
+          "sha256": "72df97f9f966f207f4f72c225f01dca9894dd6e6d70bd67dd58f28919c701376"
+        },
+        {
+          "url": "/brand/generated/editorial-post-025-95c75f971cfb-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 33354,
+          "sha256": "ce8aaf55d6f706e848212d3887b1e88c8eefe8297546239584a7bf304b917449"
+        },
+        {
+          "url": "/brand/generated/editorial-post-025-95c75f971cfb-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 72948,
+          "sha256": "de634e6693fa5bfafe7b48893cbe3a374fc0ddb556342e8125a37202aaa31324"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-025-95c75f971cfb-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 94482,
+        "sha256": "dda933ae15b83435a28440283e1089840265c1bdf9feb2d66a01e30ca5180eef"
+      }
+    },
+    "editorial-post-026": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：定时任务 MCP 服务 — 技术改造文档",
+      "source": "design/cover-sources/legacy-article-026-v1.webp",
+      "sourceHash": "3aeea285cbd0b9bdea6f0e3d796028fcd05ac8beb4eab9f70ac1b1d93bb00fcc",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-026-3aeea285cbd0-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 17756,
+          "sha256": "834c68fdedfbc879364cb27def31498a88b765a7246fe250dddde0bd485c3c7e"
+        },
+        {
+          "url": "/brand/generated/editorial-post-026-3aeea285cbd0-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 34494,
+          "sha256": "593197825bd8dd41fab7a2762b2531f3701593d1a2b8cf12b8c17462b0a5d097"
+        },
+        {
+          "url": "/brand/generated/editorial-post-026-3aeea285cbd0-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 77110,
+          "sha256": "106443c681367eaff4de852e1dbe3fc9a5c4a8ae76c9a9319644eee0f178a669"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-026-3aeea285cbd0-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 96347,
+        "sha256": "39ea9c7e3bd7a6da5bcdbbd2d78fd90b4e32abc20a26c33ff7467fd7da3bbd5c"
+      }
+    },
+    "editorial-post-027": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我在 Hermes 上叠了一层自定义编排，然后拆了",
+      "source": "design/cover-sources/legacy-article-027-v1.webp",
+      "sourceHash": "9fd95cc3bdddbc769403a3249a5294b4aed74b9dcc1b49de7c568f69d40ebc7c",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-027-9fd95cc3bddd-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18908,
+          "sha256": "63144c5122306e19d1aec00942b9b42cb7746dd90ca22d3e315b207b2667999f"
+        },
+        {
+          "url": "/brand/generated/editorial-post-027-9fd95cc3bddd-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 35598,
+          "sha256": "758128685622ede63d9ad2d03db361728e80c5c17aa1d64e40f842f72f22678f"
+        },
+        {
+          "url": "/brand/generated/editorial-post-027-9fd95cc3bddd-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 79770,
+          "sha256": "1319dfd3b53607cfff1f2333b6b79372d54ffed970af813414811f48e42b252e"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-027-9fd95cc3bddd-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 99796,
+        "sha256": "189e2de9cb200f27f0bb3a54614b4d43479de5038de467cd8ba599e2309ee615"
+      }
+    },
+    "editorial-post-028": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我们在公园长椅上写代码，做了一个自己和团队都离不开的工具",
+      "source": "design/cover-sources/legacy-article-028-v1.webp",
+      "sourceHash": "569052d397485dd55e4532c0ee81a4638c0d88ea4b20dc437d15b9bb4e49a023",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-028-569052d39748-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 25976,
+          "sha256": "588c6c669a84483f387a6cb97ad70067b62118fc023783f40a07feec7f2d6ee5"
+        },
+        {
+          "url": "/brand/generated/editorial-post-028-569052d39748-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 53514,
+          "sha256": "84bbe7106ab21985967abfd061a35ce361740316c2328bd07b41e170c032dc9a"
+        },
+        {
+          "url": "/brand/generated/editorial-post-028-569052d39748-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 126446,
+          "sha256": "8515a15740c7a8dc8d6f5cc4204e0aa16c72ac537b557c74f4bfdc2f8540925f"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-028-569052d39748-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 130214,
+        "sha256": "e162e72cf841df19e323f71e12fc2cb0def4b16240f25a0e7e318eef2875392a"
+      }
+    },
+    "editorial-post-029": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：Markdown 不会淘汰，HTML 也替代不了它",
+      "source": "design/cover-sources/legacy-article-029-v1.webp",
+      "sourceHash": "345c6963dd7c3f481645af65ab80ba2721f7369063bf7fd7c4794e396a7662b8",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-029-345c6963dd7c-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 20064,
+          "sha256": "66cb8fbea8a4f15e1c3f8b931530a09d2436a3a1a16ab359398ee6d88952de2e"
+        },
+        {
+          "url": "/brand/generated/editorial-post-029-345c6963dd7c-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 40996,
+          "sha256": "07982bc685e2c010fca9c0fa0704acf2dce72436c661713c67e0e7cc83cdabe5"
+        },
+        {
+          "url": "/brand/generated/editorial-post-029-345c6963dd7c-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 96912,
+          "sha256": "e1eec48885242d49c1c8630c30fa38a79202f81472e999d8b88c5ed467b9d6d4"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-029-345c6963dd7c-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 108741,
+        "sha256": "891aafeb474a078c966138ae5236a25dbbf90a24cfb8ab78b292b59e872a6a1f"
+      }
+    },
+    "editorial-post-030": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：Multica 实战：AI Agent 协作平台的落地实操",
+      "source": "design/cover-sources/legacy-article-030-v1.webp",
+      "sourceHash": "1de75f510be9e04bbc975da67b68bf35adde95f70564cb1957a6f522c3395f0b",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-030-1de75f510be9-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 20072,
+          "sha256": "8a6bef78c4b8bf7ffe59a4cf2c0b2a2411e8ad8b66a2e65a2b91f3d60c73397d"
+        },
+        {
+          "url": "/brand/generated/editorial-post-030-1de75f510be9-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 39848,
+          "sha256": "e064c608784196b74be4e868d6bf4055dd7984c7cd0f831fa099df2abc48a169"
+        },
+        {
+          "url": "/brand/generated/editorial-post-030-1de75f510be9-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 90864,
+          "sha256": "c6243b1df9302807f0c3beeeb51f6b0a2639ddc60666430732cc592c63f483c2"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-030-1de75f510be9-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 106836,
+        "sha256": "4ea60bbd0d5cd90c9640a1c5462a94411cc3c749baaade4df8a49dd7c8233baf"
+      }
+    },
+    "editorial-post-031": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：口播视频自动剪辑工具：从20分钟原片到10分钟成片",
+      "source": "design/cover-sources/legacy-article-031-v1.webp",
+      "sourceHash": "8e7d4086f0127bb1d9f2e27066596726385b0eb1ca7979afce3532911d594b65",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-031-8e7d4086f012-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 22784,
+          "sha256": "80e57416a8ef280944a2f571416be0e89daddcde5725c53915bbe271189a04cd"
+        },
+        {
+          "url": "/brand/generated/editorial-post-031-8e7d4086f012-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 43366,
+          "sha256": "1de903dfd1ba2ceb0a4caabb1d941e746390aa34dd0a9cb1bbe3cff0103e2d89"
+        },
+        {
+          "url": "/brand/generated/editorial-post-031-8e7d4086f012-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 100460,
+          "sha256": "70cfa7b408cfaa97dc56bcfbd9b4ff6dc4cf04cc5383515e81be0864adf5d02c"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-031-8e7d4086f012-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 116624,
+        "sha256": "a472bd37198ab49b74b6456166311299d58574eae23a0d7bf6703b326b5be4d2"
+      }
+    },
+    "editorial-post-032": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我把 AI 当新员工管：3 小时交付 10853 行代码的工程复盘",
+      "source": "design/cover-sources/legacy-article-032-v1.webp",
+      "sourceHash": "5b9da0895b62f0fc2ad2a35b14c935aaabcabfc9e38035d4423679ca12177e51",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-032-5b9da0895b62-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 20164,
+          "sha256": "2738c4c8ce962c5b777da91ea08d98bfc1d192d944bc905dc72b5a8bd913d42b"
+        },
+        {
+          "url": "/brand/generated/editorial-post-032-5b9da0895b62-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 40004,
+          "sha256": "3fcc2e0175548920b68fb16bec6d5c87dcc86b35c353b71b08a2cd277d55153e"
+        },
+        {
+          "url": "/brand/generated/editorial-post-032-5b9da0895b62-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 92528,
+          "sha256": "400238703f9d13e6f40138a182b08df4177519de18233425808fdf36499a5e3a"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-032-5b9da0895b62-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 107726,
+        "sha256": "7d2fade6d11966fb9b3ab6f57627eb6bfbcacd1acb22762296d276937253d9b0"
+      }
+    },
+    "editorial-post-033": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：输入输出工作流：为什么 AI 装上了，效果却不尽人意",
+      "source": "design/cover-sources/legacy-article-033-v1.webp",
+      "sourceHash": "1d2a7c28c738bb5a624b6927e6b1f40d17c17621f4a16bd0d1a207022103042e",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-033-1d2a7c28c738-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19042,
+          "sha256": "4695fe47d4be563c0a7ab065872a7f88bbd30beb8cdb9953837588fb5bd41279"
+        },
+        {
+          "url": "/brand/generated/editorial-post-033-1d2a7c28c738-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 39458,
+          "sha256": "8b3427c856ad13b028e52b4872bee74b43a16fd324d7998246cef3115f65af76"
+        },
+        {
+          "url": "/brand/generated/editorial-post-033-1d2a7c28c738-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 93178,
+          "sha256": "5a1f337385176dacc4012219d7adfe6980763f2795a16da16fc06ef5bd97bea9"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-033-1d2a7c28c738-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 105335,
+        "sha256": "c3c44e448c304a1d744839615da50c86ea52d6a0067d16ff18d56e0137bc26b8"
+      }
+    },
+    "editorial-post-034": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：394 个问题之后：每个任务都做对了，产品为什么还是错的",
+      "source": "design/cover-sources/legacy-article-034-v1.webp",
+      "sourceHash": "bdd0050878805596bffc52f25aa70de6cbed892fccb4f7daf30893f81b365c6f",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-034-bdd005087880-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 18250,
+          "sha256": "65e5c0ac0acc23c1d3a00e7ce687de0d7381a34d973af3e78df7dac01f0dfd55"
+        },
+        {
+          "url": "/brand/generated/editorial-post-034-bdd005087880-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 36814,
+          "sha256": "fbc55119b560431fa646a3539e391113953b945ae0bc4721458862b6a368ab17"
+        },
+        {
+          "url": "/brand/generated/editorial-post-034-bdd005087880-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 81652,
+          "sha256": "fb568fdd235507b6ccf98aea4784a9decf4e038462dc5d74c6274520b4005cd6"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-034-bdd005087880-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 100965,
+        "sha256": "56424089922a6f0d734acbca320d015e5f011c82c156e94805911088d004829a"
+      }
+    },
+    "editorial-post-035": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：AI 写代码为什么越写越烂：我用编排器对抗 Vibe Coding 的熵增",
+      "source": "design/cover-sources/legacy-article-035-v1.webp",
+      "sourceHash": "9e776934840ec30465024c562d85ca4e2504fcabecac1d2516600b7d0933a345",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-035-9e776934840e-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19516,
+          "sha256": "bb00a56a5641ffe067fde0164bde2ba5013359a55d34279bf302cb6f0578f858"
+        },
+        {
+          "url": "/brand/generated/editorial-post-035-9e776934840e-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 39126,
+          "sha256": "5262df42cc6a58625caf5ad2e5d2977a817c1fb9ebbc3955a362b8369dcfc26c"
+        },
+        {
+          "url": "/brand/generated/editorial-post-035-9e776934840e-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 91894,
+          "sha256": "83b29941f3711fe9758af966efdf4bab7753552c93493be493011275b8f0cc39"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-035-9e776934840e-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 106157,
+        "sha256": "0806333e9dad1562da0425366d67eb30d7656d5b907e0b9a9a67abe055a05787"
+      }
+    },
+    "editorial-post-036": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：Agent 最危险的不是不会做，而是把已有系统重做一遍",
+      "source": "design/cover-sources/legacy-article-036-v1.webp",
+      "sourceHash": "4aaa601588889153c8c12ae081c2ca02c08c9df2a9a6d76424a5f7e6ad376faa",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-036-4aaa60158888-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 20898,
+          "sha256": "c7e7faea82ed554d756e16d20a74e3f0a97d973b568fbe967ad30a7f4b996959"
+        },
+        {
+          "url": "/brand/generated/editorial-post-036-4aaa60158888-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 41854,
+          "sha256": "560db7ff8b320798d62825ce1f069c1b3bfa2d09f7ce59f674c4845ca917dae8"
+        },
+        {
+          "url": "/brand/generated/editorial-post-036-4aaa60158888-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 95782,
+          "sha256": "b781c1232a288d0b9c78fa1a94abf768f92e992776703f8eaef2479ad3c1cd5c"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-036-4aaa60158888-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 112348,
+        "sha256": "0356d4320d7a1328aed0c2cfbb9dac66eece41afeb2b370985e671444f9c456d"
+      }
+    },
+    "editorial-post-037": {
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：MCP 进程爆炸：从 stdio 陷阱到防御性架构设计",
+      "source": "design/cover-sources/legacy-article-037-v1.webp",
+      "sourceHash": "da6ad28ec9ff1d2f1e08da99ad7a3206a9f4bbd648e885f284ee5a0692eeebc0",
+      "width": 1672,
+      "height": 941,
+      "variants": [
+        {
+          "url": "/brand/generated/editorial-post-037-da6ad28ec9ff-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 19396,
+          "sha256": "9f09707c357f6677207bb7d1e5e4b0f460c80af27a0fe2f36eab64e4648b6adb"
+        },
+        {
+          "url": "/brand/generated/editorial-post-037-da6ad28ec9ff-800.webp",
+          "width": 800,
+          "height": 450,
+          "bytes": 39436,
+          "sha256": "7e85f7b237d4ed49e768593a371135100f70f1fd0caa49c70178eae5fa661e5d"
+        },
+        {
+          "url": "/brand/generated/editorial-post-037-da6ad28ec9ff-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 88560,
+          "sha256": "0709e4bb709ba276bbf83c5b7e60a5a5749b95acae2292dfbbebc0e30305fa60"
+        }
+      ],
+      "og": {
+        "url": "/brand/generated/editorial-post-037-da6ad28ec9ff-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "bytes": 105312,
+        "sha256": "383c701bb96eea16bf53f9c8c01564f841ee7e27d02199faec4130f1c8b0f62d"
+      }
+    }
+  }
+}

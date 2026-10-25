@@ -1,0 +1,301 @@
+/* All three card kinds use CardEffect. Only the visual moves; its link and text remain stable. */
+.product-grid .product-image,
+.article-card .article-card__visual {
+  position: relative;
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease;
+}
+
+.product-grid .product-image img,
+.article-card .article-card__visual img,
+.opensource-card .opensource-art img {
+  transition: transform 360ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.product-image__cue,
+.article-card__cue {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  padding: 9px 12px;
+  border: 1px solid #182b4222;
+  border-radius: 999px;
+  background: #fffdf6f2;
+  box-shadow: 0 5px 18px #182b421c;
+  color: var(--brand-ink);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 220ms ease,
+    transform 260ms ease;
+  pointer-events: none;
+}
+
+.product-image__cue span,
+.article-card__cue span {
+  color: var(--brand-accent);
+  font-size: 17px;
+}
+
+.product-grid .product-copy b,
+.article-card .article-card__read > span,
+.opensource-card .opensource-arrow {
+  transition:
+    transform 260ms ease,
+    background-color 260ms ease,
+    color 260ms ease;
+}
+
+.opensource-card > a {
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .product-grid a:hover .product-image,
+  .article-card:hover .article-card__visual {
+    transform: translateY(-4px);
+    border-color: #b48e5490;
+    box-shadow: 0 14px 30px #182b4218;
+  }
+
+  .product-grid a:hover .product-image img,
+  .article-card:hover .article-card__visual img,
+  .opensource-card > a:hover .opensource-art img {
+    transform: scale(1.035);
+  }
+
+  .product-grid a:hover .product-image__cue,
+  .article-card:hover .article-card__cue {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .product-grid a:hover .product-copy b,
+  .article-card:hover .article-card__read > span,
+  .opensource-card > a:hover .opensource-arrow {
+    transform: translate(2px, -2px);
+  }
+
+  .opensource-card > a:hover .opensource-arrow {
+    background: var(--card-accent, var(--brand-accent));
+    color: #fff;
+  }
+}
+
+.product-grid a:focus-visible .product-image,
+.article-card:focus-visible .article-card__visual {
+  border-color: var(--brand-accent);
+}
+
+.product-grid a:focus-visible .product-image__cue,
+.article-card:focus-visible .article-card__cue {
+  opacity: 1;
+  transform: none;
+}
+
+.opensource-card > a:focus-visible .opensource-arrow {
+  background: var(--brand-accent);
+  color: #fff;
+}
+
+@media (hover: none) {
+  .product-image__cue,
+  .article-card__cue {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-grid .product-image,
+  .article-card .article-card__visual,
+  .product-grid .product-image img,
+  .article-card .article-card__visual img,
+  .opensource-card .opensource-art img,
+  .product-image__cue,
+  .article-card__cue,
+  .product-grid .product-copy b,
+  .article-card .article-card__read > span,
+  .opensource-card .opensource-arrow,
+  .opensource-card > a {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Flash-card material. Transform the visual, never the pointer hitbox or text. */
+[data-card-motion] {
+  perspective: 1100px;
+  --card-rx: 0deg;
+  --card-ry: 0deg;
+  --card-mx: 50%;
+  --card-my: 50%;
+}
+[data-card-motion] [data-card-visual] {
+  isolation: isolate;
+  transform-origin: center;
+  transition:
+    transform 480ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 350ms ease,
+    box-shadow 480ms ease;
+}
+[data-card-motion] [data-card-visual]::before,
+[data-card-motion] [data-card-visual]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+}
+[data-card-motion] [data-card-visual]::before {
+  background: repeating-linear-gradient(105deg, #182b42f2 0 24px, var(--card-accent) 24px 33px, transparent 33px 66px);
+  transform: translateX(-110%);
+}
+[data-card-motion] [data-card-visual]::after {
+  background: radial-gradient(ellipse at var(--card-mx) var(--card-my), #ffffff75, #ffffff18 32%, transparent 65%);
+  mix-blend-mode: soft-light;
+  transition: opacity 350ms ease;
+}
+[data-card-motion] :is(.product-image__cue, .article-card__cue) {
+  z-index: 2;
+}
+.product-title {
+  background: linear-gradient(
+      color-mix(in srgb, var(--card-accent) 16%, transparent),
+      color-mix(in srgb, var(--card-accent) 16%, transparent)
+    )
+    0 85% / 0 35% no-repeat;
+  transition: background-size 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Strong, finite stripe wipe: offscreen → across the cover → offscreen. */
+@keyframes card-stripe-reveal {
+  from {
+    transform: translateX(-110%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(110%);
+    opacity: 1;
+  }
+}
+.card-reveal-line {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-accent);
+  box-shadow: 0 -2px 12px color-mix(in srgb, var(--card-accent) 35%, transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 380ms ease,
+    opacity 260ms ease;
+}
+@media (min-width: 701px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .card-effect[data-card-motion][data-card-active] [data-card-visual] {
+    transform: rotateX(var(--card-rx)) rotateY(var(--card-ry)) translateY(-4px);
+    border-color: color-mix(in srgb, var(--card-accent) 55%, white);
+    box-shadow:
+      0 24px 42px -20px color-mix(in srgb, var(--card-accent) 36%, transparent),
+      0 5px 14px #182b4212;
+    transition:
+      transform 130ms ease-out,
+      border-color 350ms ease,
+      box-shadow 480ms ease;
+  }
+  [data-card-motion] [data-card-visual] img {
+    transition:
+      filter 480ms ease,
+      transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  [data-card-color='mono'] [data-card-visual] img {
+    filter: grayscale(1) contrast(1.1) brightness(0.9);
+  }
+  /* Keep every article cover in color, including existing and future portraits. */
+  [data-card-color='soft'] [data-card-visual] img {
+    filter: saturate(0.94) contrast(0.97) brightness(1.02);
+  }
+  [data-card-motion]:is(:hover, [data-card-focused], [data-card-active], [data-card-reveal]) [data-card-visual] img {
+    filter: none;
+    transition:
+      filter 480ms ease 70ms,
+      transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  [data-card-motion][data-card-reveal] [data-card-visual]::before {
+    animation: card-stripe-reveal 720ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+  [data-card-motion]:is(:hover, [data-card-focused], [data-card-active], [data-card-reveal]) .card-reveal-line {
+    opacity: 1;
+    transform: scaleX(1);
+    transition:
+      transform 650ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 120ms ease;
+  }
+  [data-card-motion][data-card-active] [data-card-visual]::after {
+    opacity: 1;
+  }
+  [data-card-motion='article'][data-card-active] [data-card-visual]::after {
+    opacity: 0.5;
+  }
+  .product-grid a:hover .product-title {
+    background-size: 100% 35%;
+  }
+  .product-grid a:hover .product-copy b {
+    color: var(--card-accent);
+    transform: translate(3px, -3px) rotate(-8deg);
+  }
+}
+a:focus-visible [data-card-motion] [data-card-visual] {
+  border-color: var(--card-accent);
+  box-shadow: 0 16px 32px -20px var(--card-accent);
+}
+a:focus-visible .product-title {
+  background-size: 100% 35%;
+}
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  [data-card-motion] [data-card-visual]::before,
+  [data-card-motion] [data-card-visual]::after {
+    display: none;
+    animation: none;
+  }
+  .product-title {
+    transition: none;
+  }
+}
+
+@media (max-width: 700px) {
+  [data-card-motion] [data-card-visual],
+  [data-card-motion] [data-card-visual] img {
+    transform: none !important;
+  }
+  [data-card-motion] [data-card-visual]::before,
+  [data-card-motion] [data-card-visual]::after,
+  [data-card-motion] :is(.product-image__cue, .article-card__cue) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse), (max-width: 700px) {
+  [data-card-motion] [data-card-visual] img {
+    filter: none !important;
+  }
+  .card-reveal-line {
+    display: none;
+    transition: none;
+  }
+}

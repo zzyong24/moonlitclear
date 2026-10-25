@@ -1,0 +1,129 @@
+---
+import type { ProductDetail } from '~/data/product-details';
+interface Props {
+  id: string;
+  name: string;
+  detail: ProductDetail;
+}
+const { id, name, detail } = Astro.props;
+---
+
+<section class="product-section demo-section" id="demo" aria-labelledby="demo-title">
+  <div class="section-label">02 / 看它怎么工作</div>
+  <div class="product-section-heading"><h2 id="demo-title">{detail.demoTitle}</h2><p>{detail.scenario}</p></div>
+  <div class="product-demo" data-product-demo data-kind={id}>
+    <div class="demo-controlbar">
+      <span><i aria-hidden="true"></i> 交互演示 <small>· 示例内容</small></span>
+      <button type="button" class="demo-play" data-demo-play hidden aria-pressed="false"
+        >播放演示 <span aria-hidden="true">▶</span></button
+      >
+    </div>
+    <div class="demo-layout">
+      <div class="demo-steps" data-demo-tabs aria-label="演示步骤">
+        {
+          detail.steps.map((step, i) => (
+            <button type="button" data-demo-step={i} id={`${id}-step-${i}`} aria-controls={`${id}-panel-${i}`}>
+              <>
+                <span class="step-number">0{i + 1}</span>
+                <span>
+                  <>
+                    <b>{step.label}</b>
+                    <small>{step.result}</small>
+                  </>
+                </span>
+                <i aria-hidden="true">↗</i>
+              </>
+            </button>
+          ))
+        }
+      </div>
+      <div class="demo-stage">
+        {
+          detail.steps.map((step, index) => (
+            <div
+              class="demo-panel"
+              data-demo-panel={index}
+              id={`${id}-panel-${index}`}
+              aria-labelledby={`${id}-step-${index}`}
+            >
+              <div class="demo-window">
+                <div class="demo-windowbar">
+                  <>
+                    <span class="window-dots" aria-hidden="true">
+                      ● ● ●
+                    </span>
+                    <span>
+                      {name} / {step.screenTitle}
+                    </span>
+                    <span class="window-mode">流程示意</span>
+                  </>
+                </div>
+                <div
+                  class:list={['demo-screen', `screen-${id}`, { 'screen-final': index === detail.steps.length - 1 }]}
+                >
+                  <div class="screen-heading">
+                    <>
+                      <span>{index === detail.steps.length - 1 ? 'OUTPUT' : `STEP 0${index + 1}`}</span>
+                      <h3>{step.screenTitle}</h3>
+                    </>
+                  </div>
+                  <div class="screen-items">
+                    {step.items.map((item, n) => (
+                      <div class="screen-item" style={`--item-order:${n}`}>
+                        <span class="item-marker" aria-hidden="true">
+                          {id === 'thirdspace' ? '↳' : id === 'ai-companion' ? item.label.slice(0, 1) : `0${n + 1}`}
+                        </span>
+                        <div>
+                          <span class="item-label">{item.label}</span>
+                          <p>{item.text}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div class="screen-result" style={`--item-order:${step.items.length}`}>
+                    <span aria-hidden="true">↳</span> {step.result}
+                  </div>
+                </div>
+              </div>
+              <div class="demo-caption">
+                <>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="demo-transport" data-demo-transport hidden>
+      <button type="button" data-demo-prev aria-label="上一步">←</button>
+      <label class="demo-scrub"
+        >步骤 <input
+          type="range"
+          min="0"
+          max={detail.steps.length - 1}
+          value="0"
+          step="1"
+          data-demo-range
+          aria-label="演示进度"
+        /><output data-demo-count>01 / 04</output></label
+      >
+      <button type="button" data-demo-next aria-label="下一步">→</button>
+    </div>
+    <p class="demo-status" data-demo-status role="status" aria-live="polite">点击步骤查看，也可以播放完整过程。</p>
+    <noscript><p class="demo-status">当前未启用 JavaScript，以下按顺序展示全部流程。</p></noscript>
+  </div>
+</section>
+<script>
+  import { initProductDemos } from '~/scripts/product-demo';
+  let cleanup: (() => void) | undefined;
+  document.addEventListener('astro:page-load', () => {
+    cleanup?.();
+    cleanup = initProductDemos();
+  });
+  document.addEventListener('astro:before-swap', () => {
+    cleanup?.();
+    cleanup = undefined;
+  });
+</script>

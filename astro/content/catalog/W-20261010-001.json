@@ -1,0 +1,21 @@
+{
+  "id": "W-20261010-001",
+  "source": {
+    "kind": "moonlit-creator",
+    "artifact": "wechatArticle",
+    "version": "v02"
+  },
+  "title": "自媒体第一步：先想清楚，你能帮谁",
+  "slug": "creator-positioning-who-you-help",
+  "visibility": "public",
+  "date": "2026-10-10",
+  "category": "个人品牌",
+  "tags": ["自媒体定位", "个人品牌", "AI 实践"],
+  "summary": "从我会什么走向我能帮谁，用使命定位和人设提问梳理自己的内容方向。",
+  "cover": {
+    "source": "design/cover-sources/creator-W-20261010-001-real-ip-v1.png",
+    "template": "mechanism",
+    "designVersion": "moonlit-web-2",
+    "alt": "月明本人照片与我的能力、谁遇到问题、能交付什么三步定位笔记板。"
+  }
+}

@@ -1,0 +1,2735 @@
+{
+  "schemaVersion": 2,
+  "mode": "public",
+  "generation": "96d0565486d7624b7ae695f90e94d381c6609b9da3d91c4d30eb165841c6d837",
+  "posts": [
+    {
+      "source": "creator:W-20260904-001",
+      "kind": "creator",
+      "workId": "W-20260904-001",
+      "artifact": "wechatArticle",
+      "artifactVersion": "v1",
+      "sourcePath": "content/article/article.md",
+      "sourceStatus": "published",
+      "visibility": "public",
+      "sha256": "6bdb6ce3d1c1369de3190d0e8e3958273a377abf1cb1ad1924e95c05eae897ac",
+      "title": "AI Agent 不该只是一个聊天框：NomiFun 把它做成了真正的“数字伙伴”",
+      "slug": "nomifun-digital-companion",
+      "images": [
+        {
+          "path": "content/article/assets/1-AI数字伙伴主视觉.png",
+          "sha256": "415f432e02b31270f4df6bc6667047aef4c838840a7173d34fa3aaf6aa63f59c",
+          "asset": "415f432e02b31270f4df6bc6.webp"
+        },
+        {
+          "path": "content/article/assets/5-每次换会话都要重新介绍自己.png",
+          "sha256": "bf1cb239e3f9df4b643991de5e76cea79306c08b5270d2b082ee11b99b642119",
+          "asset": "bf1cb239e3f9df4b643991de.webp"
+        },
+        {
+          "path": "content/article/assets/2-伙伴独立设定.png",
+          "sha256": "8da159055dd843528214ef51078d2c4b7f1c87c0588e2db1081cd889f18872ec",
+          "asset": "8da159055dd843528214ef51.webp"
+        },
+        {
+          "path": "content/article/assets/3-伙伴技能系统.png",
+          "sha256": "9d1fa2c90e61679022077a0098eaa13d3157202235794bd03710ef2121887170",
+          "asset": "9d1fa2c90e61679022077a00.webp"
+        },
+        {
+          "path": "content/article/assets/6-记忆知识与技能归于同一伙伴.png",
+          "sha256": "64ee523e630ae787059a24413c901e24b350af64588cf9a3c32c78f1e297007c",
+          "asset": "64ee523e630ae787059a2441.webp"
+        },
+        {
+          "path": "content/article/assets/4-独立会话工作区.png",
+          "sha256": "3c717f1e6df7c603c584b5960028d8421417a6109f9bb3faf456cd822260797b",
+          "asset": "3c717f1e6df7c603c584b596.webp"
+        },
+        {
+          "path": "content/article/assets/7-伙伴连续而工作区彼此隔离.png",
+          "sha256": "b06ad874bc6453e93e62173007700a1cd4f42d4be741330be6ca76cb53f57aa7",
+          "asset": "b06ad874bc6453e93e621730.webp"
+        }
+      ],
+      "designVersion": "moonlit-web-2",
+      "coverHash": "c473364c92f1a891519839bf12db6125794f627a80574215bf46fe27bcd02364"
+    },
+    {
+      "source": "creator:W-20260906-001",
+      "kind": "creator",
+      "workId": "W-20260906-001",
+      "artifact": "wechatArticle",
+      "artifactVersion": "v4",
+      "sourcePath": "content/article/09060920-半小时做成2D肉鸽游戏-公众号.md",
+      "sourceStatus": "published",
+      "visibility": "public",
+      "sha256": "496b6cb9277cb09e452000f4fa33b4af91122487907ed5ca081a41baaac34ab2",
+      "title": "我用半小时，把一张图做成了2D肉鸽游戏",
+      "slug": "image-to-playable-roguelike",
+      "images": [
+        {
+          "path": "content/article/assets/evidence/06-电脑端游戏动态.gif",
+          "sha256": "5db1aff9a063d892f3bea81acaabe86aeea21f16d70de66a7eed162a10df1d94",
+          "asset": "5db1aff9a063d892f3bea81a.gif"
+        },
+        {
+          "path": "content/article/assets/evidence/07-手机端首领战动态.gif",
+          "sha256": "a06b452fd6a836a208821433d4e63d03a39c1a9aa8e9cc3b706590ecdf5265dc",
+          "asset": "a06b452fd6a836a208821433.gif"
+        },
+        {
+          "path": "content/article/assets/08-从图片到网页游戏.png",
+          "sha256": "b5d293f2082c8bf5e99b2e07c83a9111d8be85558a2146e47bfbdde8587ceaa3",
+          "asset": "b5d293f2082c8bf5e99b2e07.webp"
+        },
+        {
+          "path": "content/article/assets/evidence/01-原始参考图.png",
+          "sha256": "a8efe59162588f81ad0f5f3b1b38fa08a021de90e52ac93c9fe0799961959fa2",
+          "asset": "a8efe59162588f81ad0f5f3b.webp"
+        },
+        {
+          "path": "content/article/assets/evidence/02-GPT-Image-2生成Q版角色.png",
+          "sha256": "d75e49042876267ef1489c456b61b7d88387545206e87ae084d92f7d5bad79b8",
+          "asset": "d75e49042876267ef1489c45.webp"
+        },
+        {
+          "path": "content/article/assets/evidence/03-Blender可编辑模型.png",
+          "sha256": "f816ba71bf1deeefb593ac68d8f85ec617ba9810e1437cdf914c938e1ff6a893",
+          "asset": "f816ba71bf1deeefb593ac68.webp"
+        },
+        {
+          "path": "content/article/assets/evidence/04-ThreeJS手机端展厅.png",
+          "sha256": "4bf98a2860ccc6dab7aef62ca161a605454682525f4b07ae808bd3e61dbb1730",
+          "asset": "4bf98a2860ccc6dab7aef62c.webp"
+        },
+        {
+          "path": "content/article/assets/09-跨工具资产接力.png",
+          "sha256": "3803bae35e816c046fadd0f92af9c598a22b077d8c0c6752dee53685f3e62486",
+          "asset": "3803bae35e816c046fadd0f9.webp"
+        }
+      ],
+      "designVersion": "moonlit-web-2",
+      "coverHash": "5e0476b710fb49ea78955c5b3c62c204cfa8b45ad24469afca0b26a6ed96ef6c"
+    },
+    {
+      "source": "creator:W-20260908-001",
+      "kind": "creator",
+      "workId": "W-20260908-001",
+      "artifact": "wechatArticle",
+      "artifactVersion": "v3",
+      "sourcePath": "content/article/09080854-从AI个人到AI协作组织-公众号.md",
+      "sourceStatus": "draft",
+      "visibility": "public",
+      "sha256": "ff883708dad0b0c82f3546c575b19b23f64973b084e1d3c41ae5384d42f6c7d9",
+      "title": "从 AI Native 个人到 AI 协作组织",
+      "slug": "ai-native-organization",
+      "images": [
+        {
+          "path": "content/article/assets/brand/07-宇航员整理组织上下文.png",
+          "sha256": "c4442b95e7c6c89007e3ba8a6e538ae6e1dcc522f7a7ba25ec7a32cd77392b31",
+          "asset": "c4442b95e7c6c89007e3ba8a.webp"
+        },
+        {
+          "path": "content/article/assets/illustrations/02-从个人AI到组织协作.png",
+          "sha256": "6bc33810fbf78dc78ca63636839a5cd8fdc652c4fc10e0dea74805a247d03017",
+          "asset": "6bc33810fbf78dc78ca63636.webp"
+        },
+        {
+          "path": "content/article/assets/illustrations/03-AI协作组织五层结构.png",
+          "sha256": "9880cc42ed0e5060d8d4fa4fea7594dff0ead37bdd472ad25f963f7df85239b1",
+          "asset": "9880cc42ed0e5060d8d4fa4f.webp"
+        },
+        {
+          "path": "content/article/assets/illustrations/05-Uber上下文图谱.png",
+          "sha256": "463b799adc669f90a569c3da62fe239910bfa1f8c7825e2a571230c98deb92e0",
+          "asset": "463b799adc669f90a569c3da.webp"
+        },
+        {
+          "path": "content/article/assets/illustrations/04-Harness执行闭环.png",
+          "sha256": "3a181a2fe26d9c7cb6c7dc3cd337a9267b19465be56bdbf14c2f7d8ede27acd5",
+          "asset": "3a181a2fe26d9c7cb6c7dc3c.webp"
+        },
+        {
+          "path": "content/article/assets/brand/08-宇航员运行评估闭环.png",
+          "sha256": "3479712832076ebef3bdf96ce1867db60ebfd1ee994a7b5d93d9efdcea44ee29",
+          "asset": "3479712832076ebef3bdf96c.webp"
+        },
+        {
+          "path": "content/article/assets/illustrations/06-编导智能体数据飞轮.png",
+          "sha256": "53d072204e5cf984879666d70537561df7fe6b38b8931d62cb570e8c0db5a40b",
+          "asset": "53d072204e5cf984879666d7.webp"
+        },
+        {
+          "path": "content/article/assets/evidence/01-CreatorOS一站式AI编导系统.png",
+          "sha256": "833fb35ae7f8ba42da5df99b1057d87d6361483b46bf078b71a79c2bfa60c2a8",
+          "asset": "833fb35ae7f8ba42da5df99b.webp"
+        }
+      ],
+      "designVersion": "moonlit-web-2",
+      "coverHash": "d5b1a92d270e6669c9c8f849caa2a4cd74d4df381434b297b7b7a1fc174ae2a2"
+    },
+    {
+      "source": "creator:W-20260909-001",
+      "kind": "creator",
+      "workId": "W-20260909-001",
+      "artifact": "wechatArticle",
+      "artifactVersion": "v1",
+      "sourcePath": "content/article/09092000-AI时代孩子的上下文从出生开始-公众号.md",
+      "sourceStatus": "published",
+      "visibility": "public",
+      "sha256": "5042f5977333f80d7f7363ca3ea50499df13035eb1761cead1c6923f8e2ee985",
+      "title": "AI时代，我想从孩子出生的第一天开始，为他保存上下文",
+      "slug": "child-context-from-birth",
+      "images": [
+        {
+          "path": "content/article/assets/宇航员记录婴儿日常-v01.png",
+          "sha256": "6ccd0683dea793b9bf46e34a78d336bf78e9d082099fdb017f3de3e9ae7cc7b0",
+          "asset": "6ccd0683dea793b9bf46e34a.webp"
+        },
+        {
+          "path": "content/article/assets/product-screenshots/IMG_1130.PNG",
+          "sha256": "20b6880249dc1339bcab3836ece07b8aaa72b12d459361f7b906a5c0f0513cd7",
+          "asset": "20b6880249dc1339bcab3836.webp"
+        },
+        {
+          "path": "content/article/assets/图片识别自动记录-演示-v01.gif",
+          "sha256": "c6a4c1c9c52f9ce8d446ccbc8932d12eb0c1ed4a08a1fe2253ff7fd679634809",
+          "asset": "c6a4c1c9c52f9ce8d446ccbc.gif"
+        },
+        {
+          "path": "content/article/assets/一句话到成长上下文-机制图-v01.png",
+          "sha256": "7766dfceb6dd0b6d829eaedb42094547fd5297fa17dddbc1759a11c3b769ef19",
+          "asset": "7766dfceb6dd0b6d829eaedb.webp"
+        },
+        {
+          "path": "content/article/assets/product-screenshots/IMG_1131.PNG",
+          "sha256": "cb4b1e809b2c244600a229af1f731719fd92d9107d9ee0ba7318c27a693dcef1",
+          "asset": "cb4b1e809b2c244600a229af.webp"
+        },
+        {
+          "path": "content/article/assets/product-screenshots/IMG_1132.PNG",
+          "sha256": "309cc34c808dbb3316c80f383397a906a7165f93f1a1d54a2b23e3dd8172cc2b",
+          "asset": "309cc34c808dbb3316c80f38.webp"
+        },
+        {
+          "path": "content/article/assets/product-screenshots/IMG_1133.PNG",
+          "sha256": "f8fddf710603e3f3f883453439ecc2ad91df224c95d16f7e97e86f9fdffee7c6",
+          "asset": "f8fddf710603e3f3f8834534.webp"
+        },
+        {
+          "path": "content/article/assets/product-screenshots/IMG_1135.jpg",
+          "sha256": "13f19f1fd728cabec8e0134dfb6b51ca8ccc0c93005d1ea88c6356b513c1f801",
+          "asset": "13f19f1fd728cabec8e0134d.webp"
+        },
+        {
+          "path": "content/article/assets/product-screenshots/IMG_1134.PNG",
+          "sha256": "77afcc390a9343fac81511b5160e0d54e00b678b2d8a2dcf0c1ab593eefbe93c",
+          "asset": "77afcc390a9343fac81511b5.webp"
+        },
+        {
+          "path": "content/article/assets/宇航员与孩子回看成长-v01.png",
+          "sha256": "996ecf2f766b6a50277979b635ccbbba0cafea65983c8d4bd8d5029dc2c23090",
+          "asset": "996ecf2f766b6a50277979b6.webp"
+        }
+      ],
+      "designVersion": "moonlit-web-2",
+      "coverHash": "026e7068ed214424fde5b617014a00733e2ae589f1c0bdfc9d225a3310b0f2e1"
+    },
+    {
+      "source": "creator:W-20260919-001",
+      "kind": "creator",
+      "workId": "W-20260919-001",
+      "artifact": "wechatArticle",
+      "artifactVersion": "v04",
+      "sourcePath": "content/article/09191000-CreatorOS全功能一览-公众号.md",
+      "sourceStatus": "submitted",
+      "visibility": "public",
+      "sha256": "7fe1e46d047dd72dbee7e2824a7a6474fb61266acfd9b3544631d1861e3dd34a",
+      "title": "CreatorOS全功能一览",
+      "slug": "creatoros-feature-overview",
+      "images": [
+        {
+          "path": "content/article/assets/01-首页与账号.png",
+          "sha256": "72ef4ac90ca6e30813feb0472b37592c9c1c910d25e5cdae251442be946e6039",
+          "asset": "72ef4ac90ca6e30813feb047.webp"
+        },
+        {
+          "path": "content/article/assets/02-定位中心.png",
+          "sha256": "d8b24afc3f466cc5498832ef10af4a59e0f67a5bd3455129276d2e6883561ca0",
+          "asset": "d8b24afc3f466cc5498832ef.webp"
+        },
+        {
+          "path": "content/article/assets/12-定位版本解释图.png",
+          "sha256": "edda06f4cba834c4a9878d0fc954c939eee42b41019403c603d7943e7eac15e3",
+          "asset": "edda06f4cba834c4a9878d0f.webp"
+        },
+        {
+          "path": "content/article/assets/03-内容雷达.png",
+          "sha256": "f0d861706c3d509793dcc9a17d3435e56a2e28432bf0b59643d47ccfd7620a2e",
+          "asset": "f0d861706c3d509793dcc9a1.webp"
+        },
+        {
+          "path": "content/article/assets/04-选题中心.png",
+          "sha256": "63d540823b015bd79e2fe1399395c5d01d3848e576ae09f0f7cd3e14ea18b3d2",
+          "asset": "63d540823b015bd79e2fe139.webp"
+        },
+        {
+          "path": "content/article/assets/14-CLI设置.png",
+          "sha256": "1ad2b051c088e6ba69e071ad154b3c31fc0148ea36b2874bf0dff0abd3ae0298",
+          "asset": "1ad2b051c088e6ba69e071ad.webp"
+        },
+        {
+          "path": "content/article/assets/05-项目管理.png",
+          "sha256": "451863178dcdcc808dd7f896fc7be22676e154179ab2e7efe3cd4a31087e3c60",
+          "asset": "451863178dcdcc808dd7f896.webp"
+        },
+        {
+          "path": "content/article/assets/06-项目复盘与AI助手.png",
+          "sha256": "3f7bd1ed7aec443320a646fae1ad3afbb2bf4c756c906b9789958c7a34d80f61",
+          "asset": "3f7bd1ed7aec443320a646fa.webp"
+        },
+        {
+          "path": "content/article/assets/07-知识库.png",
+          "sha256": "58dd677e0e8622ea802c3a8f528bf885fdf09613eb408c205a1c6aa68a544c14",
+          "asset": "58dd677e0e8622ea802c3a8f.webp"
+        },
+        {
+          "path": "content/article/assets/08-素材中心.png",
+          "sha256": "d0e0d402e15a33537c16ba47635d37e61c2c7cd76c25dac5ffac66502cd72488",
+          "asset": "d0e0d402e15a33537c16ba47.webp"
+        },
+        {
+          "path": "content/article/assets/09-运营分析.png",
+          "sha256": "18999e7f4c854abe75e52fe3fa136904577fc42f1c23f1503f15a5864be9829c",
+          "asset": "18999e7f4c854abe75e52fe3.webp"
+        },
+        {
+          "path": "content/article/assets/10-分享战报.png",
+          "sha256": "ec74b077642c4126f195a6a430d1d0e4217203b49550e46f56e7b3c5f48d56c2",
+          "asset": "ec74b077642c4126f195a6a4.webp"
+        },
+        {
+          "path": "content/article/assets/13-数据回流解释图.png",
+          "sha256": "736640c2333b905a9c2dafc596bffd144e3cfd85220043037804df3ab1491ec5",
+          "asset": "736640c2333b905a9c2dafc5.webp"
+        },
+        {
+          "path": "content/article/assets/11-AI助手.png",
+          "sha256": "12c0e0af8e9f0333dbd5db64dfa76b7161114d758687e60f9a9c5988dd02de41",
+          "asset": "12c0e0af8e9f0333dbd5db64.webp"
+        }
+      ],
+      "designVersion": "moonlit-web-2",
+      "coverHash": "9cde75a98eb2006fc3b2a28ead3b2642c661dc25f885415b77722e896cc85f3f"
+    },
+    {
+      "source": "creator:W-20260924-001",
+      "kind": "creator",
+      "workId": "W-20260924-001",
+      "artifact": "wechatArticle",
+      "artifactVersion": "v07",
+      "sourcePath": "content/article/09261946-产品形态怎么选-公众号.md",
+      "sourceStatus": "draft",
+      "visibility": "public",
+      "sha256": "ad42f86bb5c94b300fed67a40a2a82e6625dcb253314ad88f8b29b093b166091",
+      "title": "ChatCut出了桌面版：产品第一步怎么选？",
+      "slug": "chatcut-product-form-choice",
+      "images": [
+        {
+          "path": "notes/source-materials/chatcut-web-first-impression-2026-07-14.png",
+          "sha256": "28591b865e64e8a035fe57ca9733d3b3f1bfecfd65d1dc2221f5dc154c9860d3",
+          "asset": "28591b865e64e8a035fe57ca.webp"
+        },
+        {
+          "path": "notes/source-materials/chatcut-desktop-revisit-chat.png",
+          "sha256": "16daa6cf389cc1334fb34dd9dc12ff6fa969937b8d504f8a886bd5447fdd43b9",
+          "asset": "16daa6cf389cc1334fb34dd9.webp"
+        },
+        {
+          "path": "production/chatcut-editing/source-captures-v06/chatcut-home.png",
+          "sha256": "4980ba07c0be15a4eecc33c118304b4792a4abcfe157960c8a02ffaef45bf6cb",
+          "asset": "4980ba07c0be15a4eecc33c1.webp"
+        },
+        {
+          "path": "production/illustrations/product-form-cost-map-v02.png",
+          "sha256": "916cd60d31ed0572001b853041cff989d6a16f215347c600955c696109614cdd",
+          "asset": "916cd60d31ed0572001b8530.webp"
+        },
+        {
+          "path": "production/chatcut-editing/source-captures-v06/自习室作者账单截图.png",
+          "sha256": "2f782ec4def191d40fb534d04a909b06d70fc6d4b19e24983d1b8e7fc426c277",
+          "asset": "2f782ec4def191d40fb534d0.webp"
+        },
+        {
+          "path": "production/illustrations/product-form-cost-choices-v01.png",
+          "sha256": "338c582fdc84db151126aaee37eebf0120be9fbd52c886e68d89b793733c7ed6",
+          "asset": "338c582fdc84db151126aaee.webp"
+        },
+        {
+          "path": "production/illustrations/community-feedback-loop-v01.png",
+          "sha256": "68b571ed3a7fcb441de075e20fde7080c5daa5fa188d3970e2475918aa361c5f",
+          "asset": "68b571ed3a7fcb441de075e2.webp"
+        }
+      ],
+      "designVersion": "moonlit-web-2",
+      "coverHash": "47d013f1f453cfcb4350f6c75961ffea98c5d238dd2598b4784f6fbd567c97f0"
+    },
+    {
+      "source": "creator:W-20260927-001",
+      "kind": "creator",
+      "workId": "W-20260927-001",
+      "artifact": "wechatArticle",
+      "artifactVersion": "v06",
+      "sourcePath": "content/article/10061159-拥有自己的人工智能为什么这么难-公众号.md",
+      "sourceStatus": "draft",
+      "visibility": "public",
+      "sha256": "2d9b181c9549591c133af0996fcd3441c7d8b1d3986221bf7318d269151e142a",
+      "title": "Personal AI 的入口之争",
+      "slug": "personal-ai-entry",
+      "images": [
+        {
+          "path": "production/references/personal-ai-online-assets-v01/product/Muse-官网主视觉-4K.jpg",
+          "sha256": "18439b385f274a8a1f9fd14a80682e17cbca0fafcb863d7c436881d54ff0c8cf",
+          "asset": "18439b385f274a8a1f9fd14a.webp"
+        },
+        {
+          "path": "production/references/The-Book-of-Alice-目录-用户提供-v01.png",
+          "sha256": "2ba8279a5f6b928447703bbcb4298368a5e99409b0b7985f24b7be6c6d52f350",
+          "asset": "2ba8279a5f6b928447703bbc.webp"
+        },
+        {
+          "path": "production/illustrations/personal-ai-three-diagrams-v01/02-Alice-个人AI架构图-v01.png",
+          "sha256": "97e42c900f5bc57d755b8830718220f3a14603977155bd895fba44c3dafa8280",
+          "asset": "97e42c900f5bc57d755b8830.webp"
+        },
+        {
+          "path": "production/references/personal-ai-online-assets-v01/product/Kimi-Work-官方图.webp",
+          "sha256": "1cc15eb434f339392c143ac53958fbc855f498db10e6e195494a6c7719a6c702",
+          "asset": "1cc15eb434f339392c143ac5.webp"
+        },
+        {
+          "path": "production/references/personal-ai-online-assets-v01/product/豆包-工作模式.png",
+          "sha256": "a3796772671dddb554ab2fea9dd94b1193bf38f73e6d4aea2e91d8e60a591e56",
+          "asset": "a3796772671dddb554ab2fea.webp"
+        },
+        {
+          "path": "production/references/personal-ai-online-assets-v01/screens/Gemma4-端侧离线能力.png",
+          "sha256": "57d35a7ecdafec8fd89b90a99ec517010046306f17ad7be2c45bc14610d8c248",
+          "asset": "57d35a7ecdafec8fd89b90a9.webp"
+        },
+        {
+          "path": "production/references/personal-ai-online-assets-v01/screens/WeFlow-删库历史讨论.png",
+          "sha256": "ad37fb725e161f24eef1be47a844be19d65962373e3ed6044b4495c2c8ae76b4",
+          "asset": "ad37fb725e161f24eef1be47.webp"
+        },
+        {
+          "path": "production/references/personal-ai-online-assets-v01/product/Jev-悬浮助手.png",
+          "sha256": "8b536ad16321c77263e35ef38572d5b1a875e78fab423ac584bd16284c17f5bc",
+          "asset": "8b536ad16321c77263e35ef3.webp"
+        },
+        {
+          "path": "production/references/personal-ai-online-assets-v01/screens/Jev-Android微信支持移除.png",
+          "sha256": "cbe7ae5068379a5e285277c34f68aec7d05fc1cb200ffe7b8fc052b2f90b9592",
+          "asset": "cbe7ae5068379a5e285277c3.webp"
+        },
+        {
+          "path": "production/references/amazon-muse-block-notice-geekwire-v01.png",
+          "sha256": "b917b012c52792d4a6681c76340751bfa883c77a168107c86b31d57e1ff16809",
+          "asset": "b917b012c52792d4a6681c76.webp"
+        },
+        {
+          "path": "production/references/personal-ai-online-assets-v01/product/RayBan-Meta-眼镜生活场景.jpg",
+          "sha256": "328f48efdba176af3c15b95b8654e7c55bc783cca89f954b452d352077963b4f",
+          "asset": "328f48efdba176af3c15b95b.webp"
+        },
+        {
+          "path": "production/illustrations/personal-ai-three-diagrams-v01/03-端侧本地云端AI-日常任务协作-v02.png",
+          "sha256": "04050a67d08b6563461002d9a786582af4d0d9b910c8798218e1c531e1e48174",
+          "asset": "04050a67d08b6563461002d9.webp"
+        },
+        {
+          "path": "production/illustrations/personal-ai-three-diagrams-v01/01-Personal-AI-演进路线图-v01.png",
+          "sha256": "2ed483a26fd9a99ef6d1415af7e661687f9d4786f51ae91be029e330033d1aa6",
+          "asset": "2ed483a26fd9a99ef6d1415a.webp"
+        }
+      ],
+      "designVersion": "moonlit-web-2",
+      "coverHash": "ae91ecb5aca73ba0a87e8e19b17e30cfc6d7f452eb52ee79738670f79478bcbc"
+    },
+    {
+      "source": "creator:W-20260927-002",
+      "kind": "creator",
+      "workId": "W-20260927-002",
+      "artifact": "wechatArticle",
+      "artifactVersion": "v02",
+      "sourcePath": "content/article/09291059-让AI改代码前先学会Git-公众号.md",
+      "sourceStatus": "draft",
+      "visibility": "public",
+      "sha256": "28df5bfcc492c05ccd02c3f7c998efdd9a9e5124f5cd8033d5b18b456f8839b8",
+      "title": "让 AI 改代码，先留好退路",
+      "slug": "git-agent-rollback",
+      "images": [
+        {
+          "path": "production/presentation/html-v09/assets/illustrations/git-vs-github-hero.png",
+          "sha256": "c3e2fa6d33a2fa6734a309df99785673fbb5368ba3ef2fe0d1a536a18e545dd5",
+          "asset": "c3e2fa6d33a2fa6734a309df.webp"
+        },
+        {
+          "path": "production/illustrations/git-agent-v01/git-local-github-v01.png",
+          "sha256": "fa8ff0314d9e2495f8e097c7762c81ad7d74e1bc060f5b8849f023896d8292f4",
+          "asset": "fa8ff0314d9e2495f8e097c7.webp"
+        },
+        {
+          "path": "production/illustrations/git-agent-v01/agent-diff-review-astronaut-v01.png",
+          "sha256": "c6fc388f4bf3dc60cbd671d2aad1134ba514f26d41867d559cd7ee9eaea19df8",
+          "asset": "c6fc388f4bf3dc60cbd671d2.webp"
+        },
+        {
+          "path": "production/illustrations/git-agent-v01/git-checkpoint-v01.png",
+          "sha256": "c5bba8720f1384a8a67784b14e321fc7fc11e1c7d4a34d005a981060941c0d40",
+          "asset": "c5bba8720f1384a8a67784b1.webp"
+        },
+        {
+          "path": "production/presentation/html-v09/assets/illustrations/branch-route-experiment-v01.png",
+          "sha256": "ccab38e260865bfe8643fea95bdf03abf93993756a5842dbc7a081a28cb4d599",
+          "asset": "ccab38e260865bfe8643fea9.webp"
+        },
+        {
+          "path": "production/presentation/html-v09/assets/illustrations/worktree-parallel-directories-v01.png",
+          "sha256": "194a342acd7ed40174052c66b73a6e8873d029fa475133260176f64b09943e2c",
+          "asset": "194a342acd7ed40174052c66.webp"
+        },
+        {
+          "path": "production/illustrations/git-agent-v01/github-project-signals-v01.png",
+          "sha256": "b4ed3e3e7b046e2a72bec9dbba1daf97688f434f7d7e087d5f47a93552d95f39",
+          "asset": "b4ed3e3e7b046e2a72bec9db.webp"
+        }
+      ],
+      "designVersion": "moonlit-web-2",
+      "coverHash": "e6e0853fb35fc883a647dc6b3ebed92da2114442f0ef9fc5d4524719f29c0f1c"
+    },
+    {
+      "source": "creator:W-20261003-001",
+      "kind": "creator",
+      "workId": "W-20261003-001",
+      "artifact": "wechatArticle",
+      "artifactVersion": "v03",
+      "sourcePath": "content/article/10042130-让周报从工作记录里长出来-公众号.md",
+      "sourceStatus": "draft",
+      "visibility": "public",
+      "sha256": "99eca8c382e2d9ce1c1a610406036199bd630b04129015e29dbdfd2286c9ba19",
+      "title": "让周报从工作记录里长出来",
+      "slug": "weekly-report-from-work-records",
+      "images": [
+        {
+          "path": "production/chatcut-editing/assets/工作区目录结构.png",
+          "sha256": "723599456c44d91679aff87587bd513ea6e5753653d68669dad7908e5641d719",
+          "asset": "723599456c44d91679aff875.webp"
+        },
+        {
+          "path": "production/illustrations/broll-v15/计划结果对照与规则校正-r1.png",
+          "sha256": "2619879d5a5bdeb3a265bd1ffa87936db80ad16433292ba5d38a5304378fdd10",
+          "asset": "2619879d5a5bdeb3a265bd1f.webp"
+        },
+        {
+          "path": "production/illustrations/broll-v15/维护审核后净省时间-r1.png",
+          "sha256": "0226e58876f908aac65cde6601f801862c942e8a380797fb87607c942923b65b",
+          "asset": "0226e58876f908aac65cde66.webp"
+        }
+      ],
+      "designVersion": "moonlit-web-2",
+      "coverHash": "e2eabb63d3f9d72a0028527c8eb40a131fc6e8f9b9d4b06538f4fae82c4c56cb"
+    },
+    {
+      "source": "creator:W-20261010-001",
+      "kind": "creator",
+      "workId": "W-20261010-001",
+      "artifact": "wechatArticle",
+      "artifactVersion": "v02",
+      "sourcePath": "content/article/10120139-自媒体第一步先想清楚你能帮谁-公众号-v02.md",
+      "sourceStatus": "draft",
+      "visibility": "public",
+      "sha256": "cdad9d7f32a20a58adde80593a64eb58023d244093b2f5f1a9aa7cbb40d3f5b6",
+      "title": "自媒体第一步：先想清楚，你能帮谁",
+      "slug": "creator-positioning-who-you-help",
+      "images": [
+        {
+          "path": "production/illustrations/article-v01/软件容易复制.gif",
+          "sha256": "320ef4b227ae7df4a0f1a6e42dc5bff977af509e6ef2edb7acd131c24989c4f7",
+          "asset": "320ef4b227ae7df4a0f1a6e4.gif"
+        },
+        {
+          "path": "production/illustrations/article-v01/从能力走向用户.png",
+          "sha256": "98faede82181c8b302d66a30b731b612b2556cc0f328aff49b63099114866c3f",
+          "asset": "98faede82181c8b302d66a30.webp"
+        },
+        {
+          "path": "production/illustrations/article-v01/使命定位复制动画.gif",
+          "sha256": "99469ac5878c00b64b2a43394ba0378469d67a03bd8f71272ecee7d21da40f6f",
+          "asset": "99469ac5878c00b64b2a4339.gif"
+        },
+        {
+          "path": "production/illustrations/article-v01/帮用户理清问题.gif",
+          "sha256": "7b94a5a9030ec07cf0b4aac448fecf0bcbc6c0f3630d06c41628a45247c0fbb1",
+          "asset": "7b94a5a9030ec07cf0b4aac4.gif"
+        },
+        {
+          "path": "production/illustrations/article-v01/AGI-Hunt事件时间线.jpg",
+          "sha256": "4f28df982557d9112abefd009cdb7cc73a91b7b553d2f9cfaec93ff758b90539",
+          "asset": "4f28df982557d9112abefd00.webp"
+        }
+      ],
+      "designVersion": "moonlit-web-2",
+      "coverHash": "68037f5cb23b314baf2d324d8a81348cb3f3db13fb24545fc590cb8a1f3750c1"
+    },
+    {
+      "source": "creator:W-20261011-001",
+      "kind": "creator",
+      "workId": "W-20261011-001",
+      "artifact": "wechatArticle",
+      "artifactVersion": "v02",
+      "sourcePath": "deliverables/article/10111903-我怎么把事情交给人工智能-公众号.md",
+      "sourceStatus": "ready",
+      "visibility": "public",
+      "sha256": "42cd030933050af3ea4ee595b646e29e36e9a3461b4d70639c1f1e075bc0f9df",
+      "title": "我的 AI 正在替我做什么？",
+      "slug": "what-my-ai-agents-do",
+      "images": [
+        {
+          "path": "production/assets/broll-v03/UU远程-官方办公展示.jpg",
+          "sha256": "790d5338a759774e600a0b1ac99685d991a7a93ce0108ab7dad4c9f5136f6344",
+          "asset": "790d5338a759774e600a0b1a.webp"
+        },
+        {
+          "path": "production/illustrations/article-v01/豆包语音输入-官方示例动作-v01.gif",
+          "sha256": "334f0b9454a2297d58aaf9dab0ba1bc42aeddf6d8c49bcf25885118eea57c4f2",
+          "asset": "334f0b9454a2297d58aaf9da.gif"
+        },
+        {
+          "path": "production/illustrations/article-v01/视频制作-真实随拍-v01.jpg",
+          "sha256": "e2eb2c65da634c65ebcceba27a640bccad9def27fa50c2c7fea5d178a672eac8",
+          "asset": "e2eb2c65da634c65ebcceba2.webp"
+        },
+        {
+          "path": "production/illustrations/article-v01/iPhone-Use-真机预览局部-v01.png",
+          "sha256": "44075a25a290e27a07fce72b8168bfd7c59ef0d75012079a76e1d072bb80368d",
+          "asset": "44075a25a290e27a07fce72b.webp"
+        },
+        {
+          "path": "production/illustrations/article-v01/Ego-lite-多窗口真实随拍-v01.jpg",
+          "sha256": "9816075d2e453139a9f714684c7941c9ceebc99e745b13d66b0468d71fe2e846",
+          "asset": "9816075d2e453139a9f71468.webp"
+        }
+      ],
+      "designVersion": "moonlit-web-2",
+      "coverHash": "825e33cf4b71a3ff16fdffb87a213b943946df3ff56b9e1f94fb3a2496cb5ba2"
+    },
+    {
+      "source": "20260313_AI_协作开发工程化实践方法论.md",
+      "kind": "legacy",
+      "slug": "ai-collaborative-dev-engineering-practice",
+      "title": "AI 协作开发工程化实践：从\"能用\"到\"可控\"",
+      "sha256": "03bb26e8a9d0e84e3b8dd49666dd159315c777c91a8c8f8956bfeabcb262cfc4",
+      "images": []
+    },
+    {
+      "source": "20260315_文本是知识的接口.md",
+      "kind": "legacy",
+      "slug": "text-is-the-interface-of-knowledge",
+      "title": "LLM时代，文本从来不是内容形式，而是知识的接口",
+      "sha256": "d63c2f3e61666ad5002d60c5271035e5abb19994e8783da3aa185a5d5a360109",
+      "images": []
+    },
+    {
+      "source": "20260316_ThirdSpace_完整部署教程.md",
+      "kind": "legacy",
+      "slug": "thirdspace-build",
+      "title": "ThirdSpace 完整部署教程：从零搭建 AI 驱动的个人知识库",
+      "sha256": "ce11258b9adbb3107f6487b1597abff0dc9637789b9bd2f4d7b1d5992e02b10b",
+      "images": []
+    },
+    {
+      "source": "20260323_工具做脏活_AI做智能_一个人如何用_40_个_MCP_工具搭出知识操作系统.md",
+      "kind": "legacy",
+      "slug": "tool-dirtywork-ai-intelligent",
+      "title": "工具做脏活，AI做智能：一个人如何用 40 个 MCP 工具搭出知识操作系统",
+      "sha256": "5b3edfb4a52d0a1031bcc1fd886cbc555ead5753e37bf2c8b503b6c156d01e43",
+      "images": []
+    },
+    {
+      "source": "20260324_做技术的人收到第一笔钱.md",
+      "kind": "legacy",
+      "slug": "first-payment-as-a-maker",
+      "title": "做技术的人，收到第一笔钱是什么感觉",
+      "sha256": "04d71605d9fc57db7080c2708eb37b53b379235582a91f877a534566f0ad0fe8",
+      "images": []
+    },
+    {
+      "source": "20260325_一篇文章的旅程_从收藏到行动验证.md",
+      "kind": "legacy",
+      "slug": "一篇文章的旅程_从收藏到行动验证",
+      "title": "一篇文章的旅程：从收藏到行动验证",
+      "sha256": "bcad4f7a0c3abecf7549ef10b73e6d7c01fbf8c595ebc7a9fed0cf00c723ff56",
+      "images": []
+    },
+    {
+      "source": "20260326_借鉴开源workflow设计自己的内容生产系统——取舍与最小粒度原则.md",
+      "kind": "legacy",
+      "slug": "借鉴开源workflow设计自己的内容生产系统-取舍与最小粒度原则",
+      "title": "借鉴开源 workflow 设计自己的内容生产系统——取舍与最小粒度原则",
+      "sha256": "b844fdabd5fbf3d5c77379799ea9c322c45ff054f1fffb6bfbe0913d439dcbd3",
+      "images": []
+    },
+    {
+      "source": "20260327_04-用AI搭内容系统_一个凌晨2点半还没睡的故事.md",
+      "kind": "legacy",
+      "slug": "build-content-system-with-ai-midnight-story",
+      "title": "用AI搭内容系统：一个凌晨2点半还没睡的故事",
+      "sha256": "b871144b64325deff410e8fe3fddf55f2e3398691edb9be21b8c21dc9e85938a",
+      "images": []
+    },
+    {
+      "source": "20260327_从_系统之美_到_Harness_Engineering_用系统论重新理解_AI.md",
+      "kind": "legacy",
+      "slug": "从_系统之美_到_harness_engineering_用系统论重新理解_ai",
+      "title": "从《系统之美》到 Harness Engineering：用系统论重新理解 AI 工程",
+      "sha256": "302e83810ea4a22ab8b8a384efb91098c76e852f11b9d624050ab33cb4e07332",
+      "images": []
+    },
+    {
+      "source": "20260327_我怎么把每篇文章变成一个作品.md",
+      "kind": "legacy",
+      "slug": "how-i-turn-every-article-into-a-work",
+      "title": "我怎么把每篇文章变成一个作品",
+      "sha256": "d926d88b7090126be62e7898b3d70d9be586e8721db20223cbe5443244bfa197",
+      "images": []
+    },
+    {
+      "source": "20260328_知识库中心vs智能体中心_一个人的AI协作基础设施该怎么建.md",
+      "kind": "legacy",
+      "slug": "知识库中心vs智能体中心_一个人的ai协作基础设施该怎么建",
+      "title": "知识库中心 vs 智能体中心：一个人的 AI 协作基础设施该怎么建",
+      "sha256": "bd047c2d001fc1e3d7973d985903647d6503e62837fcc3c6ed33650a38918d65",
+      "images": []
+    },
+    {
+      "source": "20260329_用了AI之后我终于理解老板的需求为何不明确.md",
+      "kind": "legacy",
+      "slug": "understand-vague-boss-requirements",
+      "title": "用了 AI 之后，我终于理解为什么老板的需求总是不明确了",
+      "sha256": "f777bfc79dd37ac96a138bfe6767bd69cc7a3cca6bfd07121537a91929fa6821",
+      "images": []
+    },
+    {
+      "source": "20260331_MoonOS_立项自审_为什么要造个人_AI_操作系统.md",
+      "kind": "legacy",
+      "slug": "moonos_立项自审_为什么要造个人_ai_操作系统",
+      "title": "MoonOS 立项自审：为什么要造个人 AI 操作系统",
+      "sha256": "b6bd5a265b3baaae346b9e61c527b7145c482d9f13b8fc509a5b56ec95e9ab6d",
+      "images": []
+    },
+    {
+      "source": "20260331_我给自己的_AI_系统打了_6_分_一个人造_个人_AI_操作系统_的冷静复盘.md",
+      "kind": "legacy",
+      "slug": "我给自己的_ai_系统打了_6_分_一个人造_个人_ai_操作系统_的冷静复盘",
+      "title": "我给自己的 AI 系统打了 6 分：一个人造「个人 AI 操作系统」的冷静复盘",
+      "sha256": "54ed97ca9295a63006fbd649a4b5cd83bf6bbbf2e85f8c1910543fee1c8bc07c",
+      "images": []
+    },
+    {
+      "source": "20260401_AI越加越多效果越差你的系统需要一次体检.md",
+      "kind": "legacy",
+      "slug": "ai-system-health-check",
+      "title": "AI 越加越多效果越来越差？你的系统缺的不是更好的模型，是一张体检报告",
+      "sha256": "8c4fa32da8615f1973fbb9b7258759177ebb8743a56a3ea3ef677ebcdd1b7140",
+      "images": []
+    },
+    {
+      "source": "20260401_我越来越确信_AI_时代最重要的_不是模型_而是你自己的_AI_资产.md",
+      "kind": "legacy",
+      "slug": "我越来越确信_ai_时代最重要的_不是模型_而是你自己的_ai_资产",
+      "title": "AI 时代最重要的不是模型，而是你自己的 AI 资产",
+      "sha256": "8b8ca63af10f62f8514936007a20bb1310a6fe804a116fe79f4eddc9aaf48ffd",
+      "images": []
+    },
+    {
+      "source": "20260403_让_AI_知道文件该放哪_我用一个函数解决了_Obsidian_知识库的混乱问题.md",
+      "kind": "legacy",
+      "slug": "让_ai_知道文件该放哪_我用一个函数解决了_obsidian_知识库的混乱问题",
+      "title": "让 AI 知道文件该放哪：我用一个函数解决了 Obsidian 知识库的混乱问题",
+      "sha256": "3c98fa0a198a05be08283c84997e9e7a28126bce2be8215d886e7a4addf89300",
+      "images": []
+    },
+    {
+      "source": "20260404_我思考了一个不可能实现的产品_但那些想法让我更清醒.md",
+      "kind": "legacy",
+      "slug": "我思考了一个不可能实现的产品_但那些想法让我更清醒",
+      "title": "我思考了一个不可能实现的产品，但那些想法让我更清醒",
+      "sha256": "1ff10968efbfe98289f62b62120ce509d4881ac6f34ead45566256b2c2750a67",
+      "images": []
+    },
+    {
+      "source": "20260408_我用_AI_把知识库从档案柜变成头脑地图.md",
+      "kind": "legacy",
+      "slug": "我用_ai_把知识库从档案柜变成头脑地图",
+      "title": "我用 AI 把知识库从「档案柜」变成「头脑地图」",
+      "sha256": "635f6b4d4790d03c90ca52f3887dc23085e47463651fbe479ea505d0a9e89bc7",
+      "images": []
+    },
+    {
+      "source": "20260415_把主力AI助手换成Agent两天踩了四个坑.md",
+      "kind": "legacy",
+      "slug": "agent-daily-driver-four-pitfalls",
+      "title": "我把主力 AI 助手换成了 Agent，两天踩了四个坑",
+      "sha256": "a06b7d1e7c0637d47b7974143bf7ec5473237b5856b364579a82cd55c877cd30",
+      "images": []
+    },
+    {
+      "source": "20260418_Skill系统能创建不能维护.md",
+      "kind": "legacy",
+      "slug": "skill-system-create-not-maintain",
+      "title": "Hermes 最大缺点：Skill 系统能创建，不能维护",
+      "sha256": "1485f02d8d6180a7fdd192f52695ff14fc04fdf68d4eadea1a85060ac577cc91",
+      "images": []
+    },
+    {
+      "source": "20260418_多智能体协作_不是人越多越好.md",
+      "kind": "legacy",
+      "slug": "多智能体协作_不是人越多越好",
+      "title": "多智能体协作：不是人越多越好",
+      "sha256": "480178094fdcf5fa5576015206b969e0a8b67b48bb50ac61be9def2800d3b667",
+      "images": []
+    },
+    {
+      "source": "20260421_Hermes___Claude_Code_三层架构完全落地方案.md",
+      "kind": "legacy",
+      "slug": "hermes___claude_code_三层架构完全落地方案",
+      "title": "Hermes + Claude Code 三层架构完全落地方案",
+      "sha256": "04dd107ad8f8fc2f540dbfc9f843e8a523f0e0592de0f1f3ce5cfde7520f621c",
+      "images": []
+    },
+    {
+      "source": "20260421_调试一个_AI_Agent_协作架构_5_轮实跑_10_次_SKILL_迭代_3.md",
+      "kind": "legacy",
+      "slug": "调试一个_ai_agent_协作架构_5_轮实跑_10_次_skill_迭代_3",
+      "title": "调试一个 AI Agent 协作架构:5 轮实跑、10 次 SKILL 迭代、3 种失败模式",
+      "sha256": "bd9e6f344f7af13cf960b0042db3bb4daa47130be1626815d646a89ad992efb1",
+      "images": []
+    },
+    {
+      "source": "20260423_Agent到底进化了什么_从对话框到能干活的AI.md",
+      "kind": "legacy",
+      "slug": "agent到底进化了什么_从对话框到能干活的ai",
+      "title": "Agent 到底进化了什么：从「对话框 AI」到「能干活的 AI」",
+      "sha256": "d9aca7171972ab8a7c258fbcbe7219371e22e00c51e84315686616d3842be3de",
+      "images": []
+    },
+    {
+      "source": "20260423_定时任务MCP服务技术改造.md",
+      "kind": "legacy",
+      "slug": "cron-task-mcp-service",
+      "title": "定时任务 MCP 服务 — 技术改造文档",
+      "sha256": "e6a06fbd95075af431bbf448341b66fdf60ba48a76fc8f20198951e2f83fa34a",
+      "images": []
+    },
+    {
+      "source": "20260423_我把LLM当编排大脑_踩了一年的坑.md",
+      "kind": "legacy",
+      "slug": "我把llm当编排大脑_踩了一年的坑",
+      "title": "我在 Hermes 上叠了一层自定义编排，然后拆了",
+      "sha256": "ab393416c53012896733d103627d2aa633e59b9f61668fc215e7880099102574",
+      "images": []
+    },
+    {
+      "source": "20260505_我们在公园长椅上写代码_做了一个自己和团队都离不开的工具.md",
+      "kind": "legacy",
+      "slug": "aiterm-three-terminals-one-workspace",
+      "title": "我们在公园长椅上写代码，做了一个自己和团队都离不开的工具",
+      "sha256": "ab96621d7fde054ef7bb33abcf9d43127b1afe94262d68ba41030b66e3c6f72e",
+      "images": []
+    },
+    {
+      "source": "20260514_Markdown不会淘汰HTML也替代不了它.md",
+      "kind": "legacy",
+      "slug": "markdown-vs-html",
+      "title": "Markdown 不会淘汰，HTML 也替代不了它",
+      "sha256": "0d0c3c92af882c8b10a9c52c041872182215599a6329f19f5b3c8169daf00fed",
+      "images": []
+    },
+    {
+      "source": "20260515_Multica实战_AI_Agent协作平台落地实操.md",
+      "kind": "legacy",
+      "slug": "multica-ai-agent-hands-on",
+      "title": "Multica 实战：AI Agent 协作平台的落地实操",
+      "sha256": "3d32e3f8988b5f8be808a0f975f08764d0ecf8cf9b49d78e2db5e993cefaad67",
+      "images": []
+    },
+    {
+      "source": "20260521_口播视频自动剪辑工具_从20分钟到10分钟.md",
+      "kind": "legacy",
+      "slug": "auto-video-editing-workflow",
+      "title": "口播视频自动剪辑工具：从20分钟原片到10分钟成片",
+      "sha256": "698a85a24fe0e8b5dbee37d5778874e3e7f31a7e7884361df08c64dcb06ace50",
+      "images": []
+    },
+    {
+      "source": "20260604_我把AI当新员工管.md",
+      "kind": "legacy",
+      "slug": "manage-ai-like-new-employee",
+      "title": "我把 AI 当新员工管：3 小时交付 10853 行代码的工程复盘",
+      "sha256": "f46f45c174a82da947d3da71b3c94f384951f9759e1b138d627c11c6c0dc045a",
+      "images": []
+    },
+    {
+      "source": "20260617_输入输出工作流.md",
+      "kind": "legacy",
+      "slug": "input-output-workflow",
+      "title": "输入输出工作流：为什么 AI 装上了，效果却不尽人意",
+      "sha256": "e944e1a7476340bd7eae4d5248338825ce33ccf09e639784df6c91c6ed12752d",
+      "images": []
+    },
+    {
+      "source": "20260702_每个任务都做对了产品为什么还是错的.md",
+      "kind": "legacy",
+      "slug": "local-correctness-global-failure",
+      "title": "394 个问题之后：每个任务都做对了，产品为什么还是错的",
+      "sha256": "04570567e06e84336ba518b3adf8b701475dde99d35cb745f2ed3dea474e6cbc",
+      "images": []
+    },
+    {
+      "source": "20260705_AI写代码为什么越写越烂.md",
+      "kind": "legacy",
+      "slug": "vibe-coding-entropy-and-orchestration",
+      "title": "AI 写代码为什么越写越烂：我用编排器对抗 Vibe Coding 的熵增",
+      "sha256": "6c5594c3f2f41664d5b685e65b8bb5cbd05a6af0244d06d5140de2e58bc72320",
+      "images": []
+    },
+    {
+      "source": "20260705_Agent最危险的是重做已有系统.md",
+      "kind": "legacy",
+      "slug": "agent-rebuilds-existing-system",
+      "title": "Agent 最危险的不是不会做，而是把已有系统重做一遍",
+      "sha256": "2b8d810bfa1634dfc762ce54c2b151df6f659036f8481ccdfce102521f229955",
+      "images": []
+    },
+    {
+      "source": "mcp-process-explosion-analysis.md",
+      "kind": "legacy",
+      "slug": "mcp-process-explosion-analysis",
+      "title": "MCP 进程爆炸：从 stdio 陷阱到防御性架构设计",
+      "sha256": "e1188bdae8e2cc735d8bd24740c8a7c99420d215b4aafd4be68f7a933c12293e",
+      "images": []
+    }
+  ],
+  "assets": [
+    {
+      "name": "415f432e02b31270f4df6bc6.webp",
+      "sha256": "b039828e82f15c8f666e48bb48299b3ac803d4c65e9354e6e5b73c9b308b0f42",
+      "bytes": 69612,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "bf1cb239e3f9df4b643991de.webp",
+      "sha256": "7097eb0f3a786e9b88e0ed0e4f65f2ba08e44cdbb9b1e9b8c599c77622290472",
+      "bytes": 53980,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "8da159055dd843528214ef51.webp",
+      "sha256": "5980b3ee698acb2fddc767685e5eebd8f047aca0b99ec21f3ae89876d2d9aeb0",
+      "bytes": 61242,
+      "width": 1440,
+      "height": 900,
+      "type": "image/webp"
+    },
+    {
+      "name": "9d1fa2c90e61679022077a00.webp",
+      "sha256": "eaf3149b4230a7793d9a3b680f239017da9a5d4dd8d8d4bce053ed444e56162e",
+      "bytes": 120456,
+      "width": 1440,
+      "height": 900,
+      "type": "image/webp"
+    },
+    {
+      "name": "64ee523e630ae787059a2441.webp",
+      "sha256": "186f5d02903f0e0e891745c050983b63b35e92931193a78afa69da20554e9438",
+      "bytes": 93398,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "3c717f1e6df7c603c584b596.webp",
+      "sha256": "ca8fc0212309158c5d866e5afd7188ec6b686704c5cf80adc77da2fcb1bab981",
+      "bytes": 52904,
+      "width": 1440,
+      "height": 900,
+      "type": "image/webp"
+    },
+    {
+      "name": "b06ad874bc6453e93e621730.webp",
+      "sha256": "b08b7dbd8a0f23ac30307f7cbc77b075732a6684601292600b6d130a05983417",
+      "bytes": 85152,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260904-001-c473364c92f1-480.webp",
+      "sha256": "8274e6c80f6a88b2fdeb6482ecd8589562db4af4c9ea3de53925904df2633124",
+      "bytes": 15536,
+      "width": 480,
+      "height": 270,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260904-001-c473364c92f1-800.webp",
+      "sha256": "e53713437ef7f8f52a5a19da08223ca7594381875c35cebcfa2f4d1799be06dc",
+      "bytes": 29912,
+      "width": 800,
+      "height": 450,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260904-001-c473364c92f1-1200.webp",
+      "sha256": "56f8ba9e7fbc6791564b7dd00753b23b99595436a1b971c69d059a497ca3b538",
+      "bytes": 49416,
+      "width": 1200,
+      "height": 675,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260904-001-c473364c92f1-og.jpg",
+      "sha256": "5c6a830e862924b0c224ec661eff3c571c553ce3fafed156f368d378cc3b23fb",
+      "bytes": 89511,
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    },
+    {
+      "name": "5db1aff9a063d892f3bea81a.gif",
+      "sha256": "5db1aff9a063d892f3bea81acaabe86aeea21f16d70de66a7eed162a10df1d94",
+      "bytes": 2544382,
+      "width": 539,
+      "height": 310,
+      "type": "image/gif"
+    },
+    {
+      "name": "a06b452fd6a836a208821433.gif",
+      "sha256": "a06b452fd6a836a208821433d4e63d03a39c1a9aa8e9cc3b706590ecdf5265dc",
+      "bytes": 2725441,
+      "width": 360,
+      "height": 780,
+      "type": "image/gif"
+    },
+    {
+      "name": "b5d293f2082c8bf5e99b2e07.webp",
+      "sha256": "497891284e191747f7bcfeaaadce33bdc0a12b74cb06c8ef565a8a01e8de7d69",
+      "bytes": 118600,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "a8efe59162588f81ad0f5f3b.webp",
+      "sha256": "3b335736cd4b4d83c8cf213cb00dc5e840c3256befbd5ad223aa7348dd3a7e7d",
+      "bytes": 172736,
+      "width": 1290,
+      "height": 2796,
+      "type": "image/webp"
+    },
+    {
+      "name": "d75e49042876267ef1489c45.webp",
+      "sha256": "924c0cc19b117e8c1655caaaae53a99e8582248a03b0ebcfc0fac6ea96b39716",
+      "bytes": 71280,
+      "width": 1440,
+      "height": 823,
+      "type": "image/webp"
+    },
+    {
+      "name": "f816ba71bf1deeefb593ac68.webp",
+      "sha256": "cffede88a9f65d659e242a93167d42bf22c07023b4420e8eeb0f0265f1d7d914",
+      "bytes": 55722,
+      "width": 1440,
+      "height": 833,
+      "type": "image/webp"
+    },
+    {
+      "name": "4bf98a2860ccc6dab7aef62c.webp",
+      "sha256": "703cfd4d4b0cd3433ab98235dfa8bf1ebeedd94c1da08f5f76958c9126d24b71",
+      "bytes": 73850,
+      "width": 1424,
+      "height": 1884,
+      "type": "image/webp"
+    },
+    {
+      "name": "3803bae35e816c046fadd0f9.webp",
+      "sha256": "8f5d2939034fb730e73064d71486fc4b897642ed2b974975dc8b867e65eb0c42",
+      "bytes": 109976,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260906-001-5e0476b710fb-480.webp",
+      "sha256": "a7eaee4111af481d4699dc8f2ada82b5c87b755b29449e0caf71a633b3789bd0",
+      "bytes": 17392,
+      "width": 480,
+      "height": 270,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260906-001-5e0476b710fb-800.webp",
+      "sha256": "0e128c023ef18e701a8e0eaf1be84d8fed3b4a03b6622d4cae706a2d216aad7d",
+      "bytes": 34152,
+      "width": 800,
+      "height": 450,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260906-001-5e0476b710fb-1200.webp",
+      "sha256": "cdecc409fa5c39e4549c83a3d0852c19377dd0578edd7bd879e30d3d8adf85b5",
+      "bytes": 58288,
+      "width": 1200,
+      "height": 675,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260906-001-5e0476b710fb-og.jpg",
+      "sha256": "0aacad6e00fdcba083d242748f3d06ce4fbf0e64e6689314a284efa3fa056cfb",
+      "bytes": 100651,
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    },
+    {
+      "name": "c4442b95e7c6c89007e3ba8a.webp",
+      "sha256": "11cf48de2fdc64b7ac87b24ac4e4dcbe1fccde2744b22fa89dc8ae873083b2a2",
+      "bytes": 95580,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "6bc33810fbf78dc78ca63636.webp",
+      "sha256": "e7be68414a9618ee8314da69b17752a76e71b64a35b55ad30601f12abea7d439",
+      "bytes": 74172,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "9880cc42ed0e5060d8d4fa4f.webp",
+      "sha256": "732b2edc2f6eb25b3e962da0dab546031f578271aa3dd5fd389361e9e2383763",
+      "bytes": 46658,
+      "width": 1440,
+      "height": 760,
+      "type": "image/webp"
+    },
+    {
+      "name": "463b799adc669f90a569c3da.webp",
+      "sha256": "e0c34ebcefc92bd331476531f504b068795b9385ae5a5191af770d0f5449c2e8",
+      "bytes": 67458,
+      "width": 1440,
+      "height": 758,
+      "type": "image/webp"
+    },
+    {
+      "name": "3a181a2fe26d9c7cb6c7dc3c.webp",
+      "sha256": "cda3e9b0c8be8841e9167336c38dabf5b272fe2157b09f859d050e21d8d49d2f",
+      "bytes": 58772,
+      "width": 1440,
+      "height": 760,
+      "type": "image/webp"
+    },
+    {
+      "name": "3479712832076ebef3bdf96c.webp",
+      "sha256": "7a3392d60ac2bc3096ee81845ef17afa158e0660fc3b722ee652fafc9a52ce83",
+      "bytes": 126828,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "53d072204e5cf984879666d7.webp",
+      "sha256": "bb3b87752bf5c7c412a6286a9cb826d3dff36a5e156e94b1cb10041116c617a7",
+      "bytes": 61034,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "833fb35ae7f8ba42da5df99b.webp",
+      "sha256": "6445113a46dd1a15e4deb5cbe10a3b75d5488f33055edad3759951d8b714fb64",
+      "bytes": 164954,
+      "width": 1024,
+      "height": 1536,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260908-001-d5b1a92d270e-480.webp",
+      "sha256": "30cd1efd34b20e25382f212eb9e42002fd90734a14d7cd07676a32733298c831",
+      "bytes": 17006,
+      "width": 480,
+      "height": 270,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260908-001-d5b1a92d270e-800.webp",
+      "sha256": "097f093fceb1b873466f8b6f6433299bccc373265341cdc695093a41d0ccd894",
+      "bytes": 31614,
+      "width": 800,
+      "height": 450,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260908-001-d5b1a92d270e-1200.webp",
+      "sha256": "c3b55410f0f380345455089f86d256a31dea43a3b358deb973b900630e3129b6",
+      "bytes": 53544,
+      "width": 1200,
+      "height": 675,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260908-001-d5b1a92d270e-og.jpg",
+      "sha256": "9ce3612dc336a4709b154672286fb6c07fd0938967f86b68c843cf839b35349a",
+      "bytes": 96135,
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    },
+    {
+      "name": "6ccd0683dea793b9bf46e34a.webp",
+      "sha256": "bfb35ca1599d2ff32a2c6cda83336dddf1263ae186fd63d1869f82650ba39e3c",
+      "bytes": 167214,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "20b6880249dc1339bcab3836.webp",
+      "sha256": "5e6563515adb6175c0fd8c84ec68af3722db71b28825de8ceb69d6c255e28371",
+      "bytes": 71086,
+      "width": 1290,
+      "height": 2796,
+      "type": "image/webp"
+    },
+    {
+      "name": "c6a4c1c9c52f9ce8d446ccbc.gif",
+      "sha256": "c6a4c1c9c52f9ce8d446ccbc8932d12eb0c1ed4a08a1fe2253ff7fd679634809",
+      "bytes": 2409324,
+      "width": 480,
+      "height": 1040,
+      "type": "image/gif"
+    },
+    {
+      "name": "7766dfceb6dd0b6d829eaedb.webp",
+      "sha256": "66fc4a7948eada4f5951fc9a52e7985e2e66f680b7fcdc2d89ed081355162d52",
+      "bytes": 85094,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "cb4b1e809b2c244600a229af.webp",
+      "sha256": "40188629560302fc2dd0b38dfbf4b55220cbdca967fdb76d9c0a6b13c6315574",
+      "bytes": 84608,
+      "width": 1290,
+      "height": 2796,
+      "type": "image/webp"
+    },
+    {
+      "name": "309cc34c808dbb3316c80f38.webp",
+      "sha256": "b6f5ce40e0091b668d7392feab81b716603a9ada55c20439fe788a0736bcce69",
+      "bytes": 81138,
+      "width": 1290,
+      "height": 2796,
+      "type": "image/webp"
+    },
+    {
+      "name": "f8fddf710603e3f3f8834534.webp",
+      "sha256": "550f18d8a92ee588f1c45c8e6efc7fcbe56f50aba2a57e7ad36a28dfa6be9e4f",
+      "bytes": 97356,
+      "width": 1290,
+      "height": 2796,
+      "type": "image/webp"
+    },
+    {
+      "name": "13f19f1fd728cabec8e0134d.webp",
+      "sha256": "4fe0d7d2e8df10568126c83476b551df408bbe7e71a56e009a9f63d57d57affe",
+      "bytes": 82076,
+      "width": 1290,
+      "height": 2796,
+      "type": "image/webp"
+    },
+    {
+      "name": "77afcc390a9343fac81511b5.webp",
+      "sha256": "c9ecd8513af3202d3dbfe1e202f54819143a4a5ab4ba5429e0df066d483dbccb",
+      "bytes": 122534,
+      "width": 1290,
+      "height": 2796,
+      "type": "image/webp"
+    },
+    {
+      "name": "996ecf2f766b6a50277979b6.webp",
+      "sha256": "58459618b489811ced382502d87467181c84b87b0bff7c17982d2751f2d3b244",
+      "bytes": 191410,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260909-001-026e7068ed21-480.webp",
+      "sha256": "08042c69662d7d6634bf1c323c9702445bf3a9f31fc2310d3025fdfdd15676b1",
+      "bytes": 17838,
+      "width": 480,
+      "height": 270,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260909-001-026e7068ed21-800.webp",
+      "sha256": "5a9f25dea38ad82413d582f422aecebd34d059ea1ad5b9f22d270028735b4b55",
+      "bytes": 32848,
+      "width": 800,
+      "height": 450,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260909-001-026e7068ed21-1200.webp",
+      "sha256": "e7289f61420a9ee23fe4bad4eb75e504d735eecaca09990c3e8b519b0fd73a6f",
+      "bytes": 52984,
+      "width": 1200,
+      "height": 675,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260909-001-026e7068ed21-og.jpg",
+      "sha256": "590f763a5b815ae4ff2272b505d70e627fb06bb8ad76c078dfcfb549569400b4",
+      "bytes": 95518,
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    },
+    {
+      "name": "72ef4ac90ca6e30813feb047.webp",
+      "sha256": "d8e8297b246c0353017b79811b0abf2a9502981d3ca3bdd4bb5bfd653da09502",
+      "bytes": 83992,
+      "width": 1440,
+      "height": 828,
+      "type": "image/webp"
+    },
+    {
+      "name": "d8b24afc3f466cc5498832ef.webp",
+      "sha256": "77e9494ed7a8dbcf0bcd38f2dd7fa640856abc6d84c8f660cefcaf9bfeab53cd",
+      "bytes": 114076,
+      "width": 1440,
+      "height": 828,
+      "type": "image/webp"
+    },
+    {
+      "name": "edda06f4cba834c4a9878d0f.webp",
+      "sha256": "172d6da90adaf466541d280c0625c9c178f84d28303a85e9b7276c07a97bea7d",
+      "bytes": 155224,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "f0d861706c3d509793dcc9a1.webp",
+      "sha256": "e66994d114f0a40954c2e6f081dc4e355f9fd296c62b312ad54a6bae8a3edb4f",
+      "bytes": 126844,
+      "width": 1440,
+      "height": 828,
+      "type": "image/webp"
+    },
+    {
+      "name": "63d540823b015bd79e2fe139.webp",
+      "sha256": "616dbff5e312b13d03b587cb27c7c3282fc70208fabf6d50cc19fd8ac2455921",
+      "bytes": 61538,
+      "width": 1440,
+      "height": 828,
+      "type": "image/webp"
+    },
+    {
+      "name": "1ad2b051c088e6ba69e071ad.webp",
+      "sha256": "1cc76db2ac33e8e472101ac4c009684e6beb8aa97501f45ed470628db3a00913",
+      "bytes": 38404,
+      "width": 1440,
+      "height": 828,
+      "type": "image/webp"
+    },
+    {
+      "name": "451863178dcdcc808dd7f896.webp",
+      "sha256": "ffb2210092019fcf075477270e6e859346317d58bf52e12e00cc67f2594c22c6",
+      "bytes": 69914,
+      "width": 1440,
+      "height": 828,
+      "type": "image/webp"
+    },
+    {
+      "name": "3f7bd1ed7aec443320a646fa.webp",
+      "sha256": "78ec437f881d18ccdf6b4ce267ec17f0ccc8049450b890be50b806d164c6a395",
+      "bytes": 122092,
+      "width": 1440,
+      "height": 828,
+      "type": "image/webp"
+    },
+    {
+      "name": "58dd677e0e8622ea802c3a8f.webp",
+      "sha256": "f54efb0cd8e0854b5768b823dc0599faaec8f7690050863eb1e6d1a0dfa712f7",
+      "bytes": 40406,
+      "width": 1440,
+      "height": 828,
+      "type": "image/webp"
+    },
+    {
+      "name": "d0e0d402e15a33537c16ba47.webp",
+      "sha256": "989c092cc8a92fbdba8aebba0bcf838be93b5786f51edcd5d617a2db7921389d",
+      "bytes": 134258,
+      "width": 1440,
+      "height": 828,
+      "type": "image/webp"
+    },
+    {
+      "name": "18999e7f4c854abe75e52fe3.webp",
+      "sha256": "0e28267c3c5249bb6ff4afdd59312ce3ed47a437cfd137596e45c6d176d11197",
+      "bytes": 54392,
+      "width": 1440,
+      "height": 828,
+      "type": "image/webp"
+    },
+    {
+      "name": "ec74b077642c4126f195a6a4.webp",
+      "sha256": "f4e4cc7bb25e80e47fdce0e2f566ef700fe900c15d2e2a009650b4753b29160d",
+      "bytes": 38868,
+      "width": 1440,
+      "height": 828,
+      "type": "image/webp"
+    },
+    {
+      "name": "736640c2333b905a9c2dafc5.webp",
+      "sha256": "63f6b6cb2ad3fd60e4f2150b6393edb10a61945797a6b2ce1a72751abfb74716",
+      "bytes": 138360,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "12c0e0af8e9f0333dbd5db64.webp",
+      "sha256": "0e9581fc91d2669017b40a273f5e606542e45966e6c8a67e5dc65a83cd6c04b5",
+      "bytes": 26726,
+      "width": 1440,
+      "height": 828,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260919-001-9cde75a98eb2-480.webp",
+      "sha256": "a35a4941ad566b300d47263382d0cc482d319bb64241f7404fb986451ae5f2d9",
+      "bytes": 16786,
+      "width": 480,
+      "height": 270,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260919-001-9cde75a98eb2-800.webp",
+      "sha256": "482e591ee4a618c8bbb5eb1a22ff6338e173b45ced185ec9a51107f24f7b60d2",
+      "bytes": 32094,
+      "width": 800,
+      "height": 450,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260919-001-9cde75a98eb2-1200.webp",
+      "sha256": "170ce6b96b7e13863557d46aed9fadd7a700124f4164555c8dec3aa12aa037ad",
+      "bytes": 55104,
+      "width": 1200,
+      "height": 675,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260919-001-9cde75a98eb2-og.jpg",
+      "sha256": "dfb7e6666cadfe92f8008f7f9eededb747422caf6df6f93961f9e10c892ed38b",
+      "bytes": 95328,
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    },
+    {
+      "name": "28591b865e64e8a035fe57ca.webp",
+      "sha256": "83f5fb541692c91d300712876be0e85a7eb38516a99e033c0548a35bdd848dcf",
+      "bytes": 45320,
+      "width": 1440,
+      "height": 894,
+      "type": "image/webp"
+    },
+    {
+      "name": "16daa6cf389cc1334fb34dd9.webp",
+      "sha256": "d1ad35076e6e6629b4681eacdeed4586f18b56091914fc8e406da3e8407e33c1",
+      "bytes": 18410,
+      "width": 1440,
+      "height": 537,
+      "type": "image/webp"
+    },
+    {
+      "name": "4980ba07c0be15a4eecc33c1.webp",
+      "sha256": "598f3bf6ba0a637888861d91c375e475e4cb26fa330aa0f465777438b50965b3",
+      "bytes": 51528,
+      "width": 1440,
+      "height": 900,
+      "type": "image/webp"
+    },
+    {
+      "name": "916cd60d31ed0572001b8530.webp",
+      "sha256": "7fcdf752680d3efd63fa756b1900878d83dba0f0467935a0dda83c63fdf28f6a",
+      "bytes": 36884,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "2f782ec4def191d40fb534d0.webp",
+      "sha256": "d478061ad727044d7a279fadaf821ea7c336ccfd838c918ad84b282d6da14fd7",
+      "bytes": 32436,
+      "width": 1016,
+      "height": 680,
+      "type": "image/webp"
+    },
+    {
+      "name": "338c582fdc84db151126aaee.webp",
+      "sha256": "f5d217c95cfdb030b5df4cd71aa70cc6751510fab69e6d46c5394669ba990b8e",
+      "bytes": 43232,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "68b571ed3a7fcb441de075e2.webp",
+      "sha256": "eb4bf0ee9a3d82469c154f2a02336b734ca8afc51a41c98068b7b77acd8125d8",
+      "bytes": 33800,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260924-001-47d013f1f453-480.webp",
+      "sha256": "44a9ce519e513071c73e997568b84bfac4654914e8b95c332c323752b79e1939",
+      "bytes": 16876,
+      "width": 480,
+      "height": 270,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260924-001-47d013f1f453-800.webp",
+      "sha256": "0a1ac697d254ed8b10e4c69b930ee048d5b5a609ec7adc2a108504ea068bc25b",
+      "bytes": 32452,
+      "width": 800,
+      "height": 450,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260924-001-47d013f1f453-1200.webp",
+      "sha256": "6a3b589161cb6794a824da03263dcd49e93d4c267e05dded75fcb79f1e938616",
+      "bytes": 54592,
+      "width": 1200,
+      "height": 675,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260924-001-47d013f1f453-og.jpg",
+      "sha256": "f9cf957c52b9c6afea323a2a3ef385d5f65707b5f569255aaea8db52cf1fd52f",
+      "bytes": 93887,
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    },
+    {
+      "name": "18439b385f274a8a1f9fd14a.webp",
+      "sha256": "cb35ab5c76ab6ce26e9299292e1ef6345139449ff155bca55ee32eec459bc73c",
+      "bytes": 57986,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "2ba8279a5f6b928447703bbc.webp",
+      "sha256": "3ee5e1ae3bc92e37b73881c4a84a741a32243cae8a9e59f8c33a86f981ce9b49",
+      "bytes": 137294,
+      "width": 1440,
+      "height": 1534,
+      "type": "image/webp"
+    },
+    {
+      "name": "97e42c900f5bc57d755b8830.webp",
+      "sha256": "6286965c1a3b6f193c5114c4ed525dc5367322f7ec580992efe27a94775ec7f2",
+      "bytes": 132700,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "1cc15eb434f339392c143ac5.webp",
+      "sha256": "f534db7de605e40a23f84441bfb1935166e19ceec0101c36868dbe0e639b44ae",
+      "bytes": 149130,
+      "width": 1288,
+      "height": 712,
+      "type": "image/webp"
+    },
+    {
+      "name": "a3796772671dddb554ab2fea.webp",
+      "sha256": "28c87cb8f407cd1e0a117f6c174a3f7b06e409e80689cefae1d864c6ab665260",
+      "bytes": 77570,
+      "width": 1440,
+      "height": 860,
+      "type": "image/webp"
+    },
+    {
+      "name": "57d35a7ecdafec8fd89b90a9.webp",
+      "sha256": "c14f44991d56c24d71712fafe80f83e4466fa6768a1922848928d5d4e422bfe2",
+      "bytes": 64814,
+      "width": 1440,
+      "height": 680,
+      "type": "image/webp"
+    },
+    {
+      "name": "ad37fb725e161f24eef1be47.webp",
+      "sha256": "8becbabff549af9431c623dbb097f746897fefc8d182e909b219cc1348adcc46",
+      "bytes": 49816,
+      "width": 1440,
+      "height": 640,
+      "type": "image/webp"
+    },
+    {
+      "name": "8b536ad16321c77263e35ef3.webp",
+      "sha256": "65f20ed439dde0707642b8b24147b818dd73037aecbba87f7cccf92d128fb525",
+      "bytes": 111548,
+      "width": 1200,
+      "height": 2670,
+      "type": "image/webp"
+    },
+    {
+      "name": "cbe7ae5068379a5e285277c3.webp",
+      "sha256": "6d96daa349d6b7c4d192f9ea2a47b422372b3371eb406a1dcb8d865051a3a4bb",
+      "bytes": 77192,
+      "width": 1440,
+      "height": 780,
+      "type": "image/webp"
+    },
+    {
+      "name": "b917b012c52792d4a6681c76.webp",
+      "sha256": "1fccf29e5acca8d405c557974bc1a805b8acb8a1c19b1398aa3db577498b284d",
+      "bytes": 28104,
+      "width": 1254,
+      "height": 1254,
+      "type": "image/webp"
+    },
+    {
+      "name": "328f48efdba176af3c15b95b.webp",
+      "sha256": "60ecd855518508874a76042feb8761d5493d903c336d93b6eeac453bef5e69d2",
+      "bytes": 147942,
+      "width": 1440,
+      "height": 809,
+      "type": "image/webp"
+    },
+    {
+      "name": "04050a67d08b6563461002d9.webp",
+      "sha256": "c4e8464383244a41617d3c767e13bcaa3d819317da7744ae1e3891c8fd02cd37",
+      "bytes": 146730,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "2ed483a26fd9a99ef6d1415a.webp",
+      "sha256": "33e786811d2207659a6f99855354e307da7918c0b8de9f88f08db5e79866a0bf",
+      "bytes": 126062,
+      "width": 1440,
+      "height": 674,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260927-001-ae91ecb5aca7-480.webp",
+      "sha256": "ab1c77204256dea8c44030037c5ae8f66264e98a977abf9be90a73a64bbb1751",
+      "bytes": 15562,
+      "width": 480,
+      "height": 270,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260927-001-ae91ecb5aca7-800.webp",
+      "sha256": "4c0421d94f276829fd8a2faf042b0e4f31e9f522a9b1a7c07e7937d9d85b080f",
+      "bytes": 31532,
+      "width": 800,
+      "height": 450,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260927-001-ae91ecb5aca7-1200.webp",
+      "sha256": "fe397eeb8edca7bac61714f7383eadda65bbd9fbbb09bac68c0824f0cec9a560",
+      "bytes": 53404,
+      "width": 1200,
+      "height": 675,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260927-001-ae91ecb5aca7-og.jpg",
+      "sha256": "2929d4e88d97ab0439aee70c617085564c9bee4fc7d8e17def30dedf7308ce63",
+      "bytes": 94451,
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    },
+    {
+      "name": "c3e2fa6d33a2fa6734a309df.webp",
+      "sha256": "5865b0968aaedc171518abd967884bb593d5f7c69353ba95ec3bafa401df9cd8",
+      "bytes": 130962,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "fa8ff0314d9e2495f8e097c7.webp",
+      "sha256": "1291dbe8ce47af6b3064566a1daae9e00c696a92ad1eaa89f62790fa817e412d",
+      "bytes": 105298,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "c6fc388f4bf3dc60cbd671d2.webp",
+      "sha256": "a38d6f0cffafd37bb05cfb2d93a91a60fbc34f5671384a92f37fa260ef294cc4",
+      "bytes": 62342,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "c5bba8720f1384a8a67784b1.webp",
+      "sha256": "f8d27d37723bf7d3680954b9b0331e70fde2696f0e482d203807218cabc70c61",
+      "bytes": 62806,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "ccab38e260865bfe8643fea9.webp",
+      "sha256": "f0ddca8ebf23d946d25a183fdeee6a4cdc282ee8c3066c9c32c5a05506ce269a",
+      "bytes": 33082,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "194a342acd7ed40174052c66.webp",
+      "sha256": "20a31c13fc902a8b59473505b0d7af53ffc6f0efd99cff17e244c42a99fc25fd",
+      "bytes": 85306,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "b4ed3e3e7b046e2a72bec9db.webp",
+      "sha256": "43b9ae0b239340c63fe4e32a0809c07052d6a03c148bf591477f32ce685e0787",
+      "bytes": 64864,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260927-002-e6e0853fb35f-480.webp",
+      "sha256": "a0f586da263f65f4ce3aea53bee4e3cfef105b464a698a020733d6ab54bb50a8",
+      "bytes": 20754,
+      "width": 480,
+      "height": 270,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260927-002-e6e0853fb35f-800.webp",
+      "sha256": "78843bbb452c0c38e587411a212d6e15337e0cb0cbc32bd07da312f0e489f93e",
+      "bytes": 42376,
+      "width": 800,
+      "height": 450,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260927-002-e6e0853fb35f-1200.webp",
+      "sha256": "27ed252b4970aaf313fec6d5664240800802debb14011bd90ba0071144be20c5",
+      "bytes": 71454,
+      "width": 1200,
+      "height": 675,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20260927-002-e6e0853fb35f-og.jpg",
+      "sha256": "99c59b97660577fac08b4a58dbee2756d0fada0b62c9abec3f6755139722255d",
+      "bytes": 115313,
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    },
+    {
+      "name": "723599456c44d91679aff875.webp",
+      "sha256": "b0acbd185b018b92fd1b9ba80bbedcd36f48ade01d669b23bb163514fbbcdff7",
+      "bytes": 65252,
+      "width": 1440,
+      "height": 673,
+      "type": "image/webp"
+    },
+    {
+      "name": "2619879d5a5bdeb3a265bd1f.webp",
+      "sha256": "4931b56890134ab3c9c6468b4b462d3ca8e75763401bfeedb48397619a719d9b",
+      "bytes": 151136,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "0226e58876f908aac65cde66.webp",
+      "sha256": "6c6a833fec2f5ca60e6cda00b16d0ee138de362a2c2898cc5053e77799ac66ca",
+      "bytes": 115486,
+      "width": 1440,
+      "height": 810,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20261003-001-e2eabb63d3f9-480.webp",
+      "sha256": "f843b5bc1ad972d3de63c9870cb13a9beba98e22655f8791c5bc258df3b65bfc",
+      "bytes": 18168,
+      "width": 480,
+      "height": 270,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20261003-001-e2eabb63d3f9-800.webp",
+      "sha256": "ef2ba50e9902468ed02cd1b7b86cf3aeae2fccab089a18bd7ea5b7e07eddadaf",
+      "bytes": 34460,
+      "width": 800,
+      "height": 450,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20261003-001-e2eabb63d3f9-1200.webp",
+      "sha256": "66947598ef1636e4d96c2f2b3a982ba241172d8db2021a02a51d2a3ace01e224",
+      "bytes": 58408,
+      "width": 1200,
+      "height": 675,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20261003-001-e2eabb63d3f9-og.jpg",
+      "sha256": "b99c0470d03d4f33a4541e55aa3d68cbc4c66adde386011c88305679c5a3835e",
+      "bytes": 98537,
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    },
+    {
+      "name": "320ef4b227ae7df4a0f1a6e4.gif",
+      "sha256": "320ef4b227ae7df4a0f1a6e42dc5bff977af509e6ef2edb7acd131c24989c4f7",
+      "bytes": 1603715,
+      "width": 598,
+      "height": 334,
+      "type": "image/gif"
+    },
+    {
+      "name": "98faede82181c8b302d66a30.webp",
+      "sha256": "3a99580d493fbdf5013dfeecc8938792f3d415e5eb603939a809e9e255b44e7a",
+      "bytes": 194820,
+      "width": 1086,
+      "height": 1448,
+      "type": "image/webp"
+    },
+    {
+      "name": "99469ac5878c00b64b2a4339.gif",
+      "sha256": "99469ac5878c00b64b2a43394ba0378469d67a03bd8f71272ecee7d21da40f6f",
+      "bytes": 134982,
+      "width": 390,
+      "height": 460,
+      "type": "image/gif"
+    },
+    {
+      "name": "7b94a5a9030ec07cf0b4aac4.gif",
+      "sha256": "7b94a5a9030ec07cf0b4aac448fecf0bcbc6c0f3630d06c41628a45247c0fbb1",
+      "bytes": 1591892,
+      "width": 598,
+      "height": 334,
+      "type": "image/gif"
+    },
+    {
+      "name": "4f28df982557d9112abefd00.webp",
+      "sha256": "ed4698e83643feacbc1b23fb30ced6e8a5c987ff7ef4fa4a4f9172644e66c7fc",
+      "bytes": 16862,
+      "width": 284,
+      "height": 395,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20261010-001-68037f5cb23b-480.webp",
+      "sha256": "1be7e2a8a0a7a265189296f2d7d3747c6f0ba79201ca7feb17e8191d6d1e54e2",
+      "bytes": 19482,
+      "width": 480,
+      "height": 270,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20261010-001-68037f5cb23b-800.webp",
+      "sha256": "866363dc1459386d38ee45c13aff33938ff992f41c9675f59d7bfc41baaec895",
+      "bytes": 38046,
+      "width": 800,
+      "height": 450,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20261010-001-68037f5cb23b-1200.webp",
+      "sha256": "f3e671a04ed558eccdbc10b679d8a57f45d2cbe42a618c8416cd1623fe1293e9",
+      "bytes": 66346,
+      "width": 1200,
+      "height": 675,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20261010-001-68037f5cb23b-og.jpg",
+      "sha256": "43ab5ac6391ae13762aff67ef4cc3524ce9de87674246a669a14a63f0c2069d6",
+      "bytes": 109835,
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    },
+    {
+      "name": "790d5338a759774e600a0b1a.webp",
+      "sha256": "1fdaa23ca918cbf10061b3119557082ca05cdf94045d7140a9bbfcaf44d1008f",
+      "bytes": 43052,
+      "width": 1286,
+      "height": 964,
+      "type": "image/webp"
+    },
+    {
+      "name": "334f0b9454a2297d58aaf9da.gif",
+      "sha256": "334f0b9454a2297d58aaf9dab0ba1bc42aeddf6d8c49bcf25885118eea57c4f2",
+      "bytes": 3797341,
+      "width": 720,
+      "height": 890,
+      "type": "image/gif"
+    },
+    {
+      "name": "e2eb2c65da634c65ebcceba2.webp",
+      "sha256": "dd03ed6b3e3abbcbc86c6ac2446543153cf38fb1bcd7d59c9babe4ad68499862",
+      "bytes": 31022,
+      "width": 1080,
+      "height": 1065,
+      "type": "image/webp"
+    },
+    {
+      "name": "44075a25a290e27a07fce72b.webp",
+      "sha256": "4d6bc4f17c5bceb47ec9ef61b46b24ad697b9bda0aa8a6f0f14b11ea5bf6999d",
+      "bytes": 50960,
+      "width": 560,
+      "height": 1220,
+      "type": "image/webp"
+    },
+    {
+      "name": "9816075d2e453139a9f71468.webp",
+      "sha256": "9c2fa5887b7171f958b214187ccfeec17377cf9342b337d7002fc773b0c962ce",
+      "bytes": 21760,
+      "width": 1080,
+      "height": 905,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20261011-001-825e33cf4b71-480.webp",
+      "sha256": "35d90fe4c0e35add6c9b8d4dfb58cf5d88d08ff0004ebfd113e453fa961a686e",
+      "bytes": 22466,
+      "width": 480,
+      "height": 270,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20261011-001-825e33cf4b71-800.webp",
+      "sha256": "db2a6ae636feaca00c1a145fcba015e0351c3b52cb415c0fc6c068d2a49e4d52",
+      "bytes": 42814,
+      "width": 800,
+      "height": 450,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20261011-001-825e33cf4b71-1200.webp",
+      "sha256": "d4dbf807998e7eae78c8da307190f5d08b032dea83a578b1eb4883f748ef6b12",
+      "bytes": 73350,
+      "width": 1200,
+      "height": 675,
+      "type": "image/webp"
+    },
+    {
+      "name": "W-20261011-001-825e33cf4b71-og.jpg",
+      "sha256": "4936b4a78bd63bf76cc3c8d3b4b3bea2915b444005024816178208596a988fb8",
+      "bytes": 115278,
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/415f432e02b31270f4df6bc6.webp",
+      "sha256": "b039828e82f15c8f666e48bb48299b3ac803d4c65e9354e6e5b73c9b308b0f42"
+    },
+    {
+      "path": "assets/bf1cb239e3f9df4b643991de.webp",
+      "sha256": "7097eb0f3a786e9b88e0ed0e4f65f2ba08e44cdbb9b1e9b8c599c77622290472"
+    },
+    {
+      "path": "assets/8da159055dd843528214ef51.webp",
+      "sha256": "5980b3ee698acb2fddc767685e5eebd8f047aca0b99ec21f3ae89876d2d9aeb0"
+    },
+    {
+      "path": "assets/9d1fa2c90e61679022077a00.webp",
+      "sha256": "eaf3149b4230a7793d9a3b680f239017da9a5d4dd8d8d4bce053ed444e56162e"
+    },
+    {
+      "path": "assets/64ee523e630ae787059a2441.webp",
+      "sha256": "186f5d02903f0e0e891745c050983b63b35e92931193a78afa69da20554e9438"
+    },
+    {
+      "path": "assets/3c717f1e6df7c603c584b596.webp",
+      "sha256": "ca8fc0212309158c5d866e5afd7188ec6b686704c5cf80adc77da2fcb1bab981"
+    },
+    {
+      "path": "assets/b06ad874bc6453e93e621730.webp",
+      "sha256": "b08b7dbd8a0f23ac30307f7cbc77b075732a6684601292600b6d130a05983417"
+    },
+    {
+      "path": "assets/W-20260904-001-c473364c92f1-480.webp",
+      "sha256": "8274e6c80f6a88b2fdeb6482ecd8589562db4af4c9ea3de53925904df2633124"
+    },
+    {
+      "path": "assets/W-20260904-001-c473364c92f1-800.webp",
+      "sha256": "e53713437ef7f8f52a5a19da08223ca7594381875c35cebcfa2f4d1799be06dc"
+    },
+    {
+      "path": "assets/W-20260904-001-c473364c92f1-1200.webp",
+      "sha256": "56f8ba9e7fbc6791564b7dd00753b23b99595436a1b971c69d059a497ca3b538"
+    },
+    {
+      "path": "assets/W-20260904-001-c473364c92f1-og.jpg",
+      "sha256": "5c6a830e862924b0c224ec661eff3c571c553ce3fafed156f368d378cc3b23fb"
+    },
+    {
+      "path": "assets/5db1aff9a063d892f3bea81a.gif",
+      "sha256": "5db1aff9a063d892f3bea81acaabe86aeea21f16d70de66a7eed162a10df1d94"
+    },
+    {
+      "path": "assets/a06b452fd6a836a208821433.gif",
+      "sha256": "a06b452fd6a836a208821433d4e63d03a39c1a9aa8e9cc3b706590ecdf5265dc"
+    },
+    {
+      "path": "assets/b5d293f2082c8bf5e99b2e07.webp",
+      "sha256": "497891284e191747f7bcfeaaadce33bdc0a12b74cb06c8ef565a8a01e8de7d69"
+    },
+    {
+      "path": "assets/a8efe59162588f81ad0f5f3b.webp",
+      "sha256": "3b335736cd4b4d83c8cf213cb00dc5e840c3256befbd5ad223aa7348dd3a7e7d"
+    },
+    {
+      "path": "assets/d75e49042876267ef1489c45.webp",
+      "sha256": "924c0cc19b117e8c1655caaaae53a99e8582248a03b0ebcfc0fac6ea96b39716"
+    },
+    {
+      "path": "assets/f816ba71bf1deeefb593ac68.webp",
+      "sha256": "cffede88a9f65d659e242a93167d42bf22c07023b4420e8eeb0f0265f1d7d914"
+    },
+    {
+      "path": "assets/4bf98a2860ccc6dab7aef62c.webp",
+      "sha256": "703cfd4d4b0cd3433ab98235dfa8bf1ebeedd94c1da08f5f76958c9126d24b71"
+    },
+    {
+      "path": "assets/3803bae35e816c046fadd0f9.webp",
+      "sha256": "8f5d2939034fb730e73064d71486fc4b897642ed2b974975dc8b867e65eb0c42"
+    },
+    {
+      "path": "assets/W-20260906-001-5e0476b710fb-480.webp",
+      "sha256": "a7eaee4111af481d4699dc8f2ada82b5c87b755b29449e0caf71a633b3789bd0"
+    },
+    {
+      "path": "assets/W-20260906-001-5e0476b710fb-800.webp",
+      "sha256": "0e128c023ef18e701a8e0eaf1be84d8fed3b4a03b6622d4cae706a2d216aad7d"
+    },
+    {
+      "path": "assets/W-20260906-001-5e0476b710fb-1200.webp",
+      "sha256": "cdecc409fa5c39e4549c83a3d0852c19377dd0578edd7bd879e30d3d8adf85b5"
+    },
+    {
+      "path": "assets/W-20260906-001-5e0476b710fb-og.jpg",
+      "sha256": "0aacad6e00fdcba083d242748f3d06ce4fbf0e64e6689314a284efa3fa056cfb"
+    },
+    {
+      "path": "assets/c4442b95e7c6c89007e3ba8a.webp",
+      "sha256": "11cf48de2fdc64b7ac87b24ac4e4dcbe1fccde2744b22fa89dc8ae873083b2a2"
+    },
+    {
+      "path": "assets/6bc33810fbf78dc78ca63636.webp",
+      "sha256": "e7be68414a9618ee8314da69b17752a76e71b64a35b55ad30601f12abea7d439"
+    },
+    {
+      "path": "assets/9880cc42ed0e5060d8d4fa4f.webp",
+      "sha256": "732b2edc2f6eb25b3e962da0dab546031f578271aa3dd5fd389361e9e2383763"
+    },
+    {
+      "path": "assets/463b799adc669f90a569c3da.webp",
+      "sha256": "e0c34ebcefc92bd331476531f504b068795b9385ae5a5191af770d0f5449c2e8"
+    },
+    {
+      "path": "assets/3a181a2fe26d9c7cb6c7dc3c.webp",
+      "sha256": "cda3e9b0c8be8841e9167336c38dabf5b272fe2157b09f859d050e21d8d49d2f"
+    },
+    {
+      "path": "assets/3479712832076ebef3bdf96c.webp",
+      "sha256": "7a3392d60ac2bc3096ee81845ef17afa158e0660fc3b722ee652fafc9a52ce83"
+    },
+    {
+      "path": "assets/53d072204e5cf984879666d7.webp",
+      "sha256": "bb3b87752bf5c7c412a6286a9cb826d3dff36a5e156e94b1cb10041116c617a7"
+    },
+    {
+      "path": "assets/833fb35ae7f8ba42da5df99b.webp",
+      "sha256": "6445113a46dd1a15e4deb5cbe10a3b75d5488f33055edad3759951d8b714fb64"
+    },
+    {
+      "path": "assets/W-20260908-001-d5b1a92d270e-480.webp",
+      "sha256": "30cd1efd34b20e25382f212eb9e42002fd90734a14d7cd07676a32733298c831"
+    },
+    {
+      "path": "assets/W-20260908-001-d5b1a92d270e-800.webp",
+      "sha256": "097f093fceb1b873466f8b6f6433299bccc373265341cdc695093a41d0ccd894"
+    },
+    {
+      "path": "assets/W-20260908-001-d5b1a92d270e-1200.webp",
+      "sha256": "c3b55410f0f380345455089f86d256a31dea43a3b358deb973b900630e3129b6"
+    },
+    {
+      "path": "assets/W-20260908-001-d5b1a92d270e-og.jpg",
+      "sha256": "9ce3612dc336a4709b154672286fb6c07fd0938967f86b68c843cf839b35349a"
+    },
+    {
+      "path": "assets/6ccd0683dea793b9bf46e34a.webp",
+      "sha256": "bfb35ca1599d2ff32a2c6cda83336dddf1263ae186fd63d1869f82650ba39e3c"
+    },
+    {
+      "path": "assets/20b6880249dc1339bcab3836.webp",
+      "sha256": "5e6563515adb6175c0fd8c84ec68af3722db71b28825de8ceb69d6c255e28371"
+    },
+    {
+      "path": "assets/c6a4c1c9c52f9ce8d446ccbc.gif",
+      "sha256": "c6a4c1c9c52f9ce8d446ccbc8932d12eb0c1ed4a08a1fe2253ff7fd679634809"
+    },
+    {
+      "path": "assets/7766dfceb6dd0b6d829eaedb.webp",
+      "sha256": "66fc4a7948eada4f5951fc9a52e7985e2e66f680b7fcdc2d89ed081355162d52"
+    },
+    {
+      "path": "assets/cb4b1e809b2c244600a229af.webp",
+      "sha256": "40188629560302fc2dd0b38dfbf4b55220cbdca967fdb76d9c0a6b13c6315574"
+    },
+    {
+      "path": "assets/309cc34c808dbb3316c80f38.webp",
+      "sha256": "b6f5ce40e0091b668d7392feab81b716603a9ada55c20439fe788a0736bcce69"
+    },
+    {
+      "path": "assets/f8fddf710603e3f3f8834534.webp",
+      "sha256": "550f18d8a92ee588f1c45c8e6efc7fcbe56f50aba2a57e7ad36a28dfa6be9e4f"
+    },
+    {
+      "path": "assets/13f19f1fd728cabec8e0134d.webp",
+      "sha256": "4fe0d7d2e8df10568126c83476b551df408bbe7e71a56e009a9f63d57d57affe"
+    },
+    {
+      "path": "assets/77afcc390a9343fac81511b5.webp",
+      "sha256": "c9ecd8513af3202d3dbfe1e202f54819143a4a5ab4ba5429e0df066d483dbccb"
+    },
+    {
+      "path": "assets/996ecf2f766b6a50277979b6.webp",
+      "sha256": "58459618b489811ced382502d87467181c84b87b0bff7c17982d2751f2d3b244"
+    },
+    {
+      "path": "assets/W-20260909-001-026e7068ed21-480.webp",
+      "sha256": "08042c69662d7d6634bf1c323c9702445bf3a9f31fc2310d3025fdfdd15676b1"
+    },
+    {
+      "path": "assets/W-20260909-001-026e7068ed21-800.webp",
+      "sha256": "5a9f25dea38ad82413d582f422aecebd34d059ea1ad5b9f22d270028735b4b55"
+    },
+    {
+      "path": "assets/W-20260909-001-026e7068ed21-1200.webp",
+      "sha256": "e7289f61420a9ee23fe4bad4eb75e504d735eecaca09990c3e8b519b0fd73a6f"
+    },
+    {
+      "path": "assets/W-20260909-001-026e7068ed21-og.jpg",
+      "sha256": "590f763a5b815ae4ff2272b505d70e627fb06bb8ad76c078dfcfb549569400b4"
+    },
+    {
+      "path": "assets/72ef4ac90ca6e30813feb047.webp",
+      "sha256": "d8e8297b246c0353017b79811b0abf2a9502981d3ca3bdd4bb5bfd653da09502"
+    },
+    {
+      "path": "assets/d8b24afc3f466cc5498832ef.webp",
+      "sha256": "77e9494ed7a8dbcf0bcd38f2dd7fa640856abc6d84c8f660cefcaf9bfeab53cd"
+    },
+    {
+      "path": "assets/edda06f4cba834c4a9878d0f.webp",
+      "sha256": "172d6da90adaf466541d280c0625c9c178f84d28303a85e9b7276c07a97bea7d"
+    },
+    {
+      "path": "assets/f0d861706c3d509793dcc9a1.webp",
+      "sha256": "e66994d114f0a40954c2e6f081dc4e355f9fd296c62b312ad54a6bae8a3edb4f"
+    },
+    {
+      "path": "assets/63d540823b015bd79e2fe139.webp",
+      "sha256": "616dbff5e312b13d03b587cb27c7c3282fc70208fabf6d50cc19fd8ac2455921"
+    },
+    {
+      "path": "assets/1ad2b051c088e6ba69e071ad.webp",
+      "sha256": "1cc76db2ac33e8e472101ac4c009684e6beb8aa97501f45ed470628db3a00913"
+    },
+    {
+      "path": "assets/451863178dcdcc808dd7f896.webp",
+      "sha256": "ffb2210092019fcf075477270e6e859346317d58bf52e12e00cc67f2594c22c6"
+    },
+    {
+      "path": "assets/3f7bd1ed7aec443320a646fa.webp",
+      "sha256": "78ec437f881d18ccdf6b4ce267ec17f0ccc8049450b890be50b806d164c6a395"
+    },
+    {
+      "path": "assets/58dd677e0e8622ea802c3a8f.webp",
+      "sha256": "f54efb0cd8e0854b5768b823dc0599faaec8f7690050863eb1e6d1a0dfa712f7"
+    },
+    {
+      "path": "assets/d0e0d402e15a33537c16ba47.webp",
+      "sha256": "989c092cc8a92fbdba8aebba0bcf838be93b5786f51edcd5d617a2db7921389d"
+    },
+    {
+      "path": "assets/18999e7f4c854abe75e52fe3.webp",
+      "sha256": "0e28267c3c5249bb6ff4afdd59312ce3ed47a437cfd137596e45c6d176d11197"
+    },
+    {
+      "path": "assets/ec74b077642c4126f195a6a4.webp",
+      "sha256": "f4e4cc7bb25e80e47fdce0e2f566ef700fe900c15d2e2a009650b4753b29160d"
+    },
+    {
+      "path": "assets/736640c2333b905a9c2dafc5.webp",
+      "sha256": "63f6b6cb2ad3fd60e4f2150b6393edb10a61945797a6b2ce1a72751abfb74716"
+    },
+    {
+      "path": "assets/12c0e0af8e9f0333dbd5db64.webp",
+      "sha256": "0e9581fc91d2669017b40a273f5e606542e45966e6c8a67e5dc65a83cd6c04b5"
+    },
+    {
+      "path": "assets/W-20260919-001-9cde75a98eb2-480.webp",
+      "sha256": "a35a4941ad566b300d47263382d0cc482d319bb64241f7404fb986451ae5f2d9"
+    },
+    {
+      "path": "assets/W-20260919-001-9cde75a98eb2-800.webp",
+      "sha256": "482e591ee4a618c8bbb5eb1a22ff6338e173b45ced185ec9a51107f24f7b60d2"
+    },
+    {
+      "path": "assets/W-20260919-001-9cde75a98eb2-1200.webp",
+      "sha256": "170ce6b96b7e13863557d46aed9fadd7a700124f4164555c8dec3aa12aa037ad"
+    },
+    {
+      "path": "assets/W-20260919-001-9cde75a98eb2-og.jpg",
+      "sha256": "dfb7e6666cadfe92f8008f7f9eededb747422caf6df6f93961f9e10c892ed38b"
+    },
+    {
+      "path": "assets/28591b865e64e8a035fe57ca.webp",
+      "sha256": "83f5fb541692c91d300712876be0e85a7eb38516a99e033c0548a35bdd848dcf"
+    },
+    {
+      "path": "assets/16daa6cf389cc1334fb34dd9.webp",
+      "sha256": "d1ad35076e6e6629b4681eacdeed4586f18b56091914fc8e406da3e8407e33c1"
+    },
+    {
+      "path": "assets/4980ba07c0be15a4eecc33c1.webp",
+      "sha256": "598f3bf6ba0a637888861d91c375e475e4cb26fa330aa0f465777438b50965b3"
+    },
+    {
+      "path": "assets/916cd60d31ed0572001b8530.webp",
+      "sha256": "7fcdf752680d3efd63fa756b1900878d83dba0f0467935a0dda83c63fdf28f6a"
+    },
+    {
+      "path": "assets/2f782ec4def191d40fb534d0.webp",
+      "sha256": "d478061ad727044d7a279fadaf821ea7c336ccfd838c918ad84b282d6da14fd7"
+    },
+    {
+      "path": "assets/338c582fdc84db151126aaee.webp",
+      "sha256": "f5d217c95cfdb030b5df4cd71aa70cc6751510fab69e6d46c5394669ba990b8e"
+    },
+    {
+      "path": "assets/68b571ed3a7fcb441de075e2.webp",
+      "sha256": "eb4bf0ee9a3d82469c154f2a02336b734ca8afc51a41c98068b7b77acd8125d8"
+    },
+    {
+      "path": "assets/W-20260924-001-47d013f1f453-480.webp",
+      "sha256": "44a9ce519e513071c73e997568b84bfac4654914e8b95c332c323752b79e1939"
+    },
+    {
+      "path": "assets/W-20260924-001-47d013f1f453-800.webp",
+      "sha256": "0a1ac697d254ed8b10e4c69b930ee048d5b5a609ec7adc2a108504ea068bc25b"
+    },
+    {
+      "path": "assets/W-20260924-001-47d013f1f453-1200.webp",
+      "sha256": "6a3b589161cb6794a824da03263dcd49e93d4c267e05dded75fcb79f1e938616"
+    },
+    {
+      "path": "assets/W-20260924-001-47d013f1f453-og.jpg",
+      "sha256": "f9cf957c52b9c6afea323a2a3ef385d5f65707b5f569255aaea8db52cf1fd52f"
+    },
+    {
+      "path": "assets/18439b385f274a8a1f9fd14a.webp",
+      "sha256": "cb35ab5c76ab6ce26e9299292e1ef6345139449ff155bca55ee32eec459bc73c"
+    },
+    {
+      "path": "assets/2ba8279a5f6b928447703bbc.webp",
+      "sha256": "3ee5e1ae3bc92e37b73881c4a84a741a32243cae8a9e59f8c33a86f981ce9b49"
+    },
+    {
+      "path": "assets/97e42c900f5bc57d755b8830.webp",
+      "sha256": "6286965c1a3b6f193c5114c4ed525dc5367322f7ec580992efe27a94775ec7f2"
+    },
+    {
+      "path": "assets/1cc15eb434f339392c143ac5.webp",
+      "sha256": "f534db7de605e40a23f84441bfb1935166e19ceec0101c36868dbe0e639b44ae"
+    },
+    {
+      "path": "assets/a3796772671dddb554ab2fea.webp",
+      "sha256": "28c87cb8f407cd1e0a117f6c174a3f7b06e409e80689cefae1d864c6ab665260"
+    },
+    {
+      "path": "assets/57d35a7ecdafec8fd89b90a9.webp",
+      "sha256": "c14f44991d56c24d71712fafe80f83e4466fa6768a1922848928d5d4e422bfe2"
+    },
+    {
+      "path": "assets/ad37fb725e161f24eef1be47.webp",
+      "sha256": "8becbabff549af9431c623dbb097f746897fefc8d182e909b219cc1348adcc46"
+    },
+    {
+      "path": "assets/8b536ad16321c77263e35ef3.webp",
+      "sha256": "65f20ed439dde0707642b8b24147b818dd73037aecbba87f7cccf92d128fb525"
+    },
+    {
+      "path": "assets/cbe7ae5068379a5e285277c3.webp",
+      "sha256": "6d96daa349d6b7c4d192f9ea2a47b422372b3371eb406a1dcb8d865051a3a4bb"
+    },
+    {
+      "path": "assets/b917b012c52792d4a6681c76.webp",
+      "sha256": "1fccf29e5acca8d405c557974bc1a805b8acb8a1c19b1398aa3db577498b284d"
+    },
+    {
+      "path": "assets/328f48efdba176af3c15b95b.webp",
+      "sha256": "60ecd855518508874a76042feb8761d5493d903c336d93b6eeac453bef5e69d2"
+    },
+    {
+      "path": "assets/04050a67d08b6563461002d9.webp",
+      "sha256": "c4e8464383244a41617d3c767e13bcaa3d819317da7744ae1e3891c8fd02cd37"
+    },
+    {
+      "path": "assets/2ed483a26fd9a99ef6d1415a.webp",
+      "sha256": "33e786811d2207659a6f99855354e307da7918c0b8de9f88f08db5e79866a0bf"
+    },
+    {
+      "path": "assets/W-20260927-001-ae91ecb5aca7-480.webp",
+      "sha256": "ab1c77204256dea8c44030037c5ae8f66264e98a977abf9be90a73a64bbb1751"
+    },
+    {
+      "path": "assets/W-20260927-001-ae91ecb5aca7-800.webp",
+      "sha256": "4c0421d94f276829fd8a2faf042b0e4f31e9f522a9b1a7c07e7937d9d85b080f"
+    },
+    {
+      "path": "assets/W-20260927-001-ae91ecb5aca7-1200.webp",
+      "sha256": "fe397eeb8edca7bac61714f7383eadda65bbd9fbbb09bac68c0824f0cec9a560"
+    },
+    {
+      "path": "assets/W-20260927-001-ae91ecb5aca7-og.jpg",
+      "sha256": "2929d4e88d97ab0439aee70c617085564c9bee4fc7d8e17def30dedf7308ce63"
+    },
+    {
+      "path": "assets/c3e2fa6d33a2fa6734a309df.webp",
+      "sha256": "5865b0968aaedc171518abd967884bb593d5f7c69353ba95ec3bafa401df9cd8"
+    },
+    {
+      "path": "assets/fa8ff0314d9e2495f8e097c7.webp",
+      "sha256": "1291dbe8ce47af6b3064566a1daae9e00c696a92ad1eaa89f62790fa817e412d"
+    },
+    {
+      "path": "assets/c6fc388f4bf3dc60cbd671d2.webp",
+      "sha256": "a38d6f0cffafd37bb05cfb2d93a91a60fbc34f5671384a92f37fa260ef294cc4"
+    },
+    {
+      "path": "assets/c5bba8720f1384a8a67784b1.webp",
+      "sha256": "f8d27d37723bf7d3680954b9b0331e70fde2696f0e482d203807218cabc70c61"
+    },
+    {
+      "path": "assets/ccab38e260865bfe8643fea9.webp",
+      "sha256": "f0ddca8ebf23d946d25a183fdeee6a4cdc282ee8c3066c9c32c5a05506ce269a"
+    },
+    {
+      "path": "assets/194a342acd7ed40174052c66.webp",
+      "sha256": "20a31c13fc902a8b59473505b0d7af53ffc6f0efd99cff17e244c42a99fc25fd"
+    },
+    {
+      "path": "assets/b4ed3e3e7b046e2a72bec9db.webp",
+      "sha256": "43b9ae0b239340c63fe4e32a0809c07052d6a03c148bf591477f32ce685e0787"
+    },
+    {
+      "path": "assets/W-20260927-002-e6e0853fb35f-480.webp",
+      "sha256": "a0f586da263f65f4ce3aea53bee4e3cfef105b464a698a020733d6ab54bb50a8"
+    },
+    {
+      "path": "assets/W-20260927-002-e6e0853fb35f-800.webp",
+      "sha256": "78843bbb452c0c38e587411a212d6e15337e0cb0cbc32bd07da312f0e489f93e"
+    },
+    {
+      "path": "assets/W-20260927-002-e6e0853fb35f-1200.webp",
+      "sha256": "27ed252b4970aaf313fec6d5664240800802debb14011bd90ba0071144be20c5"
+    },
+    {
+      "path": "assets/W-20260927-002-e6e0853fb35f-og.jpg",
+      "sha256": "99c59b97660577fac08b4a58dbee2756d0fada0b62c9abec3f6755139722255d"
+    },
+    {
+      "path": "assets/723599456c44d91679aff875.webp",
+      "sha256": "b0acbd185b018b92fd1b9ba80bbedcd36f48ade01d669b23bb163514fbbcdff7"
+    },
+    {
+      "path": "assets/2619879d5a5bdeb3a265bd1f.webp",
+      "sha256": "4931b56890134ab3c9c6468b4b462d3ca8e75763401bfeedb48397619a719d9b"
+    },
+    {
+      "path": "assets/0226e58876f908aac65cde66.webp",
+      "sha256": "6c6a833fec2f5ca60e6cda00b16d0ee138de362a2c2898cc5053e77799ac66ca"
+    },
+    {
+      "path": "assets/W-20261003-001-e2eabb63d3f9-480.webp",
+      "sha256": "f843b5bc1ad972d3de63c9870cb13a9beba98e22655f8791c5bc258df3b65bfc"
+    },
+    {
+      "path": "assets/W-20261003-001-e2eabb63d3f9-800.webp",
+      "sha256": "ef2ba50e9902468ed02cd1b7b86cf3aeae2fccab089a18bd7ea5b7e07eddadaf"
+    },
+    {
+      "path": "assets/W-20261003-001-e2eabb63d3f9-1200.webp",
+      "sha256": "66947598ef1636e4d96c2f2b3a982ba241172d8db2021a02a51d2a3ace01e224"
+    },
+    {
+      "path": "assets/W-20261003-001-e2eabb63d3f9-og.jpg",
+      "sha256": "b99c0470d03d4f33a4541e55aa3d68cbc4c66adde386011c88305679c5a3835e"
+    },
+    {
+      "path": "assets/320ef4b227ae7df4a0f1a6e4.gif",
+      "sha256": "320ef4b227ae7df4a0f1a6e42dc5bff977af509e6ef2edb7acd131c24989c4f7"
+    },
+    {
+      "path": "assets/98faede82181c8b302d66a30.webp",
+      "sha256": "3a99580d493fbdf5013dfeecc8938792f3d415e5eb603939a809e9e255b44e7a"
+    },
+    {
+      "path": "assets/99469ac5878c00b64b2a4339.gif",
+      "sha256": "99469ac5878c00b64b2a43394ba0378469d67a03bd8f71272ecee7d21da40f6f"
+    },
+    {
+      "path": "assets/7b94a5a9030ec07cf0b4aac4.gif",
+      "sha256": "7b94a5a9030ec07cf0b4aac448fecf0bcbc6c0f3630d06c41628a45247c0fbb1"
+    },
+    {
+      "path": "assets/4f28df982557d9112abefd00.webp",
+      "sha256": "ed4698e83643feacbc1b23fb30ced6e8a5c987ff7ef4fa4a4f9172644e66c7fc"
+    },
+    {
+      "path": "assets/W-20261010-001-68037f5cb23b-480.webp",
+      "sha256": "1be7e2a8a0a7a265189296f2d7d3747c6f0ba79201ca7feb17e8191d6d1e54e2"
+    },
+    {
+      "path": "assets/W-20261010-001-68037f5cb23b-800.webp",
+      "sha256": "866363dc1459386d38ee45c13aff33938ff992f41c9675f59d7bfc41baaec895"
+    },
+    {
+      "path": "assets/W-20261010-001-68037f5cb23b-1200.webp",
+      "sha256": "f3e671a04ed558eccdbc10b679d8a57f45d2cbe42a618c8416cd1623fe1293e9"
+    },
+    {
+      "path": "assets/W-20261010-001-68037f5cb23b-og.jpg",
+      "sha256": "43ab5ac6391ae13762aff67ef4cc3524ce9de87674246a669a14a63f0c2069d6"
+    },
+    {
+      "path": "assets/790d5338a759774e600a0b1a.webp",
+      "sha256": "1fdaa23ca918cbf10061b3119557082ca05cdf94045d7140a9bbfcaf44d1008f"
+    },
+    {
+      "path": "assets/334f0b9454a2297d58aaf9da.gif",
+      "sha256": "334f0b9454a2297d58aaf9dab0ba1bc42aeddf6d8c49bcf25885118eea57c4f2"
+    },
+    {
+      "path": "assets/e2eb2c65da634c65ebcceba2.webp",
+      "sha256": "dd03ed6b3e3abbcbc86c6ac2446543153cf38fb1bcd7d59c9babe4ad68499862"
+    },
+    {
+      "path": "assets/44075a25a290e27a07fce72b.webp",
+      "sha256": "4d6bc4f17c5bceb47ec9ef61b46b24ad697b9bda0aa8a6f0f14b11ea5bf6999d"
+    },
+    {
+      "path": "assets/9816075d2e453139a9f71468.webp",
+      "sha256": "9c2fa5887b7171f958b214187ccfeec17377cf9342b337d7002fc773b0c962ce"
+    },
+    {
+      "path": "assets/W-20261011-001-825e33cf4b71-480.webp",
+      "sha256": "35d90fe4c0e35add6c9b8d4dfb58cf5d88d08ff0004ebfd113e453fa961a686e"
+    },
+    {
+      "path": "assets/W-20261011-001-825e33cf4b71-800.webp",
+      "sha256": "db2a6ae636feaca00c1a145fcba015e0351c3b52cb415c0fc6c068d2a49e4d52"
+    },
+    {
+      "path": "assets/W-20261011-001-825e33cf4b71-1200.webp",
+      "sha256": "d4dbf807998e7eae78c8da307190f5d08b032dea83a578b1eb4883f748ef6b12"
+    },
+    {
+      "path": "assets/W-20261011-001-825e33cf4b71-og.jpg",
+      "sha256": "4936b4a78bd63bf76cc3c8d3b4b3bea2915b444005024816178208596a988fb8"
+    },
+    {
+      "path": "posts/W-20260904-001.md",
+      "sha256": "de9df93cdd5921c045d1dc9d234f615df76be9b6c2351707176485466e765cf6"
+    },
+    {
+      "path": "posts/W-20260906-001.md",
+      "sha256": "f0584d9c463e4a0db05e692398fcd44e7221fb54f172468e4ff5f842d04e2449"
+    },
+    {
+      "path": "posts/W-20260908-001.md",
+      "sha256": "41452dc421dcf899190bddc55cf2de5014bee2d4aefa0b78b072763a860cd865"
+    },
+    {
+      "path": "posts/W-20260909-001.md",
+      "sha256": "5bccaae505a77806e778008272774f76211396cf49860d7a8e5fc89e038abd43"
+    },
+    {
+      "path": "posts/W-20260919-001.md",
+      "sha256": "62e930d3c3f70c6f957b2ef9a833a75bab3fa3ab05b89939375fb6892d75aab7"
+    },
+    {
+      "path": "posts/W-20260924-001.md",
+      "sha256": "5572779b93493bad98ff75883849e4a5a7a457258ee2d871bd6a1b4d277faf7b"
+    },
+    {
+      "path": "posts/W-20260927-001.md",
+      "sha256": "1e02dd7b5cbedf2796e4d57fbdb1bc48424b5a295e0c20f8d44972354eba9b87"
+    },
+    {
+      "path": "posts/W-20260927-002.md",
+      "sha256": "8cebdaf2e83aa336ebe18d2483a3bb96071a3966fd11f5ab4c4235540e32fad3"
+    },
+    {
+      "path": "posts/W-20261003-001.md",
+      "sha256": "01e131775ddb64d6afde47a7d0a36cfb25b0782e8bce92ba355d441660f6711b"
+    },
+    {
+      "path": "posts/W-20261010-001.md",
+      "sha256": "01a7f5bed773d1928d1c97c43af1a999fb1f7867280e2c7acbfce7619443d6ef"
+    },
+    {
+      "path": "posts/W-20261011-001.md",
+      "sha256": "1e925031e23517e7e5a67c78622fc77606efcf688b0d90bcee4c67dc14d7ab63"
+    },
+    {
+      "path": "posts/20260313_AI_协作开发工程化实践方法论.md",
+      "sha256": "48795948364a41eb07d42337a62bfff57fd6007260304e266a7c49a3aaaf7e62"
+    },
+    {
+      "path": "posts/20260315_文本是知识的接口.md",
+      "sha256": "463409096a7a6bd3827ddd0c1dfaa01a05059ead737b9d0f4be4a8ada65d55d2"
+    },
+    {
+      "path": "posts/20260316_ThirdSpace_完整部署教程.md",
+      "sha256": "bc4f99710bf7fc34396f0cc4fafeb73e00d1491882692c9ecc04dd718c207254"
+    },
+    {
+      "path": "posts/20260323_工具做脏活_AI做智能_一个人如何用_40_个_MCP_工具搭出知识操作系统.md",
+      "sha256": "df602b786b20bc098f7c67846ea197b2362cab3f14ac597c4591936a346ce1b9"
+    },
+    {
+      "path": "posts/20260324_做技术的人收到第一笔钱.md",
+      "sha256": "28d26e8b5dee2759c3a9018f2a17db4babc9c0ca995a1d2993682c81b0c96c6c"
+    },
+    {
+      "path": "posts/20260325_一篇文章的旅程_从收藏到行动验证.md",
+      "sha256": "82dfc755620073e1114952240da36ddfe7df1f78d994a1fb87ba0aa7d5f3decb"
+    },
+    {
+      "path": "posts/20260326_借鉴开源workflow设计自己的内容生产系统——取舍与最小粒度原则.md",
+      "sha256": "d1ab559bae7eca332e96f236165ad04eadb19abb26810d95e5fc0a20cbc8cc05"
+    },
+    {
+      "path": "posts/20260327_04-用AI搭内容系统_一个凌晨2点半还没睡的故事.md",
+      "sha256": "d7be16892c9287bf6c4cbfba302dd2498ab10b7a64b8ba0a65cc49af087dee4d"
+    },
+    {
+      "path": "posts/20260327_从_系统之美_到_Harness_Engineering_用系统论重新理解_AI.md",
+      "sha256": "229900cbb801b410f9fefb8de81f2bb725b8ee198571ff170a127b2174e9e191"
+    },
+    {
+      "path": "posts/20260327_我怎么把每篇文章变成一个作品.md",
+      "sha256": "fefd1ea6c3cbbdc3b25bb563f7c29d11d92c99e065083ca4c4e042d757964c5a"
+    },
+    {
+      "path": "posts/20260328_知识库中心vs智能体中心_一个人的AI协作基础设施该怎么建.md",
+      "sha256": "9923d6034a802e087211a649c3707db0edbd15fd070ac29de7adbf01e5d6b003"
+    },
+    {
+      "path": "posts/20260329_用了AI之后我终于理解老板的需求为何不明确.md",
+      "sha256": "af44b4ef23c7a5b2f5cbeae312bf8eef38db4736f78ef0609c612364e799ac9f"
+    },
+    {
+      "path": "posts/20260331_MoonOS_立项自审_为什么要造个人_AI_操作系统.md",
+      "sha256": "0f536808a81610e903170da9bc9395d07ad1b2ef77ef6e25d67c84477a64e76d"
+    },
+    {
+      "path": "posts/20260331_我给自己的_AI_系统打了_6_分_一个人造_个人_AI_操作系统_的冷静复盘.md",
+      "sha256": "ff1e6390abdee927807e347a5f4bb2f5d7918ecebacd3c0c54c8567dfc94d19e"
+    },
+    {
+      "path": "posts/20260401_AI越加越多效果越差你的系统需要一次体检.md",
+      "sha256": "630ea307abd9ed56d39f71f09ac6ada37bd73227cb98e6dc5a114d3ec7339ca0"
+    },
+    {
+      "path": "posts/20260401_我越来越确信_AI_时代最重要的_不是模型_而是你自己的_AI_资产.md",
+      "sha256": "c49ff21ab62fd38611dc8f9a7db4842bac20e1b6083d53e139f21e490595e58e"
+    },
+    {
+      "path": "posts/20260403_让_AI_知道文件该放哪_我用一个函数解决了_Obsidian_知识库的混乱问题.md",
+      "sha256": "541321da06d8c7fe0fb4ed0ccf0eabc742913d7e5bb52c0b5a17d0a1fb029916"
+    },
+    {
+      "path": "posts/20260404_我思考了一个不可能实现的产品_但那些想法让我更清醒.md",
+      "sha256": "77253ef3bea0522af9d8cefe1148d4cac9b0bd6c21a9e542d727654105d24695"
+    },
+    {
+      "path": "posts/20260408_我用_AI_把知识库从档案柜变成头脑地图.md",
+      "sha256": "acece6901303c1784c795e81528d4152bc004ee909c91001d4cd886a58a970ac"
+    },
+    {
+      "path": "posts/20260415_把主力AI助手换成Agent两天踩了四个坑.md",
+      "sha256": "cd1bd9cdc6585133334d071bb9944e4c236315b69c819ce878e0b41e595c31b1"
+    },
+    {
+      "path": "posts/20260418_Skill系统能创建不能维护.md",
+      "sha256": "fe4782d7ac38d1772518cb28f188ee488a718edc5ca25275e3a8fbbe1b488075"
+    },
+    {
+      "path": "posts/20260418_多智能体协作_不是人越多越好.md",
+      "sha256": "1ba6948669e6b2dce2f49f3e3e1d0099f5b1307ae67b7c6254ab67ff212baf1e"
+    },
+    {
+      "path": "posts/20260421_Hermes___Claude_Code_三层架构完全落地方案.md",
+      "sha256": "4fe8cc3f2064a12bbae168f5cbf061933a3e56c5e118acb9ba4c5574eabab28a"
+    },
+    {
+      "path": "posts/20260421_调试一个_AI_Agent_协作架构_5_轮实跑_10_次_SKILL_迭代_3.md",
+      "sha256": "811a8cf72b0d161146930aa44fafd023aa416ebb3d525405eeadd678e3eec8cb"
+    },
+    {
+      "path": "posts/20260423_Agent到底进化了什么_从对话框到能干活的AI.md",
+      "sha256": "2f7e9f7cdff87f3a98d0a7357e069a28e052cbb4bdc3c7cce2d8b342a4095292"
+    },
+    {
+      "path": "posts/20260423_定时任务MCP服务技术改造.md",
+      "sha256": "47a83f9a34b6bc99c3025299ce9ccdb1ed70931a4c25d8db85030f333537683c"
+    },
+    {
+      "path": "posts/20260423_我把LLM当编排大脑_踩了一年的坑.md",
+      "sha256": "36bd52b4c1c7611efa213738d905a1d5664112d9842e0814e76f039499b782a1"
+    },
+    {
+      "path": "posts/20260505_我们在公园长椅上写代码_做了一个自己和团队都离不开的工具.md",
+      "sha256": "e542ae16063544e4ca8fbd4e5a29744b958a64d735df5be374b80d17c8d90664"
+    },
+    {
+      "path": "posts/20260514_Markdown不会淘汰HTML也替代不了它.md",
+      "sha256": "31401596f1c3d7256fd555b34e871ec8f59a59a27752fea3b14fa763eda19a18"
+    },
+    {
+      "path": "posts/20260515_Multica实战_AI_Agent协作平台落地实操.md",
+      "sha256": "61ba8c47e0b047f3671c604ba55637dd8c2a4b1a08351577bd639e1253ae6658"
+    },
+    {
+      "path": "posts/20260521_口播视频自动剪辑工具_从20分钟到10分钟.md",
+      "sha256": "f12d9ba32c0eb94931cb827779d716304241ce0d95572daa87dbe4e23345a116"
+    },
+    {
+      "path": "posts/20260604_我把AI当新员工管.md",
+      "sha256": "4272029cd7df4d36593b7f72366b6d9bc0bddd77e2bc888c54247d8a6d0d17f4"
+    },
+    {
+      "path": "posts/20260617_输入输出工作流.md",
+      "sha256": "bf93e919968b37bd01a01560ea12768b8157e0aa31a7f8d9a4139c4b045d7488"
+    },
+    {
+      "path": "posts/20260702_每个任务都做对了产品为什么还是错的.md",
+      "sha256": "01b2f3ac21f2bd737ac75df02623e8169415a30ccc5b4796b0b50b9647b08f3e"
+    },
+    {
+      "path": "posts/20260705_AI写代码为什么越写越烂.md",
+      "sha256": "93ce0bce6a2cdd1fc0cda7351d0aeac167d1abbd001513e70896e503b107d7c3"
+    },
+    {
+      "path": "posts/20260705_Agent最危险的是重做已有系统.md",
+      "sha256": "d38fcac07f5f1425d638b73d8795fdffd4c9d0bb6a53f4fae3d804dd64a93aa7"
+    },
+    {
+      "path": "posts/mcp-process-explosion-analysis.md",
+      "sha256": "cdf6ef899e72df7d85ac1882c0841c4647836ac8be20ee43780a3f3f4332d38d"
+    }
+  ],
+  "missingAssets": [
+    {
+      "source": "20260418_多智能体协作_不是人越多越好.md",
+      "asset": "./assets/20260418_多智能体协作_不是人越多越好/08_cover.png",
+      "alt": "封面"
+    },
+    {
+      "source": "20260418_多智能体协作_不是人越多越好.md",
+      "asset": "./assets/20260418_多智能体协作_不是人越多越好/01_cost.png",
+      "alt": "协作成本"
+    },
+    {
+      "source": "20260418_多智能体协作_不是人越多越好.md",
+      "asset": "./assets/20260418_多智能体协作_不是人越多越好/02_dispatch.png",
+      "alt": "调度子Agent"
+    },
+    {
+      "source": "20260418_多智能体协作_不是人越多越好.md",
+      "asset": "./assets/20260418_多智能体协作_不是人越多越好/03_team.png",
+      "alt": "Agent团队"
+    },
+    {
+      "source": "20260418_多智能体协作_不是人越多越好.md",
+      "asset": "./assets/20260418_多智能体协作_不是人越多越好/04_validator.png",
+      "alt": "生成验证者"
+    },
+    {
+      "source": "20260418_多智能体协作_不是人越多越好.md",
+      "asset": "./assets/20260418_多智能体协作_不是人越多越好/05_bus.png",
+      "alt": "消息总线"
+    },
+    {
+      "source": "20260418_多智能体协作_不是人越多越好.md",
+      "asset": "./assets/20260418_多智能体协作_不是人越多越好/06_blackboard.png",
+      "alt": "共享状态"
+    },
+    {
+      "source": "20260418_多智能体协作_不是人越多越好.md",
+      "asset": "./assets/20260418_多智能体协作_不是人越多越好/07_decision.png",
+      "alt": "三问题决策树"
+    }
+  ]
+}

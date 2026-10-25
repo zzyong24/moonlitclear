@@ -1,0 +1,150 @@
+---
+import CardEffect from './CardEffect.astro';
+import type { Post } from '~/types';
+interface Props {
+  post: Post;
+  featured?: boolean;
+}
+const { post, featured = false } = Astro.props;
+const src = typeof post.image === 'string' ? post.image : post.image?.src;
+const variants = post.coverVariants;
+---
+
+<a href={'/' + post.permalink} class:list={['article-card', { 'article-card--featured': featured }]}>
+  <CardEffect kind="article" visualClass="article-card__visual">
+    <img
+      src={variants?.[1]?.url || src}
+      srcset={variants?.map((v) => `${v.url} ${v.width}w`).join(', ')}
+      sizes="(max-width:700px) calc(100vw - 40px),560px"
+      width="1200"
+      height="675"
+      loading="lazy"
+      decoding="async"
+      alt={post.imageAlt || ''}
+    />
+
+    <span class="article-card__cue" aria-hidden="true">阅读文章 <span>↗</span></span>
+    {post.previewOnly && <span class="article-card__preview">本地预览</span>}
+  </CardEffect>
+  <div class="article-card__body">
+    <div class="article-card__meta">
+      <span>{post.category?.title || '实践记录'}</span><time datetime={post.publishDate.toISOString()}
+        >{post.publishDate.toISOString().slice(0, 10).replaceAll('-', '.')}</time
+      >
+    </div>
+    <h3>{post.title}</h3>
+    <p>{post.excerpt}</p>
+    <span class="article-card__read">阅读全文 <span aria-hidden="true">↗</span></span>
+  </div>
+</a>
+<style>
+  :global(.article-grid) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 32px;
+  }
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    color: var(--brand-ink);
+    text-decoration: none;
+  }
+  .article-card:focus-visible {
+    outline: 3px solid var(--brand-accent);
+    outline-offset: 8px;
+    border-radius: 12px;
+  }
+  .article-card__body {
+    padding: 23px 2px 0;
+  }
+  .article-card__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    color: var(--brand-muted);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .article-card__meta > span {
+    color: var(--brand-accent);
+  }
+  .article-card h3 {
+    font-size: clamp(21px, 2vw, 27px);
+    line-height: 1.5;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin: 12px 0 10px;
+    text-wrap: pretty;
+  }
+  .article-card p {
+    color: var(--brand-body);
+    font-size: 16px;
+    line-height: 1.85;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .article-card__read {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 1px solid #20252218;
+    font-size: 13px;
+    color: var(--brand-accent);
+  }
+  .article-card__read > span {
+    font-size: 20px;
+    line-height: 1;
+  }
+  .article-card__preview {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    background: #fffffff0;
+    color: var(--brand-ink);
+    border: 1px solid #20252212;
+    border-radius: 100px;
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+  .article-card--featured {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #20252218;
+  }
+  .article-card--featured .article-card__body {
+    padding-top: 0;
+  }
+  .article-card--featured h3 {
+    font-size: clamp(25px, 2.5vw, 36px);
+    line-height: 1.5;
+  }
+  @media (max-width: 700px) {
+    :global(.article-grid) {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .article-card--featured {
+      display: flex;
+      gap: 0;
+    }
+    .article-card--featured .article-card__body {
+      padding-top: 23px;
+    }
+    .article-card--featured h3 {
+      font-size: 25px;
+    }
+    .article-card__visual {
+      width: 100%;
+    }
+  }
+</style>

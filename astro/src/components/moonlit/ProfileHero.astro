@@ -1,0 +1,229 @@
+---
+import { getImage } from 'astro:assets';
+import portrait from '~/assets/moonlit/portrait.png';
+const photo = await getImage({ src: portrait, width: 800, format: 'webp', quality: 85 });
+---
+
+<section class="profile-hero" id="main" aria-labelledby="hero-title">
+  <div class="profile-copy">
+    <p class="profile-kicker"><span></span> 朱志勇 <i>/</i> 月明Verse · 独立开发者</p>
+    <h1 id="hero-title">一个人做产品。<br /><em>做内容，也做增长。</em></h1>
+    <p class="profile-intro">
+      我是一名在职独立开发者，实战 AI Native。这里有我做的产品、试过的工具，也有从 0 到 1 的真实记录。
+    </p>
+    <div class="profile-actions">
+      <a class="glow-button" href="#work">看看我的作品 <span aria-hidden="true">↗</span></a>
+      <a class="quiet-button" href="#links">了解我 <span aria-hidden="true">→</span></a>
+    </div>
+    <p class="profile-note">AI Native · 工具实测 · 产品从 0 到 1</p>
+  </div>
+  <figure class="profile-photo">
+    <img
+      src={photo.src}
+      width={800}
+      height={Math.round((800 * portrait.height) / portrait.width)}
+      alt="朱志勇身穿深蓝西装和白色上衣的全身形象照"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <figcaption><span>月明Verse</span><small>朱志勇 · 全栈开发工程师</small></figcaption>
+  </figure>
+  <nav class="profile-paths" aria-label="探索我的内容">
+    <a href="#work"><span>01 / 构建</span><strong>产品与实践 <b aria-hidden="true">↗</b></strong></a>
+    <a href="#articles"><span>02 / 记录</span><strong>文章与思考 <b aria-hidden="true">↗</b></strong></a>
+    <a href="#links"><span>03 / 链接</span><strong>认识与交流 <b aria-hidden="true">↗</b></strong></a>
+  </nav>
+</section>
+<style>
+  .profile-hero {
+    max-width: 1180px;
+    width: 100%;
+    margin: auto;
+    padding: 60px 30px 0;
+    display: grid;
+    grid-template-columns: 1.25fr 0.85fr;
+    column-gap: 72px;
+    align-items: center;
+  }
+  .profile-kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    color: var(--brand-body);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .profile-kicker > span {
+    width: 8px;
+    height: 8px;
+    background: var(--brand-copper);
+    border-radius: 50%;
+  }
+  .profile-kicker i {
+    font-style: normal;
+    color: var(--brand-muted);
+    margin: 0 3px;
+  }
+  h1 {
+    font-size: clamp(48px, 5vw, 64px);
+    line-height: 1.26;
+    font-weight: 750;
+    letter-spacing: -0.05em;
+    color: var(--brand-ink);
+    margin: 28px 0;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--brand-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--brand-apricot);
+    text-decoration-thickness: 9px;
+    text-underline-offset: 1px;
+    text-decoration-skip-ink: none;
+  }
+  .profile-intro {
+    font-size: 18px;
+    line-height: 1.95;
+    color: var(--brand-body);
+  }
+  .profile-actions {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    margin-top: 32px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .profile-note {
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--brand-muted);
+    letter-spacing: 0.06em;
+  }
+  .profile-photo {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 24px;
+    background: var(--brand-surface);
+    border: 1px solid var(--brand-border);
+    box-shadow: 0 16px 40px #182b420b;
+  }
+  .profile-photo img {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center 38%;
+  }
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 18px 22px;
+    background: var(--brand-paper);
+    border-top: 1px solid var(--brand-border);
+  }
+  figcaption span {
+    color: var(--brand-ink);
+    font-size: 17px;
+    font-weight: 650;
+  }
+  figcaption small {
+    color: var(--brand-muted);
+    font-size: 13px;
+  }
+  .profile-paths {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 58px;
+    border-top: 1px solid var(--brand-border);
+    border-bottom: 1px solid var(--brand-border);
+  }
+  .profile-paths a {
+    padding: 22px 26px;
+    border-right: 1px solid var(--brand-border);
+  }
+  .profile-paths a:first-child {
+    padding-left: 0;
+  }
+  .profile-paths a:last-child {
+    border-right: 0;
+    padding-right: 0;
+  }
+  .profile-paths span {
+    display: block;
+    font-size: 12px;
+    color: var(--brand-muted);
+    margin-bottom: 9px;
+  }
+  .profile-paths strong {
+    display: flex;
+    justify-content: space-between;
+    color: var(--brand-ink);
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .profile-paths b {
+    color: var(--brand-copper);
+    font-weight: 400;
+  }
+  .profile-paths a:hover strong {
+    color: var(--brand-accent);
+  }
+  @media (max-width: 900px) {
+    .profile-hero {
+      column-gap: 32px;
+    }
+    .profile-kicker {
+      font-size: 12px;
+    }
+    .profile-photo img {
+      height: 440px;
+    }
+  }
+  @media (max-width: 700px) {
+    .profile-hero {
+      grid-template-columns: 1fr;
+      padding: 34px 24px 0;
+      gap: 32px;
+    }
+    h1 {
+      font-size: clamp(35px, 9vw, 42px);
+      margin: 22px 0;
+    }
+    .profile-intro {
+      font-size: 16px;
+    }
+    .profile-actions {
+      gap: 20px;
+      font-size: 14px;
+      margin-top: 24px;
+    }
+    .profile-note {
+      margin-top: 22px;
+    }
+    .profile-photo img {
+      height: 380px;
+      object-position: center 30%;
+    }
+    .profile-paths {
+      margin-top: 0;
+    }
+    .profile-paths a {
+      padding: 18px 12px;
+    }
+    .profile-paths strong {
+      font-size: 14px;
+      gap: 5px;
+    }
+    .profile-paths span {
+      font-size: 11px;
+    }
+    .profile-paths b {
+      display: none;
+    }
+  }
+</style>

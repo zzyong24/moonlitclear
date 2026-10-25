@@ -1,0 +1,21 @@
+{
+  "id": "W-20260919-001",
+  "source": {
+    "kind": "moonlit-creator",
+    "artifact": "wechatArticle",
+    "version": "v04"
+  },
+  "title": "CreatorOS全功能一览",
+  "slug": "creatoros-feature-overview",
+  "visibility": "public",
+  "date": "2026-09-19",
+  "category": "产品实践",
+  "tags": ["CreatorOS", "创作者", "工作流"],
+  "summary": "按定位、选题、项目、素材、数据与复盘，介绍 CreatorOS 的创作工作流。",
+  "cover": {
+    "source": "design/cover-sources/creator-W-20260919-001-real-ip-v1.png",
+    "template": "mechanism",
+    "designVersion": "moonlit-web-2",
+    "alt": "月明本人照片与 CreatorOS 定位、选题、项目、素材、数据、复盘功能板。"
+  }
+}

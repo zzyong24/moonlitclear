@@ -1,0 +1,25 @@
+---
+import { openSourceEntries } from '~/data/open-source';
+import OpenSourceCard from './OpenSourceCard.astro';
+interface Props {
+  limit?: number;
+}
+const { limit = 4 } = Astro.props;
+---
+
+<div class="opensource-grid">
+  {openSourceEntries.slice(0, limit).map((item) => <OpenSourceCard item={item} />)}
+</div>
+<style>
+  .opensource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+  @media (max-width: 650px) {
+    .opensource-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+</style>

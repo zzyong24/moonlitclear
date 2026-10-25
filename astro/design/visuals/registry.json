@@ -1,0 +1,431 @@
+{
+  "version": "moonlit-raster-3",
+  "generator": "OpenAI image generation; raster cover masters, sharp derivative export only",
+  "assets": {
+    "hermes-book": {
+      "source": "open-source/hermes-book-v1.png",
+      "kind": "open-source",
+      "alt": "暖白立体书册、章节卡片与铜色书签组成的 AI Agent 架构手册概念图",
+      "generatorOutput": "exec-0f83cd4c-5e08-4e64-b9f6-2fcfeff2cc49.png"
+    },
+    "skills-judgment": {
+      "source": "open-source/skills-judgment-v1.png",
+      "kind": "open-source",
+      "alt": "卡片、铜框放大镜和勾选标记组成的能力审视概念图",
+      "generatorOutput": "exec-0d78f69e-d4df-43e4-8f69-cea79819f669.png"
+    },
+    "aiterm-open-source": {
+      "source": "open-source/aiterm-v1.png",
+      "kind": "open-source",
+      "alt": "终端、文件标签与铜色连接线组成的开发工作区概念图",
+      "generatorOutput": "exec-79e1cc50-4a7d-410f-8172-aa1801cd8ffc.png"
+    },
+    "mkd2pic": {
+      "source": "open-source/mkd2pic-v1.png",
+      "kind": "open-source",
+      "alt": "空白手稿经过排版成为多张图片卡片的 Markdown 转图概念图",
+      "generatorOutput": "exec-283556c9-3a92-439d-92d6-ac1879056def.png"
+    },
+    "book": {
+      "source": "book-v1.png",
+      "kind": "atlas",
+      "alt": "白色与绿色精装书从闭合到展开的四个关键画面",
+      "generatorOutput": "exec-deb3439d-1236-4d68-865a-1f98e1955623.png"
+    },
+    "skills": {
+      "source": "skills-v1.png",
+      "kind": "atlas",
+      "alt": "技能卡片经过绿色扫描器并形成待确认评估的四个关键画面",
+      "generatorOutput": "exec-1e03d243-3558-413b-bda7-8bb12452351b.png"
+    },
+    "pages": {
+      "source": "pages-v1.png",
+      "kind": "atlas",
+      "alt": "Markdown 手稿经过排版装置成为多页图片的四个关键画面",
+      "generatorOutput": "exec-6dc690e4-1ae8-432f-bade-6c11c54bd93f.png"
+    },
+    "terminal": {
+      "source": "terminal-v1.png",
+      "kind": "atlas",
+      "alt": "复古白色终端展开文件树与编辑器的四个关键画面",
+      "generatorOutput": "exec-2a11b9ab-3b7c-4dbd-b25f-f605a9b78f34.png"
+    },
+    "creatoros": {
+      "source": "creatoros-detail-v3.png",
+      "kind": "product",
+      "alt": "铜橙色摄影机、分镜纸与胶片组成的创作工作室 AI 概念图",
+      "generatorOutput": "exec-2ae2f9c6-7a84-4485-85a9-47ed9d5aefd7.png"
+    },
+    "thirdspace": {
+      "source": "thirdspace-detail-v3.png",
+      "kind": "product",
+      "alt": "蓝色玻璃桥连接书籍与知识卡片的档案空间 AI 概念图",
+      "generatorOutput": "exec-77d10976-f831-4e20-8183-4e5c66bb7d02.png"
+    },
+    "msg-collect": {
+      "source": "msg-collect-detail-v3.png",
+      "kind": "product",
+      "alt": "琥珀色资料整理装置把视频、报纸与文档转为笔记的 AI 概念图",
+      "generatorOutput": "exec-e2703de1-2f57-485e-9ec6-067fe1f38b97.png"
+    },
+    "ai-companion": {
+      "source": "ai-companion-detail-v3.png",
+      "kind": "product",
+      "alt": "鼠尾草绿阅读椅、立体故事书与对话雕塑构成的 AI 概念图",
+      "generatorOutput": "exec-2d47f3a4-9699-4918-90f4-031ed8f57aba.png"
+    },
+    "wireframe-background": {
+      "source": "wireframe-background-v1.png",
+      "kind": "background",
+      "alt": "暖白底上的浅灰绿色空间线框背景",
+      "generatorOutput": "exec-79150a65-c2ab-45f9-a46f-71f2f347f740.png"
+    },
+    "hean": {
+      "source": "hean-detail-v1.png",
+      "kind": "product",
+      "alt": "暖桃色成长日记、奶瓶与月亮灯组成的禾安 AI 概念图",
+      "generatorOutput": "exec-f7c9effb-357e-4563-a1c9-2c56d3405d6c.png"
+    },
+    "moving": {
+      "source": "moving-detail-v1.png",
+      "kind": "product",
+      "alt": "灰紫色放映机、分镜轨道与胶片组成的媒措 Moving AI 概念图",
+      "generatorOutput": "exec-fb26f9b9-805e-4a7a-b526-3289e06a904f.png"
+    },
+    "aiterm": {
+      "source": "aiterm-detail-v1.png",
+      "kind": "product",
+      "alt": "蓝绿色多屏终端、文件夹与分支连接件组成的 AITerm AI 概念图",
+      "generatorOutput": "exec-04c60267-2cb5-4ad6-b704-b16c3d486fac.png"
+    },
+    "moonlit-topic-radar": {
+      "source": "open-source/moonlit-topic-radar-v1.png",
+      "kind": "open-source",
+      "alt": "暖白桌面上从信息卡片中筛出选题线索的内容研究概念图",
+      "generatorOutput": "exec-a230c43b-d0f1-4f51-a941-050c59d1b885.png"
+    },
+    "moonlit-topic-engine": {
+      "source": "open-source/moonlit-topic-engine-v1.png",
+      "kind": "open-source",
+      "alt": "多条内容路径汇入一张清晰选题卡片的内容策划概念图",
+      "generatorOutput": "exec-f1347309-403a-4da2-a7bc-73d866266d59.png"
+    },
+    "moonlit-benchmark-research": {
+      "source": "open-source/moonlit-benchmark-research-v1.png",
+      "kind": "open-source",
+      "alt": "不同内容样本与放大观察工具组成的对标研究概念图",
+      "generatorOutput": "exec-5a0c6b5f-d27e-45f8-81ed-213b1b2921c3.png"
+    },
+    "moonlit-douyin-extractor": {
+      "source": "open-source/moonlit-douyin-extractor-v1.png",
+      "kind": "open-source",
+      "alt": "数据刻度、作品卡片与评论便笺组成的作品复盘概念图",
+      "generatorOutput": "exec-99977acb-96db-494c-87f3-62753bb4ff8a.png"
+    },
+    "moonlit-content-engine": {
+      "source": "open-source/moonlit-content-engine-v1.png",
+      "kind": "open-source",
+      "alt": "同一命题生长出文章、短帖与视频等多种表达的概念图",
+      "generatorOutput": "exec-85724302-4b7a-40e2-8e63-3d70c048c068.png"
+    },
+    "moonlit-business-copywriter": {
+      "source": "open-source/moonlit-business-copywriter-v1.png",
+      "kind": "open-source",
+      "alt": "笔与任务卡片构成的商业内容写作概念图",
+      "generatorOutput": "exec-c5409bd3-63a1-4665-b32a-0d6655d99521.png"
+    },
+    "moonlit-de-ai-perception": {
+      "source": "open-source/moonlit-de-ai-perception-v1.png",
+      "kind": "open-source",
+      "alt": "文案草稿经过细致校准后保留自然语气的编辑概念图",
+      "generatorOutput": "exec-e455b21e-d7f5-4e33-b695-62ba7a82479e.png"
+    },
+    "moonlit-oral-to-outline": {
+      "source": "open-source/moonlit-oral-to-outline-v1.png",
+      "kind": "open-source",
+      "alt": "零散口述便笺整理成清晰层级大纲的概念图",
+      "generatorOutput": "exec-45691dc7-91b4-4069-8057-6d9da0bec87b.png"
+    },
+    "moonlit-wechat-article": {
+      "source": "open-source/moonlit-wechat-article-v1.png",
+      "kind": "open-source",
+      "alt": "文章手稿、段落卡片和观点提示组成的公众号写作概念图",
+      "generatorOutput": "exec-d09fa98e-8b04-499d-91ff-a3feee472299.png"
+    },
+    "moonlit-wechat-moments": {
+      "source": "open-source/moonlit-wechat-moments-v1.png",
+      "kind": "open-source",
+      "alt": "打开的随身笔记本与一张私密便笺组成的朋友圈文案概念图",
+      "generatorOutput": "exec-6a7ede1a-39cc-450f-846a-171ef5807bd8.png"
+    },
+    "moonlit-x-short": {
+      "source": "open-source/moonlit-x-short-v1.png",
+      "kind": "open-source",
+      "alt": "三张短帖卡片用铜色夹扣串联的连续表达概念图",
+      "generatorOutput": "exec-fc973e40-4113-4fb1-9425-31e57a3f7734.png"
+    },
+    "moonlit-xiaohongshu": {
+      "source": "open-source/moonlit-xiaohongshu-v1.png",
+      "kind": "open-source",
+      "alt": "相机、空白方形照片和说明卡组成的小红书图文概念图",
+      "generatorOutput": "exec-0e5f6d28-5194-41a0-a1b4-c0c887c01c69.png"
+    },
+    "moonlit-astronaut-illustration": {
+      "source": "open-source/moonlit-astronaut-illustration-v1.png",
+      "kind": "open-source",
+      "alt": "白色宇航头盔、铅笔与讲解卡片组成的配图制作概念图",
+      "generatorOutput": "exec-9b49e406-b4be-43ad-a9eb-963eab1633d5.png"
+    },
+    "moonlit-material-illustration": {
+      "source": "open-source/moonlit-material-illustration-v1.png",
+      "kind": "open-source",
+      "alt": "信息模块通过连接件组成易读结构图的概念图",
+      "generatorOutput": "exec-6aede005-f32d-4697-b179-63911b92f277.png"
+    },
+    "moonlit-explainer-canvas": {
+      "source": "open-source/moonlit-explainer-canvas-v1.png",
+      "kind": "open-source",
+      "alt": "讲解画板上的留白卡片与指示杆构成空间表达概念图",
+      "generatorOutput": "exec-11ea05a7-a2f3-4643-b8a9-d5259793f1ea.png"
+    },
+    "moonlit-video-script": {
+      "source": "open-source/moonlit-video-script-v1.png",
+      "kind": "open-source",
+      "alt": "脚本手稿、分镜空格与书写工具组成的视频策划概念图",
+      "generatorOutput": "exec-c5d65474-a21d-404e-9af4-67230007fca5.png"
+    },
+    "moonlit-html-video": {
+      "source": "open-source/moonlit-html-video-v1.png",
+      "kind": "open-source",
+      "alt": "屏幕中的画面块与时间线组成的信息视频制作概念图",
+      "generatorOutput": "exec-e35233c8-c1e0-4871-8226-d864afbb026b.png"
+    },
+    "moonlit-talking-head-video": {
+      "source": "open-source/moonlit-talking-head-video-v1.png",
+      "kind": "open-source",
+      "alt": "摄影机、麦克风、补光灯与拍摄清单组成的真人讲解概念图",
+      "generatorOutput": "exec-dd144f7b-7ea4-4a0c-8236-5c9ba5a4ace2.png"
+    },
+    "moonlit-avatar-video": {
+      "source": "open-source/moonlit-avatar-video-v1.png",
+      "kind": "open-source",
+      "alt": "陶瓷数字人、麦克风和镜头片组成的横版视频概念图",
+      "generatorOutput": "exec-f3e38d1b-c524-4702-afad-8bb05a823e6e.png"
+    },
+    "moonlit-video-cover": {
+      "source": "open-source/moonlit-video-cover-v1.png",
+      "kind": "open-source",
+      "alt": "留白封面版式与镜头配件组成的视频封面设计概念图",
+      "generatorOutput": "exec-77d50f17-bc36-4e57-928f-bcf3ea1d6c73.png"
+    },
+    "moonlit-social-publisher": {
+      "source": "open-source/moonlit-social-publisher-v1.png",
+      "kind": "open-source",
+      "alt": "社交内容卡片与分发路径组成的图文发布概念图",
+      "generatorOutput": "exec-37f4d3d8-9dfd-4f1f-a3cc-06b00c24a8cd.png"
+    },
+    "moonlit-video-publisher": {
+      "source": "open-source/moonlit-video-publisher-v1.png",
+      "kind": "open-source",
+      "alt": "胶片经分发轨道流向多个内容终端的视频发布概念图",
+      "generatorOutput": "exec-c6da28dc-067e-486f-8bb8-79377b510289.png"
+    },
+    "moonlit-wechat-publisher": {
+      "source": "open-source/moonlit-wechat-publisher-v1.png",
+      "kind": "open-source",
+      "alt": "长文稿、手机预览与排版工具组成的公众号发布概念图",
+      "generatorOutput": "exec-0b26db32-c71e-45eb-be80-bf4bcf3e056a.png"
+    },
+    "moonlit-skill-creator": {
+      "source": "open-source/moonlit-skill-creator-v1.png",
+      "kind": "open-source",
+      "alt": "能力模块、蓝图和说明手册组成的 Skill 设计概念图",
+      "generatorOutput": "exec-41ce034f-3f14-4074-8609-63c0022032a9.png"
+    },
+    "editorial-post-001": {
+      "source": "../cover-sources/legacy-article-001-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：AI 协作开发工程化实践：从\"能用\"到\"可控\""
+    },
+    "editorial-post-002": {
+      "source": "../cover-sources/legacy-article-002-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：LLM时代，文本从来不是内容形式，而是知识的接口"
+    },
+    "editorial-post-003": {
+      "source": "../cover-sources/legacy-article-003-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：ThirdSpace 完整部署教程：从零搭建 AI 驱动的个人知识库"
+    },
+    "editorial-post-004": {
+      "source": "../cover-sources/legacy-article-004-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：工具做脏活，AI做智能：一个人如何用 40 个 MCP 工具搭出知识操作系统"
+    },
+    "editorial-post-005": {
+      "source": "../cover-sources/legacy-article-005-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：做技术的人，收到第一笔钱是什么感觉"
+    },
+    "editorial-post-006": {
+      "source": "../cover-sources/legacy-article-006-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：一篇文章的旅程：从收藏到行动验证"
+    },
+    "editorial-post-007": {
+      "source": "../cover-sources/legacy-article-007-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：借鉴开源 workflow 设计自己的内容生产系统——取舍与最小粒度原则"
+    },
+    "editorial-post-008": {
+      "source": "../cover-sources/legacy-article-008-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：用AI搭内容系统：一个凌晨2点半还没睡的故事"
+    },
+    "editorial-post-009": {
+      "source": "../cover-sources/legacy-article-009-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：从《系统之美》到 Harness Engineering：用系统论重新理解 AI 工程"
+    },
+    "editorial-post-010": {
+      "source": "../cover-sources/legacy-article-010-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我怎么把每篇文章变成一个作品"
+    },
+    "editorial-post-011": {
+      "source": "../cover-sources/legacy-article-011-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：知识库中心 vs 智能体中心：一个人的 AI 协作基础设施该怎么建"
+    },
+    "editorial-post-012": {
+      "source": "../cover-sources/legacy-article-012-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：用了 AI 之后，我终于理解为什么老板的需求总是不明确了"
+    },
+    "editorial-post-013": {
+      "source": "../cover-sources/legacy-article-013-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：MoonOS 立项自审：为什么要造个人 AI 操作系统"
+    },
+    "editorial-post-014": {
+      "source": "../cover-sources/legacy-article-014-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我给自己的 AI 系统打了 6 分：一个人造「个人 AI 操作系统」的冷静复盘"
+    },
+    "editorial-post-015": {
+      "source": "../cover-sources/legacy-article-015-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：AI 越加越多效果越来越差？你的系统缺的不是更好的模型，是一张体检报告"
+    },
+    "editorial-post-016": {
+      "source": "../cover-sources/legacy-article-016-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：AI 时代最重要的不是模型，而是你自己的 AI 资产"
+    },
+    "editorial-post-017": {
+      "source": "../cover-sources/legacy-article-017-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：让 AI 知道文件该放哪：我用一个函数解决了 Obsidian 知识库的混乱问题"
+    },
+    "editorial-post-018": {
+      "source": "../cover-sources/legacy-article-018-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我思考了一个不可能实现的产品，但那些想法让我更清醒"
+    },
+    "editorial-post-019": {
+      "source": "../cover-sources/legacy-article-019-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我用 AI 把知识库从「档案柜」变成「头脑地图」"
+    },
+    "editorial-post-020": {
+      "source": "../cover-sources/legacy-article-020-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我把主力 AI 助手换成了 Agent，两天踩了四个坑"
+    },
+    "editorial-post-021": {
+      "source": "../cover-sources/legacy-article-021-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：Hermes 最大缺点：Skill 系统能创建，不能维护"
+    },
+    "editorial-post-022": {
+      "source": "../cover-sources/legacy-article-022-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：多智能体协作：不是人越多越好"
+    },
+    "editorial-post-023": {
+      "source": "../cover-sources/legacy-article-023-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：Hermes + Claude Code 三层架构完全落地方案"
+    },
+    "editorial-post-024": {
+      "source": "../cover-sources/legacy-article-024-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：调试一个 AI Agent 协作架构:5 轮实跑、10 次 SKILL 迭代、3 种失败模式"
+    },
+    "editorial-post-025": {
+      "source": "../cover-sources/legacy-article-025-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：Agent 到底进化了什么：从「对话框 AI」到「能干活的 AI」"
+    },
+    "editorial-post-026": {
+      "source": "../cover-sources/legacy-article-026-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：定时任务 MCP 服务 — 技术改造文档"
+    },
+    "editorial-post-027": {
+      "source": "../cover-sources/legacy-article-027-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我在 Hermes 上叠了一层自定义编排，然后拆了"
+    },
+    "editorial-post-028": {
+      "source": "../cover-sources/legacy-article-028-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我们在公园长椅上写代码，做了一个自己和团队都离不开的工具"
+    },
+    "editorial-post-029": {
+      "source": "../cover-sources/legacy-article-029-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：Markdown 不会淘汰，HTML 也替代不了它"
+    },
+    "editorial-post-030": {
+      "source": "../cover-sources/legacy-article-030-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：Multica 实战：AI Agent 协作平台的落地实操"
+    },
+    "editorial-post-031": {
+      "source": "../cover-sources/legacy-article-031-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：口播视频自动剪辑工具：从20分钟原片到10分钟成片"
+    },
+    "editorial-post-032": {
+      "source": "../cover-sources/legacy-article-032-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：我把 AI 当新员工管：3 小时交付 10853 行代码的工程复盘"
+    },
+    "editorial-post-033": {
+      "source": "../cover-sources/legacy-article-033-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：输入输出工作流：为什么 AI 装上了，效果却不尽人意"
+    },
+    "editorial-post-034": {
+      "source": "../cover-sources/legacy-article-034-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：394 个问题之后：每个任务都做对了，产品为什么还是错的"
+    },
+    "editorial-post-035": {
+      "source": "../cover-sources/legacy-article-035-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：AI 写代码为什么越写越烂：我用编排器对抗 Vibe Coding 的熵增"
+    },
+    "editorial-post-036": {
+      "source": "../cover-sources/legacy-article-036-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：Agent 最危险的不是不会做，而是把已有系统重做一遍"
+    },
+    "editorial-post-037": {
+      "source": "../cover-sources/legacy-article-037-v1.webp",
+      "kind": "editorial",
+      "alt": "真人作者与暖白网格笔记板构成的文章封面：MCP 进程爆炸：从 stdio 陷阱到防御性架构设计"
+    }
+  }
+}

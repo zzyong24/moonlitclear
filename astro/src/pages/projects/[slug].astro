@@ -1,0 +1,203 @@
+---
+import Layout from '~/layouts/SiteLayout.astro';
+import ProductDemo from '~/components/moonlit/ProductDemo.astro';
+import { projects } from '~/data/brand';
+import { productDetails } from '~/data/product-details';
+import { visualAsset } from '~/data/visuals';
+import '~/assets/styles/product-detail.css';
+export const prerender = true;
+export function getStaticPaths() {
+  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+const { project } = Astro.props;
+const detail = productDetails[project.id];
+const art = visualAsset(project.id);
+const destination = project.url;
+const external = destination.startsWith('https:');
+const related = projects.filter((p) => p.id !== project.id).slice(0, 3);
+---
+
+<Layout metadata={{ title: project.name, description: detail.intro }}>
+  <article class="product-page" data-theme={detail.theme}>
+    <section class="product-overview" id="main" aria-labelledby="product-title">
+      <a href="/projects" class="product-back">← 所有作品</a>
+      <div class="product-hero-grid">
+        <div class="product-hero-copy">
+          <div class="product-wordmark">
+            <span class="product-mark" aria-hidden="true">{project.name.slice(0, 1)}</span><span>{project.name}</span
+            ><small>{project.tag}</small>
+          </div>
+          {detail.status && <p class="product-status">{detail.status}</p>}
+          <h1 id="product-title">{detail.title[0]}<br /><em>{detail.title[1]}</em></h1>
+          <p class="product-intro">{detail.intro}</p>
+          <div class="product-actions">
+            <a href="#demo" class="product-primary">看使用过程 <span aria-hidden="true">↓</span></a><a
+              href={destination}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noreferrer' : undefined}
+              class="product-secondary">{detail.cta} <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+        <figure class="product-keyvisual">
+          <img
+            src={art.variants[1].url}
+            srcset={art.variants.map((v) => `${v.url} ${v.width}w`).join(', ')}
+            sizes="(max-width:850px) 95vw,650px"
+            width={art.width}
+            height={art.height}
+            alt={art.alt}
+            fetchpriority="high"
+            decoding="async"
+          />
+          <figcaption><span>{project.kicker}</span><span>AI 概念主视觉</span></figcaption>
+        </figure>
+      </div>
+      <dl class="product-facts">
+        {
+          detail.facts.map((fact) => (
+            <div>
+              <>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
+              </>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+    <nav class="product-jumpnav" aria-label={`${project.name} 页面目录`}>
+      <span>{project.name}</span><div>
+        <a href="#demo">使用演示</a><a href="#capabilities">核心功能</a><a href="#scenarios">适用场景</a><a
+          href="#questions">常见问题</a
+        >
+      </div>
+    </nav>
+    <ProductDemo id={project.id} name={project.name} detail={detail} />
+    <section class="product-section" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section-label">03 / 核心功能</div>
+      <div class="product-section-heading">
+        <h2 id="capabilities-title">具体能帮你做什么。</h2><p>{project.body}</p>
+      </div>
+      <div class="product-benefits">
+        {
+          detail.benefits.map((item, i) => (
+            <article>
+              <>
+                <span class="benefit-index">0{i + 1}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <small>{item.detail}</small>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+    {
+      detail.resources && (
+        <nav class="product-resources" aria-label="配套工具">
+          {detail.resources.map((resource) => (
+            <a href={resource.url} target="_blank" rel="noreferrer">
+              {resource.label} ↗
+            </a>
+          ))}
+        </nav>
+      )
+    }
+    <section class="product-section product-fit" id="scenarios" aria-labelledby="scenarios-title">
+      <div>
+        <div class="section-label">04 / 适用场景</div><h2 id="scenarios-title">在这些时候，<br />可能用得上。</h2><p>
+          从一件小事开始，看看它能否融入你已有的习惯。
+        </p>
+      </div>
+      <ol>
+        {
+          detail.fit.map((item, i) => (
+            <li>
+              <>
+                <span>0{i + 1}</span>
+                <div>
+                  <>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </>
+                </div>
+              </>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+    <section class="product-section product-questions" id="questions" aria-labelledby="questions-title">
+      <div>
+        <div class="section-label">05 / 常见问题</div><h2 id="questions-title">开始之前，<br />你可能还想知道。</h2>
+      </div>
+      <div class="product-faq-list">
+        {
+          detail.faq.map((item) => (
+            <details name={`${project.id}-faq`}>
+              <>
+                <summary>
+                  {item.question}
+                  <span aria-hidden="true">+</span>
+                </summary>
+                <p>{item.answer}</p>
+              </>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+    <section class="product-closing">
+      <div>
+        <span class="section-label">下一步</span><h2>从一个自己的问题开始。</h2><p>
+          {destination === '/ama' ? '可以先聊聊你的使用场景与当前版本。' : '去了解产品，或带着具体需求和我聊聊。'}
+        </p>
+      </div><div class="product-actions">
+        <a
+          href={destination}
+          target={external ? '_blank' : undefined}
+          rel={external ? 'noreferrer' : undefined}
+          class="product-primary">{detail.cta} ↗</a
+        >{
+          destination !== '/ama' && (
+            <a href="/ama" class="product-secondary">
+              联系月明 →
+            </a>
+          )
+        }
+      </div>
+    </section>
+    <section class="product-section product-related" aria-labelledby="related-title">
+      <div class="section-label">其他作品</div><h2 id="related-title">也可以看看。</h2><div>
+        {
+          related.map((item) => {
+            const image = visualAsset(item.id);
+            return (
+              <a href={`/projects/${item.id}`}>
+                <>
+                  <img
+                    src={image.variants[0].url}
+                    width={image.width}
+                    height={image.height}
+                    alt={image.alt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>
+                    <>
+                      <b>{item.name}</b>
+                      <span aria-hidden="true">↗</span>
+                    </>
+                  </span>
+                  <p>{item.tag}</p>
+                </>
+              </a>
+            );
+          })
+        }
+      </div>
+    </section>
+  </article>
+</Layout>

@@ -1,0 +1,15 @@
+{
+  "generator": "built-in image_gen",
+  "edits": [
+    {
+      "id": "editorial-systems",
+      "path": "/Users/zyongzhu/.codex/generated_images/01a0a2d3-6efc-7b52-8673-a1777505dbb8/exec-547d5da8-b581-4a98-8f12-d03969ffd99f.png",
+      "prompt": "Use case: precise-object-edit. Remove EVERY letter, word, Chinese calligraphy, numbers, writing, mountain drawing, and graphic print from this image. All white module surfaces must be completely blank clean ceramic, with their physical seams and glass retained. Remove the notebook and plants at the edges, replacing them with the same plain warm studio background and ground. Keep the central arrangement, camera, shadows, white ceramic, emerald glass connectors exactly. Final image is ONLY a clean photoreal modular white-and-green mechanism, no text at all, no drawings, no additional props."
+    },
+    {
+      "id": "ai-companion",
+      "path": "/Users/zyongzhu/.codex/generated_images/01a0a2d3-6efc-7b52-8673-a1777505dbb8/exec-431afc7f-763e-49cc-bd04-4265f358322b.png",
+      "prompt": "Use case: precise-object-edit. Keep the small white ceramic listening companion with black glossy face and glowing green crescent, the green sprout in its glass vase, and the low ivory plinth. Replace the cluttered room with a plain warm ivory seamless studio backdrop. Remove all extra books, wall artwork and background plants. Keep ONE open cream storybook smaller at front left on the same studio floor, wholly inside the frame, pages completely blank with absolutely no written text or pictures. Keep photoreal 3D materials, soft left studio light and believable grounding shadows. Center the simple subject group with 15% negative space on every edge. No text, no labels, no fake product slogan."
+    }
+  ]
+}

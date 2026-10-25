@@ -1,0 +1,100 @@
+---
+import CardEffect from './CardEffect.astro';
+import { projects } from '~/data/brand';
+import { productDetails } from '~/data/product-details';
+import { visualAsset } from '~/data/visuals';
+const { limit = projects.length } = Astro.props;
+---
+
+<div class="product-grid">
+  {
+    projects.slice(0, limit).map((project) => {
+      const asset = visualAsset(project.id);
+      return (
+        <article>
+          <a href={`/projects/${project.id}`} data-card-theme={productDetails[project.id]?.theme}>
+            <>
+              <CardEffect kind="work" visualClass="product-image" theme={productDetails[project.id]?.theme}>
+                <img
+                  src={asset.variants[1].url}
+                  srcset={asset.variants.map((v) => `${v.url} ${v.width}w`).join(', ')}
+                  sizes="(max-width:900px) 90vw,560px"
+                  width={asset.width}
+                  height={asset.height}
+                  alt={asset.alt}
+                  loading="lazy"
+                  decoding="async"
+                />
+
+                <span class="product-image__cue" aria-hidden="true">
+                  查看作品 <span>↗</span>
+                </span>
+              </CardEffect>
+              <div class="product-copy">
+                <>
+                  <span>{project.tag}</span>
+                  <h3>
+                    <span class="product-title">{project.name}</span>
+                    <b aria-hidden="true">↗</b>
+                  </h3>
+                  <p>{project.description}</p>
+                </>
+              </div>
+            </>
+          </a>
+        </article>
+      );
+    })
+  }
+</div>
+<style>
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 42px 32px;
+  }
+  .product-grid article {
+    min-width: 0;
+  }
+  .product-grid a {
+    display: block;
+    text-decoration: none;
+    color: var(--brand-ink);
+  }
+  .product-copy {
+    padding: 22px 2px 0;
+  }
+  .product-copy > span {
+    font-size: 13px;
+    color: var(--brand-accent);
+  }
+  .product-copy h3 {
+    font-size: 28px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 650;
+    letter-spacing: -0.04em;
+    margin: 10px 0;
+  }
+  .product-copy b {
+    font-size: 24px;
+    font-weight: 400;
+  }
+  .product-copy p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--brand-body);
+    margin: 0;
+  }
+  .product-grid a:focus-visible {
+    outline: 3px solid var(--brand-accent);
+    outline-offset: 6px;
+    border-radius: 12px;
+  }
+  @media (max-width: 900px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+  }
+</style>

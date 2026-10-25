@@ -1,0 +1,23 @@
+---
+import Layout from '~/layouts/SiteLayout.astro';
+import LinksPanel from '~/components/moonlit/LinksPanel.astro';
+---
+
+<Layout metadata={{ title: '链接', description: '认识朱志勇，了解咨询、知识星球交流答疑与作品投稿。' }}>
+  <main id="main" class="links-page">
+    <LinksPanel />
+  </main>
+</Layout>
+
+<style>
+  .links-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 66px 30px 100px;
+  }
+  @media (max-width: 650px) {
+    .links-page {
+      padding: 36px 24px 70px;
+    }
+  }
+</style>

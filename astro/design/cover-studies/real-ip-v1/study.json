@@ -1,0 +1,23 @@
+{
+  "reference": "https://www.oiloil.org/#articles",
+  "coverReference": "https://www.oiloil.org/assets/articles/covers/lark-cli-personal-workbench.webp",
+  "referenceRole": "布局与浅色风格，不能沿用原作者身份与内容",
+  "grid": {
+    "size": "32px 32px",
+    "lineWidth": "1px",
+    "color": "rgba(0, 0, 0, 0.03)",
+    "background": "rgb(255, 255, 255)",
+    "implementation": "CSS linear-gradient; no SVG or raster grid image"
+  },
+  "identitySource": "src/assets/moonlit/portrait.png",
+  "identitySourceSha256": "7efe4d6c59a64a0f1acec2ce9ced2cd2bca0f1916185152078ec6a297e9dc8b7",
+  "contentId": "W-20260913-002",
+  "title": "别急着上 Agent，先把业务拆成五层",
+  "status": "candidate-ready-awaiting-user-review",
+  "generator": "built-in image_gen",
+  "scope": "只生成一张真人封面样张，不批量替换文章封面；网格仅改本地页面",
+  "output": "enterprise-five-layers-real-ip-v1.png",
+  "outputSha256": "c6eddb331e0f88793c7b0fa38e9e11c3446c205831a2e1188099d945ea53bdcd",
+  "referenceScreenshot": "oil-reference-screenshot.png",
+  "prompt": "prompt.txt"
+}

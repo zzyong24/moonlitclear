@@ -1,0 +1,15 @@
+dist
+node_modules
+.github
+.changeset
+reference/
+vault/
+public/covers/
+docs/
+
+src/data/post/
+releases/
+
+.content-cache/
+
+.content-sync.lock

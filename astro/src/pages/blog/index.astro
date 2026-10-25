@@ -1,0 +1,68 @@
+---
+import Layout from '~/layouts/SiteLayout.astro';
+import ArticleCard from '~/components/moonlit/ArticleCard.astro';
+import { fetchPosts } from '~/utils/blog';
+const posts = await fetchPosts();
+const categories = [...new Set(posts.map((p) => p.category?.title).filter(Boolean))];
+---
+
+<Layout
+  metadata={{
+    title: '文章与实践记录',
+    description: '月明Verse关于 AI Native、工具实测、产品从 0 到 1 与知识系统的实践记录。',
+  }}
+  ><section class="page-intro" id="main">
+    <span class="eyebrow">FIELD NOTES / {posts.length} 篇实践记录</span><h1>
+      边做，边想。<br /><em>让经验留下来。</em>
+    </h1><p>关于 AI、产品、知识系统，以及真实工作中的每一次试验。</p>
+  </section><section class="blog-library">
+    <div class="library-toolbar">
+      <label
+        ><span>搜索文章</span><input id="article-search" type="search" placeholder="搜索标题、主题或关键词…" /></label
+      ><label
+        ><span>主题</span><select id="article-category"
+          ><option value="">全部主题</option>{categories.map((c) => <option value={c}>{c}</option>)}</select
+        ></label
+      ><p id="result-count" role="status">{posts.length} 篇文章</p>
+    </div><div class="article-grid">
+      {
+        posts.map((p) => (
+          <article
+            class="library-entry"
+            data-search={[p.title, p.excerpt, ...(p.tags || []).map((t) => t.title)].join(' ').toLowerCase()}
+            data-category={p.category?.title}
+          >
+            <ArticleCard post={p} />
+          </article>
+        ))
+      }
+    </div><p id="empty-results" hidden>没有找到相关内容，试试其他关键词。</p>
+  </section></Layout
+>
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const search = document.querySelector<HTMLInputElement>('#article-search');
+    const category = document.querySelector<HTMLSelectElement>('#article-category');
+    if (!search || !category) return;
+    const params = new URLSearchParams(location.search);
+    search.value = params.get('q') || params.get('tag') || '';
+    const cards = [...document.querySelectorAll<HTMLElement>('.library-entry')];
+    const apply = () => {
+      let count = 0;
+      cards.forEach((card) => {
+        const show =
+          (!search.value || card.dataset.search?.includes(search.value.toLowerCase().trim())) &&
+          (!category.value || card.dataset.category === category.value);
+        card.hidden = !show;
+        if (show) count++;
+      });
+      const result = document.querySelector('#result-count');
+      if (result) result.textContent = `${count} 篇文章`;
+      const empty = document.querySelector<HTMLElement>('#empty-results');
+      if (empty) empty.hidden = count !== 0;
+    };
+    search.addEventListener('input', apply);
+    category.addEventListener('change', apply);
+    apply();
+  });
+</script>

@@ -1,0 +1,20 @@
+{
+  "id": "W-20260924-001",
+  "source": {
+    "kind": "moonlit-creator",
+    "artifact": "wechatArticle",
+    "version": "v07"
+  },
+  "slug": "chatcut-product-form-choice",
+  "visibility": "preview",
+  "date": "2026-09-24",
+  "category": "产品实践",
+  "tags": ["ChatCut", "产品形态", "成本"],
+  "summary": "以作者两次使用 ChatCut 的经历，对照网页、App、小程序和桌面客户端的任务位置与成本。",
+  "cover": {
+    "source": "design/cover-sources/creator-W-20260924-001-real-ip-v1.png",
+    "template": "mechanism",
+    "designVersion": "moonlit-web-2",
+    "alt": "月明本人照片与四种产品形态笔记板。"
+  }
+}

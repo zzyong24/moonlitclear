@@ -1,0 +1,21 @@
+{
+  "id": "W-20261011-001",
+  "source": {
+    "kind": "moonlit-creator",
+    "artifact": "wechatArticle",
+    "version": "v02"
+  },
+  "title": "我的 AI 正在替我做什么？",
+  "slug": "what-my-ai-agents-do",
+  "visibility": "public",
+  "date": "2026-10-11",
+  "category": "AI 工作流",
+  "tags": ["Agent", "AI 实践", "工作现场"],
+  "summary": "打开实际工作现场：用语音交代任务，让 Agent 剪视频、操作手机、跑测试，再查看结果并调整。",
+  "cover": {
+    "source": "design/cover-sources/creator-W-20261011-001-real-ip-v1.png",
+    "template": "mechanism",
+    "designVersion": "moonlit-web-2",
+    "alt": "月明本人照片与视频剪辑、手机操作、产品测试、网页任务四项工作笔记板。"
+  }
+}

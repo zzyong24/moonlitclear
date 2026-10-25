@@ -1,0 +1,21 @@
+{
+  "id": "W-20260927-002",
+  "source": {
+    "kind": "moonlit-creator",
+    "artifact": "wechatArticle",
+    "version": "v02"
+  },
+  "title": "让 AI 改代码，先留好退路",
+  "slug": "git-agent-rollback",
+  "visibility": "public",
+  "date": "2026-09-27",
+  "category": "AI 工程实践",
+  "tags": ["Git", "GitHub", "Agent"],
+  "summary": "从检查差异、保存提交到验证结果，给 Agent 改代码留出可核查的回退路径。",
+  "cover": {
+    "source": "design/cover-sources/creator-W-20260927-002-real-ip-v1.png",
+    "template": "mechanism",
+    "designVersion": "moonlit-web-2",
+    "alt": "月明本人照片与 Git 版本检查三步笔记板。"
+  }
+}

@@ -1,0 +1,51 @@
+---
+/** One visual surface for every list card; the enclosing native link remains the stable hitbox. */
+interface Props {
+  kind: 'work' | 'article' | 'opensource';
+  theme?: string;
+  colorMode?: 'soft' | 'mono' | 'original';
+  visualClass?: string;
+  aspect?: string;
+  radius?: string;
+  border?: string;
+}
+const {
+  kind,
+  theme,
+  colorMode = kind === 'article' ? 'soft' : 'mono',
+  visualClass,
+  aspect = '16 / 9',
+  radius = 'var(--brand-radius, 16px)',
+  border = '1px solid #182b4212',
+} = Astro.props;
+---
+
+<div class="card-effect" data-card-motion={kind} data-card-theme={theme} data-card-color={colorMode}>
+  <div
+    class:list={['card-visual', visualClass]}
+    data-card-visual
+    style={{ aspectRatio: aspect, borderRadius: radius, border }}
+  >
+    <slot />
+    <span class="card-reveal-line" aria-hidden="true"></span>
+  </div>
+</div>
+
+<style>
+  .card-effect {
+    min-width: 0;
+    width: 100%;
+  }
+  .card-visual {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--brand-surface);
+  }
+  .card-visual :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+import Layout from '~/layouts/SiteLayout.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import { projects } from '~/data/brand';
+export const prerender = true;
+export function getStaticPaths() {
+  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+const { project } = Astro.props;
+---
+
+<Layout metadata={{ title: project.name, description: project.description }}
+  ><section class="page-intro project-detail" id="main">
+    <a href="/projects" class="text-arrow">← 所有作品</a><span class="eyebrow">{project.kicker}</span><h1>
+      {project.name}<em>{project.headline}</em>
+    </h1><p>{project.description}</p><div class="detail-actions">
+      <a href={project.url} target="_blank" rel="noreferrer" class="glow-button"
+        >{project.id === 'thirdspace' ? '访问开源仓库' : '访问产品官网'} ↗</a
+      ><a href="/ama" class="quiet-button">聊聊共创 →</a>
+    </div>
+  </section><section class="project-story">
+    <span class="eyebrow">THE IDEA</span><h2>为什么做这件事</h2><p>{project.body}</p>
+  </section><div class="services-widget">
+    <Features3
+      title="它能帮你做什么"
+      columns={4}
+      items={project.features.map((title) => ({ title, icon: 'tabler:circle-check' }))}
+    />
+  </div><section class="next-projects">
+    <h2>继续探索</h2>{
+      projects
+        .filter((p) => p.id !== project.id)
+        .map((p) => (
+          <a href={'/projects/' + p.id}>
+            {p.name}
+            <span>↗</span>
+          </a>
+        ))
+    }
+  </section></Layout
+>

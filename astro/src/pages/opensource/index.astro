@@ -1,0 +1,337 @@
+---
+import Layout from '~/layouts/SiteLayout.astro';
+import { openSourceCategories, openSourceEntries } from '~/data/open-source';
+import OpenSourceCard from '~/components/moonlit/OpenSourceCard.astro';
+
+const projects = openSourceEntries;
+const softwareCount = projects.filter((item) => item.type === '软件').length;
+const toolCount = projects.length - softwareCount;
+---
+
+<Layout
+  metadata={{
+    title: '开源',
+    description: '月明Verse的开源软件与创作工具，覆盖选题研究、内容写作、视觉制作、发布分发和 Agent 工作流。',
+  }}
+>
+  <main class="opensource-page" id="main">
+    <section class="opensource-hero" aria-labelledby="opensource-title">
+      <div>
+        <span class="eyebrow">OPEN SOURCE / {projects.length} REPOSITORIES</span>
+        <h1 id="opensource-title">把做事的方法，<br /><em>开源成可用的工具。</em></h1>
+        <p>从独立软件到内容工作流，这里收录我公开维护的项目。每项都可以直接查看源码与使用说明。</p>
+      </div>
+      <div class="opensource-summary" aria-label="开源项目数量">
+        <div><strong>{softwareCount.toString().padStart(2, '0')}</strong><span>独立软件</span></div>
+        <i aria-hidden="true"></i>
+        <div><strong>{toolCount.toString().padStart(2, '0')}</strong><span>创作工具</span></div>
+      </div>
+    </section>
+
+    <section class="opensource-directory" id="directory" aria-labelledby="directory-title">
+      <div class="directory-heading">
+        <div><span class="eyebrow">THE COLLECTION / {projects.length}</span><h2 id="directory-title">开源项目</h2></div>
+        <label class="opensource-search">
+          <span>搜索项目</span>
+          <input id="opensource-query" type="search" placeholder="试试：公众号、视频、终端…" autocomplete="off" />
+        </label>
+      </div>
+      <div class="opensource-filters" role="group" aria-label="按项目方向筛选">
+        {
+          openSourceCategories.map((category) => (
+            <button
+              type="button"
+              data-category={category === '全部' ? '' : category}
+              aria-pressed={category === '全部'}
+            >
+              {category}
+              <span>
+                {category === '全部' ? projects.length : projects.filter((item) => item.category === category).length}
+              </span>
+            </button>
+          ))
+        }
+      </div>
+      <p class="opensource-result" id="opensource-result" role="status" aria-live="polite">
+        显示全部 {projects.length} 个开源项目
+      </p>
+      <div class="opensource-directory-grid" id="opensource-grid">
+        {projects.map((item) => <OpenSourceCard item={item} compact />)}
+      </div>
+      <p class="opensource-empty" id="opensource-empty" hidden>没有找到匹配的项目，试试其他关键词。</p>
+    </section>
+
+    <p class="opensource-footnote">访问仓库可查看完整介绍、安装方法、依赖和各项目的使用要求。</p>
+  </main>
+</Layout>
+
+<script>
+  function setupOpenSourceDirectory() {
+    const input = document.querySelector<HTMLInputElement>('#opensource-query');
+    const buttons = [...document.querySelectorAll<HTMLButtonElement>('.opensource-filters button')];
+    const filterRail = document.querySelector<HTMLElement>('.opensource-filters');
+    const cards = [...document.querySelectorAll<HTMLElement>('.opensource-directory-grid .opensource-card')];
+    const result = document.querySelector<HTMLElement>('#opensource-result');
+    const empty = document.querySelector<HTMLElement>('#opensource-empty');
+    if (!input || !buttons.length || !result || !empty) return;
+
+    const params = new URLSearchParams(location.search);
+    input.value = params.get('q') || '';
+    let category = params.get('category') || '';
+    if (!buttons.some((button) => button.dataset.category === category)) category = '';
+
+    const revealActiveFilter = () => {
+      const selected = buttons.find((button) => button.dataset.category === category);
+      if (!filterRail || !selected || filterRail.scrollWidth <= filterRail.clientWidth) return;
+      const rail = filterRail.getBoundingClientRect();
+      const button = selected.getBoundingClientRect();
+      filterRail.scrollLeft += button.left - rail.left - (rail.width - button.width) / 2;
+    };
+
+    const apply = (syncUrl = true) => {
+      const query = input.value.trim().toLocaleLowerCase();
+      let visible = 0;
+      cards.forEach((card) => {
+        const matches =
+          (!category || card.dataset.category === category) && (!query || card.dataset.search?.includes(query));
+        card.hidden = !matches;
+        if (matches) visible++;
+      });
+      buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.category === category)));
+      result.textContent = `找到 ${visible} 个开源项目`;
+      empty.hidden = visible !== 0;
+      if (syncUrl) {
+        const next = new URL(location.href);
+        if (query) next.searchParams.set('q', input.value.trim());
+        else next.searchParams.delete('q');
+        if (category) next.searchParams.set('category', category);
+        else next.searchParams.delete('category');
+        history.replaceState({}, '', next);
+      }
+    };
+
+    buttons.forEach((button) =>
+      button.addEventListener('click', () => {
+        category = button.dataset.category || '';
+        apply();
+        revealActiveFilter();
+      })
+    );
+    input.addEventListener('input', () => apply());
+    addEventListener('popstate', () => {
+      const current = new URLSearchParams(location.search);
+      input.value = current.get('q') || '';
+      category = current.get('category') || '';
+      if (!buttons.some((button) => button.dataset.category === category)) category = '';
+      apply(false);
+      revealActiveFilter();
+    });
+    apply(false);
+    revealActiveFilter();
+  }
+  document.addEventListener('astro:page-load', setupOpenSourceDirectory);
+</script>
+
+<style>
+  .opensource-page {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 68px 30px 92px;
+  }
+  .opensource-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 48px;
+    padding: 26px 0 42px;
+    border-bottom: 1px solid var(--brand-border);
+  }
+  .opensource-hero h1 {
+    margin: 15px 0 13px;
+    color: var(--brand-ink);
+    font-size: clamp(36px, 5vw, 62px);
+    line-height: 1.12;
+    letter-spacing: -0.055em;
+  }
+  .opensource-hero h1 em {
+    color: var(--brand-accent);
+    font-style: normal;
+  }
+  .opensource-hero p {
+    max-width: 610px;
+    margin: 0;
+    color: var(--brand-body);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  .opensource-summary {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 18px 22px;
+    border: 1px solid var(--brand-border);
+    border-radius: 14px;
+    background: #fffdf6d9;
+  }
+  .opensource-summary div {
+    display: grid;
+    gap: 2px;
+  }
+  .opensource-summary strong {
+    color: var(--brand-ink);
+    font-size: 29px;
+    line-height: 1;
+  }
+  .opensource-summary span {
+    color: var(--brand-body);
+    font-size: 12px;
+  }
+  .opensource-summary i {
+    width: 1px;
+    height: 38px;
+    background: var(--brand-border);
+  }
+  .opensource-directory {
+    padding-top: 35px;
+  }
+  .directory-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 24px;
+  }
+  .directory-heading h2 {
+    margin: 4px 0 0;
+    color: var(--brand-ink);
+    font-size: 27px;
+    letter-spacing: -0.03em;
+  }
+  .opensource-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: min(350px, 100%);
+    padding: 0 14px;
+    border: 1px solid var(--brand-border);
+    border-radius: 9px;
+    background: #fff;
+  }
+  .opensource-search span {
+    flex: 0 0 auto;
+    color: var(--brand-body);
+    font-size: 13px;
+  }
+  .opensource-search input {
+    width: 100%;
+    min-width: 0;
+    height: 42px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--brand-ink);
+    font: inherit;
+  }
+  .opensource-search:focus-within {
+    border-color: var(--brand-accent);
+    box-shadow: 0 0 0 3px #9b4f2c1c;
+  }
+  .opensource-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0 5px;
+  }
+  .opensource-filters button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 35px;
+    padding: 0 12px;
+    border: 1px solid var(--brand-border);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--brand-body);
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .opensource-filters button[aria-pressed='true'] {
+    border-color: var(--brand-ink);
+    background: var(--brand-ink);
+    color: #fff;
+  }
+  .opensource-filters button span {
+    opacity: 0.7;
+    font-size: 11px;
+  }
+  .opensource-result {
+    min-height: 18px;
+    margin: 10px 0 14px;
+    color: var(--brand-muted, #657083);
+    font-size: 12px;
+  }
+  .opensource-directory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .opensource-empty {
+    padding: 24px;
+    color: var(--brand-body);
+    text-align: center;
+  }
+  .opensource-footnote {
+    margin: 24px 0 0;
+    color: var(--brand-body);
+    font-size: 13px;
+  }
+  @media (max-width: 1060px) {
+    .opensource-directory-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 760px) {
+    .opensource-page {
+      padding: 42px 22px 68px;
+    }
+    .opensource-hero {
+      align-items: start;
+      flex-direction: column;
+      gap: 22px;
+      padding-top: 10px;
+    }
+    .opensource-hero p {
+      font-size: 15px;
+    }
+    .directory-heading {
+      align-items: stretch;
+      flex-direction: column;
+    }
+    .opensource-search {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .opensource-filters {
+      flex-wrap: nowrap;
+      margin-right: -22px;
+      padding: 0 22px 8px 0;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      scrollbar-width: thin;
+    }
+    .opensource-filters button {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+    }
+    .opensource-directory-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+  }
+  @media (max-width: 430px) {
+    .opensource-directory-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

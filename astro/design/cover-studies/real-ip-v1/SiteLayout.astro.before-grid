@@ -1,0 +1,23 @@
+---
+import PageLayout from './PageLayout.astro';
+import '~/assets/styles/brand-tokens.css';
+import Header from '~/components/moonlit/Header.astro';
+import Footer from '~/components/moonlit/Footer.astro';
+import { visualAsset } from '~/data/visuals';
+import type { MetaData } from '~/types';
+interface Props {
+  metadata?: MetaData;
+}
+const { metadata = {} } = Astro.props;
+---
+
+<PageLayout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Header slot="header" />
+  <div class="brand-wireframe-bg" aria-hidden="true">
+    <img src={visualAsset('wireframe-background').variants.at(-1)!.url} alt="" decoding="async" />
+  </div>
+  <slot name="head" slot="head" />
+  <slot />
+  <Footer slot="footer" />
+</PageLayout>

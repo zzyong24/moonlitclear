@@ -1,0 +1,53 @@
+site:
+  name: 月明Verse
+  site: 'https://aitongban.cloud'
+  base: '/'
+  trailingSlash: false
+metadata:
+  title:
+    default: 月明Verse
+    template: '%s — 月明Verse'
+  description: '月明Verse的个人网站：独立开发者朱志勇的 AI Native 实践、产品、开源工具与文章。'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: 月明Verse
+    type: website
+    images:
+      - url: /brand/moonlit-verse-avatar-v1.webp
+        width: 900
+        height: 900
+  twitter:
+    cardType: summary_large_image
+i18n:
+  language: zh-CN
+  textDirection: ltr
+apps:
+  blog:
+    isEnabled: true
+    postsPerPage: 12
+    post:
+      isEnabled: true
+      permalink: '/blog/%slug%'
+      robots: { index: true }
+    list:
+      isEnabled: true
+      pathname: blog
+      robots: { index: true }
+    category:
+      isEnabled: true
+      pathname: category
+      robots: { index: true }
+    tag:
+      isEnabled: true
+      pathname: tag
+      robots: { index: false }
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 3
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null
+ui:
+  theme: 'light:only'
