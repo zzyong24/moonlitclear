@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/SiteLayout.astro';
 import Hero from '~/components/v6/home/Hero.astro';
-import Retros from '~/components/v6/home/Retros.astro';
+import Capabilities from '~/components/v6/home/Capabilities.astro';
 import Products from '~/components/v6/home/Products.astro';
 import OpenSource from '~/components/v6/home/OpenSource.astro';
 import Articles from '~/components/v6/home/Articles.astro';
@@ -15,26 +15,26 @@ import githubStats from '~/data/github-stats.json';
 const allPosts = await fetchPosts();
 const totalStars = Object.values(githubStats.repos).reduce((sum, repo) => sum + repo.stars, 0);
 const stats = [
-  { value: projects.length, label: '个产品', pad: true },
+  { value: 5, label: '年 AI 工程经验', growing: true },
+  { value: projects.length, label: '款独立产品', pad: true },
   { value: openSourceEntries.length, label: '个开源项目', growing: true },
   { value: totalStars, label: 'GitHub Star', growing: true },
-  { value: allPosts.length, label: '篇文章', growing: true },
 ];
 ---
 
 <Layout
   metadata={{
-    title: '朱志勇（月明Verse）｜先做出来，再老实复盘',
-    description: `朱志勇，网上叫月明Verse。00 后全栈工程师，下班后用 AI 做自己的产品。这里有 ${projects.length} 个产品、${openSourceEntries.length} 个开源项目，以及 AI 协作、Agent 工程和产品复盘的文章。`,
+    title: '朱志勇（月明Verse）｜AI 落地陪跑 · AI 原生开发与产品咨询',
+    description: `朱志勇（月明Verse），全栈工程师、AI 落地陪跑营主理人。提供 AI 原生开发、产品从 0 到 1、AI 助理与知识系统、AI 内容生产的咨询与陪跑；独立做出 ${projects.length} 款产品、${openSourceEntries.length} 个开源项目。`,
   }}
 >
   <div class="v6-page">
     <Hero stats={stats} />
-    <Retros posts={allPosts} />
+    <Capabilities posts={allPosts} />
     <Products />
     <OpenSource />
-    <Articles posts={allPosts} total={allPosts.length} />
     <Offers />
+    <Articles posts={allPosts} total={allPosts.length} />
     <ClosingCta />
   </div>
 </Layout>

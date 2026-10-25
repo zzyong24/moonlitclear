@@ -11,33 +11,49 @@ export const consultationTopics = [
   'AI 辅助自媒体：选题、脚本、制作和复盘怎样连成流程',
 ];
 
+export const coachingUrl = `mailto:${brand.email}?subject=${encodeURIComponent('AI 落地陪跑咨询｜月明Verse官网')}`;
+
 export const offers = [
   {
     id: 'consult',
-    label: '01 / 一对一',
-    title: '咨询',
+    label: '一对一咨询',
+    title: '一小时，解决一个具体问题',
     price: '¥399',
     unit: '/ 小时',
-    description: '带着具体问题来，一小时只聊你的事：现状、卡点、下一步。我踩过的坑，能用上的都给你。',
+    description: '带着你的项目或卡点来。一起梳理现状、拆开问题，给出能马上执行的下一步。',
     topics: consultationTopics,
-    action: { label: '查看咨询付款方式', href: '/links#offers', payment: true },
+    action: { label: '预约咨询', href: '/links#offers', payment: true },
+  },
+  {
+    id: 'coaching',
+    label: 'AI 落地陪跑',
+    title: '把 AI 真正用进团队',
+    price: '按项目',
+    description: '面向创始人与小团队。从诊断现状开始，一起搭方法、跑通第一个场景，再交给团队自己运转。',
+    topics: ['现状诊断与落地方案', '工作流搭建与陪跑实施', '团队培训与交接'],
+    action: { label: '发邮件沟通', href: coachingUrl },
   },
   {
     id: 'community',
-    label: '02 / 持续交流',
-    title: '知识星球 · 交流答疑',
+    label: '知识星球',
+    title: '持续交流与答疑',
     price: '长期',
-    description: '平时试的工具、做产品的过程、还没写成文章的想法，先放在这里。有问题直接问。',
-    note: '适合想持续关注我的实践，或带着具体问题来讨论的朋友。',
-    action: { label: '进入知识星球', href: communityUrl, external: true },
-  },
-  {
-    id: 'submission',
-    label: '03 / 分享作品',
-    title: '作品投稿',
-    price: '开放',
-    description: '做出了能打开、能运行的作品？欢迎发来。好的、有趣的项目，我会了解后再决定是否分享给更多人。',
-    note: '请附作品名称、可访问链接、解决的问题和你的联系方式。',
-    action: { label: '通过邮件投稿', href: submissionUrl },
+    description: 'AI 工具实测、产品实践与内容方法持续更新，加入后随时提问，长期跟进你的进展。',
+    topics: ['工具实测与方法更新', '产品与内容实践分享', '会员随时提问'],
+    action: { label: '加入知识星球', href: communityUrl, external: true },
   },
 ] as const;
+
+/** 用户反馈：只放真实发生过的评价与案例。 */
+export const testimonials = [
+  {
+    quote: '老师搭建的这个模型初始框架就已经很符合当前需要了，接下来先熟悉怎么用好工作流。',
+    who: '灵犀用户',
+    role: '付费定制 AI 工作流',
+  },
+  {
+    quote: '两次咨询，把飞书机器人、本地知识库和消息闭环全部跑通。',
+    who: '咨询案例',
+    role: '个人 AI 助理搭建',
+  },
+];

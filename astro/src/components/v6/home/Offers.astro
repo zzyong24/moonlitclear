@@ -1,6 +1,6 @@
 ---
 import SectionHeading from '../SectionHeading.astro';
-import { offers } from '~/data/offers';
+import { offers, testimonials } from '~/data/offers';
 ---
 
 <section class="v6-section v6-grain" id="offers" data-tone="dark" data-bg="night-900" aria-labelledby="offers-title">
@@ -8,8 +8,8 @@ import { offers } from '~/data/offers';
     <SectionHeading
       id="offers-title"
       eyebrow="合作"
-      title="三种方式，<br />来找我聊。"
-      lead="从你的具体问题开始。一次咨询、长期交流，或者把你做出来的东西发给我看看。"
+      title="三种合作方式，<br />按需选择。"
+      lead="从一个具体问题的咨询，到团队级的落地陪跑，再到长期的社群交流。"
     />
     <div class="v6-offers">
       {
@@ -55,6 +55,18 @@ import { offers } from '~/data/offers';
         })
       }
     </div>
+    <ul class="v6-voices">
+      {
+        testimonials.map((t, i) => (
+          <li data-reveal style={`--reveal-i:${i}`}>
+            <blockquote>「{t.quote}」</blockquote>
+            <span class="v6-small">
+              {t.who} · {t.role}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </section>
 
@@ -155,7 +167,31 @@ import { offers } from '~/data/offers';
   .v6-offer__go:hover {
     color: var(--copper-moon);
   }
+  .v6-voices {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 40px 0 0;
+    padding: 28px 0 0;
+    list-style: none;
+    border-top: 1px solid var(--v6-line);
+  }
+  .v6-voices li {
+    display: grid;
+    gap: 10px;
+  }
+  .v6-voices blockquote {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.7;
+    color: var(--v6-fg);
+  }
   @media (max-width: 1023px) {
+    .v6-voices {
+      grid-template-columns: 1fr;
+    }
     .v6-offers {
       grid-template-columns: 1fr;
     }

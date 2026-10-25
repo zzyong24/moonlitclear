@@ -1,5 +1,5 @@
 ---
-import { pullQuote } from '~/data/retros';
+import { pullQuote } from '~/data/capabilities';
 import SectionHeading from '../SectionHeading.astro';
 import type { Post } from '~/types';
 interface Props {
@@ -17,8 +17,8 @@ const ym = (d: Date) => d.toISOString().slice(0, 7).replace('-', '.');
     <SectionHeading
       id="articles-title"
       eyebrow="文章"
-      title="写下来，<br />才算想清楚。"
-      lead="AI 协作、Agent 工程、知识库、内容系统。大多是踩完坑当晚写的，尽量写到别人能照着验证。"
+      title="方法与实战，<br />都写成了文章。"
+      lead="AI 协作、Agent 工程、知识库与内容系统。每篇都来自真实项目，步骤和数据写清楚，读完就能照着用。"
       linkHref="/blog"
       linkLabel={`全部 ${total} 篇文章`}
     />

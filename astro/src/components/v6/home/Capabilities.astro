@@ -1,0 +1,142 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import { capabilities } from '~/data/capabilities';
+import type { Post } from '~/types';
+interface Props {
+  posts: Post[];
+}
+const { posts } = Astro.props;
+const items = capabilities.map((c) => {
+  const post = c.match ? posts.find((p) => p.title.includes(c.match!)) : undefined;
+  const href = c.href ?? (post ? '/' + post.permalink : undefined);
+  return { ...c, proofHref: href };
+});
+---
+
+<section class="v6-section" id="capabilities" data-tone="light" data-bg="moon-100" aria-labelledby="capabilities-title">
+  <div class="v6-container">
+    <SectionHeading
+      id="capabilities-title"
+      eyebrow="能力"
+      title="我能帮你，<br />把 AI 用进这四件事。"
+      lead="每一项都是我在自己的产品和客户项目里反复跑通过的方法，附可查看的真实案例。"
+    />
+    <ol class="v6-caps">
+      {
+        items.map((c, i) => (
+          <li class="v6-card v6-cap" data-reveal style={`--reveal-i:${i % 2}`}>
+            <span class="v6-cap__n v6-num">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="v6-cap__title">{c.title}</h3>
+            <p class="v6-cap__desc">{c.description}</p>
+            <ul class="v6-cap__points">
+              {c.points.map((p) => (
+                <li>{p}</li>
+              ))}
+            </ul>
+            {c.proofHref && (
+              <a class="v6-cap__proof" href={c.proofHref}>
+                <span class="v6-cap__tag">案例</span>
+                <span class="v6-cap__proof-text">{c.proof}</span>
+                <span class="v6-arrow" aria-hidden="true">
+                  →
+                </span>
+              </a>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .v6-caps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .v6-cap {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px 24px;
+    color: var(--ink);
+  }
+  .v6-cap__n {
+    font-size: 15px;
+    color: var(--copper);
+    letter-spacing: 0.04em;
+  }
+  .v6-cap__title {
+    margin: 14px 0 0;
+    font-family: var(--font-serif);
+    font-size: clamp(24px, 2.2vw, 30px);
+    font-weight: 900;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .v6-cap__desc {
+    margin: 12px 0 0;
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+  .v6-cap__points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .v6-cap__points li {
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--ink) 5%, transparent);
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+  .v6-cap__proof {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 22px;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 9%, transparent);
+    font-size: 14.5px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .v6-cap__points + .v6-cap__proof {
+    margin-top: 24px;
+  }
+  .v6-cap__tag {
+    flex: none;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--copper);
+  }
+  .v6-cap__proof-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .v6-cap__proof .v6-arrow {
+    color: var(--copper);
+  }
+  .v6-cap__proof:hover .v6-cap__proof-text {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  @media (max-width: 860px) {
+    .v6-caps {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .v6-cap {
+      padding: 24px 22px 20px;
+    }
+  }
+</style>
