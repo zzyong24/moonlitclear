@@ -6,6 +6,9 @@
       <a class="v6-btn v6-btn--primary" href="/links#offers">聊一聊</a>
       <a class="v6-btn v6-btn--secondary" href="/feed.xml">订阅 RSS</a>
     </div>
+    <a class="v6-closing__more" href="/opensource">
+      先逛逛开源项目 <span class="v6-arrow" aria-hidden="true">→</span>
+    </a>
   </div>
 </section>
 
@@ -14,7 +17,7 @@
     text-align: center;
   }
   .v6-closing .v6-h2 {
-    font-size: 64px;
+    font-size: clamp(36px, 4.6vw, 64px);
     line-height: 1.22;
   }
   .v6-closing .v6-h2 span {
@@ -25,6 +28,16 @@
   }
   .v6-closing .v6-lead {
     margin-top: 24px;
+    color: var(--v6-fg-3);
+  }
+  .v6-closing__more {
+    display: inline-flex;
+    gap: 8px;
+    margin-top: 22px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--copper);
+    text-decoration: none;
   }
   .v6-closing__actions {
     display: flex;
@@ -33,9 +46,6 @@
     margin-top: 36px;
   }
   @media (max-width: 767px) {
-    .v6-closing .v6-h2 {
-      font-size: 36px;
-    }
     .v6-closing .v6-h2 span {
       display: block;
     }

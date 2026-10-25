@@ -1,6 +1,7 @@
 ---
 import { brand } from '~/data/brand';
 import SocialIcons from './SocialIcons.astro';
+import brushMark from '~/assets/moonlit/brush-yueming.svg?raw';
 const links = [
   { label: '产品', href: '/projects' },
   { label: '开源', href: '/opensource' },
@@ -10,15 +11,20 @@ const links = [
 ];
 ---
 
-<footer class="v6-footer" data-tone="dark">
+<footer class="v6-footer v6-grain" data-tone="dark">
   <div class="v6-container">
     <div class="v6-footer__top">
       <div class="v6-footer__brand">
-        <a href="/" class="v6-footer__logo">月明Verse</a>
-        <p class="v6-small">朱志勇 · 独立开发者。<br />一个人做产品、做内容、做增长。</p>
+        <a href="/" class="v6-footer__mark" aria-label="月明Verse 首页" set:html={brushMark} />
+        <div>
+          <p class="v6-footer__logo">朱志勇 · 月明Verse</p>
+          <p class="v6-small">全栈开发工程师，在职独立开发者。<br />一个人做产品、做内容、做增长。</p>
+        </div>
+      </div>
+      <div class="v6-footer__side">
+        <SocialIcons label="关注" />
         <a class="v6-footer__mail v6-small" href={`mailto:${brand.email}`}>{brand.email}</a>
       </div>
-      <SocialIcons label="关注我" />
     </div>
     <div class="v6-footer__bottom">
       <nav aria-label="页脚导航">
@@ -31,8 +37,9 @@ const links = [
 
 <style>
   .v6-footer {
+    position: relative;
     background: var(--night-900);
-    padding-block: 72px 40px;
+    padding-block: 56px 36px;
     font-family: var(--font-sans);
   }
   .v6-footer__top {
@@ -40,23 +47,41 @@ const links = [
     justify-content: space-between;
     align-items: flex-end;
     gap: 32px;
-    padding-bottom: 40px;
+    padding-bottom: 36px;
     border-bottom: 1px solid var(--v6-line);
   }
   .v6-footer__brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .v6-footer__mark {
+    display: block;
+    width: 64px;
+    color: var(--moon-cream);
+    flex: none;
+  }
+  .v6-footer__mark :global(svg) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .v6-footer__side {
     display: grid;
-    gap: 12px;
+    justify-items: end;
+    gap: 14px;
   }
   .v6-footer__brand p {
     margin: 0;
   }
   .v6-footer__logo {
-    font-family: var(--font-serif);
-    font-size: 28px;
-    font-weight: 900;
+    margin: 0 0 6px;
+    font-size: 15px;
+    font-weight: 600;
     color: var(--moon-cream);
-    text-decoration: none;
-    letter-spacing: 0.02em;
+  }
+  .v6-footer__brand .v6-small {
+    line-height: 1.75;
   }
   .v6-footer__mail {
     color: var(--v6-fg-2);
@@ -94,6 +119,9 @@ const links = [
     .v6-footer__top {
       flex-direction: column;
       align-items: flex-start;
+    }
+    .v6-footer__side {
+      justify-items: start;
     }
   }
 </style>

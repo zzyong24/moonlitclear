@@ -3,7 +3,7 @@ import SectionHeading from '../SectionHeading.astro';
 import { offers } from '~/data/offers';
 ---
 
-<section class="v6-section" id="offers" data-tone="dark" data-bg="night-800" aria-labelledby="offers-title">
+<section class="v6-section v6-grain" id="offers" data-tone="dark" data-bg="night-900" aria-labelledby="offers-title">
   <div class="v6-container">
     <SectionHeading
       id="offers-title"
@@ -40,7 +40,7 @@ import { offers } from '~/data/offers';
               )}
               {'note' in o && <p class="v6-small v6-offer__note">{o.note}</p>}
               <a
-                class:list={['v6-btn', i === 0 ? 'v6-btn--primary' : 'v6-btn--secondary']}
+                class:list={i === 0 ? ['v6-btn', 'v6-btn--primary'] : ['v6-offer__go']}
                 href={o.action.href}
                 target={external ? '_blank' : undefined}
                 rel={external ? 'noreferrer' : undefined}
@@ -69,17 +69,20 @@ import { offers } from '~/data/offers';
     display: flex;
     flex-direction: column;
     gap: 14px;
-    padding: 28px;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--v6-line);
-    transition: background-color var(--dur-base) ease;
+    padding: 26px 26px 24px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 0 1px var(--v6-line);
+    transition: box-shadow var(--dur-base) ease;
   }
   .v6-offer:not(.v6-offer--accent):hover {
-    background: color-mix(in srgb, var(--night-700) 60%, transparent);
+    box-shadow: 0 0 0 1px var(--v6-line-strong);
   }
   .v6-offer--accent {
-    background: var(--moon-100);
-    border-color: transparent;
+    background: #f8f0e2;
+    box-shadow: none;
+  }
+  .v6-offer .v6-h3 {
+    font-weight: 900;
   }
   .v6-offer__top {
     display: flex;
@@ -90,9 +93,9 @@ import { offers } from '~/data/offers';
     border-bottom: 1px solid var(--v6-line);
   }
   .v6-offer__price {
-    font-family: var(--font-serif);
+    font-family: var(--font-num);
     font-size: 24px;
-    font-weight: 900;
+    font-weight: 600;
     color: var(--v6-fg);
   }
   .v6-offer__price small {
@@ -131,9 +134,26 @@ import { offers } from '~/data/offers';
     border-radius: var(--radius-sm);
     background: color-mix(in srgb, var(--v6-fg) 6%, transparent);
   }
-  .v6-offer .v6-btn {
+  .v6-offer .v6-btn,
+  .v6-offer__go {
     margin-top: auto;
+  }
+  .v6-offer .v6-btn {
     align-self: stretch;
+  }
+  .v6-offer__go {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    padding-top: 18px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--v6-fg);
+    text-decoration: none;
+  }
+  .v6-offer__go:hover {
+    color: var(--copper-moon);
   }
   @media (max-width: 1023px) {
     .v6-offers {

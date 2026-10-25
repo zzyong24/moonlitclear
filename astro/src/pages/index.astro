@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/SiteLayout.astro';
 import Hero from '~/components/v6/home/Hero.astro';
-import PathTimeline from '~/components/v6/home/PathTimeline.astro';
 import Stats from '~/components/v6/home/Stats.astro';
 import Products from '~/components/v6/home/Products.astro';
 import OpenSource from '~/components/v6/home/OpenSource.astro';
@@ -31,8 +30,7 @@ const stats = [
 >
   <div class="v6-page">
     <Hero productCount={projects.length} openSourceCount={openSourceEntries.length} postCount={allPosts.length} />
-    <PathTimeline />
-    <Stats stats={stats} tags={['全栈开发', 'AI Native', '独立产品', '内容与增长']} />
+    <Stats stats={stats} />
     <Products />
     <OpenSource />
     <Articles posts={allPosts.slice(0, 8)} total={allPosts.length} />

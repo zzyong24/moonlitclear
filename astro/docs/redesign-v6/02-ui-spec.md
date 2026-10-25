@@ -42,7 +42,7 @@
   --radius-sm: 8px;    /* 标签、输入框 */
   --radius-md: 14px;   /* 卡片 */
   --radius-lg: 20px;   /* 大卡片、Hero 方案 B 照片框 */
-  --radius-pill: 999px;/* 按钮 */
+  --radius-btn: 10px; /* 按钮（2026-10-25 细节打磨：由胶囊改为 10px） */
 
   /* 阴影：只用于亮段浮起卡片 */
   --shadow-card: 0 1px 2px rgba(24, 43, 66, 0.04), 0 12px 32px -12px rgba(24, 43, 66, 0.12);
@@ -95,7 +95,7 @@
 
 | 场景 | 桌面 | 手机 |
 | --- | --- | --- |
-| 段落上下内边距 | 128px（大段）/ 96px（小段，如时间轴、数字条） | 72px / 56px |
+| 段落上下内边距 | clamp(64px, 6.4vw, 96px)（大段）/ clamp(48px, 4.8vw, 72px)（小段） | 同左，随视口收缩 |
 | 段落标题区 → 内容 | 56px | 32px |
 | eyebrow → H2 | 12px | 8px |
 | H2 → 说明 | 20px | 12px |
@@ -112,7 +112,7 @@
 - 输出 `<section data-tone data-bg>`，整幅背景，内部包 `Container`。
 
 ### 5.2 `Container.astro`
-- `max-width: 1120px`；左右内边距 桌面 32px / 手机 20px；`margin-inline: auto`。
+- 内容宽 `max-width: 1200px`；左右内边距 `--gutter: clamp(20px, 4vw, 48px)`；`margin-inline: auto`。页头与内容同宽。
 - 变体 `narrow`：760px（收尾 CTA、文章正文）。
 
 ### 5.3 `SectionHeading.astro`（每段标题固定句式）
@@ -128,7 +128,7 @@
 | `secondary` | 1px `--line-dark-strong` 描边，字 `--fg` | 1px `--ink` 描边，字 `--ink` | 次要动作 |
 | `text` | 字 `--fg`，后接「→」 | 同左 | 列表、段尾链接 |
 
-- 尺寸：高 44px（手机 ≥ 44px 触控），左右内边距 20px，`--radius-pill`，字号 15px / 500。
+- 尺寸：高 44px（手机 ≥ 44px 触控），左右内边距 20px，`--radius-btn`（10px），字号 15px / 500；悬停上移 1px，主按钮加投影。
 - 悬停：primary 底色混 8% 黑或白；secondary 底色变 `--line`；text 箭头右移 4px。
 - 焦点：`outline: 2px solid var(--accent); outline-offset: 3px;`，所有可点击元素统一。
 - 外链加 `target="_blank" rel="noreferrer"`，箭头用「↗」；站内用「→」。
@@ -178,3 +178,16 @@
 - 图片必须有 `alt`；装饰性元素（背景字、月晕、分隔线）`aria-hidden`。
 - 每个 Section 有唯一 `h2`，`aria-labelledby` 指向它；页面只有一个 `h1`。
 - 跳到正文链接保留在 Header 第一位。
+
+## 附：2026-10-25 细节打磨（已实施，优先于上文冲突处）
+
+对照参考站逐项测量后补充的细节，代码在 `src/assets/styles/tokens-v6.css` 与 `src/components/v6/`：
+
+- **数字字体**：统计数字、日期、价格用 `--font-num`（Source Serif 4 600，构建时只保留 ASCII，约 10KB），不用宋体 900，显得更轻更精致。
+- **颗粒质感**：暗色段落（首屏、产品、合作、页脚）加 `.v6-grain`，SVG 噪点 7% overlay。首屏另有两层径向光（右上偏亮、左下压暗）。
+- **首屏书法字**：「月明」用 Ma Shan Zheng 毛笔字形转成的 SVG（`src/assets/moonlit/brush-yueming.svg`），人像压在字前；入场时字从左向右揭开，文案依次上浮。
+- **首屏色带**：首屏底部接一条更深的色带，显示「方向」（有已确认时间轴时显示「路径」），节点圆点 + 细线，最后一项高亮。
+- **卡片**：`.v6-card` = 1px 描边 + `0 26px 50px -38px` 长淡投影，圆角 14px，悬停上移 4px。
+- **文章列表**：日期栏 8rem、宋体标题 22px、单行摘要、右侧箭头；不再显示分类标签，悬停标题变强调色。
+- **段落标题**：左右 1 : 0.9，底对齐，右侧说明 16.5px 弱化色。
+- **数据条**：数字下方一行「在这些地方更新」，平台名用宋体列出。

@@ -36,20 +36,26 @@ const { id, eyebrow, title, lead, linkHref, linkLabel } = Astro.props;
 <style>
   .v6-heading {
     display: grid;
-    grid-template-columns: 7fr 5fr;
-    gap: 24px 48px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 20px 64px;
     align-items: end;
-    margin-bottom: 56px;
+    margin-bottom: 40px;
   }
   .v6-heading__main {
     display: grid;
     gap: 12px;
   }
+  .v6-heading__side .v6-body {
+    max-width: 30em;
+    font-size: 16.5px;
+    line-height: 1.8;
+    color: var(--v6-fg-3);
+  }
   .v6-heading__side {
     display: grid;
-    gap: 14px;
+    gap: 12px;
     justify-items: start;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
   }
   @media (max-width: 767px) {
     .v6-heading {

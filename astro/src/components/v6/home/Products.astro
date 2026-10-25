@@ -20,7 +20,13 @@ const theme = (id: string) => productDetails[id]?.theme;
 const border = '1px solid rgba(246, 239, 226, 0.12)';
 ---
 
-<section class="v6-section" id="products" data-tone="dark" data-bg="night-800" aria-labelledby="products-title">
+<section
+  class="v6-section v6-grain"
+  id="products"
+  data-tone="dark"
+  data-bg="night-800"
+  aria-labelledby="products-title"
+>
   <div class="v6-container">
     <SectionHeading
       id="products-title"
@@ -126,18 +132,20 @@ const border = '1px solid rgba(246, 239, 226, 0.12)';
     grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
     gap: 48px;
     align-items: center;
-    padding: 20px;
-    margin-bottom: 64px;
-    border: 1px solid var(--v6-line);
-    border-radius: var(--radius-lg);
-    background: color-mix(in srgb, var(--night-700) 45%, transparent);
+    padding: 14px;
+    margin-bottom: 56px;
+    border-radius: var(--radius-md);
+    background: var(--night-900);
+    box-shadow: 0 0 0 1px var(--v6-line);
     transition:
-      background-color var(--dur-base) ease,
-      border-color var(--dur-base) ease;
+      transform 350ms var(--ease-out),
+      box-shadow 350ms var(--ease-out);
   }
   .v6-feature:hover {
-    background: color-mix(in srgb, var(--night-700) 75%, transparent);
-    border-color: var(--v6-line-strong);
+    transform: translateY(-4px);
+    box-shadow:
+      0 0 0 1px var(--v6-line-strong),
+      0 30px 60px -36px rgba(0, 0, 0, 0.7);
   }
   .v6-feature__copy {
     display: grid;
@@ -146,7 +154,7 @@ const border = '1px solid rgba(246, 239, 226, 0.12)';
     padding-right: 20px;
   }
   .v6-feature__name {
-    font-size: 36px;
+    font-size: clamp(28px, 2.6vw, 36px);
     font-weight: 900;
   }
   .v6-feature__copy .v6-lead {
@@ -177,21 +185,31 @@ const border = '1px solid rgba(246, 239, 226, 0.12)';
   .v6-products {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 48px 24px;
+    gap: 44px 28px;
     margin: 0;
     padding: 0;
     list-style: none;
   }
   .v6-products a {
     display: grid;
-    gap: 18px;
+    gap: 16px;
+  }
+  .v6-products h3 {
+    font-size: 22px;
+    font-weight: 900;
+    transition: color var(--dur-fast) ease;
+  }
+  .v6-products a:hover h3 {
+    color: var(--copper-moon);
   }
   .v6-products__copy {
     display: grid;
     gap: 8px;
   }
   .v6-products__tag {
-    color: var(--v6-accent);
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--v6-fg-3);
   }
   .v6-products .v6-body {
     display: -webkit-box;
@@ -202,8 +220,8 @@ const border = '1px solid rgba(246, 239, 226, 0.12)';
   }
   .v6-products h3 .v6-arrow {
     font-family: var(--font-sans);
-    font-size: 18px;
-    color: var(--v6-fg-2);
+    font-size: 17px;
+    color: var(--v6-fg-3);
   }
   @media (max-width: 1023px) {
     .v6-feature {

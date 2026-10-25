@@ -33,7 +33,7 @@ const cover = (p: Post) => {
 
     {
       featured && (
-        <a class="v6-article-feature" href={'/' + featured.permalink} data-reveal>
+        <a class="v6-article-feature v6-card" href={'/' + featured.permalink} data-reveal>
           <CardEffect kind="article" aspect="16 / 9" radius="var(--radius-md)" border="1px solid var(--line-light)">
             <img
               src={cover(featured).src}
@@ -71,18 +71,15 @@ const cover = (p: Post) => {
         list.map((p, i) => (
           <li data-reveal style={`--reveal-i:${i}`}>
             <a href={'/' + p.permalink}>
-              <time class="v6-small" datetime={p.publishDate.toISOString()}>
+              <time class="v6-num" datetime={p.publishDate.toISOString()}>
                 {ym(p.publishDate)}
               </time>
               <span class="v6-rows__main">
                 <strong class="v6-h3">{p.title}</strong>
                 {p.excerpt && <span class="v6-small">{p.excerpt}</span>}
               </span>
-              <span class="v6-rows__meta">
-                <span class="v6-tag">{p.category?.title || '实践记录'}</span>
-                <span class="v6-arrow" aria-hidden="true">
-                  →
-                </span>
+              <span class="v6-rows__go" aria-hidden="true">
+                →
               </span>
             </a>
           </li>
@@ -102,15 +99,17 @@ const cover = (p: Post) => {
     grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
     gap: 48px;
     align-items: center;
-    padding-bottom: 56px;
+    padding: 14px;
+    margin-bottom: 56px;
   }
   .v6-article-feature__copy {
     display: grid;
     gap: 16px;
     justify-items: start;
+    padding-right: 28px;
   }
   .v6-article-feature__copy .v6-h3 {
-    font-size: 32px;
+    font-size: clamp(24px, 2.2vw, 30px);
     font-weight: 900;
     line-height: 1.3;
   }
@@ -129,48 +128,63 @@ const cover = (p: Post) => {
     margin: 0;
     padding: 0;
     list-style: none;
-    border-top: 2px solid var(--v6-fg);
+    border-top: 1px solid var(--v6-fg);
   }
   .v6-rows a {
     display: grid;
-    grid-template-columns: 120px minmax(0, 1fr) auto;
-    gap: 24px;
-    align-items: center;
-    padding: 28px 8px;
+    grid-template-columns: 8rem minmax(0, 1fr) auto;
+    column-gap: 28px;
+    align-items: baseline;
+    padding: 22px 0;
     border-bottom: 1px solid var(--v6-line);
-    transition: background-color var(--dur-fast) ease;
-  }
-  .v6-rows a:hover {
-    background: color-mix(in srgb, var(--v6-fg) 3%, transparent);
   }
   .v6-rows time {
-    font-variant-numeric: tabular-nums;
+    font-size: 13px;
+    font-weight: 500;
     color: var(--v6-fg-3);
   }
   .v6-rows__main {
     display: grid;
-    gap: 6px;
+    gap: 8px;
     min-width: 0;
   }
   .v6-rows__main .v6-h3 {
-    font-size: 21px;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.45;
+    transition: color var(--dur-fast) ease;
   }
   .v6-rows__main .v6-small {
+    max-width: 40em;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-size: 15px;
+    line-height: 1.8;
   }
-  .v6-rows__meta {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    color: var(--v6-fg-2);
+  .v6-rows__go {
+    font-size: 15px;
+    color: var(--v6-fg-3);
+    transition:
+      color var(--dur-fast) ease,
+      transform var(--dur-fast) ease;
+  }
+  .v6-rows a:hover .v6-h3,
+  .v6-rows a:hover .v6-rows__go {
+    color: var(--v6-accent);
+  }
+  .v6-rows a:hover .v6-rows__go {
+    transform: translate(2px, -2px);
   }
   @media (max-width: 767px) {
     .v6-article-feature {
       grid-template-columns: 1fr;
       gap: 20px;
-      padding-bottom: 40px;
+      padding: 10px 10px 22px;
+      margin-bottom: 40px;
+    }
+    .v6-article-feature__copy {
+      padding: 0 8px;
     }
     .v6-article-feature__copy .v6-h3 {
       font-size: 24px;
@@ -184,10 +198,13 @@ const cover = (p: Post) => {
       grid-column: 1 / -1;
     }
     .v6-rows__main .v6-h3 {
-      font-size: 18px;
+      font-size: 19px;
     }
-    .v6-rows__meta .v6-tag {
-      display: none;
+    .v6-rows__main .v6-small {
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
   }
 </style>

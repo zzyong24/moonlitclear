@@ -13,6 +13,7 @@ const { metadata = {} } = Astro.props;
 // 生产环境使用构建后生成的宋体子集；开发环境直接用 fontsource 分片。
 if (import.meta.env.DEV) {
   await import('@fontsource/noto-serif-sc/900.css');
+  await import('@fontsource/source-serif-4/latin-600.css');
 }
 ---
 

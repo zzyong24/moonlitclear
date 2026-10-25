@@ -1,6 +1,8 @@
 ---
 import { getImage } from 'astro:assets';
 import portrait from '~/assets/moonlit/portrait-cutout-v1.png';
+import brushMark from '~/assets/moonlit/brush-yueming.svg?raw';
+import { timeline } from '~/data/timeline';
 import SocialIcons from '../SocialIcons.astro';
 interface Props {
   productCount: number;
@@ -13,32 +15,54 @@ const images = await Promise.all(
   widths.map((width) => getImage({ src: portrait, width, format: 'webp', quality: 82 }))
 );
 const ratio = portrait.height / portrait.width;
+
+// 首屏底部色带：有本人确认的时间轴（timeline.ts 非 draft）时显示「路径」，否则显示「方向」。
+const confirmed = timeline.filter((item) => !item.draft);
+const band =
+  confirmed.length > 1
+    ? {
+        label: '路径',
+        note: '从写代码，到一个人做完整的产品。',
+        items: confirmed.map((t) => ({ title: t.title, note: t.note ?? t.period, current: !!t.current })),
+      }
+    : {
+        label: '方向',
+        note: '一个人，把代码、产品和内容连成一条线。',
+        items: [
+          { title: '全栈开发', note: '在职全栈工程师', current: false },
+          { title: 'AI Native', note: '用 Agent 写代码、做内容', current: false },
+          { title: '独立产品', note: `${productCount} 个产品，一个人做完`, current: false },
+          { title: '开源', note: `${openSourceCount} 个项目公开在 GitHub`, current: false },
+          { title: '内容与增长', note: `${postCount} 篇文章，多平台分发`, current: true },
+        ],
+      };
 ---
 
-<section class="v6-hero" data-tone="dark" aria-labelledby="hero-title">
-  <div class="v6-hero__glow" aria-hidden="true"></div>
-  <div class="v6-hero__inner v6-container">
+<section class="v6-hero v6-grain" data-tone="dark" aria-labelledby="hero-title">
+  <div class="v6-container v6-hero__wrap">
     <div class="v6-hero__copy">
-      <span class="v6-eyebrow">朱志勇 · 月明Verse</span>
-      <h1 id="hero-title" class="v6-display">
+      <p class="v6-kicker rise">朱志勇 · 月明Verse</p>
+      <h1 id="hero-title" class="v6-display rise d1">
         <span>一个人做产品。</span><span>做内容，</span><span>也做增长。</span>
       </h1>
-      <p class="v6-lead">
-        我是朱志勇，也叫月明Verse。全栈开发工程师，在职独立开发者。这里有我做的 {productCount} 个产品、{openSourceCount} 个开源项目，以及
-        {postCount} 篇从 0 到 1 的真实记录。
+      <p class="v6-lead rise d2">
+        我是朱志勇，也叫<b>月明Verse</b>。<span class="nw">全栈开发工程师，在职独立开发者。</span>这里有我做的<b
+          >{productCount} 个产品</b
+        >、<b>{openSourceCount} 个开源项目</b>，以及 {postCount} 篇从 0 到 1 的真实记录。
       </p>
-      <div class="v6-hero__actions">
+      <div class="v6-hero__actions rise d3">
         <a class="v6-btn v6-btn--primary" href="#products">看我做的产品</a>
         <a class="v6-btn v6-btn--secondary" href="#articles">读我的文章</a>
       </div>
-      <SocialIcons label="关注我" />
+      <div class="rise d4"><SocialIcons label="关注我" /></div>
     </div>
-    <div class="v6-hero__figure">
-      <span class="v6-hero__moon" aria-hidden="true">月</span>
+    <div class="v6-hero__art">
+      <div class="v6-hero__mark" set:html={brushMark} />
       <img
+        class="v6-hero__portrait"
         src={images[1].src}
         srcset={images.map((img, i) => `${img.src} ${widths[i]}w`).join(', ')}
-        sizes="(max-width: 767px) 78vw, (max-width: 1023px) 46vw, 500px"
+        sizes="(max-width: 860px) 60vw, 380px"
         width={520}
         height={Math.round(520 * ratio)}
         alt="朱志勇，身穿深蓝西装和白色上衣，面带微笑"
@@ -48,6 +72,23 @@ const ratio = portrait.height / portrait.width;
       />
     </div>
   </div>
+
+  <div class="v6-hero__band">
+    <div class="v6-container">
+      <p class="v6-hero__band-head"><b>{band.label}</b><span>{band.note}</span></p>
+      <ol class="v6-hero__path" style={`--n:${band.items.length}`}>
+        {
+          band.items.map((item) => (
+            <li class:list={{ 'is-current': item.current }}>
+              <span class="v6-hero__dot" aria-hidden="true" />
+              <strong>{item.title}</strong>
+              <span>{item.note}</span>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
 </section>
 
 <style>
@@ -55,122 +96,262 @@ const ratio = portrait.height / portrait.width;
     position: relative;
     overflow: hidden;
     background: var(--night-800);
-    min-height: min(100svh, 800px);
-    display: flex;
-    align-items: stretch;
   }
-  .v6-hero__glow {
+  .v6-hero::before {
+    content: '';
     position: absolute;
-    right: -6%;
-    top: 4%;
-    width: 900px;
-    height: 900px;
-    border-radius: 50%;
-    background: radial-gradient(closest-side, var(--moon-glow), transparent 72%);
+    inset: 0;
+    z-index: 0;
     pointer-events: none;
+    background:
+      radial-gradient(60% 70% at 72% 40%, rgba(120, 150, 230, 0.22), transparent 70%),
+      radial-gradient(40% 50% at 8% 100%, rgba(0, 0, 0, 0.28), transparent 70%);
   }
-  .v6-hero__inner {
+  .v6-hero__wrap {
     position: relative;
+    z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr);
+    align-items: center;
     gap: 24px;
-    padding-top: 72px;
-    min-height: inherit;
+    padding-top: clamp(120px, 10vw, 148px);
   }
   .v6-hero__copy {
-    display: grid;
-    align-content: center;
-    gap: 28px;
-    padding-block: 64px 96px;
-    z-index: 2;
+    padding-bottom: 56px;
+  }
+  .v6-hero__copy h1 {
+    margin-top: 26px;
   }
   .v6-hero__copy h1 span {
     display: block;
     white-space: nowrap;
   }
-  .v6-hero__copy .v6-eyebrow {
-    margin-bottom: -8px;
-  }
   .v6-hero__copy .v6-lead {
-    max-width: 30em;
+    max-width: 28em;
+    margin-top: 26px;
+  }
+  .nw {
+    display: inline-block;
+  }
+  .v6-lead b {
+    white-space: nowrap;
+    font-weight: 500;
+    color: var(--v6-fg);
   }
   .v6-hero__actions {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    margin-top: 34px;
   }
-  .v6-hero__figure {
+  .v6-hero__copy > .rise:last-child {
+    margin-top: 28px;
+  }
+
+  .v6-hero__art {
     position: relative;
     align-self: end;
-    display: flex;
-    justify-content: center;
-    min-height: 100%;
+    height: clamp(460px, 42vw, 600px);
   }
-  .v6-hero__moon {
+  .v6-hero__mark {
     position: absolute;
+    top: 8%;
     left: 50%;
-    top: 50%;
-    transform: translate(-22%, -50%);
-    font-family: var(--font-serif);
-    font-size: 600px;
-    font-weight: 900;
-    line-height: 1;
+    width: 108%;
+    transform: translateX(-50%);
     color: var(--moon-cream);
-    opacity: 0.94;
-    user-select: none;
-    pointer-events: none;
-    white-space: nowrap;
+    opacity: 0.95;
   }
-  .v6-hero__figure img {
-    position: relative;
-    align-self: flex-end;
-    width: min(100%, 500px);
+  .v6-hero__mark :global(svg) {
+    display: block;
+    width: 100%;
     height: auto;
-    max-height: calc(min(100svh, 800px) - 96px);
-    object-fit: contain;
-    object-position: bottom center;
-    filter: drop-shadow(0 30px 60px rgba(5, 12, 22, 0.35));
   }
-  @media (max-width: 1023px) {
-    .v6-hero__moon {
-      font-size: 440px;
+  .v6-hero__portrait {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    width: auto;
+    max-width: none;
+    height: 100%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.22));
+  }
+
+  .v6-hero__band {
+    position: relative;
+    z-index: 1;
+    background: var(--night-900);
+    padding-block: 30px 34px;
+  }
+  .v6-hero__band-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 14px;
+    margin: 0 0 22px;
+    font-size: 13.5px;
+  }
+  .v6-hero__band-head b {
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--copper-moon);
+  }
+  .v6-hero__band-head span {
+    color: var(--moon-cream-3);
+  }
+  .v6-hero__path {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(var(--n, 5), minmax(0, 1fr));
+    grid-auto-flow: column;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .v6-hero__path::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--line-dark-strong), var(--line-dark) 85%, transparent);
+  }
+  .v6-hero__path li {
+    position: relative;
+    display: grid;
+    gap: 4px;
+    padding-top: 26px;
+  }
+  .v6-hero__dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--night-900);
+    box-shadow: inset 0 0 0 1.5px var(--moon-cream-2);
+  }
+  .is-current .v6-hero__dot {
+    background: var(--copper-moon);
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--copper-moon) 22%, transparent);
+  }
+  .v6-hero__path strong {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    color: var(--moon-cream);
+  }
+  .v6-hero__path li > span:last-child {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--moon-cream-3);
+  }
+
+  .rise {
+    animation: v6-rise 0.9s var(--ease-out) both;
+  }
+  .rise.d1 {
+    animation-delay: 0.25s;
+  }
+  .rise.d2 {
+    animation-delay: 0.4s;
+  }
+  .rise.d3 {
+    animation-delay: 0.55s;
+  }
+  .rise.d4 {
+    animation-delay: 0.7s;
+  }
+  .v6-hero__mark {
+    animation: v6-mark-in 1.25s cubic-bezier(0.7, 0, 0.2, 1) 0.15s both;
+  }
+  .v6-hero__portrait {
+    animation: v6-rise-portrait 0.9s var(--ease-out) 0.35s both;
+  }
+  @keyframes v6-rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
     }
   }
-  @media (max-width: 767px) {
-    .v6-hero {
-      min-height: 0;
+  @keyframes v6-mark-in {
+    from {
+      clip-path: inset(0 100% 0 0);
     }
-    .v6-hero__inner {
+    to {
+      clip-path: inset(0);
+    }
+  }
+  @keyframes v6-rise-portrait {
+    from {
+      opacity: 0;
+      transform: translate(-50%, 24px);
+    }
+  }
+
+  @media (max-width: 860px) {
+    .v6-hero__wrap {
       grid-template-columns: 1fr;
-      padding-top: 60px;
       gap: 0;
+      padding-top: 84px;
+    }
+    .v6-hero__art {
+      order: -1;
+      height: min(104vw, 440px);
+    }
+    .v6-hero__mark {
+      width: 100%;
+      top: 10%;
+    }
+    .v6-hero__portrait {
+      height: 96%;
     }
     .v6-hero__copy {
-      padding-block: 40px 32px;
-      gap: 22px;
+      padding-bottom: 48px;
+    }
+    .v6-hero__copy h1 {
+      margin-top: 28px;
     }
     .v6-hero__actions .v6-btn {
-      flex: 1 1 100%;
+      flex: 1 1 0;
     }
-    .v6-hero__figure {
-      height: 400px;
-      min-height: 0;
+    .v6-hero__path {
+      grid-template-columns: 1fr;
+      grid-auto-flow: row;
+      gap: 18px;
+      padding-left: 26px;
     }
-    .v6-hero__moon {
-      font-size: 330px;
-      transform: translate(-30%, -50%);
+    .v6-hero__path::before {
+      top: 4px;
+      bottom: 4px;
+      left: 4px;
+      right: auto;
+      width: 1px;
+      height: auto;
+      background: var(--line-dark-strong);
     }
-    .v6-hero__figure img {
-      width: auto;
-      height: 100%;
-      max-height: none;
+    .v6-hero__path li {
+      padding-top: 0;
+      grid-template-columns: auto 1fr;
+      align-items: baseline;
+      column-gap: 12px;
     }
-    .v6-hero__glow {
-      width: 520px;
-      height: 520px;
-      top: auto;
-      bottom: 0;
-      right: -30%;
+    .v6-hero__dot {
+      left: -26px;
+      top: 7px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rise,
+    .v6-hero__mark,
+    .v6-hero__portrait {
+      animation: none;
     }
   }
 </style>

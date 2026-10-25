@@ -72,6 +72,12 @@ const categories = [...new Set(openSourceEntries.map((i) => i.category))].map((c
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 32px 24px;
   }
+  .v6-os__cards :global(.opensource-copy h3) {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+  }
   .v6-os__index {
     position: sticky;
     top: 96px;
@@ -80,14 +86,13 @@ const categories = [...new Set(openSourceEntries.map((i) => i.category))].map((c
     padding: 28px;
     border-radius: var(--radius-md);
     background: var(--card-light);
-    border: 1px solid var(--v6-line);
     box-shadow: var(--shadow-card);
   }
   .v6-os__index ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    border-top: 2px solid var(--v6-fg);
+    border-top: 1px solid var(--v6-fg);
   }
   .v6-os__index li a {
     display: grid;
@@ -104,10 +109,11 @@ const categories = [...new Set(openSourceEntries.map((i) => i.category))].map((c
     background: color-mix(in srgb, var(--v6-fg) 4%, transparent);
   }
   .v6-os__count {
-    font-family: var(--font-serif);
+    font-family: var(--font-num);
     font-size: 20px;
+    font-weight: 600;
     color: var(--v6-accent);
-    font-variant-numeric: tabular-nums;
+    font-variant-numeric: tabular-nums lining-nums;
   }
   .v6-os__name {
     display: grid;
@@ -116,6 +122,8 @@ const categories = [...new Set(openSourceEntries.map((i) => i.category))].map((c
   .v6-os__name strong {
     font-family: var(--font-serif);
     font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 0.02em;
   }
   .v6-os__name small {
     font-size: 13px;

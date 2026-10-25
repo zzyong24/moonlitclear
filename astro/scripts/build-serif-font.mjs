@@ -23,15 +23,11 @@ const SERIF_CLASSES = new Set([
   'v6-h3',
   'v6-h4',
   'v6-stat',
-  'v6-lead',
-  'v6-hero__moon',
   'v6-header__brand',
-  'v6-footer__logo',
   'v6-menu',
-  'v6-offer__price',
-  'v6-os__count',
   'v6-os__name',
-  'v6-stats__tags',
+  'v6-proof__row',
+  'v6-hero__path',
 ]);
 const ALWAYS = '月明Verse朱志勇0123456789+.,，。、：；！？·—→↗《》「」（）%';
 
@@ -111,6 +107,18 @@ for (const weight of WEIGHTS) {
     css += `@font-face{font-family:'Noto Serif SC';font-style:normal;font-weight:700 ${weight};font-display:swap;src:url(/fonts/serif/${name}) format('woff2');unicode-range:${toRange(used)};}\n`;
   }
 }
+// 数字与日期用 Source Serif 4 600（--font-num），只保留 ASCII 可见字符，约 10KB。
+const numDir = path.dirname(require.resolve('@fontsource/source-serif-4/package.json'));
+const ascii = Array.from({ length: 0x7f - 0x20 }, (_, i) => String.fromCharCode(0x20 + i)).join('') + '·—→↗¥';
+const numBuf = await subsetFont(
+  fs.readFileSync(path.join(numDir, 'files', 'source-serif-4-latin-600-normal.woff2')),
+  ascii,
+  { targetFormat: 'woff2' }
+);
+fs.writeFileSync(path.join(outDir, 'num-600.woff2'), numBuf);
+total += numBuf.length;
+files++;
+css += `@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:500 700;font-display:swap;src:url(/fonts/serif/num-600.woff2) format('woff2');}\n`;
 fs.writeFileSync(path.join(DIST, 'fonts', 'serif.css'), css);
 console.log(
   `宋体子集：${chars.size} 字，${files} 个文件，共 ${(total / 1024).toFixed(0)}KB（扫描 ${pages.length} 页）。`
